@@ -27,7 +27,8 @@ jobs:
       - name: Build data/dinos.json from Wikipedia and Wikimedia Commons
         run: |
           if [ -f scripts/REUSE_IMAGES ]; then export REUSE_IMAGES=1; fi
-          python scripts/build_data.py 2> build-log.txt; tail -n 40 build-log.txt
+          set -o pipefail
+          python scripts/build_data.py 2>&1 | tee build-log.txt
       - name: Commit the data
         run: |
           git config user.name "github-actions[bot]"

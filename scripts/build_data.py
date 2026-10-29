@@ -362,5 +362,5 @@ out = ROOT / "data/dinos.json"
 out.parent.mkdir(exist_ok=True)
 out.write_text(json.dumps(rows, ensure_ascii=False, indent=0, separators=(",", ":")))
 have = sum(1 for r in rows if r.get("img"))
-print(f"{len(rows)} dinosaurs, {have} with pictures, {sum(1 for r in rows if r['wiki'])} with articles,"
-      f" {sum(1 for r in rows if r['group'])} grouped, {sum(1 for r in rows if r['period'])} with period")
+print(f"{len(rows)} dinosaurs, {have} with pictures, {sum(1 for r in rows if r.get('wiki'))} with articles,"
+      f" {sum(1 for r in rows if r.get('group'))} grouped, {sum(1 for r in rows if r.get('period'))} with period")
