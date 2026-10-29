@@ -8,7 +8,7 @@ restoration from Wikimedia Commons.
 
 Runs on GitHub Actions (see .github/workflows/build-data.yml).
 """
-import json, re, sys, time, pathlib, urllib.parse, urllib.request
+import json, os, re, sys, time, pathlib, urllib.parse, urllib.request
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 UA = "MesozoicCarousel/1.0 (https://github.com/sayantandatta/mesozoic-carousel)"
@@ -35,6 +35,11 @@ def chunks(xs, n):
         yield xs[i:i + n]
 
 
+OFFLINE = "--offline" in sys.argv          # re-run classification from data/raw.json only
+REUSE_IMAGES = OFFLINE or os.environ.get("REUSE_IMAGES") == "1"
+RAW = ROOT / "data/raw.json"
+PREV = {r["name"]: r for r in json.loads((ROOT / "data/dinos.json").read_text())} if (ROOT / "data/dinos.json").exists() else {}
+
 # ---------- 1. find the right Wikipedia article ----------
 names = [n.strip() for n in (ROOT / "scripts/names.txt").read_text().splitlines() if n.strip()]
 SPECIAL = {"Yi": "Yi (dinosaur)"}
@@ -60,33 +65,50 @@ def resolve(titles):
     return out
 
 
-cand_dino = resolve([SPECIAL.get(n, f"{n} (dinosaur)") for n in names])
-cand_plain = resolve(names)
-title_for = {}
-for n in names:
-    a = cand_dino[SPECIAL.get(n, f"{n} (dinosaur)")]
-    b = cand_plain[n]
-    title_for[n] = a[0] if a[1] else (b[0] if b[1] else None)
+def fetch_articles():
+    cand_dino = resolve([SPECIAL.get(n, f"{n} (dinosaur)") for n in names])
+    cand_plain = resolve(names)
+    title_for = {}
+    for n in names:
+        a = cand_dino[SPECIAL.get(n, f"{n} (dinosaur)")]
+        b = cand_plain[n]
+        t = a[0] if a[1] else (b[0] if b[1] else None)
+        title_for[n] = None if (t and t.startswith("List of")) else t
 
-# ---------- 2. read each article's introduction ----------
-intro = {}
-article_images = {}
-titles = sorted({t for t in title_for.values() if t})
-for ch in chunks(titles, 20):
-    j = api(WP, action="query", titles="|".join(ch), prop="extracts", exintro=1, explaintext=1, exlimit=20)
-    for p in j.get("query", {}).get("pages", []):
-        intro[p["title"]] = p.get("extract", "")
-    time.sleep(0.3)
-for ch in chunks(titles, 20):
-    cont = {}
-    while True:
-        j = api(WP, action="query", titles="|".join(ch), prop="images", imlimit=500, **cont)
-        for p in j.get("query", {}).get("pages", []):
-            article_images.setdefault(p["title"], []).extend(i["title"] for i in p.get("images", []))
-        if "continue" not in j:
-            break
-        cont = j["continue"]
-    time.sleep(0.3)
+    # ---------- 2. read each article's introduction and image list ----------
+    intro, article_images = {}, {}
+    titles = sorted({t for t in title_for.values() if t})
+    for ch in chunks(titles, 20):
+        cont = {}
+        while True:
+            j = api(WP, action="query", titles="|".join(ch), prop="extracts", exintro=1, explaintext=1, exlimit=20, **cont)
+            for p in j.get("query", {}).get("pages", []):
+                if p.get("extract"):
+                    intro[p["title"]] = p["extract"]
+            if "continue" not in j:
+                break
+            cont = j["continue"]
+            time.sleep(0.2)
+        time.sleep(0.3)
+    for ch in chunks(titles, 20):
+        cont = {}
+        while True:
+            j = api(WP, action="query", titles="|".join(ch), prop="images", imlimit=500, **cont)
+            for p in j.get("query", {}).get("pages", []):
+                article_images.setdefault(p["title"], []).extend(i["title"] for i in p.get("images", []))
+            if "continue" not in j:
+                break
+            cont = j["continue"]
+        time.sleep(0.3)
+    RAW.write_text(json.dumps({"titles": title_for, "intro": intro, "images": article_images}, ensure_ascii=False))
+    return title_for, intro, article_images
+
+
+if OFFLINE:
+    raw = json.loads(RAW.read_text())
+    title_for, intro, article_images = raw["titles"], raw["intro"], raw["images"]
+else:
+    title_for, intro, article_images = fetch_articles()
 
 # ---------- 3. facts from the introduction ----------
 STAGES = {  # ICS 2023 ages, million years ago
@@ -165,42 +187,46 @@ def facts(text):
 
 
 # ---------- 4. group, diet and drawing template ----------
-GROUPS = [  # (pattern, group, diet, template, what it ate)
-    (r"synapsid|pelycosaur", "synapsid", "carn", "spino", "meat, including fish, amphibians and other reptiles"),
-    (r"plesiosaur|marine reptile", "marine", "carn", "spino", "fish and other sea animals"),
-    (r"spinosaur", "spinosaur", "carn", "spino", "mostly fish, plus other animals it caught near the water"),
-    (r"tyrannosaur", "tyrannosaur", "carn", "trex", "meat, mostly other dinosaurs"),
-    (r"therizinosaur", "therizinosaur", "herb", "galli", "leaves, pulled down from trees with its long claws"),
-    (r"oviraptor|caenagnath", "oviraptorosaur", "omni", "galli", "plants and seeds, and possibly eggs and small animals"),
-    (r"ornithomim|deinocheir", "ornithomimosaur", "omni", "galli", "plants, seeds, insects and small animals"),
-    (r"alvarezsaur", "alvarezsaur", "carn", "compy", "insects such as ants and termites"),
-    (r"troodont", "troodontid", "omni", "velo", "small animals, insects and possibly plants"),
-    (r"dromaeosaur|\braptor\b|unenlagi|microraptor", "dromaeosaur", "carn", "velo", "small and medium-sized animals, gripped with its sickle-shaped foot claws"),
-    (r"ceratops|centrosaur|chasmosaur|psittacosaur|ceratopsia", "ceratopsian", "herb", "tri", "tough, low-growing plants, sliced with its sharp beak"),
-    (r"ankylosaur|nodosaur|thyreophora", "ankylosaur", "herb", "anky", "low ferns and other leafy plants"),
-    (r"stegosaur", "stegosaur", "herb", "steg", "ferns, mosses and other low plants"),
-    (r"pachycephalosaur|bone-headed|dome-headed", "pachycephalosaur", "herb", "pachy", "leaves, seeds and fruit"),
-    (r"lambeosaur", "hadrosaur", "herb", "para", "leaves, twigs and conifer needles, ground up by hundreds of teeth"),
-    (r"hadrosaur|saurolophin|duck-billed", "hadrosaur", "herb", "igu", "leaves, twigs and conifer needles, ground up by hundreds of teeth"),
-    (r"heterodontosaur", "heterodontosaur", "omni", "compy", "plants, and maybe insects and small animals"),
-    (r"iguanodon|ornithopod|hypsilophodon|rhabdodont|ornithischia", "ornithopod", "herb", "igu", "low-growing plants such as ferns and horsetails"),
-    (r"brachiosaur", "sauropod", "herb", "brach", "leaves from the tops of tall trees"),
-    (r"titanosaur|sauropod|diplodoc|macronaria|camarasaur|mamenchisaur|rebbachisaur|dicraeosaur", "sauropod", "herb", "diplo", "leaves from tall trees and other plants, swallowed without chewing"),
-    (r"prosauropod|sauropodomorph|plateosaur|massospondyl", "sauropodomorph", "herb", "igu", "leaves and other plants, and perhaps the odd small animal"),
-    (r"abelisaur|carcharodontosaur|allosaur|megalosaur|ceratosaur|metriacanthosaur|sinraptor|megaraptor|noasaur|tetanura|theropod", "theropod", "carn", "allo", "meat, hunting other animals"),
-    (r"coelophys|herrerasaur|compsognath|coelurosaur", "theropod", "carn", "coelo", "small animals such as lizards and insects"),
-    (r"\bbird|avialan|avialae|scansoriopteryg|paraves", "avialan", "carn", "compy", "insects and other small animals"),
-    (r"dinosauromorph|dinosauriform|archosaur|pseudosuchia|crocodil", "archosaur", "carn", "coelo", "small animals"),
+GROUPS = [  # (pattern, group, diet, template, what it ate). Family words only, never genus names.
+    (r"synapsids?\b|pelycosaur|sphenacodont", "synapsid", "carn", "spino", "meat, including fish, amphibians and other reptiles"),
+    (r"plesiosaur(?:s|ian)?\b", "marine", "carn", "spino", "fish and other sea animals"),
+    (r"spinosaurids?\b|spinosaurines?\b|baryonychines?\b|spinosauroids?\b", "spinosaur", "carn", "spino", "mostly fish, plus other animals it caught near the water"),
+    (r"tyrannosaur(?:id|oid|ine|s)?\b", "tyrannosaur", "carn", "trex", "meat, mostly other dinosaurs"),
+    (r"therizinosaur(?:id|oid|ian|s)?\b|segnosaur(?:id|ian|s)\b", "therizinosaur", "herb", "galli", "leaves, pulled down from trees with its long claws"),
+    (r"oviraptor(?:id|ids|osaur|osaurs|osaurian|ine)\b|caenagnathids?\b", "oviraptorosaur", "omni", "galli", "plants and seeds, and possibly eggs and small animals"),
+    (r"ornithomim(?:id|ids|osaur|osaurs|osaurian|ine)\b|deinocheirids?\b", "ornithomimosaur", "omni", "galli", "plants, seeds, insects and small animals"),
+    (r"alvarezsaur(?:id|ids|s)?\b", "alvarezsaur", "carn", "compy", "insects such as ants and termites"),
+    (r"troodont(?:id|ids|s)?\b", "troodontid", "omni", "velo", "small animals, insects and possibly plants"),
+    (r"dromaeosaur(?:id|ids|ine|s)?\b|\braptors?\b|unenlagiines?\b|microraptorines?\b|eudromaeosaur", "dromaeosaur", "carn", "velo", "small and medium-sized animals, gripped with its sickle-shaped foot claws"),
+    (r"ceratopsians?\b|ceratopsids?\b|ceratopsia\b|chasmosaurines?\b|centrosaurines?\b|leptoceratopsids?\b|protoceratopsids?\b|psittacosaurids?\b|horned dinosaur|frilled dinosaur", "ceratopsian", "herb", "tri", "tough, low-growing plants, sliced with its sharp beak"),
+    (r"ankylosaur(?:id|ids|ian|ians|ine|ines|s)?\b|nodosaur(?:id|ids|ine|s)?\b|armou?red dinosaur|thyreophoran", "ankylosaur", "herb", "anky", "low ferns and other leafy plants"),
+    (r"stegosaur(?:id|ids|ian|ians|s)?\b", "stegosaur", "herb", "steg", "ferns, mosses and other low plants"),
+    (r"pachycephalosaur(?:id|ids|ian|ians|ine|s)?\b|bone-headed|dome-headed|thick-headed", "pachycephalosaur", "herb", "pachy", "leaves, seeds and fruit"),
+    (r"lambeosaurines?\b", "hadrosaur", "herb", "para", "leaves, twigs and conifer needles, ground up by hundreds of teeth"),
+    (r"hadrosaur(?:id|ids|oid|oids|ine|s)?\b|saurolophines?\b|duck-billed", "hadrosaur", "herb", "igu", "leaves, twigs and conifer needles, ground up by hundreds of teeth"),
+    (r"heterodontosaur(?:id|ids|s)?\b", "heterodontosaur", "omni", "compy", "plants, and maybe insects and small animals"),
+    (r"iguanodont(?:ian|ians|id|ids|s)?\b|ornithopods?\b|hypsilophodont(?:id|ids)?\b|rhabdodontids?\b|ornithischians?\b|thescelosaurids?\b|dryosaurids?\b|elasmarians?\b|neornithischian", "ornithopod", "herb", "igu", "low-growing plants such as ferns and horsetails"),
+    (r"brachiosaur(?:id|ids|s)?\b", "sauropod", "herb", "brach", "leaves from the tops of tall trees"),
+    (r"prosauropods?\b|sauropodomorphs?\b|plateosaurids?\b|massospondylids?\b|anchisaurids?\b", "sauropodomorph", "herb", "igu", "leaves and other plants, and perhaps the odd small animal"),
+    (r"titanosaur(?:id|ids|ian|ians|iform|s)?\b|sauropods?\b|diplodocids?\b|diplodocoids?\b|macronarians?\b|camarasaurids?\b|mamenchisaurids?\b|rebbachisaurids?\b|dicraeosaurids?\b|turiasaurs?\b|eusauropods?\b|neosauropods?\b|somphospondyl|euhelopodids?\b|cetiosaurids?\b|apatosaurines?\b", "sauropod", "herb", "diplo", "leaves from tall trees and other plants, swallowed without chewing"),
+    (r"coelophysoids?\b|coelophysids?\b|herrerasaur(?:id|ids|ian|ians)\b|compsognathids?\b|dilophosaurids?\b", "theropod", "carn", "coelo", "small animals such as lizards and insects"),
+    (r"abelisaur(?:id|ids|oid|oids|ine)?\b|carcharodontosaur(?:id|ids|ian|s)?\b|allosaur(?:id|ids|oid|oids|s)?\b|megalosaur(?:id|ids|oid|oids|s)?\b|ceratosaur(?:id|ids|ian|ians|s)?\b|metriacanthosaurids?\b|sinraptorids?\b|megaraptor(?:an|ans|id|ids)\b|noasaurids?\b|tetanurans?\b|theropods?\b|carnosaurs?\b|piatnitzkysaurids?\b|coelurosaurs?\b|maniraptor", "theropod", "carn", "allo", "meat, hunting other animals"),
+    (r"avialans?\b|avialae\b|scansoriopterygids?\b|paravians?\b|\bbirds?\b", "avialan", "carn", "compy", "insects and other small animals"),
+    (r"dinosauromorphs?\b|dinosauriforms?\b|silesaurids?\b|pseudosuchians?\b|crocodylomorphs?\b|archosaurs?\b", "archosaur", "carn", "coelo", "small animals"),
 ]
 SMALL_THEROPOD_EATS = "small animals such as lizards, insects and early mammals"
+BIG_COELO_EATS = "meat, hunting other animals"
 
 
 def classify(text):
+    """The family word that appears first in the article's introduction decides the group."""
     t = text.lower()
-    for pat, grp, diet, tpl, eats in GROUPS:
-        if re.search(pat, t):
-            return grp, diet, tpl, eats
-    return None, None, None, None
+    best = None
+    for k, (pat, grp, diet, tpl, eats) in enumerate(GROUPS):
+        m = re.search(pat, t)
+        if m and (best is None or (m.start(), k) < best[0]):
+            best = ((m.start(), k), (grp, diet, tpl, eats))
+    return best[1] if best else (None, None, None, None)
 
 
 # ---------- 5. pictures ----------
@@ -277,15 +303,27 @@ for n in names:
     grp, diet, tpl, eats = classify(text)
     if tpl == "allo" and length and float(length.split()[0]) < 3:
         tpl, eats = "coelo", SMALL_THEROPOD_EATS
+    elif tpl == "coelo" and grp == "theropod" and length and float(length.split()[0]) >= 3.5:
+        eats = BIG_COELO_EATS
     not_dino = bool(re.search(r"not a (true )?dinosaur|synapsid|pelycosaur|plesiosaur|pseudosuchian|crocodylomorph|dinosauriform|dinosauromorph", text[:700], re.I)) \
         and not re.search(r"\bis a (genus|species) of [^.]{0,80}dinosaur", text[:300], re.I)
     rows.append({"name": n, "wiki": t, "period": period, "ma": ma, "len": length, "group": grp,
                  "diet": diet, "tpl": tpl, "eats": eats, "notDino": not_dino})
-    cands[n] = pick_image(n, t) if t else pick_image(n, n)
+    if not REUSE_IMAGES:
+        cands[n] = pick_image(n, t) if t else pick_image(n, n)
 
+if REUSE_IMAGES:  # keep the pictures chosen last time
+    for r in rows:
+        p = PREV.get(r["name"], {})
+        for k in ("img", "file", "art", "lic", "alts"):
+            if k in p:
+                r[k] = p[k]
+    rows_with_cands = []
+else:
+    rows_with_cands = rows
 all_files = sorted({f for fs in cands.values() for f in fs})
-info = image_info(all_files)
-for r in rows:
+info = image_info(all_files) if all_files else {}
+for r in rows_with_cands:
     for f in cands.get(r["name"], []):
         i = info.get(f)
         if not i or not i["url"] or not FREE.search(i["lic"] or "") or i["w"] < 300:
@@ -295,6 +333,17 @@ for r in rows:
         r.update(img=i["url"], file=f.replace("File:", ""), art=i["art"], lic=i["lic"])
         break
     r["alts"] = [f.replace("File:", "") for f in cands.get(r["name"], [])][:6]
+
+# hand corrections after review (scripts/overrides.json: {name: {field: value}})
+ov_path = ROOT / "scripts/overrides.json"
+if ov_path.exists():
+    ov = json.loads(ov_path.read_text())
+    for r in rows:
+        for k, v in ov.get(r["name"], {}).items():
+            if v is None:
+                r.pop(k, None)
+            else:
+                r[k] = v
 
 out = ROOT / "data/dinos.json"
 out.parent.mkdir(exist_ok=True)
