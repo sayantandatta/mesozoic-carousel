@@ -224,7 +224,20 @@ dialog.tree::backdrop{background:rgb(10 16 12 / .55)}
 .kin h3{margin:0; font:600 .7rem/1.2 var(--f-body); letter-spacing:.1em; text-transform:uppercase; color:var(--muted)}
 .kin p{margin:0; font-size:.88rem; color:var(--muted)}
 .kin-list{display:flex; flex-wrap:wrap; gap:6px}
-.kin-list button{min-height:36px; padding:7px 12px; font-size:.88rem}
+.kin-list a, .members a{
+  display:inline-flex; align-items:center; min-height:36px; padding:7px 12px; border-radius:999px; border:1.5px solid var(--line);
+  background:var(--surface); color:var(--ink); font:600 .88rem/1.1 var(--f-body); text-decoration:none;
+}
+.kin-list a:hover, .members a:hover{border-color:var(--accent); color:var(--accent)}
+.kin-list a:focus-visible, .members a:focus-visible, .me-card a:focus-visible{outline:3px solid var(--accent); outline-offset:2px}
+.lineage .ct{min-height:0; padding:2px 0; border:none; background:none; border-radius:4px; color:var(--accent); font:500 .72rem/1.2 var(--f-mono);
+  text-decoration:underline; text-underline-offset:3px; font-variant-numeric:tabular-nums; cursor:pointer}
+.lineage .ct:hover{border:none}
+.lineage .ct[aria-expanded="true"]{color:var(--ink)}
+.members{flex-basis:100%; display:flex; flex-wrap:wrap; gap:5px; margin:6px 0 4px; max-height:190px; overflow-y:auto; padding:2px}
+.members a{min-height:32px; padding:5px 10px; font-size:.82rem}
+.members a[aria-current="page"]{border-color:var(--accent); color:var(--accent)}
+.me-card a{color:inherit; text-decoration:underline; text-decoration-color:var(--accent); text-underline-offset:4px}
 .tree-missing{display:grid; gap:10px; padding:10px 0 16px}
 @media (max-width:480px){ .me-card .th{width:64px} .me-card{gap:10px} .finder{padding:12px} .ribbon-wrap{margin:0 -12px; padding:2px 12px 4px} }
 @media (min-width:640px){
@@ -554,6 +567,7 @@ function mergeRows(rows){
   document.getElementById("total").textContent = DINOS.length;
   document.getElementById("q").placeholder = `Search ${DINOS.length} dinosaurs by name`;
   KIN = null; refreshFinder();
+  if(location.hash && indexFromHash()>=0 && indexFromHash()!==current) showFromHash();
 }
 const ERAS = [["Triassic",252,201,"var(--tri)"],["Jurassic",201,145,"var(--jur)"],["Cretaceous",145,66,"var(--cre)"]];
 
@@ -905,6 +919,7 @@ function swivel(idx,thenSpeak){
   if(busy)return; busy=true; run++; clearTimeout(timer); try{speechSynthesis.cancel()}catch(e){}
   statusEl.classList.remove("is-speaking");
   const out=stage.querySelector(".card"), inc=makeCard(DINOS[idx]); current=idx; shown++; countEl.textContent=`Shown: ${shown}`;
+  markSlide(DINOS[idx]);
   stage.append(inc);
   const dur=reduce?300:950, ease="cubic-bezier(.65,.02,.25,1)";
   const outK=reduce?[{opacity:1},{opacity:0}]:[{transform:"translateX(0) rotateY(0deg) scale(1)",opacity:1},{transform:"translateX(-58%) rotateY(-78deg) scale(.82)",opacity:0}];
@@ -1058,11 +1073,20 @@ function openTree(d){
   } else {
     const {members}=kinIndex(), ol=el("ol","lineage");
     chain.slice(0,-1).forEach(q=>{ const [name,rank]=TREE.taxa[q], n=(members[q]||[]).length, note=birdNote(name);
-      ol.append(el("li",null,`<span class="tn">${name}</span>${rank?`<span class="rk">${rank}</span>`:""}<span class="ct">${n} on this site</span>${note?`<span class="bird">${note}</span>`:""}`)) });
+      const li=el("li",null,`<span class="tn">${name}</span>${rank?`<span class="rk">${rank}</span>`:""}${note?`<span class="bird">${note}</span>`:""}`);
+      const ct=el("button","ct",`${n} on this site`); ct.type="button"; ct.setAttribute("aria-expanded","false");
+      ct.setAttribute("aria-label",`${n} dinosaurs on this site in ${name}; show their slides`);
+      ct.onclick=()=>{ let box=li.querySelector(".members");
+        if(!box){ box=el("div","members"); box.setAttribute("aria-label",`${name} on this site`);
+          [...(members[q]||[])].sort((a,b)=>DINOS[a].name.localeCompare(DINOS[b].name)).forEach(i=>box.append(slideLink(i, i===DINOS.indexOf(d))));
+          li.append(box); }
+        else box.hidden=!box.hidden;
+        ct.setAttribute("aria-expanded", String(!box.hidden)) };
+      li.insertBefore(ct, li.querySelector(".bird")); ol.append(li) });
     const own=TREE.taxa[chain[chain.length-1]], me=el("li","me"), card=el("div","me-card");
     const th=el("div","th"+(d.png?" png":"")); if(d.photo) th.style.backgroundImage=`url("${d.photo}")`; else { const cv=document.createElement("canvas"); cv.style.cssText="width:100%;height:100%;border-radius:8px"; th.append(cv); render(cv,d) }
     const sub=[own[1]&&own[1]!=="genus"?own[1]:"", own[0]!==d.name?own[0]:"", d.period].filter(Boolean).join(" · ");
-    card.append(th, el("div",null,`<b${d.name.length>15?' class="long"':''}>${d.name}</b><span>${sub}</span>`)); me.append(card); ol.append(me); treeBody.append(ol);
+    card.append(th, el("div",null,`<b${d.name.length>15?' class="long"':''}><a href="${slideHref(d)}" title="Link to ${d.name}’s slide">${d.name}</a></b><span>${sub}</span>`)); me.append(card); ol.append(me); treeBody.append(ol);
     // nearest group that holds at least three other dinosaurs on the site
     const self=DINOS.indexOf(d); let pick=null;
     for(const q of chain.slice(0,-1).reverse()){ const m=(members[q]||[]).filter(i=>i!==self); if(m.length){ pick=[q,m]; if(m.length>=3) break } }
@@ -1070,20 +1094,44 @@ function openTree(d){
       // for a big group, show the members that lived closest in time
       const near = m.length>18 && me0!=null ? [...m].sort((a,b)=>Math.abs((mid(DINOS[a])??999)-me0)-Math.abs((mid(DINOS[b])??999)-me0)).slice(0,18) : m.slice(0,18);
       const shown = near.sort((a,b)=>DINOS[a].name.localeCompare(DINOS[b].name));
-      const kin=el("div","kin",`<h3>Closest relatives on this site</h3><p>${m.length} other${m.length===1?"":"s"} in ${TREE.taxa[q][0]}${m.length>shown.length?`; here are the ${shown.length} that lived closest in time to ${d.name}`:""}. Pick one to see it.</p>`), list=el("div","kin-list");
-      shown.forEach(i=>{ const b=el("button",null,DINOS[i].name); b.type="button"; b.onclick=()=>{ treeDlg.close(); jumpTo(i) }; list.append(b) });
+      const kin=el("div","kin",`<h3>Closest relatives on this site</h3><p>${m.length} other${m.length===1?"":"s"} in ${TREE.taxa[q][0]}${m.length>shown.length?`; here are the ${shown.length} that lived closest in time to ${d.name}`:""}. Each name links to its slide.</p>`), list=el("div","kin-list");
+      shown.forEach(i=>list.append(slideLink(i)));
       kin.append(list); treeBody.append(kin) }
   }
   treeDlg.showModal();
   const meEl=treeBody.querySelector(".me"); if(meEl) requestAnimationFrame(()=>meEl.scrollIntoView({block:"center"}));
 }
 document.getElementById("treeClose").onclick=()=>treeDlg.close();
+treeBody.addEventListener("click", e=>{ const a=e.target.closest('a[href^="#"]'); if(a && a.getAttribute("href")===location.hash) treeDlg.close() });   // link to the slide already showing
 treeDlg.addEventListener("click", e=>{ if(e.target===treeDlg) treeDlg.close() });   // click on the backdrop
 treeDlg.addEventListener("close", ()=>{ if(treeWasRunning){ treeWasRunning=false; setRunning(true) } });
 
+/* ---------- One address per slide: #Name ---------- */
+const slideHref = d => "#" + encodeURIComponent(d.name);
+function slideLink(i, isCurrent){
+  const d=DINOS[i], a=el("a",null,d.name); a.href=slideHref(d);
+  if(isCurrent) a.setAttribute("aria-current","page");
+  return a;
+}
+function indexFromHash(){
+  const n=decodeURIComponent(location.hash.slice(1)).trim().toLowerCase();
+  return n ? DINOS.findIndex(d=>d.name.toLowerCase()===n) : -1;
+}
+function showFromHash(){
+  const i=indexFromHash(); if(i<0) return false;
+  if(treeDlg.open) treeDlg.close();
+  if(i!==current){ if(!running) statusText.textContent=`${DINOS[i].name}. Press Start to hear it.`; jumpTo(i) }
+  return true;
+}
+window.addEventListener("hashchange", showFromHash);
+function markSlide(d){   // keep the address in step with the card, without adding history entries
+  const h=slideHref(d); if(location.hash!==h){ try{ history.replaceState(null,"",h) }catch(e){} }
+}
+
 /* first card */
 refreshFinder(false);
-current=nextIndex(); shown=1; stage.append(makeCard(DINOS[current]));
+{ const h=indexFromHash(); current = h>=0 ? h : nextIndex(); }
+shown=1; stage.append(makeCard(DINOS[current])); if(location.hash) markSlide(DINOS[current]);
 fetch("data/dinos.json",{cache:"no-cache"}).then(r=>r.ok?r.json():Promise.reject(r.status)).then(mergeRows).catch(()=>{});
 
 

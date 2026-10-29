@@ -10,6 +10,7 @@ Live site: https://sayantandatta.github.io/mesozoic-carousel/
 - **Search** by name (press `/` to jump to the box). Picking a suggestion swivels straight to that dinosaur.
 - **Filters** for diet, period, family and pictures only, plus an **A to Z ribbon**. The endless loop then cycles only through the dinosaurs that match.
 - **Family tree** on every card opens a pop-up: the groups it belongs to run from Dinosauria at the top down to the dinosaur in the centre, with its closest relatives on the site underneath.
+- **Every slide has its own address**, like `#Velociraptor`, so you can share or bookmark a dinosaur. In the family tree, each relative, the centre dinosaur and the members of every group (tap "N on this site") link to their slides, and the browser's back button returns to the previous one.
 
 ## Where the content comes from
 
