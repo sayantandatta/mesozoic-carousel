@@ -867,8 +867,14 @@ function lineFor(d){return d.eats ? `${d.speak}. It ate ${d.eats}.` : `${d.speak
 let voices=[];
 function loadVoices(){try{voices=speechSynthesis.getVoices()}catch(e){voices=[]}}
 if("speechSynthesis" in window){loadVoices();speechSynthesis.onvoiceschanged=loadVoices}
-function pickVoice(){const en=voices.filter(v=>/^en/i.test(v.lang));
-  return en.find(v=>/Google UK English Male|Daniel|Samantha|Google US English|Natural/i.test(v.name))||en[0]||null}
+// Neutral accent: standard US English (General American), never a regional voice when a US one exists.
+const VOICE_RANK = [/Google US English/i, /Microsoft (Aria|Jenny|Guy|Ava|Andrew|Emma|Brian).*Natural/i, /^(Samantha|Alex|Allison|Ava|Tom)\b/i,
+  /Microsoft (Zira|David|Mark)/i, /English \(United States\)|US English/i];
+function pickVoice(){
+  const us = voices.filter(v=>/^en[-_]US$/i.test(v.lang) && !/Fred|Albert|Bad News|Bahh|Bells|Boing|Bubbles|Cellos|Good News|Jester|Organ|Superstar|Trinoids|Whisper|Wobble|Zarvox|Junior|Ralph|Kathy|Novelty/i.test(v.name));
+  for(const re of VOICE_RANK){ const v = us.find(x=>re.test(x.name)); if(v) return v }
+  return us.find(v=>v.localService) || us[0] || null;   // no US voice: let the browser pick its default for en-US
+}
 
 function speak(text,done){
   const id=run, start=performance.now(), readMs=Math.max(3200,text.length*62);
@@ -878,7 +884,7 @@ function speak(text,done){
   if(!voiceOn||!("speechSynthesis" in window)){statusText.textContent=voiceOn?"Voice isn't available in this browser.":"Voice is off.";timer=setTimeout(()=>{if(id===run)done()},readMs);return}
   try{
     speechSynthesis.cancel();
-    const u=new SpeechSynthesisUtterance(text); const v=pickVoice(); if(v)u.voice=v; u.lang=v?v.lang:"en-GB"; u.rate=.92; u.pitch=1.05;
+    const u=new SpeechSynthesisUtterance(text); const v=pickVoice(); if(v)u.voice=v; u.lang="en-US"; u.rate=.95; u.pitch=1;
     u.onstart=()=>{if(id===run){statusEl.classList.add("is-speaking");statusText.textContent="Speaking…"}};
     u.onend=()=>finish(false); u.onerror=()=>finish(true);
     liveUtter=u; speechSynthesis.speak(u);
