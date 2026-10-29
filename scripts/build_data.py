@@ -494,7 +494,9 @@ LINEAGE_RULES = [  # (group, any of these clade names in the chain)
     ("hadrosaur", {"Hadrosauridae", "Hadrosauroidea", "Hadrosauriformes", "Hadrosauromorpha"}),
     ("heterodontosaur", {"Heterodontosauridae"}),
     ("ornithopod", {"Ornithopoda", "Ornithischia"}),
-    ("sauropod", {"Sauropoda"}),
+    ("sauropod", {"Sauropoda", "Gravisauria", "Eusauropoda", "Neosauropoda", "Macronaria", "Titanosauriformes", "Titanosauria",
+                  "Lithostrotia", "Somphospondyli", "Diplodocoidea", "Diplodocidae", "Dicraeosauridae", "Rebbachisauridae",
+                  "Brachiosauridae", "Camarasauridae", "Mamenchisauridae", "Turiasauria", "Flagellicaudata", "Colossosauria"}),
     ("sauropodomorph", {"Sauropodomorpha"}),
 ]
 GROUP_INFO = {}

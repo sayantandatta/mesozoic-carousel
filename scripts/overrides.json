@@ -875,5 +875,43 @@
   "places": [
    "Asia"
   ]
+ },
+ "Bagualia": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Velocipes": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Amargastegos": {
+  "group": "stegosaur",
+  "diet": "herb",
+  "tpl": "steg",
+  "eats": "ferns, mosses and other low plants",
+  "period": "Early Cretaceous",
+  "ma": [
+   129,
+   122
+  ],
+  "hips": "bird"
+ },
+ "Pendraig": {
+  "period": "Late Triassic",
+  "ma": [
+   208,
+   201
+  ]
+ },
+ "Gnathovorax": {
+  "period": "Late Triassic",
+  "ma": [
+   233,
+   231
+  ]
  }
 }

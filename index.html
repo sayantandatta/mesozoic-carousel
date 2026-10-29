@@ -134,6 +134,7 @@ button[aria-pressed="true"] .off{display:none}
 }
 .start svg{width:22px; height:22px}
 .note{margin:0; color:var(--muted); font-size:.85rem; max-width:65ch}
+.note a{color:var(--accent); text-underline-offset:3px}
 @media (max-width:480px){ .start{font-size:.95rem; padding:12px 16px; top:16%} }
 
 /* Finder: search, filters, alphabet ribbon */
@@ -176,6 +177,21 @@ button[aria-pressed="true"] .off{display:none}
 .ribbon button.all{padding:8px 12px; font-family:var(--f-body); font-weight:600}
 .ribbon button:disabled{opacity:.3; cursor:default; border-color:var(--line)}
 .fsum{display:flex; flex-wrap:wrap; align-items:center; gap:6px 14px; font-size:.9rem; color:var(--muted)}
+.ftoggle{min-height:38px; padding:8px 14px; font-size:.88rem}
+.ftoggle svg{width:16px; height:16px}
+.ftoggle[aria-expanded="true"]{border-color:var(--muted)}
+.fbadge{display:inline-grid; place-items:center; min-width:20px; height:20px; padding:0 6px; border-radius:999px; background:var(--accent); color:var(--accent-ink); font:700 .72rem/1 var(--f-body)}
+.fgroup.wide{flex-basis:100%}
+.seg button:disabled{opacity:.35; cursor:default; border-color:var(--line)}
+.more{display:flex; flex-wrap:wrap; align-items:center; gap:6px; margin:0}
+.more .ml{font:600 .7rem/1.2 var(--f-body); letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin-right:4px}
+.more a{
+  display:inline-flex; align-items:center; min-height:32px; padding:5px 11px; border-radius:999px; border:1.5px solid var(--line);
+  color:var(--ink); background:var(--surface); font:600 .82rem/1.1 var(--f-body); text-decoration:none;
+}
+.more a:hover{border-color:var(--accent); color:var(--accent)}
+.more a:focus-visible, .links a:focus-visible{outline:3px solid var(--accent); outline-offset:2px}
+.facts dd i{font-style:italic; font-family:var(--f-body); font-weight:500}
 .fsum b{color:var(--ink); font-variant-numeric:tabular-nums}
 .linkbtn{
   min-height:0; padding:4px 0; border:none; background:none; border-radius:4px; color:var(--accent);
@@ -279,7 +295,14 @@ dialog.tree::backdrop{background:rgb(10 16 12 / .55)}
         role="combobox" aria-label="Search dinosaurs by name" aria-expanded="false" aria-controls="sugs" aria-autocomplete="list">
       <ul class="sugs" id="sugs" role="listbox" aria-label="Matching dinosaurs" hidden></ul>
     </div>
-    <div class="filters">
+    <div class="fsum">
+      <button type="button" class="ftoggle" id="fToggle" aria-expanded="true" aria-controls="filterPanel">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+        Filters <span class="fbadge" id="fActive" hidden>0</span>
+      </button>
+      <span id="matchCount" aria-live="polite">Showing all dinosaurs</span><button type="button" class="linkbtn" id="clearF" hidden>Clear filters</button>
+    </div>
+    <div class="filters" id="filterPanel">
       <div class="fgroup" role="group" aria-labelledby="lbl-diet">
         <span class="flabel" id="lbl-diet">Diet</span>
         <div class="seg" id="f-diet">
@@ -298,6 +321,37 @@ dialog.tree::backdrop{background:rgb(10 16 12 / .55)}
           <button type="button" data-v="cre" aria-pressed="false">Cretaceous</button>
         </div>
       </div>
+      <div class="fgroup wide" role="group" aria-labelledby="lbl-place">
+        <span class="flabel" id="lbl-place">Found in</span>
+        <div class="seg" id="f-place">
+          <button type="button" data-v="all" aria-pressed="true">All</button>
+          <button type="button" data-v="north-america" aria-pressed="false">North America</button>
+          <button type="button" data-v="south-america" aria-pressed="false">South America</button>
+          <button type="button" data-v="europe" aria-pressed="false">Europe</button>
+          <button type="button" data-v="asia" aria-pressed="false">Asia</button>
+          <button type="button" data-v="africa" aria-pressed="false">Africa</button>
+          <button type="button" data-v="australia" aria-pressed="false">Australia</button>
+          <button type="button" data-v="antarctica" aria-pressed="false">Antarctica</button>
+        </div>
+      </div>
+      <div class="fgroup" role="group" aria-labelledby="lbl-size">
+        <span class="flabel" id="lbl-size">Length</span>
+        <div class="seg" id="f-size">
+          <button type="button" data-v="all" aria-pressed="true">All</button>
+          <button type="button" data-v="small" aria-pressed="false">Under 3 m</button>
+          <button type="button" data-v="medium" aria-pressed="false">3–9 m</button>
+          <button type="button" data-v="large" aria-pressed="false">9–20 m</button>
+          <button type="button" data-v="giant" aria-pressed="false">20 m +</button>
+        </div>
+      </div>
+      <div class="fgroup" role="group" aria-labelledby="lbl-hips">
+        <span class="flabel" id="lbl-hips">Hips</span>
+        <div class="seg" id="f-hips">
+          <button type="button" data-v="all" aria-pressed="true">All</button>
+          <button type="button" data-v="lizard" aria-pressed="false" title="Saurischia: theropods and long-necks">Lizard-hipped</button>
+          <button type="button" data-v="bird" aria-pressed="false" title="Ornithischia: beaked plant-eaters">Bird-hipped</button>
+        </div>
+      </div>
       <div class="fgroup">
         <label class="flabel" for="f-group">Family</label>
         <select id="f-group"><option value="all">All families</option></select>
@@ -305,7 +359,6 @@ dialog.tree::backdrop{background:rgb(10 16 12 / .55)}
       <label class="toggle"><input type="checkbox" id="f-pic"> Pictures only</label>
     </div>
     <div class="ribbon-wrap"><div class="ribbon" id="ribbon" role="group" aria-label="First letter of the name"></div></div>
-    <div class="fsum"><span id="matchCount" aria-live="polite">Showing all dinosaurs</span><button type="button" class="linkbtn" id="clearF" hidden>Clear filters</button></div>
   </section>
 
   <div class="stage" id="stage">
@@ -320,7 +373,7 @@ dialog.tree::backdrop{background:rgb(10 16 12 / .55)}
     <span class="count" id="count">Shown: 1</span>
   </div>
 
-  <p class="note" id="note">Pictures are life restorations by paleoartists, from Wikimedia Commons; tap the credit on a picture to see the artist and licence. Nobody has photographed a living dinosaur, so these are scientists’ and artists’ best reconstructions. If there’s no free picture, or it can’t load, the page draws the dinosaur instead. Ages and sizes come from Wikipedia; for most dinosaurs, “what it ate” is what its family is known to have eaten.</p>
+  <p class="note" id="note">Pictures are life restorations by paleoartists, from Wikimedia Commons; tap the credit on a picture to see the artist and licence. Nobody has photographed a living dinosaur, so these are scientists’ and artists’ best reconstructions. If there’s no free picture, or it can’t load, the page draws the dinosaur instead. Ages and sizes come from Wikipedia; for most dinosaurs, “what it ate” is what its family is known to have eaten. Some weights, species names and fossil-photo links come from <a href="https://github.com/sopynya/DinoDatabase" target="_blank" rel="noopener">DinoDatabase</a> by sopynya.</p>
 </div>
 
 <dialog class="tree" id="treeDlg" aria-labelledby="treeTitle">
@@ -553,7 +606,8 @@ function fromRow(r,i){
   let h=0; for(const ch of r.name) h=(h*31+ch.charCodeAt(0))>>>0;
   const d = {...base, sp:"", name:r.name, speak:r.name, say:null, id:"x"+i,
     diet:r.diet||null, eats:r.eats||null, period:r.period||"Age unknown", ma:r.ma||null, len:r.len||null,
-    scene:SCENE_FOR(r.period), body:BODY_TONES[h%BODY_TONES.length], teeth:r.diet==="carn", wiki:r.wiki, notDino:r.notDino, group:r.group||null};
+    scene:SCENE_FOR(r.period), body:BODY_TONES[h%BODY_TONES.length], teeth:r.diet==="carn", wiki:r.wiki, notDino:r.notDino, group:r.group||null,
+    places:r.places||[], hips:r.hips||null, weight:r.weight||null, species:r.species||null, fossil:r.fossil||null};
   if(tpl!=="spino") delete d.sailOpt;
   if(r.img){ d.photo=r.img; d.photo2=null; d.file=r.file; d.art=r.art; d.lic=r.lic; d.png=/\.png$/i.test(r.file||"") }
   return d;
@@ -561,12 +615,15 @@ function fromRow(r,i){
 function mergeRows(rows){
   const byName = Object.fromEntries(DINOS.map(d=>[d.name,d]));
   const curName = DINOS[current] && DINOS[current].name;
-  const out = rows.map((r,i)=>{ const c=byName[r.name]; if(c){ if(r.wiki&&!c.wiki) c.wiki=r.wiki; if(r.group) c.group=r.group; return c } return fromRow(r,i) });
+  const out = rows.map((r,i)=>{ const c=byName[r.name]; if(c){ if(r.wiki&&!c.wiki) c.wiki=r.wiki; if(r.group) c.group=r.group;
+    for(const k of ["places","hips","weight","species","fossil"]) if(r[k]!=null && c[k]==null) c[k]=r[k];
+    if(!c.len && r.len) c.len=r.len; return c } return fromRow(r,i) });
   DINOS.forEach(d=>{ if(!out.includes(d)) out.push(d) });
   DINOS = out; bag = []; current = DINOS.findIndex(d=>d.name===curName);
   document.getElementById("total").textContent = DINOS.length;
   document.getElementById("q").placeholder = `Search ${DINOS.length} dinosaurs by name`;
   KIN = null; refreshFinder();
+  { const shownCard=stage.querySelector(".card"); if(shownCard && !busy && DINOS[current]) shownCard.replaceWith(makeCard(DINOS[current])) }   // first card gets the full facts
   if(location.hash && indexFromHash()>=0 && indexFromHash()!==current) showFromHash();
 }
 const ERAS = [["Triassic",252,201,"var(--tri)"],["Jurassic",201,145,"var(--jur)"],["Cretaceous",145,66,"var(--cre)"]];
@@ -854,11 +911,18 @@ function makeCard(d){
   const facts=el("dl","facts"); let fh="";
   if(d.ma){ const lived=d.ma[0]===d.ma[1]?`about ${d.ma[0]}`:`${d.ma[0]}–${d.ma[1]}`; fh+=`<div><dt>Lived</dt><dd>${lived} million years ago</dd></div>` }
   if(d.len) fh+=`<div><dt>Length</dt><dd>about ${d.len}</dd></div>`;
+  if(d.weight) fh+=`<div><dt>Weight</dt><dd>${d.weight}</dd></div>`;
+  if(d.places&&d.places.length) fh+=`<div><dt>Found in</dt><dd>${d.places.join(", ")}</dd></div>`;
+  if(d.hips) fh+=`<div><dt>Hips</dt><dd>${d.hips==="bird"?"Bird-hipped":"Lizard-hipped"}</dd></div>`;
+  if(d.species&&d.species.length) fh+=`<div><dt>Species</dt><dd>${d.species.map(x=>`<i>${x.replace(d.name+" ", d.name[0]+". ")}</i>`).join(", ")}</dd></div>`;
   facts.innerHTML=fh; if(fh) pl.append(facts);
   pl.append(timeline(d));
   const links=el("p","links"), tb=el("button","treebtn",`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21V9M12 13l-5-4M12 11l5-5M7 9V5M17 6V3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="21" r="1.4" fill="currentColor"/></svg>Family tree`);
   tb.type="button"; tb.setAttribute("aria-haspopup","dialog"); tb.onclick=()=>openTree(d);
-  links.append(tb); pl.append(links);
+  links.append(tb);
+  if(d.fossil){ const fa=el("a",null,"Fossil photo ↗"); fa.href=d.fossil; fa.target="_blank"; fa.rel="noopener"; fa.title="A photo of this dinosaur's fossil on Wikimedia Commons"; links.append(fa) }
+  pl.append(links);
+  const moreRow=moreLinks(d); if(moreRow) pl.append(moreRow);
   card.append(frame,pl); return card;
 }
 
@@ -962,7 +1026,17 @@ const GROUPS = [
   ["Beaked plant-eaters", [["ceratopsian","Horned and frilled"],["ankylosaur","Armoured"],["stegosaur","Plated"],["pachycephalosaur","Dome-headed"],["hadrosaur","Duck-billed"],["ornithopod","Ornithopods"],["heterodontosaur","Heterodontosaurs"]]],
   ["Not quite dinosaurs", [["archosaur","Early relatives"],["synapsid","Synapsids"],["marine","Sea reptiles"]]],
 ];
-const F = {diet:"all", era:"all", group:"all", pic:false, letter:"all"};
+const DEFAULTS = {diet:"all", era:"all", group:"all", pic:false, letter:"all", place:"all", size:"all", hips:"all"};
+const F = {...DEFAULTS};
+const SEGS = [["f-diet","diet"],["f-era","era"],["f-place","place"],["f-size","size"],["f-hips","hips"]];
+const PLACES = {"north-america":"North America","south-america":"South America","europe":"Europe","asia":"Asia","africa":"Africa","australia":"Australia","antarctica":"Antarctica"};
+const PLACE_SLUG = Object.fromEntries(Object.entries(PLACES).map(([k,v])=>[v,k]));
+const SIZE_LABEL = {small:"under 3 m long", medium:"3 to 9 m long", large:"9 to 20 m long", giant:"over 20 m long"};
+function sizeOf(d){
+  if(d._size!==undefined) return d._size;
+  const m=parseFloat((d.len||"").replace(/[^\d.]/g," ").trim().split(/\s+/).pop());
+  return d._size = !m ? null : m<3 ? "small" : m<9 ? "medium" : m<20 ? "large" : "giant";
+}
 let POOL = null;
 const eraOf = d => /Triassic|Permian/.test(d.period||"") ? "tri" : /Jurassic/.test(d.period||"") ? "jur" : /Cretaceous/.test(d.period||"") ? "cre" : "other";
 const fold = t => t.normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase();
@@ -972,6 +1046,9 @@ function matches(d, skip){
   if(skip!=="group" && F.group!=="all" && d.group!==F.group) return false;
   if(skip!=="pic" && F.pic && !d.photo) return false;
   if(skip!=="letter" && F.letter!=="all" && d.name[0].toUpperCase()!==F.letter) return false;
+  if(skip!=="place" && F.place!=="all" && !(d.places||[]).includes(PLACES[F.place])) return false;
+  if(skip!=="size" && F.size!=="all" && sizeOf(d)!==F.size) return false;
+  if(skip!=="hips" && F.hips!=="all" && d.hips!==F.hips) return false;
   return true;
 }
 const groupSel = document.getElementById("f-group"), ribbon = document.getElementById("ribbon");
@@ -982,25 +1059,76 @@ const groupSel = document.getElementById("f-group"), ribbon = document.getElemen
     b.setAttribute("aria-pressed", String(v===F.letter)); if(v!=="all") b.setAttribute("aria-label", `Names starting with ${v}`); ribbon.append(b) };
   mk("all","All","all"); for(let c=65;c<=90;c++) mk(String.fromCharCode(c), String.fromCharCode(c));
   ribbon.onclick=e=>{ const b=e.target.closest("button"); if(!b||b.disabled) return; setFilter("letter", b.dataset.v) };
-  for(const [id,key] of [["f-diet","diet"],["f-era","era"]])
-    document.getElementById(id).onclick=e=>{ const b=e.target.closest("button"); if(b) setFilter(key, b.dataset.v) };
+  for(const [id,key] of SEGS)
+    document.getElementById(id).onclick=e=>{ const b=e.target.closest("button"); if(b&&!b.disabled) setFilter(key, b.dataset.v) };
+  const tg=document.getElementById("fToggle"), panel=document.getElementById("filterPanel");
+  const setOpen=o=>{ tg.setAttribute("aria-expanded", String(o)); panel.hidden=!o };
+  setOpen(matchMedia("(min-width: 760px)").matches);
+  tg.onclick=()=>setOpen(panel.hidden);
   groupSel.onchange=()=>setFilter("group", groupSel.value);
   document.getElementById("f-pic").onchange=e=>setFilter("pic", e.target.checked);
-  document.getElementById("clearF").onclick=()=>{ Object.assign(F,{diet:"all",era:"all",group:"all",pic:false,letter:"all"}); refreshFinder(true) };
+  document.getElementById("clearF").onclick=()=>{ Object.assign(F,DEFAULTS); refreshFinder(true) };
 })();
 function setFilter(k,v){ F[k]=v; refreshFinder(true) }
+/* filters live in the address (?place=asia&size=giant), the slide in the hash (#Velociraptor) */
+const Q = {diet:["diet",{herb:"plants",carn:"meat",omni:"both"}], era:["period",{tri:"triassic",jur:"jurassic",cre:"cretaceous"}],
+  group:["family",null], place:["place",null], size:["size",null], hips:["hips",null], letter:["letter",null], pic:["pictures",null]};
+function queryFor(st){
+  const p=new URLSearchParams();
+  for(const [k,[name,map]] of Object.entries(Q)){ const v=st[k]; if(v===DEFAULTS[k]) continue;
+    p.set(name, k==="pic" ? "only" : map ? map[v] : v) }
+  const qs=p.toString(); return qs ? "?"+qs : "";
+}
+function readQuery(){
+  const p=new URLSearchParams(location.search); Object.assign(F,DEFAULTS);
+  for(const [k,[name,map]] of Object.entries(Q)){ if(!p.has(name)) continue; const raw=p.get(name);
+    if(k==="pic") F.pic = raw==="only";
+    else if(map){ const hit=Object.entries(map).find(([,q])=>q===raw.toLowerCase()); if(hit) F[k]=hit[0] }
+    else if(k==="letter") F.letter = /^[A-Za-z]$/.test(raw) ? raw.toUpperCase() : "all";
+    else F[k]=raw.toLowerCase() }
+}
+function writeQuery(){
+  const url = location.pathname + queryFor(F) + location.hash;
+  if(url !== location.pathname+location.search+location.hash){ try{ history.replaceState(null,"",url) }catch(e){} }
+}
+function moreLinks(d){
+  const items=[];
+  const add=(st,label,title)=>{ const a=el("a",null,label); a.href=queryFor({...DEFAULTS,...st})+slideHref(d); a.title=title;
+    a.onclick=e=>{ if(e.metaKey||e.ctrlKey||e.shiftKey||e.button!==0) return; e.preventDefault();
+      Object.assign(F,DEFAULTS,st); try{ history.pushState(null,"",a.getAttribute("href")) }catch(_){} refreshFinder(true);
+      document.querySelector(".finder").scrollIntoView({block:"nearest", behavior:"smooth"}) };
+    items.push(a) };
+  const era=eraOf(d); if(era!=="other") add({era}, {tri:"Triassic",jur:"Jurassic",cre:"Cretaceous"}[era], `Every dinosaur from the ${({tri:"Triassic",jur:"Jurassic",cre:"Cretaceous"})[era]}`);
+  (d.places||[]).forEach(p=>{ if(PLACE_SLUG[p]) add({place:PLACE_SLUG[p]}, `Found in ${p}`, `Every dinosaur found in ${p}`) });
+  const g=GROUPS.flatMap(([,items])=>items).find(([v])=>v===d.group); if(g) add({group:d.group}, g[1], `Every dinosaur in this family group: ${g[1]}`);
+  if(d.hips) add({hips:d.hips}, d.hips==="bird"?"Bird-hipped":"Lizard-hipped", d.hips==="bird"?"Every bird-hipped (ornithischian) dinosaur":"Every lizard-hipped (saurischian) dinosaur");
+  const sz=sizeOf(d); if(sz) add({size:sz}, sz[0].toUpperCase()+sz.slice(1)+" ones", `Every dinosaur ${SIZE_LABEL[sz]}`);
+  if(!items.length) return null;
+  const p=el("p","more",`<span class="ml">More like this</span>`); items.forEach(a=>p.append(a)); return p;
+}
+window.addEventListener("popstate", ()=>{ readQuery(); refreshFinder(true); showFromHash() });
 function refreshFinder(changed){
   POOL = DINOS.map((d,i)=>matches(d)?i:-1).filter(i=>i>=0); bag=[];
   // controls reflect state
-  for(const [id,key] of [["f-diet","diet"],["f-era","era"]])
-    document.querySelectorAll(`#${id} button`).forEach(b=>b.setAttribute("aria-pressed", String(b.dataset.v===F[key])));
+  for(const [id,key] of SEGS){
+    const cnt={}; let all=0;
+    DINOS.forEach(d=>{ if(!matches(d,key)) return; all++;
+      const vals = key==="diet"?[d.diet] : key==="era"?[eraOf(d)] : key==="size"?[sizeOf(d)] : key==="hips"?[d.hips] : (d.places||[]).map(p=>PLACE_SLUG[p]);
+      vals.forEach(v=>{ if(v) cnt[v]=(cnt[v]||0)+1 }) });
+    document.querySelectorAll(`#${id} button`).forEach(b=>{ const v=b.dataset.v, n=v==="all"?all:(cnt[v]||0);
+      b.setAttribute("aria-pressed", String(v===F[key])); b.disabled=!n && v!==F[key];
+      if(b.dataset.base===undefined) b.dataset.base=b.title||""; b.title=(b.dataset.base?b.dataset.base+" · ":"")+`${n} dinosaur${n===1?"":"s"}` });
+  }
   groupSel.value=F.group; document.getElementById("f-pic").checked=F.pic;
   const gc={}; DINOS.forEach(d=>{ if(matches(d,"group")) gc[d.group]=(gc[d.group]||0)+1 });
   groupSel.querySelectorAll("option[data-t]").forEach(o=>{ const n=gc[o.value]||0; o.textContent=`${o.dataset.t} (${n})`; o.disabled=!n && o.value!==F.group });
   const lc={}; let lAll=0; DINOS.forEach(d=>{ if(matches(d,"letter")){ const L=d.name[0].toUpperCase(); lc[L]=(lc[L]||0)+1; lAll++ } });
   ribbon.querySelectorAll("button").forEach(b=>{ const v=b.dataset.v, n=v==="all"?lAll:(lc[v]||0);
     b.setAttribute("aria-pressed", String(v===F.letter)); b.disabled = !n && v!==F.letter; b.title = `${n} dinosaur${n===1?"":"s"}` });
-  const active = F.diet!=="all"||F.era!=="all"||F.group!=="all"||F.pic||F.letter!=="all";
+  const nActive = Object.keys(DEFAULTS).filter(k=>F[k]!==DEFAULTS[k]).length, active = nActive>0;
+  const badge=document.getElementById("fActive"), nPanel=Object.keys(DEFAULTS).filter(k=>k!=="letter"&&F[k]!==DEFAULTS[k]).length;
+  badge.hidden=!nPanel; badge.textContent=nPanel;
+  writeQuery();
   document.getElementById("matchCount").innerHTML = active
     ? `Showing <b>${POOL.length}</b> of ${DINOS.length} dinosaurs`
     : `Showing all <b>${DINOS.length}</b> dinosaurs`;
@@ -1129,9 +1257,10 @@ function markSlide(d){   // keep the address in step with the card, without addi
 }
 
 /* first card */
+readQuery();
 refreshFinder(false);
 { const h=indexFromHash(); current = h>=0 ? h : nextIndex(); }
-shown=1; stage.append(makeCard(DINOS[current])); if(location.hash) markSlide(DINOS[current]);
+shown=1; stage.append(makeCard(DINOS[current])); if(location.hash && indexFromHash()===current) markSlide(DINOS[current]);
 fetch("data/dinos.json",{cache:"no-cache"}).then(r=>r.ok?r.json():Promise.reject(r.status)).then(mergeRows).catch(()=>{});
 
 
