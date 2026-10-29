@@ -13,4 +13,5 @@ duplicate Sahaliyania -> Amurosaurus (kept Amurosaurus)
 duplicate Seismosaurus -> Diplodocus (kept Diplodocus)
 duplicate Sellosaurus -> Plateosaurus (kept Plateosaurus)
 duplicate Zhuchengosaurus -> Shantungosaurus (kept Shantungosaurus)
+family tree: 729 dinosaurs linked, 1052 groups
 730 dinosaurs, 575 with pictures, 729 with articles, 730 grouped, 718 with period
