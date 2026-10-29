@@ -1265,13 +1265,16 @@
 {
 "name":"Amargastegos",
 "wiki":null,
-"period":null,
-"ma":null,
+"period":"Early Cretaceous",
+"ma":[
+129,
+122
+],
 "len":null,
-"group":null,
-"diet":null,
-"tpl":null,
-"eats":null,
+"group":"stegosaur",
+"diet":"herb",
+"tpl":"steg",
+"eats":"ferns, mosses and other low plants",
 "notDino":false,
 "img":"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Amargastegos_brevicollus.jpg/960px-Amargastegos_brevicollus.jpg",
 "file":"Amargastegos brevicollus.jpg",
@@ -1280,10 +1283,10 @@
 "alts":[
 "Amargastegos brevicollus.jpg"
 ],
+"hips":"bird",
 "places":[
 "South America"
 ],
-"hips":null,
 "species":[
 "Amargastegos brevicollus"
 ],
@@ -2994,10 +2997,6 @@
 "tpl":"brach",
 "eats":"leaves from the tops of tall trees",
 "notDino":false,
-"img":"https://upload.wikimedia.org/wikipedia/commons/7/78/Bagualia_alba.jpg",
-"file":"Bagualia alba.jpg",
-"art":"Kevin Leonel Gomez, Jose Luis Carballido, and Diego Pol. Str",
-"lic":"CC BY 4.0",
 "alts":[
 "Bagualia alba.jpg",
 "MEF Bagualia.jpg"
@@ -8182,8 +8181,11 @@
 {
 "name":"Gnathovorax",
 "wiki":"Gnathovorax",
-"period":null,
-"ma":null,
+"period":"Late Triassic",
+"ma":[
+233,
+231
+],
 "len":null,
 "group":"theropod",
 "diet":"carn",
@@ -15176,8 +15178,11 @@
 {
 "name":"Pendraig",
 "wiki":"Pendraig",
-"period":null,
-"ma":null,
+"period":"Late Triassic",
+"ma":[
+208,
+201
+],
 "len":"1 m",
 "group":"theropod",
 "diet":"carn",
@@ -21206,10 +21211,6 @@
 "tpl":"allo",
 "eats":"meat, hunting other animals",
 "notDino":false,
-"img":"https://upload.wikimedia.org/wikipedia/commons/9/91/Velociped.jpeg",
-"file":"Velociped.jpeg",
-"art":"Wilhelm Wolf",
-"lic":"Public domain",
 "alts":[
 "Velociped.jpeg",
 "Velocipes guerichi fibula.jpg"
