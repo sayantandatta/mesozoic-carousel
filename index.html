@@ -76,14 +76,17 @@ button[aria-pressed="true"] .off{display:none}
 }
 .frame{position:relative; aspect-ratio:5/3; max-width:100%; background:#1d2a22; overflow:hidden}
 .frame canvas{display:block; width:100%; height:100%}
+.frame.studio{background:radial-gradient(ellipse at 50% 60%, #F7F6EF 0%, #E3E4D8 70%, #D3D6C6 100%)}
+.frame .loading{position:absolute; inset:0; display:grid; place-items:center; color:#C9D1C3; font:500 .8rem/1 var(--f-mono); letter-spacing:.08em; text-transform:uppercase}
 .frame .photo-bg{position:absolute; inset:-20px; background-size:cover; background-position:center; filter:blur(18px) brightness(.55)}
 .frame img{position:absolute; inset:0; width:100%; height:100%; object-fit:contain}
+.frame.studio img{inset:4% 3%; width:94%; height:92%; filter:drop-shadow(0 10px 14px rgb(0 0 0 / .18))}
 .tag{
   position:absolute; left:12px; top:12px; font:500 .72rem/1 var(--f-mono); letter-spacing:.06em; text-transform:uppercase;
   background:rgb(255 255 255 / .82); color:#1B2620; padding:6px 9px; border-radius:6px;
 }
 .credit{
-  position:absolute; right:10px; bottom:8px; font:500 .7rem/1 var(--f-mono); color:#fff;
+  position:absolute; right:10px; bottom:8px; max-width:calc(100% - 20px); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; font:500 .7rem/1 var(--f-mono); color:#fff;
   background:rgb(0 0 0 / .45); padding:5px 7px; border-radius:5px; text-decoration:none;
 }
 .placard{padding:16px 18px 18px; display:grid; gap:10px}
@@ -138,7 +141,7 @@ button[aria-pressed="true"] .off{display:none}
   <header>
     <div class="brand">
       <h1>Mesozoic Carousel</h1>
-      <p>A random dinosaur swivels in, says its name and tells you what it ate. It keeps going forever.</p>
+      <p>51 dinosaurs, picked at random. Each one swivels in, says its name and tells you what it ate. It keeps going forever.</p>
     </div>
     <div class="controls">
       <button id="play" class="primary" type="button" aria-label="Start the show">
@@ -168,12 +171,12 @@ button[aria-pressed="true"] .off{display:none}
     <span class="count" id="count">Shown: 1</span>
   </div>
 
-  <p class="note" id="note">Pictures are drawn by the page. Where the page can reach Wikipedia, it shows fossil photos instead.</p>
+  <p class="note" id="note">Pictures are life restorations by paleoartists, from Wikimedia Commons; tap the credit on a picture to see the artist and licence. Nobody has photographed a living dinosaur, so these are scientists’ and artists’ best reconstructions. If a picture can’t load, the page draws the dinosaur instead.</p>
 </div>
 
 <script>
 /* ---------- Data ---------- */
-const DINOS = [
+const SPECS = [
   {id:"trex", name:"Tyrannosaurus", sp:"rex", wiki:"Tyrannosaurus", say:"tie-RAN-uh-SOR-us REX", speak:"Tyrannosaurus rex",
    diet:"carn", eats:"meat, mostly big plant-eating dinosaurs like Triceratops and Edmontosaurus", period:"Late Cretaceous", ma:[68,66], len:"12 m",
    scene:"cre", body:"#6E7F4C", belly:"#CDBE8C", stripes:true, teeth:true,
@@ -282,6 +285,108 @@ const DINOS = [
    legs:[{far:1,hip:[328,244],segs:[[1,82,20],[1,120,14],[.6,72,9]],foot:24},{hip:[345,252],segs:[[1,72,26],[1,116,17],[.6,74,11]],foot:26}],
    arms:[{at:[452,240],segs:[[26,80,8],[22,30,6]]}]}
 ];
+/* ---------- The 51 dinosaurs (art: Wikimedia Commons life restorations) ---------- */
+// img: "U:<path>" original file, "T:<path>" 960px thumbnail of that file
+const LIST = [
+  {name:"Abelisaurus", tpl:"allo", scene:"cre", body:"#8A5A44", say:"ah-BEL-ih-SOR-us", diet:"carn", eats:"meat, probably big long-necked titanosaurs and other plant-eaters", period:"Late Cretaceous", ma:[83,80], len:"9 m"},
+  {name:"Acrocanthosaurus", tpl:"allo", scene:"cre", body:"#6F6A55", say:"AK-roh-KAN-thuh-SOR-us", diet:"carn", eats:"big plant-eaters such as sauropods and Tenontosaurus", period:"Early Cretaceous", ma:[113,110], len:"11.5 m",
+   img:"U:d/d5/Acrocanthosaurus_atokensis_by_durbed.jpg", file:"Acrocanthosaurus atokensis by durbed.jpg", art:"Durbed", lic:"CC BY-SA 3.0"},
+  {name:"Albertosaurus", tpl:"trex", scene:"cre", body:"#7A6B4A", say:"al-BUR-tuh-SOR-us", diet:"carn", eats:"duck-billed and horned dinosaurs, possibly hunted in packs", period:"Late Cretaceous", ma:[71,68], len:"9 m",
+   img:"T:1/12/Albertosaurus_confronting_Pachyrhinosaurus.jpg", file:"Albertosaurus confronting Pachyrhinosaurus.jpg", art:"ABelov2014", lic:"CC BY 3.0"},
+  {name:"Allosaurus", tpl:"allo", img:"T:6/64/Allosaurus_Life_Restoration.jpg", file:"Allosaurus Life Restoration.jpg", art:"Fred Wierum", lic:"CC BY-SA 3.0"},
+  {name:"Amargasaurus", tpl:"diplo", scene:"cre", body:"#8C7C5E", say:"ah-MAR-guh-SOR-us", diet:"herb", eats:"low-growing plants, browsed at about head height", period:"Early Cretaceous", ma:[129,122], len:"10 m",
+   img:"U:a/ae/Amargasaurus_NT_small_%28mirrored%29.jpg", file:"Amargasaurus NT small (mirrored).jpg", art:"Nobu Tamura", lic:"CC BY-SA 4.0"},
+  {name:"Ankylosaurus", tpl:"anky", img:"T:2/2f/Ankylosaurus_magniventris_reconstruction_nomargin.png", file:"Ankylosaurus magniventris reconstruction nomargin.png", art:"Emily Willoughby", lic:"CC BY-SA 3.0"},
+  {name:"Apatosaurus", tpl:"diplo", scene:"jur", body:"#7F8579", say:"uh-PAT-uh-SOR-us", diet:"herb", eats:"ferns, horsetails, cycads and conifer leaves", period:"Late Jurassic", ma:[152,151], len:"22 m",
+   img:"T:c/c7/Apatosaurus_louisae_by_durbed_flipped.jpg", file:"Apatosaurus louisae by durbed flipped.jpg", art:"Durbed", lic:"CC BY-SA 3.0"},
+  {name:"Archaeopteryx", tpl:"compy", scene:"jur", body:"#4E4A44", feather:"#3A3631", tailFeathers:1, say:"AR-kee-OP-ter-ix", speak:"Arky-opter-ix", diet:"carn", eats:"insects, lizards and other small animals", period:"Late Jurassic", ma:[150,148], len:"0.5 m",
+   img:"T:3/33/Archaeopteryx_lithographica_by_durbed.jpg", file:"Archaeopteryx lithographica by durbed.jpg", art:"Durbed", lic:"CC BY-SA 3.0"},
+  {name:"Argentinosaurus", tpl:"diplo", scene:"cre", body:"#8D8070", say:"AR-jen-TEE-nuh-SOR-us", diet:"herb", eats:"huge amounts of leaves, perhaps hundreds of kilograms a day", period:"Late Cretaceous", ma:[96,92], len:"35 m",
+   img:"U:f/fb/Argentinosaurus_digital_clay_reconstruction.png", file:"Argentinosaurus digital clay reconstruction.png", art:"Dinosaur Zoo", lic:"CC BY-SA 3.0"},
+  {name:"Baryonyx", tpl:"spino", scene:"cre", body:"#6E7A5A", noSail:1, say:"BAIR-ee-ON-ix", diet:"carn", eats:"fish, and young Iguanodon, whose bones were found in its stomach", period:"Early Cretaceous", ma:[130,125], len:"9 m",
+   img:"T:6/62/Baryonyx_life_restoration.jpg", file:"Baryonyx life restoration.jpg", art:"Andrey Belov", lic:"CC BY 3.0"},
+  {name:"Brachiosaurus", tpl:"brach", img:"U:c/cf/Brachiosaurus_NT_new.jpg", file:"Brachiosaurus NT new.jpg", art:"Nobu Tamura", lic:"CC BY-SA 4.0"},
+  {name:"Brontosaurus", tpl:"diplo", scene:"jur", body:"#8A8E7C", say:"BRON-tuh-SOR-us", diet:"herb", eats:"ferns, horsetails and conifer leaves", period:"Late Jurassic", ma:[156,146], len:"22 m",
+   img:"T:0/0f/Brontosaurus_excelsus.jpg", file:"Brontosaurus excelsus.jpg", art:"Leotrex444", lic:"CC BY-SA 4.0"},
+  {name:"Carnotaurus", tpl:"allo", scene:"cre", body:"#9C5038", say:"KAR-noh-TOR-us", diet:"carn", eats:"meat, chasing down medium-sized plant-eaters", period:"Late Cretaceous", ma:[72,69], len:"8 m",
+   img:"T:3/3a/Carnotaurus_life_restoration_%28mirrored%29.jpg", file:"Carnotaurus life restoration (mirrored).jpg", art:"Lida Xing and Yi Liu", lic:"CC BY 2.5"},
+  {name:"Ceratosaurus", tpl:"allo", scene:"jur", body:"#5F6B4A", say:"seh-RAT-uh-SOR-us", diet:"carn", eats:"fish, crocodiles and other dinosaurs", period:"Late Jurassic", ma:[153,148], len:"6 m",
+   img:"T:7/7d/Life_reconstruction_of_Ceratosaurus_nasicornis.png", file:"Life reconstruction of Ceratosaurus nasicornis.png", art:"Connor Ashbridge", lic:"CC BY 4.0"},
+  {name:"Chasmosaurus", tpl:"tri", scene:"cre", body:"#7C7A52", say:"KAZ-muh-SOR-us", diet:"herb", eats:"low plants, sliced with its sharp beak", period:"Late Cretaceous", ma:[76,74], len:"4.5 m",
+   img:"T:2/25/Sketch_chasmosaurus.jpg", file:"Sketch chasmosaurus.jpg", art:"Tbc", lic:"Public domain"},
+  {name:"Coelophysis", tpl:"coelo", img:"T:e/eb/Postosuchus%2C_Coelophysis%2C_and_Placerias.jpg", file:"Postosuchus, Coelophysis, and Placerias.jpg", art:"ABelov2014", lic:"CC BY-SA 3.0"},
+  {name:"Compsognathus", tpl:"compy", img:"T:8/8d/Compsognathus_95898.jpg", file:"Compsognathus 95898.jpg", art:"Conty", lic:"CC BY-SA 4.0"},
+  {name:"Corythosaurus", tpl:"para", scene:"cre", body:"#6E7F5C", say:"koh-RITH-uh-SOR-us", diet:"herb", eats:"leaves, conifer needles, seeds and fruit", period:"Late Cretaceous", ma:[77,75], len:"9 m",
+   img:"T:e/eb/Gorgosaurus_chasing_Corythosaurus.jpg", file:"Gorgosaurus chasing Corythosaurus.jpg", art:"ABelov2014", lic:"CC BY 3.0"},
+  {name:"Deinonychus", tpl:"velo", scene:"cre", body:"#7B5A44", say:"dy-NON-ih-kus", diet:"carn", eats:"plant-eaters such as Tenontosaurus, pinned down with its sickle claws", period:"Early Cretaceous", ma:[115,108], len:"3.4 m",
+   img:"T:9/93/Deinonychus_%28Raptor_Prey_Restraint%29.jpg", file:"Deinonychus (Raptor Prey Restraint).jpg", art:"Emily Willoughby", lic:"CC BY-SA 3.0"},
+  {name:"Dilophosaurus", tpl:"coelo", scene:"jur", body:"#8A7A46", say:"dy-LOF-uh-SOR-us", diet:"carn", eats:"fish and small to medium-sized animals", period:"Early Jurassic", ma:[193,183], len:"7 m",
+   img:"T:9/9d/Dilophosaurus_wetherilli_%28flipped%29.PNG", file:"Dilophosaurus wetherilli (flipped).PNG", art:"Leandra Walters, Phil Senter, James H. Robins", lic:"CC BY 2.5"},
+  {name:"Diplodocus", tpl:"diplo", img:"T:5/5e/Diplodocus_carnegii_flipped.jpg", file:"Diplodocus carnegii flipped.jpg", art:"Fred Wierum", lic:"CC BY-SA 4.0"},
+  {name:"Edmontosaurus", tpl:"igu", scene:"cre", body:"#7D7F64", say:"ed-MON-tuh-SOR-us", diet:"herb", eats:"conifer needles, twigs, seeds and bark", period:"Late Cretaceous", ma:[73,66], len:"12 m",
+   img:"T:4/41/Dakotaraptor%2C_Edmontosaurus%2C_Pachycephalosaurus_and_Tyrannosaurus.jpg", file:"Dakotaraptor, Edmontosaurus, Pachycephalosaurus and Tyrannosaurus.jpg", art:"ABelov2014", lic:"CC BY 3.0"},
+  {name:"Gallimimus", tpl:"galli", img:"T:b/b3/Gallimimus_Steveoc86_%28mirrored%29.jpg", file:"Gallimimus Steveoc86 (mirrored).jpg", art:"Steveoc 86", lic:"CC BY 2.5"},
+  {name:"Giganotosaurus", tpl:"allo", scene:"cre", body:"#8E6B4F", say:"JIG-uh-NOT-uh-SOR-us", diet:"carn", eats:"probably giant long-necked titanosaurs", period:"Late Cretaceous", ma:[99,97], len:"12.5 m",
+   img:"T:3/3d/Giganotosaurus_carolinii_colored_pencil_drawing.jpg", file:"Giganotosaurus carolinii colored pencil drawing.jpg", art:"ChDinosaurs", lic:"CC BY-SA 4.0"},
+  {name:"Gorgosaurus", tpl:"trex", scene:"cre", body:"#5E6A55", say:"GOR-guh-SOR-us", diet:"carn", eats:"duck-billed and horned dinosaurs", period:"Late Cretaceous", ma:[77,75], len:"9 m",
+   img:"T:b/b3/Gorgosaurus_by_johnson_mortimer-da6heas.jpg", file:"Gorgosaurus by johnson mortimer-da6heas.jpg", art:"Johnson Mortimer", lic:"CC BY 3.0"},
+  {name:"Herrerasaurus", tpl:"coelo", scene:"tri", body:"#8E6E44", say:"her-RARE-uh-SOR-us", speak:"Herrera-saurus", diet:"carn", eats:"small reptiles and early plant-eating relatives", period:"Late Triassic", ma:[231,228], len:"4.5 m",
+   img:"T:8/86/Herrerasaurus_ischigualastensis_Illustration.jpg", file:"Herrerasaurus ischigualastensis Illustration.jpg", art:"Fred Wierum", lic:"CC BY-SA 4.0"},
+  {name:"Iguanodon", tpl:"igu", img:"T:d/dd/Iguanodon_paleoart_2025.png", file:"Iguanodon paleoart 2025.png", art:"Sauroarchive", lic:"CC BY 4.0"},
+  {name:"Kentrosaurus", tpl:"steg", scene:"jur", body:"#7E8650", say:"KEN-truh-SOR-us", diet:"herb", eats:"low plants such as ferns and cycads", period:"Late Jurassic", ma:[152,150], len:"4.5 m",
+   img:"T:1/13/Kentrosaurus_02.JPG", file:"Kentrosaurus 02.JPG", art:"Conty", lic:"CC BY-SA 4.0"},
+  {name:"Lambeosaurus", tpl:"para", scene:"cre", body:"#7C6A50", say:"LAM-bee-uh-SOR-us", diet:"herb", eats:"leaves, twigs and conifer needles", period:"Late Cretaceous", ma:[76,75], len:"9 m",
+   img:"T:c/ce/Gorgosaurus_chasing_Lambeosaurus.jpg", file:"Gorgosaurus chasing Lambeosaurus.jpg", art:"ABelov2014", lic:"CC BY 3.0"},
+  {name:"Leaellynasaura", tpl:"compy", scene:"cre", body:"#8B7A52", teeth:false, say:"lee-EL-in-uh-SOR-uh", speak:"Lee-ellin-a-saura", diet:"herb", eats:"ferns and other low plants in cold polar forests", period:"Early Cretaceous", ma:[118,110], len:"2 m",
+   img:"U:2/22/Leaellynasaura_transparent.png", file:"Leaellynasaura transparent.png", art:"Danny Cicchetti", lic:"CC BY-SA 3.0"},
+  {name:"Maiasaura", tpl:"igu", scene:"cre", body:"#8A6650", say:"MY-uh-SOR-uh", diet:"herb", eats:"leaves, berries and seeds, brought to its young in the nest", period:"Late Cretaceous", ma:[77,74], len:"9 m",
+   img:"T:0/0f/Maiasaura_peeblesorum.png", file:"Maiasaura peeblesorum.png", art:"Connor Ashbridge", lic:"CC BY-SA 4.0"},
+  {name:"Megalosaurus", tpl:"allo", scene:"jur", body:"#7A6248", say:"MEG-uh-loh-SOR-us", diet:"carn", eats:"other dinosaurs and smaller animals", period:"Middle Jurassic", ma:[166,164], len:"9 m",
+   img:"T:b/bb/Megalosaurus_dinosaur.png", file:"Megalosaurus dinosaur.png", art:"Mariana Ruiz, altered by FunkMonk", lic:"Public domain"},
+  {name:"Minmi", tpl:"anky", scene:"cre", body:"#86775C", club:0, say:"MIN-mee", diet:"herb", eats:"fruit, seeds and soft plant parts, which were found in its fossil gut", period:"Early Cretaceous", ma:[119,113], len:"3 m"},
+  {name:"Ornithomimus", tpl:"galli", scene:"cre", body:"#A58764", say:"or-NITH-uh-MY-mus", diet:"omni", eats:"plants, insects and small animals", period:"Late Cretaceous", ma:[76,66], len:"3.8 m",
+   img:"T:2/2d/Ornithomimus_TD.png", file:"Ornithomimus TD.png", art:"TotalDino", lic:"CC BY-SA 4.0"},
+  {name:"Oviraptor", tpl:"galli", scene:"cre", body:"#5E5A55", say:"OH-vih-RAP-tor", diet:"omni", eats:"plants and seeds, and maybe eggs and small animals", period:"Late Cretaceous", ma:[75,71], len:"1.6 m",
+   img:"T:f/f3/Oviraptor_Restoration.png", file:"Oviraptor Restoration.png", art:"PaleoNeolitic", lic:"CC BY 4.0"},
+  {name:"Pachycephalosaurus", tpl:"pachy", img:"T:a/a5/Pachycephalosaurus_TD.png", file:"Pachycephalosaurus TD.png", art:"TotalDino", lic:"CC BY-SA 4.0"},
+  {name:"Parasaurolophus", tpl:"para", img:"U:7/75/Parasaurolophus_3D_rendered.jpg", file:"Parasaurolophus 3D rendered.jpg", art:"Ryanz720", lic:"Public domain"},
+  {name:"Plateosaurus", tpl:"igu", scene:"tri", body:"#A0704A", say:"PLAT-ee-uh-SOR-us", diet:"herb", eats:"leaves from low trees, reached by rearing up on its hind legs", period:"Late Triassic", ma:[214,204], len:"8 m",
+   img:"T:f/f8/202010_Plateosaurus_engelhardti.png", file:"202010 Plateosaurus engelhardti.png", art:"DataBase Center for Life Science", lic:"CC BY 4.0"},
+  {name:"Protoceratops", tpl:"tri", scene:"cre", body:"#9A8058", say:"PRO-toh-SAIR-uh-tops", diet:"herb", eats:"tough desert plants, cut with its parrot-like beak", period:"Late Cretaceous", ma:[75,71], len:"2 m",
+   img:"T:8/84/Protoceratops_andrewsi_Restoration.png", file:"Protoceratops andrewsi Restoration.png", art:"PaleoNeolitic", lic:"CC BY 4.0"},
+  {name:"Spinosaurus", tpl:"spino", img:"U:8/86/Spinosaurus_life_restoration_with_Onchopristis.jpg", file:"Spinosaurus life restoration with Onchopristis.jpg", art:"Nobu Tamura", lic:"CC BY-SA 4.0"},
+  {name:"Stegoceras", tpl:"pachy", scene:"cre", body:"#7E6E58", say:"steg-OSS-er-us", diet:"herb", eats:"leaves, seeds and fruit", period:"Late Cretaceous", ma:[77,74], len:"2 m",
+   img:"U:8/8c/Stegoceras_validum_transparent.png", file:"Stegoceras validum transparent.png", art:"FunkMonk", lic:"CC BY-SA 4.0"},
+  {name:"Stegosaurus", tpl:"steg", img:"T:7/70/Stegosaurus_and_Coelurus.jpg", file:"Stegosaurus and Coelurus.jpg", art:"ABelov2014", lic:"CC BY-SA 3.0"},
+  {name:"Stenonychosaurus", tpl:"velo", scene:"cre", body:"#8E5E46", say:"sten-ON-ih-koh-SOR-us", diet:"omni", eats:"small animals, insects and possibly plants", period:"Late Cretaceous", ma:[77,75], len:"2.5 m",
+   img:"T:7/70/Stenonychosaurus_TD.png", file:"Stenonychosaurus TD.png", art:"TotalDino", lic:"CC BY 4.0"},
+  {name:"Suchomimus", tpl:"spino", scene:"cre", body:"#6F6A4E", sailOpt:{from:.42,to:.86,max:42}, say:"SOO-koh-MY-mus", diet:"carn", eats:"mostly fish, caught with its crocodile-like snout", period:"Early Cretaceous", ma:[125,112], len:"10 m",
+   img:"T:b/b6/Suchomimus_paleoart_%28by_Sauroarchive%2C_2023%29.png", file:"Suchomimus paleoart (by Sauroarchive, 2023).png", art:"Sauroarchive", lic:"CC BY 4.0"},
+  {name:"Tarbosaurus", tpl:"trex", scene:"cre", body:"#6E5E48", say:"TAR-buh-SOR-us", diet:"carn", eats:"big plant-eaters like the duck-billed Saurolophus", period:"Late Cretaceous", ma:[70,68], len:"10 m",
+   img:"T:d/df/Tarbosaurus_attacking_Saurolophus.jpg", file:"Tarbosaurus attacking Saurolophus.jpg", art:"ABelov2014", lic:"CC BY 3.0"},
+  {name:"Therizinosaurus", tpl:"galli", scene:"cre", body:"#5F5850", say:"THERR-ih-ZIN-uh-SOR-us", diet:"herb", eats:"leaves, pulled down from trees with its huge clawed hands", period:"Late Cretaceous", ma:[70,68], len:"10 m",
+   img:"T:3/31/Therizinosaurus_6_by_johnson_mortimer-da8hjx0.jpg", file:"Therizinosaurus 6 by johnson mortimer-da8hjx0.jpg", art:"Johnson Mortimer", lic:"CC BY 3.0"},
+  {name:"Triceratops", tpl:"tri", img:"T:0/08/Triceratops_horridus.png", file:"Triceratops horridus.png", art:"Connor Ashbridge", lic:"CC BY-SA 4.0"},
+  {name:"Troodon", tpl:"velo", scene:"cre", body:"#7E6A5A", say:"TROH-uh-don", diet:"omni", eats:"small animals, eggs, insects and possibly plants", period:"Late Cretaceous", ma:[77,75], len:"2.4 m",
+   img:"T:2/2e/Troodon_or_Stenonychosaurus_%28update%29.png", file:"Troodon or Stenonychosaurus (update).png", art:"Conty", lic:"CC BY-SA 4.0"},
+  {name:"Tyrannosaurus", tpl:"trex", img:"T:7/73/Reconstruction_of_Tyrannosaurus_mcraeensis.png", file:"Reconstruction of Tyrannosaurus mcraeensis.png", art:"Veselin Stefanov", lic:"CC BY-SA 4.0"},
+  {name:"Utahraptor", tpl:"velo", scene:"cre", body:"#6A5242", say:"YOO-tah-RAP-tor", diet:"carn", eats:"large plant-eating dinosaurs, attacked with its big foot claws", period:"Early Cretaceous", ma:[135,130], len:"6 m",
+   img:"T:3/33/Utahraptor_traditional.jpg", file:"Utahraptor traditional.jpg", art:"PaleoNeolitic", lic:"CC0"},
+  {name:"Velociraptor", tpl:"velo", img:"U:7/75/Velociraptors_with_feathers.jpg", file:"Velociraptors with feathers.jpg", art:"", lic:"CC BY-SA 3.0"}
+];
+const BYID = Object.fromEntries(SPECS.map(s=>[s.id,s]));
+const DINOS = LIST.map((e,i)=>{
+  const base = BYID[e.tpl], own = base.name===e.name;
+  const d = {...base, ...(own?{}:{sp:"", speak:e.name, teeth:e.diet==="carn"}), ...e, id:"d"+i};
+  if(!own && !e.speak) d.speak = e.name;
+  if(d.noSail) delete d.sailOpt;
+  if(d.club===0) delete d.club;
+  if(e.img){const k=e.img[0], p=e.img.slice(2), f=p.split("/").pop();
+    d.photo = k==="U" ? "https://upload.wikimedia.org/wikipedia/commons/"+p : "https://upload.wikimedia.org/wikipedia/commons/thumb/"+p+"/960px-"+f;
+    d.photo2 = k==="T" ? "https://thumb.wikimedia.org/wikipedia/commons/thumb/"+p+"/960px-"+f : null;
+    d.png = /\.png$/i.test(f);}
+  return d;
+});
 const DIET_LABEL = {herb:"Plant eater", carn:"Meat eater", omni:"Ate everything"};
 const ERAS = [["Triassic",252,201,"var(--tri)"],["Jurassic",201,145,"var(--jur)"],["Cretaceous",145,66,"var(--cre)"]];
 
@@ -538,15 +643,21 @@ function timeline(d){
 }
 function makeCard(d){
   const card=el("article","card"); card.setAttribute("aria-live","polite");
-  const frame=el("div","frame"); const cv=document.createElement("canvas");
-  cv.setAttribute("role","img"); cv.setAttribute("aria-label",`Illustration of ${d.name}${d.sp?" "+d.sp:""}`);
-  frame.append(cv); render(cv,d);
+  const frame=el("div","frame");
+  const label=`${d.name}${d.sp?" "+d.sp:""}`;
+  const drawFallback=()=>{frame.classList.remove("studio"); frame.querySelectorAll("img,.photo-bg,.credit,.loading").forEach(n=>n.remove());
+    const cv=document.createElement("canvas"); cv.setAttribute("role","img"); cv.setAttribute("aria-label",`Drawing of ${label}`); frame.prepend(cv); render(cv,d)};
   if(d.photo){
-    const bgp=el("div","photo-bg"); const img=new Image(); img.alt=`${d.name} fossil photo from Wikipedia`; img.decoding="async";
-    img.onload=()=>{bgp.style.backgroundImage=`url("${d.photo}")`; frame.insertBefore(bgp,cv.nextSibling); frame.insertBefore(img,bgp.nextSibling); cv.hidden=true;
-      const a=el("a","credit","Photo · Wikipedia"); a.href="https://en.wikipedia.org/wiki/"+encodeURIComponent(d.wiki); a.target="_blank"; a.rel="noopener"; frame.append(a)};
+    if(d.png) frame.classList.add("studio");
+    const wait=el("div","loading","Loading picture"); frame.append(wait);
+    const img=new Image(); img.alt=`Life restoration of ${label}`; img.decoding="async"; let tried2=false;
+    img.onload=()=>{wait.remove();
+      if(!d.png){const bgp=el("div","photo-bg"); bgp.style.backgroundImage=`url("${img.src}")`; frame.prepend(bgp)}
+      frame.insertBefore(img, frame.querySelector(".tag"));
+      const a=el("a","credit",`Art: ${d.art||"Wikimedia Commons"} · ${d.lic}`); a.href="https://commons.wikimedia.org/wiki/File:"+encodeURIComponent(d.file.replace(/ /g,"_")); a.target="_blank"; a.rel="noopener"; frame.append(a)};
+    img.onerror=()=>{ if(d.photo2&&!tried2){tried2=true; img.src=d.photo2} else drawFallback() };
     img.src=d.photo;
-  }
+  } else drawFallback();
   frame.append(el("span","tag",d.period));
   const pl=el("div","placard");
   const row=el("div","name-row"); row.append(el("h2",null,d.name+(d.sp?` <i>${d.sp}</i>`:"")), el("span","diet "+d.diet,DIET_LABEL[d.diet]));
@@ -632,18 +743,7 @@ document.addEventListener("visibilitychange",()=>{if(document.visibilityState===
 /* first card */
 current=nextIndex(); shown=1; stage.append(makeCard(DINOS[current]));
 
-/* real photos where Wikipedia is reachable */
-(async()=>{
-  try{
-    const ctl=new AbortController(); setTimeout(()=>ctl.abort(),6000);
-    const url="https://en.wikipedia.org/w/api.php?action=query&format=json&origin=*&prop=pageimages&piprop=thumbnail&pithumbsize=1200&redirects=1&titles="+encodeURIComponent(DINOS.map(d=>d.wiki).join("|"));
-    const j=await (await fetch(url,{signal:ctl.signal})).json();
-    const alias={}; [...(j.query.normalized||[]),...(j.query.redirects||[])].forEach(x=>alias[x.from]=x.to);
-    const pics={}; Object.values(j.query.pages||{}).forEach(p=>{if(p.thumbnail)pics[p.title]=p.thumbnail.source});
-    let n=0; DINOS.forEach(d=>{let t=d.wiki;while(alias[t])t=alias[t];if(pics[t]){d.photo=pics[t];n++}});
-    if(n) document.getElementById("note").textContent="Fossil photos come from Wikipedia. Any dinosaur without a photo is drawn by the page.";
-  }catch(e){/* blocked or offline: keep the drawings */}
-})();
+
 </script>
 
 </body>
