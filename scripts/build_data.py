@@ -1,0 +1,304 @@
+#!/usr/bin/env python3
+"""Build data/dinos.json for Mesozoic Carousel.
+
+For every name in scripts/names.txt this looks up the Wikipedia article,
+reads the period, age and length from its introduction, works out the
+animal's group (and so its diet), and picks a freely licensed life
+restoration from Wikimedia Commons.
+
+Runs on GitHub Actions (see .github/workflows/build-data.yml).
+"""
+import json, re, sys, time, pathlib, urllib.parse, urllib.request
+
+ROOT = pathlib.Path(__file__).resolve().parent.parent
+UA = "MesozoicCarousel/1.0 (https://github.com/sayantandatta/mesozoic-carousel)"
+WP = "https://en.wikipedia.org/w/api.php"
+CM = "https://commons.wikimedia.org/w/api.php"
+
+
+def api(base, **p):
+    p.update(format="json", formatversion="2")
+    url = base + "?" + urllib.parse.urlencode(p)
+    for attempt in range(5):
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": UA})
+            with urllib.request.urlopen(req, timeout=40) as r:
+                return json.load(r)
+        except Exception as e:  # rate limit or network blip
+            time.sleep(2 + attempt * 3)
+    print("FAILED", url[:160], file=sys.stderr)
+    return {}
+
+
+def chunks(xs, n):
+    for i in range(0, len(xs), n):
+        yield xs[i:i + n]
+
+
+# ---------- 1. find the right Wikipedia article ----------
+names = [n.strip() for n in (ROOT / "scripts/names.txt").read_text().splitlines() if n.strip()]
+SPECIAL = {"Yi": "Yi (dinosaur)"}
+DINO_WORDS = re.compile(r"dinosaur|sauropod|theropod|ornithopod|ceratops|saur|archosaur|synapsid|pterosaur|bird", re.I)
+
+
+def resolve(titles):
+    """Return {asked: (final_title, exists)} following redirects."""
+    out = {}
+    for ch in chunks(titles, 50):
+        j = api(WP, action="query", titles="|".join(ch), redirects=1, prop="pageprops", ppprop="disambiguation")
+        q = j.get("query", {})
+        norm = {x["from"]: x["to"] for x in q.get("normalized", [])}
+        red = {x["from"]: x["to"] for x in q.get("redirects", [])}
+        pages = {p["title"]: p for p in q.get("pages", [])}
+        for t in ch:
+            f = norm.get(t, t)
+            f = red.get(f, f)
+            p = pages.get(f, {})
+            ok = not p.get("missing") and not p.get("invalid") and "disambiguation" not in p.get("pageprops", {})
+            out[t] = (f, ok)
+        time.sleep(0.3)
+    return out
+
+
+cand_dino = resolve([SPECIAL.get(n, f"{n} (dinosaur)") for n in names])
+cand_plain = resolve(names)
+title_for = {}
+for n in names:
+    a = cand_dino[SPECIAL.get(n, f"{n} (dinosaur)")]
+    b = cand_plain[n]
+    title_for[n] = a[0] if a[1] else (b[0] if b[1] else None)
+
+# ---------- 2. read each article's introduction ----------
+intro = {}
+article_images = {}
+titles = sorted({t for t in title_for.values() if t})
+for ch in chunks(titles, 20):
+    j = api(WP, action="query", titles="|".join(ch), prop="extracts", exintro=1, explaintext=1, exlimit=20)
+    for p in j.get("query", {}).get("pages", []):
+        intro[p["title"]] = p.get("extract", "")
+    time.sleep(0.3)
+for ch in chunks(titles, 20):
+    cont = {}
+    while True:
+        j = api(WP, action="query", titles="|".join(ch), prop="images", imlimit=500, **cont)
+        for p in j.get("query", {}).get("pages", []):
+            article_images.setdefault(p["title"], []).extend(i["title"] for i in p.get("images", []))
+        if "continue" not in j:
+            break
+        cont = j["continue"]
+    time.sleep(0.3)
+
+# ---------- 3. facts from the introduction ----------
+STAGES = {  # ICS 2023 ages, million years ago
+    "Maastrichtian": (72.1, 66.0, "Late Cretaceous"), "Campanian": (83.6, 72.1, "Late Cretaceous"),
+    "Santonian": (86.3, 83.6, "Late Cretaceous"), "Coniacian": (89.8, 86.3, "Late Cretaceous"),
+    "Turonian": (93.9, 89.8, "Late Cretaceous"), "Cenomanian": (100.5, 93.9, "Late Cretaceous"),
+    "Albian": (113.0, 100.5, "Early Cretaceous"), "Aptian": (121.4, 113.0, "Early Cretaceous"),
+    "Barremian": (125.8, 121.4, "Early Cretaceous"), "Hauterivian": (132.6, 125.8, "Early Cretaceous"),
+    "Valanginian": (139.8, 132.6, "Early Cretaceous"), "Berriasian": (145.0, 139.8, "Early Cretaceous"),
+    "Tithonian": (149.2, 145.0, "Late Jurassic"), "Kimmeridgian": (154.8, 149.2, "Late Jurassic"),
+    "Oxfordian": (161.5, 154.8, "Late Jurassic"), "Callovian": (165.3, 161.5, "Middle Jurassic"),
+    "Bathonian": (168.2, 165.3, "Middle Jurassic"), "Bajocian": (170.9, 168.2, "Middle Jurassic"),
+    "Aalenian": (174.7, 170.9, "Middle Jurassic"), "Toarcian": (184.2, 174.7, "Early Jurassic"),
+    "Pliensbachian": (192.9, 184.2, "Early Jurassic"), "Sinemurian": (199.5, 192.9, "Early Jurassic"),
+    "Hettangian": (201.4, 199.5, "Early Jurassic"), "Rhaetian": (208.5, 201.4, "Late Triassic"),
+    "Norian": (227.0, 208.5, "Late Triassic"), "Carnian": (237.0, 227.0, "Late Triassic"),
+    "Ladinian": (242.0, 237.0, "Middle Triassic"), "Anisian": (247.2, 242.0, "Middle Triassic"),
+}
+PERIODS = {
+    "Late Cretaceous": (100.5, 66.0), "Early Cretaceous": (145.0, 100.5),
+    "Late Jurassic": (161.5, 145.0), "Middle Jurassic": (174.7, 161.5), "Early Jurassic": (201.4, 174.7),
+    "Late Triassic": (237.0, 201.4), "Middle Triassic": (247.2, 237.0), "Early Permian": (298.9, 273.0),
+}
+NUM = r"(\d{2,3}(?:\.\d+)?)"
+
+
+def facts(text):
+    t = text.replace("–", "-").replace("—", "-").replace(" ", " ")
+    t = re.sub(r"\s+", " ", t)
+    period = None
+    m = re.search(r"\b(Early|Middle|Late|Lower|Upper)\s+(Triassic|Jurassic|Cretaceous|Permian)\b", t)
+    if m:
+        period = {"Lower": "Early", "Upper": "Late"}.get(m.group(1), m.group(1)) + " " + m.group(2)
+    ma = None
+    m = re.search(NUM + r"\s*(?:-|to|and)\s*" + NUM + r"\s*(?:million years|mya|Ma\b)", t)
+    if m:
+        a, b = float(m.group(1)), float(m.group(2))
+        if 60 <= min(a, b) and max(a, b) <= 300:
+            ma = [max(a, b), min(a, b)]
+    if not ma:
+        m = re.search(NUM + r"\s*(?:million years ago|mya|Ma\b)", t)
+        if m and 60 <= float(m.group(1)) <= 300:
+            v = float(m.group(1)); ma = [v, v]
+    stage = None
+    for s in STAGES:
+        if re.search(r"\b" + s, t):
+            stage = s; break
+    if not ma and stage:
+        ma = list(STAGES[stage][:2])
+    if not period and stage:
+        period = STAGES[stage][2]
+    if not period and ma:
+        for p, (a, b) in PERIODS.items():
+            if b <= ma[0] <= a:
+                period = p; break
+    if not period:
+        m = re.search(r"\b(Triassic|Jurassic|Cretaceous)\b", t)
+        if m:
+            period = m.group(1)
+    if not ma and period in PERIODS:
+        ma = list(PERIODS[period])
+    if not ma and period in ("Triassic", "Jurassic", "Cretaceous"):
+        ma = {"Triassic": [237.0, 201.4], "Jurassic": [201.4, 145.0], "Cretaceous": [145.0, 66.0]}[period]
+    if ma:
+        ma = [round(ma[0]), round(ma[1])]
+    length = None
+    m = re.search(r"(\d+(?:\.\d+)?)\s*(?:-|to)?\s*(\d+(?:\.\d+)?)?\s*(m|metres|meters|cm|centimetres|centimeters)\b[^.]{0,40}?\b(long|in length|length)", t) \
+        or re.search(r"\b(?:length|long)\b[^.]{0,40}?(\d+(?:\.\d+)?)\s*(?:-|to)?\s*(\d+(?:\.\d+)?)?\s*(m|metres|meters|cm|centimetres|centimeters)\b", t)
+    if m:
+        hi = float(m.group(2) or m.group(1))
+        if m.group(3).startswith("c"):
+            hi /= 100
+        if 0.1 <= hi <= 45:
+            length = (f"{hi:.1f}".rstrip("0").rstrip(".")) + " m"
+    return period, ma, length
+
+
+# ---------- 4. group, diet and drawing template ----------
+GROUPS = [  # (pattern, group, diet, template, what it ate)
+    (r"synapsid|pelycosaur", "synapsid", "carn", "spino", "meat, including fish, amphibians and other reptiles"),
+    (r"plesiosaur|marine reptile", "marine", "carn", "spino", "fish and other sea animals"),
+    (r"spinosaur", "spinosaur", "carn", "spino", "mostly fish, plus other animals it caught near the water"),
+    (r"tyrannosaur", "tyrannosaur", "carn", "trex", "meat, mostly other dinosaurs"),
+    (r"therizinosaur", "therizinosaur", "herb", "galli", "leaves, pulled down from trees with its long claws"),
+    (r"oviraptor|caenagnath", "oviraptorosaur", "omni", "galli", "plants and seeds, and possibly eggs and small animals"),
+    (r"ornithomim|deinocheir", "ornithomimosaur", "omni", "galli", "plants, seeds, insects and small animals"),
+    (r"alvarezsaur", "alvarezsaur", "carn", "compy", "insects such as ants and termites"),
+    (r"troodont", "troodontid", "omni", "velo", "small animals, insects and possibly plants"),
+    (r"dromaeosaur|\braptor\b|unenlagi|microraptor", "dromaeosaur", "carn", "velo", "small and medium-sized animals, gripped with its sickle-shaped foot claws"),
+    (r"ceratops|centrosaur|chasmosaur|psittacosaur|ceratopsia", "ceratopsian", "herb", "tri", "tough, low-growing plants, sliced with its sharp beak"),
+    (r"ankylosaur|nodosaur|thyreophora", "ankylosaur", "herb", "anky", "low ferns and other leafy plants"),
+    (r"stegosaur", "stegosaur", "herb", "steg", "ferns, mosses and other low plants"),
+    (r"pachycephalosaur|bone-headed|dome-headed", "pachycephalosaur", "herb", "pachy", "leaves, seeds and fruit"),
+    (r"lambeosaur", "hadrosaur", "herb", "para", "leaves, twigs and conifer needles, ground up by hundreds of teeth"),
+    (r"hadrosaur|saurolophin|duck-billed", "hadrosaur", "herb", "igu", "leaves, twigs and conifer needles, ground up by hundreds of teeth"),
+    (r"heterodontosaur", "heterodontosaur", "omni", "compy", "plants, and maybe insects and small animals"),
+    (r"iguanodon|ornithopod|hypsilophodon|rhabdodont|ornithischia", "ornithopod", "herb", "igu", "low-growing plants such as ferns and horsetails"),
+    (r"brachiosaur", "sauropod", "herb", "brach", "leaves from the tops of tall trees"),
+    (r"titanosaur|sauropod|diplodoc|macronaria|camarasaur|mamenchisaur|rebbachisaur|dicraeosaur", "sauropod", "herb", "diplo", "leaves from tall trees and other plants, swallowed without chewing"),
+    (r"prosauropod|sauropodomorph|plateosaur|massospondyl", "sauropodomorph", "herb", "igu", "leaves and other plants, and perhaps the odd small animal"),
+    (r"abelisaur|carcharodontosaur|allosaur|megalosaur|ceratosaur|metriacanthosaur|sinraptor|megaraptor|noasaur|tetanura|theropod", "theropod", "carn", "allo", "meat, hunting other animals"),
+    (r"coelophys|herrerasaur|compsognath|coelurosaur", "theropod", "carn", "coelo", "small animals such as lizards and insects"),
+    (r"\bbird|avialan|avialae|scansoriopteryg|paraves", "avialan", "carn", "compy", "insects and other small animals"),
+    (r"dinosauromorph|dinosauriform|archosaur|pseudosuchia|crocodil", "archosaur", "carn", "coelo", "small animals"),
+]
+SMALL_THEROPOD_EATS = "small animals such as lizards, insects and early mammals"
+
+
+def classify(text):
+    t = text.lower()
+    for pat, grp, diet, tpl, eats in GROUPS:
+        if re.search(pat, t):
+            return grp, diet, tpl, eats
+    return None, None, None, None
+
+
+# ---------- 5. pictures ----------
+BAD = re.compile(r"skull|skelet|size|bone|fossil|tooth|teeth|mount|holotype|specimen|scale|track|footprint|\bcast\b|museum|museo|jaw|claw|vertebr|diagram|statue|sculpture|park|exhibit|\btoy|stamp|\begg|nest|comparison|silhouette|outline|\bBW\b|black|NHM|AMNH|Senckenberg|display|Tyrrell|Jurassic World|dinopark|Dinosaurier|life-size|replica|robot|model|figure|portrait|bust|close-?up|\bhand|\bfoot|\bfeet|\barm\b|\bleg\b|\btail\b|map\b|phylogen|cladogram|chart|quarry|excavat|locality|formation|endocast|brain|pelvis|femur|manus|\bpes\b|sacrum|bite|lesion|patholog|growth|ontogen|\.svg|\.tif|\.gif|\.webm|\.ogv|\.ogg|\.pdf|\.djvu|1[89]\d\d|Knight|Owen|Marsh|Mantell", re.I)
+GOOD = re.compile(r"restor|reconstr|\blife\b|flesh|paleoart|palaeoart|\bNT\b|durbed|steveoc|bonadonna|paleocolour|paleogeek|parker|martyniuk|jconway|wierum|abelov|belov|connolly|willoughby|tamura|PaleoNeolitic|TotalDino|\bTD\b|Conty|Sauroarchive|Ashbridge|mortimer|lida", re.I)
+FREE = re.compile(r"^(CC BY|CC BY-SA|CC0|Public domain|PD)", re.I)
+
+
+def commons_search(q, n=10):
+    j = api(CM, action="query", list="search", srsearch=q, srnamespace=6, srlimit=n)
+    return j.get("query", {}).get("search", [])
+
+
+def pick_image(name, title):
+    key = name.lower()[:min(7, len(name))]
+    score = {}
+    for f in article_images.get(title, []):
+        if key in f.lower() and not BAD.search(f):
+            score[f] = score.get(f, 0) + (25 if GOOD.search(f) else 4)
+    for i, w in enumerate(["restoration", "reconstruction", "life", "paleoart"]):
+        for k, x in enumerate(commons_search(f"intitle:{name} {w} filetype:bitmap")):
+            f, snip = x["title"], x.get("snippet", "")
+            if BAD.search(f) or re.search(r"inaccura|outdated|disputed|obsolete", snip, re.I):
+                continue
+            if key not in f.lower():
+                continue
+            score[f] = score.get(f, 0) + 10 - k + (6 if GOOD.search(f) else 0)
+        time.sleep(0.15)
+    return [f for f, _ in sorted(score.items(), key=lambda kv: -kv[1])][:6]
+
+
+def image_info(files):
+    info = {}
+    for ch in chunks(files, 40):
+        j = api(CM, action="query", titles="|".join(ch), prop="imageinfo", iiprop="url|size|extmetadata|mime",
+                iiurlwidth=960, iiextmetadatafilter="Artist|LicenseShortName|Restrictions")
+        q = j.get("query", {})
+        norm = {x["to"]: x["from"] for x in q.get("normalized", [])}
+        for p in q.get("pages", []):
+            ii = (p.get("imageinfo") or [None])[0]
+            if not ii:
+                continue
+            em = ii.get("extmetadata", {})
+            art = re.sub(r"<[^>]+>", "", em.get("Artist", {}).get("value", ""))
+            art = re.sub(r"\s+", " ", art).strip()
+            art = re.split(r"\s*\|\s*|\s*https?://|\s*\(|\s*<", art)[0].replace("©", "").strip()[:60]
+            info[norm.get(p["title"], p["title"])] = {
+                "w": ii.get("width", 0), "h": ii.get("height", 0), "mime": ii.get("mime", ""),
+                "url": ii.get("thumburl") if ii.get("width", 0) > 960 else ii.get("url"),
+                "lic": em.get("LicenseShortName", {}).get("value", ""), "art": art,
+            }
+        time.sleep(0.3)
+    return info
+
+
+# ---------- 6. assemble ----------
+rows, seen_titles, cands = [], {}, {}
+for n in names:
+    t = title_for[n]
+    text = intro.get(t, "") if t else ""
+    if t and not DINO_WORDS.search(text[:600]):
+        t, text = None, ""
+    if t and t in seen_titles and seen_titles[t] != n:
+        # same animal under another name (e.g. Anatosaurus -> Edmontosaurus): keep the one matching the title
+        other = seen_titles[t]
+        if n.lower() in t.lower() and other.lower() not in t.lower():
+            rows = [r for r in rows if r["name"] != other]
+        else:
+            print("duplicate", n, "->", t, "(kept", other + ")", file=sys.stderr)
+            continue
+    if t:
+        seen_titles[t] = n
+    period, ma, length = facts(text)
+    grp, diet, tpl, eats = classify(text)
+    if tpl == "allo" and length and float(length.split()[0]) < 3:
+        tpl, eats = "coelo", SMALL_THEROPOD_EATS
+    not_dino = bool(re.search(r"not a (true )?dinosaur|synapsid|pelycosaur|plesiosaur|pseudosuchian|crocodylomorph|dinosauriform|dinosauromorph", text[:700], re.I)) \
+        and not re.search(r"\bis a (genus|species) of [^.]{0,80}dinosaur", text[:300], re.I)
+    rows.append({"name": n, "wiki": t, "period": period, "ma": ma, "len": length, "group": grp,
+                 "diet": diet, "tpl": tpl, "eats": eats, "notDino": not_dino})
+    cands[n] = pick_image(n, t) if t else pick_image(n, n)
+
+all_files = sorted({f for fs in cands.values() for f in fs})
+info = image_info(all_files)
+for r in rows:
+    for f in cands.get(r["name"], []):
+        i = info.get(f)
+        if not i or not i["url"] or not FREE.search(i["lic"] or "") or i["w"] < 300:
+            continue
+        if i["mime"] not in ("image/jpeg", "image/png", "image/webp"):
+            continue
+        r.update(img=i["url"], file=f.replace("File:", ""), art=i["art"], lic=i["lic"])
+        break
+    r["alts"] = [f.replace("File:", "") for f in cands.get(r["name"], [])][:6]
+
+out = ROOT / "data/dinos.json"
+out.parent.mkdir(exist_ok=True)
+out.write_text(json.dumps(rows, ensure_ascii=False, indent=0, separators=(",", ":")))
+have = sum(1 for r in rows if r.get("img"))
+print(f"{len(rows)} dinosaurs, {have} with pictures, {sum(1 for r in rows if r['wiki'])} with articles,"
+      f" {sum(1 for r in rows if r['group'])} grouped, {sum(1 for r in rows if r['period'])} with period")

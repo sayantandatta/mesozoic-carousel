@@ -1,0 +1,36 @@
+name: Build dinosaur data
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/**"
+      - ".github/workflows/build-data.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-data
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build data/dinos.json from Wikipedia and Wikimedia Commons
+        run: python scripts/build_data.py 2> build-log.txt; tail -n 40 build-log.txt
+      - name: Commit the data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          mkdir -p data && mv build-log.txt data/build-log.txt
+          git add data
+          git diff --cached --quiet && echo "No changes" || git commit -m "Update dinosaur data"
+          git push
