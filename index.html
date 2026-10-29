@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="A random dinosaur swivels in, says its name and tells you what it ate. It keeps going forever.">
+<meta name="description" content="An endless carousel of dinosaurs. Each one swivels in, says its name and tells you what it ate.">
 <title>Mesozoic Carousel</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,6 +36,9 @@
   color-scheme:dark;
 }
 *{box-sizing:border-box}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0}
+img{max-width:100%}
 [hidden]{display:none!important}
 html,body{background:var(--bg)}
 body{
@@ -128,7 +131,6 @@ button[aria-pressed="true"] .off{display:none}
 @media (max-width:480px){ .start{font-size:.95rem; padding:12px 16px; top:16%} }
 @media (prefers-reduced-motion: reduce){ .is-speaking .wave i{animation:none; height:10px} }
 </style>
-<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)} body{margin:0}</style>
 </head>
 <body>
 
