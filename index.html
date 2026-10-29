@@ -1,0 +1,648 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="A random dinosaur swivels in, says its name and tells you what it ate. It keeps going forever.">
+<title>Mesozoic Carousel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,500..800&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: one centred column; a 3D stage where each specimen card swivels in from the right, placard under the picture. */
+:root{
+  --bg:#E7ECE1; --surface:#F8FAF4; --ink:#1B2620; --muted:#56655A; --line:#CBD4C5;
+  --accent:#A9561A; --accent-ink:#FFF8EE;
+  --herb:#367534; --carn:#AE3424; --omni:#6F4F98;
+  --tri:#D9A36C; --jur:#6FA67E; --cre:#C98B6E;
+  --f-display:"Bricolage Grotesque", "Arial Narrow", system-ui, sans-serif;
+  --f-body:"Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono:"JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#101712; --surface:#18211B; --ink:#E5ECE1; --muted:#98A79B; --line:#2B3A30;
+    --accent:#F0A24A; --accent-ink:#1B1206;
+    --herb:#7DC56E; --carn:#F2806A; --omni:#B99DE2;
+    --tri:#C99161; --jur:#5E9670; --cre:#B97D63;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#101712; --surface:#18211B; --ink:#E5ECE1; --muted:#98A79B; --line:#2B3A30;
+  --accent:#F0A24A; --accent-ink:#1B1206;
+  --herb:#7DC56E; --carn:#F2806A; --omni:#B99DE2;
+  --tri:#C99161; --jur:#5E9670; --cre:#B97D63;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{background:var(--bg)}
+body{
+  color:var(--ink); font-family:var(--f-body); font-size:16px; line-height:1.5;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));
+  padding-right:max(16px, env(safe-area-inset-right, 0px));
+  padding-block:20px 32px;
+}
+.wrap{max-width:760px; margin:0 auto; display:grid; gap:18px}
+header{display:flex; flex-wrap:wrap; align-items:end; justify-content:space-between; gap:12px 20px}
+.brand{min-width:0}
+.brand h1{
+  margin:0; font-family:var(--f-display); font-weight:800; font-stretch:78%;
+  font-size:clamp(1.9rem, 6vw, 2.7rem); line-height:.95; letter-spacing:-.01em; text-wrap:balance;
+}
+.brand p{margin:6px 0 0; color:var(--muted); font-size:.95rem; max-width:44ch}
+.controls{display:flex; flex-wrap:wrap; gap:8px}
+button{
+  font:600 .95rem/1 var(--f-body); color:var(--ink); background:var(--surface);
+  border:1.5px solid var(--line); border-radius:999px; padding:11px 16px; cursor:pointer;
+  display:inline-flex; align-items:center; gap:8px; min-height:44px;
+}
+button:hover{border-color:var(--muted)}
+button:focus-visible{outline:3px solid var(--accent); outline-offset:2px}
+button.primary{background:var(--accent); color:var(--accent-ink); border-color:var(--accent)}
+button svg{width:18px; height:18px; flex:none}
+button[aria-pressed="false"] .on{display:none}
+button[aria-pressed="true"] .off{display:none}
+
+.stage{position:relative; display:grid; perspective:1400px; perspective-origin:50% 40%}
+.card{
+  grid-area:1/1; min-width:0; background:var(--surface); border:1px solid var(--line);
+  border-radius:14px; overflow:hidden; transform-origin:50% 50%;
+  backface-visibility:hidden; box-shadow:0 18px 40px -24px rgb(0 0 0 / .45);
+}
+.frame{position:relative; aspect-ratio:5/3; max-width:100%; background:#1d2a22; overflow:hidden}
+.frame canvas{display:block; width:100%; height:100%}
+.frame .photo-bg{position:absolute; inset:-20px; background-size:cover; background-position:center; filter:blur(18px) brightness(.55)}
+.frame img{position:absolute; inset:0; width:100%; height:100%; object-fit:contain}
+.tag{
+  position:absolute; left:12px; top:12px; font:500 .72rem/1 var(--f-mono); letter-spacing:.06em; text-transform:uppercase;
+  background:rgb(255 255 255 / .82); color:#1B2620; padding:6px 9px; border-radius:6px;
+}
+.credit{
+  position:absolute; right:10px; bottom:8px; font:500 .7rem/1 var(--f-mono); color:#fff;
+  background:rgb(0 0 0 / .45); padding:5px 7px; border-radius:5px; text-decoration:none;
+}
+.placard{padding:16px 18px 18px; display:grid; gap:10px}
+.name-row{display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:6px 14px}
+.name-row h2{
+  margin:0; min-width:0; font-family:var(--f-display); font-weight:800; font-stretch:75%;
+  font-size:clamp(1.6rem, 6.4vw, 2.5rem); line-height:1; letter-spacing:-.005em; overflow-wrap:anywhere;
+}
+.name-row h2 i{font-style:normal; font-weight:600; color:var(--muted)}
+.diet{
+  font:700 .78rem/1 var(--f-body); letter-spacing:.07em; text-transform:uppercase;
+  padding:7px 10px; border-radius:999px; border:1.5px solid currentColor; white-space:nowrap;
+}
+.diet.herb{color:var(--herb)} .diet.carn{color:var(--carn)} .diet.omni{color:var(--omni)}
+.say{margin:-4px 0 0; font:500 .82rem/1.3 var(--f-mono); color:var(--muted); letter-spacing:.02em}
+.eats{margin:0; font-size:1.05rem; max-width:62ch}
+.eats b{font-weight:700}
+.facts{display:grid; grid-template-columns:repeat(auto-fit, minmax(140px, 1fr)); gap:8px 18px; margin:2px 0 0}
+.facts div{min-width:0}
+.facts dt{font:600 .7rem/1.2 var(--f-body); letter-spacing:.1em; text-transform:uppercase; color:var(--muted)}
+.facts dd{margin:2px 0 0; font:500 .92rem/1.3 var(--f-mono); font-variant-numeric:tabular-nums}
+.timeline{display:grid; gap:4px; margin-top:2px}
+.bar{position:relative; display:flex; height:12px; border-radius:3px; overflow:hidden}
+.bar span{height:100%}
+.bar .mark{position:absolute; top:-1px; bottom:-1px; background:var(--ink); border-radius:2px; min-width:4px; box-shadow:0 0 0 2px var(--surface)}
+.bar-labels{display:flex; font:500 .66rem/1 var(--f-mono); color:var(--muted); letter-spacing:.04em; text-transform:uppercase}
+.bar-labels span{overflow:hidden; white-space:nowrap}
+
+.status{display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:8px 16px; color:var(--muted); font-size:.9rem}
+.speaking{display:inline-flex; align-items:center; gap:8px}
+.wave{display:inline-flex; align-items:center; gap:3px; height:16px}
+.wave i{width:3px; height:4px; background:var(--accent); border-radius:2px}
+.is-speaking .wave i{animation:wave .9s ease-in-out infinite}
+.wave i:nth-child(2){animation-delay:.15s} .wave i:nth-child(3){animation-delay:.3s} .wave i:nth-child(4){animation-delay:.45s}
+@keyframes wave{0%,100%{height:4px}50%{height:16px}}
+.count{font-family:var(--f-mono); font-size:.82rem; font-variant-numeric:tabular-nums}
+
+.start{
+  position:absolute; z-index:5; left:50%; top:20%; transform:translate(-50%,-50%); white-space:nowrap;
+  background:var(--accent); color:var(--accent-ink); border:none; font-size:1.05rem; padding:16px 22px;
+  box-shadow:0 10px 30px -10px rgb(0 0 0 / .6);
+}
+.start svg{width:22px; height:22px}
+.note{margin:0; color:var(--muted); font-size:.85rem; max-width:65ch}
+@media (max-width:480px){ .start{font-size:.95rem; padding:12px 16px; top:16%} }
+@media (prefers-reduced-motion: reduce){ .is-speaking .wave i{animation:none; height:10px} }
+</style>
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)} body{margin:0}</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <h1>Mesozoic Carousel</h1>
+      <p>A random dinosaur swivels in, says its name and tells you what it ate. It keeps going forever.</p>
+    </div>
+    <div class="controls">
+      <button id="play" class="primary" type="button" aria-label="Start the show">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path id="playIcon" d="M7 5v14l12-7z" fill="currentColor"/></svg>
+        <span id="playLabel">Start</span>
+      </button>
+      <button id="next" type="button" aria-label="Next dinosaur">
+        Next
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button id="voice" type="button" aria-pressed="true" aria-label="Voice">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path class="on" d="M16 9a4 4 0 010 6M18.5 6.5a7.5 7.5 0 010 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="off" d="M16 9l5 6M21 9l-5 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span class="on">Voice on</span><span class="off">Voice off</span>
+      </button>
+    </div>
+  </header>
+
+  <div class="stage" id="stage">
+    <button class="start" id="bigStart" type="button">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5v14l12-7z" fill="currentColor"/></svg>
+      Start the show
+    </button>
+  </div>
+
+  <div class="status" id="status">
+    <span class="speaking"><span class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span id="statusText">Press Start to hear each dinosaur.</span></span>
+    <span class="count" id="count">Shown: 1</span>
+  </div>
+
+  <p class="note" id="note">Pictures are drawn by the page. Where the page can reach Wikipedia, it shows fossil photos instead.</p>
+</div>
+
+<script>
+/* ---------- Data ---------- */
+const DINOS = [
+  {id:"trex", name:"Tyrannosaurus", sp:"rex", wiki:"Tyrannosaurus", say:"tie-RAN-uh-SOR-us REX", speak:"Tyrannosaurus rex",
+   diet:"carn", eats:"meat, mostly big plant-eating dinosaurs like Triceratops and Edmontosaurus", period:"Late Cretaceous", ma:[68,66], len:"12 m",
+   scene:"cre", body:"#6E7F4C", belly:"#CDBE8C", stripes:true, teeth:true,
+   spine:[[50,245,3,3],[190,212,16,18],[330,196,52,58],[420,200,56,72],[495,212,44,52],[540,190,32,30],[565,168,30,28]],
+   head:{type:"thero", at:[553,158], s:135, ang:12},
+   legs:[{far:1,hip:[318,222],segs:[[1,92,30],[.85,122,22],[.5,78,15]],foot:34},{hip:[345,232],segs:[[1,72,46],[.85,115,30],[.5,80,20]],foot:44}],
+   arms:[{at:[505,252],segs:[[24,75,11],[18,15,8]]}]},
+  {id:"tri", name:"Triceratops", wiki:"Triceratops", say:"try-SAIR-uh-tops", speak:"Triceratops",
+   diet:"herb", eats:"tough, low-growing plants such as ferns, cycads and palms, sliced with its sharp beak", period:"Late Cretaceous", ma:[68,66], len:"9 m",
+   scene:"cre", body:"#8A6A4C", belly:"#D9C4A0", frill:"#B4553B", horn:"#EFE3C4",
+   spine:[[90,300,3,3],[200,270,20,22],[330,232,62,70],[440,228,66,72],[540,250,46,52],[575,262,40,40]],
+   head:{type:"cerato", at:[560,252], s:140, ang:18},
+   legs:[{far:1,hip:[320,262],segs:[[1,95,32],[.9,85,26]],foot:14},{far:1,hip:[505,270],segs:[[1,95,26],[.8,92,22]],foot:12},
+         {hip:[345,272],segs:[[1,80,44],[.9,95,34]],foot:16},{hip:[525,280],segs:[[1,85,34],[.8,95,28]],foot:14}]},
+  {id:"steg", name:"Stegosaurus", wiki:"Stegosaurus", say:"STEG-uh-SOR-us", speak:"Stegosaurus",
+   diet:"herb", eats:"ferns, mosses, horsetails and cycads close to the ground", period:"Late Jurassic", ma:[155,150], len:"9 m",
+   scene:"jur", body:"#8B7B4C", belly:"#DCCFA3", plate:"#C35B39", horn:"#EFE3C4",
+   spine:[[60,330,3,3],[160,300,14,16],[290,240,58,52],[390,236,60,58],[480,280,40,42],[560,322,18,18],[590,330,16,14]],
+   head:{type:"stego", at:[582,320], s:72, ang:15},
+   legs:[{far:1,hip:[300,270],segs:[[1,95,30],[.9,92,24]],foot:12},{far:1,hip:[480,300],segs:[[1,95,22],[.8,90,18]],foot:10},
+         {hip:[325,280],segs:[[1,82,42],[.9,96,32]],foot:14},{hip:[500,305],segs:[[1,88,28],[.8,96,22]],foot:12}],
+   plates:{from:.24,to:.8,n:9,max:78}, spikes:{at:[.035,.075]}},
+  {id:"brach", name:"Brachiosaurus", wiki:"Brachiosaurus", say:"BRAK-ee-uh-SOR-us", speak:"Brachiosaurus",
+   diet:"herb", eats:"leaves from the tops of tall conifer and ginkgo trees", period:"Late Jurassic", ma:[154,150], len:"22 m",
+   scene:"jur", body:"#7C8C95", belly:"#D5D9CE", stripes:false,
+   spine:[[60,300,3,3],[150,280,14,16],[260,250,52,56],[360,222,64,64],[440,190,48,46],[495,120,26,22],[530,60,18,16],[548,40,15,14]],
+   head:{type:"brachio", at:[538,36], s:70, ang:8},
+   legs:[{far:1,hip:[280,270],segs:[[1,92,32],[.9,90,26]],foot:12},{far:1,hip:[420,225],segs:[[1,92,30],[1,90,26]],foot:12},
+         {hip:[300,280],segs:[[1,86,40],[.9,94,32]],foot:14},{hip:[440,232],segs:[[1,86,38],[1,94,32]],foot:14}]},
+  {id:"velo", name:"Velociraptor", wiki:"Velociraptor", say:"veh-LOSS-ih-RAP-tor", speak:"Velociraptor",
+   diet:"carn", eats:"small animals such as lizards, early mammals and young dinosaurs", period:"Late Cretaceous", ma:[75,71], len:"2 m",
+   scene:"cre", body:"#A3784A", belly:"#E3CDA6", stripes:true, teeth:true, feather:"#6B4A39",
+   spine:[[40,225,3,3],[180,212,8,9],[330,212,34,40],[420,218,36,44],[480,214,22,20],[520,190,16,15],[540,175,15,14]],
+   head:{type:"raptor", at:[530,170], s:110, ang:10},
+   legs:[{far:1,hip:[325,235],segs:[[1,80,22],[1,120,16],[.6,70,11]],foot:28,claw:1},{hip:[345,242],segs:[[1,70,30],[1,118,20],[.6,72,13]],foot:30,claw:1}],
+   arms:[{at:[470,240],segs:[[34,80,11],[30,30,8]],feathers:1}], tailFeathers:1},
+  {id:"anky", name:"Ankylosaurus", wiki:"Ankylosaurus", say:"ANG-kih-loh-SOR-us", speak:"Ankylosaurus",
+   diet:"herb", eats:"low ferns and leafy plants, and possibly fruit", period:"Late Cretaceous", ma:[68,66], len:"7 m",
+   scene:"cre", body:"#7D6B55", belly:"#C3B193", armor:"#5B4C3E", horn:"#E6D9BA",
+   spine:[[60,300,6,6],[180,290,14,16],[300,262,54,48],[420,260,56,50],[520,282,36,36],[560,300,28,28]],
+   head:{type:"anky", at:[550,293], s:80, ang:12},
+   legs:[{far:1,hip:[310,290],segs:[[1,95,34],[.8,88,28]],foot:12},{far:1,hip:[490,300],segs:[[1,95,30],[.8,90,24]],foot:10},
+         {hip:[335,300],segs:[[1,85,44],[.8,95,36]],foot:14},{hip:[510,305],segs:[[1,85,36],[.8,95,30]],foot:12}],
+   armorRows:{from:.3,to:.9}, club:1},
+  {id:"para", name:"Parasaurolophus", wiki:"Parasaurolophus", say:"PAIR-uh-sor-OL-uh-fus", speak:"Parasaurolophus",
+   diet:"herb", eats:"leaves, twigs and pine needles, ground up by hundreds of teeth", period:"Late Cretaceous", ma:[77,73], len:"9.5 m",
+   scene:"cre", body:"#5D7E85", belly:"#D7D3B9", stripes:true, crest:"#B4563D",
+   spine:[[50,260,3,3],[180,232,14,16],[320,212,50,56],[420,222,46,56],[480,215,30,28],[515,185,22,20],[535,165,20,18]],
+   head:{type:"para", at:[526,160], s:95, ang:25},
+   legs:[{far:1,hip:[320,240],segs:[[1,90,30],[.85,120,22],[.5,80,15]],foot:26},{hip:[345,250],segs:[[1,72,40],[.85,115,28],[.5,80,18]],foot:30}],
+   arms:[{at:[462,262],segs:[[40,85,14],[38,95,10]]}]},
+  {id:"spino", name:"Spinosaurus", wiki:"Spinosaurus", say:"SPY-nuh-SOR-us", speak:"Spinosaurus",
+   diet:"carn", eats:"mostly fish, caught in rivers, plus other animals near the water", period:"Mid Cretaceous", ma:[99,93], len:"14 m",
+   scene:"cre", body:"#7B6352", belly:"#D8C2A2", sail:"#C77A49", teeth:true,
+   spine:[[30,280,3,3],[170,250,16,20],[310,230,46,52],[420,230,50,58],[500,236,36,40],[545,215,24,22],[565,200,20,18]],
+   head:{type:"spino", at:[556,196], s:140, ang:12},
+   legs:[{far:1,hip:[320,258],segs:[[1,92,28],[.85,120,20],[.5,80,14]],foot:28},{hip:[345,266],segs:[[1,74,38],[.85,115,26],[.5,80,16]],foot:32}],
+   arms:[{at:[500,262],segs:[[30,75,12],[30,20,9]]}], sailOpt:{from:.42,to:.86,max:118}},
+  {id:"diplo", name:"Diplodocus", wiki:"Diplodocus", say:"dih-PLOD-uh-kus", speak:"Diplodocus",
+   diet:"herb", eats:"soft plants, ferns and leaves, stripped off with peg-like teeth", period:"Late Jurassic", ma:[154,152], len:"25 m",
+   scene:"jur", body:"#8E8366", belly:"#DAD0B0", stripes:true,
+   spine:[[10,270,2,2],[120,250,8,10],[250,225,38,44],[340,212,56,58],[430,215,56,58],[500,215,34,34],[600,180,18,16],[690,150,14,12],[730,145,12,12]],
+   head:{type:"sauro", at:[722,140], s:58, ang:15},
+   legs:[{far:1,hip:[335,240],segs:[[1,92,30],[.9,90,24]],foot:12},{far:1,hip:[455,240],segs:[[1,92,26],[.9,90,22]],foot:10},
+         {hip:[355,250],segs:[[1,86,40],[.9,94,32]],foot:14},{hip:[475,248],segs:[[1,86,34],[.9,94,28]],foot:12}]},
+  {id:"pachy", name:"Pachycephalosaurus", wiki:"Pachycephalosaurus", say:"PAK-ee-SEF-uh-loh-SOR-us", speak:"Packy-seffalo-saurus",
+   diet:"herb", eats:"leaves, seeds and fruit, and maybe the odd insect", period:"Late Cretaceous", ma:[70,66], len:"4.5 m",
+   scene:"cre", body:"#8C7A5B", belly:"#DCCDA6", dome:"#E2D2A7", stripes:true,
+   spine:[[60,262,3,3],[200,236,14,16],[330,220,48,54],[420,225,44,52],[470,212,28,26],[500,185,22,22],[515,170,20,20]],
+   head:{type:"pachy", at:[506,164], s:95, ang:15},
+   legs:[{far:1,hip:[320,248],segs:[[1,90,28],[.85,120,20],[.5,80,14]],foot:24},{hip:[345,256],segs:[[1,72,38],[.85,115,26],[.5,80,16]],foot:28}],
+   arms:[{at:[455,250],segs:[[26,80,10],[22,40,7]]}]},
+  {id:"allo", name:"Allosaurus", wiki:"Allosaurus", say:"AL-uh-SOR-us", speak:"Allosaurus",
+   diet:"carn", eats:"meat, including Stegosaurus and young long-necked sauropods", period:"Late Jurassic", ma:[155,145], len:"8.5 m",
+   scene:"jur", body:"#9A6A47", belly:"#DABD93", stripes:true, teeth:true, browHorn:1,
+   spine:[[40,240,3,3],[190,210,14,16],[330,196,46,52],[420,200,48,62],[490,206,36,40],[530,186,26,24],[555,168,24,22]],
+   head:{type:"thero", at:[546,160], s:120, ang:12},
+   legs:[{far:1,hip:[318,218],segs:[[1,92,28],[.85,122,20],[.5,78,14]],foot:32},{hip:[343,228],segs:[[1,72,40],[.85,115,27],[.5,80,17]],foot:38}],
+   arms:[{at:[496,240],segs:[[34,75,11],[28,25,8]]}]},
+  {id:"igu", name:"Iguanodon", wiki:"Iguanodon", say:"ig-WAH-nuh-don", speak:"Ig-wah-no-don",
+   diet:"herb", eats:"tough plants like horsetails, ferns and conifers", period:"Early Cretaceous", ma:[126,122], len:"10 m",
+   scene:"cre", body:"#6E8357", belly:"#D5D0A7", horn:"#EFE3C4", stripes:false,
+   spine:[[50,255,3,3],[190,230,16,18],[330,212,52,58],[430,220,48,58],[490,212,32,30],[525,185,24,22],[545,170,22,20]],
+   head:{type:"hadro", at:[537,164], s:100, ang:22},
+   legs:[{far:1,hip:[320,240],segs:[[1,90,32],[.85,120,23],[.5,80,16]],foot:26},{hip:[345,250],segs:[[1,72,42],[.85,115,30],[.5,80,19]],foot:30}],
+   arms:[{at:[470,260],segs:[[40,80,15],[36,92,11]],thumb:1}]},
+  {id:"compy", name:"Compsognathus", wiki:"Compsognathus", say:"komp-SOG-nuh-thus", speak:"Compsognathus",
+   diet:"carn", eats:"lizards, insects and other small animals", period:"Late Jurassic", ma:[151,149], len:"1 m",
+   scene:"jur", body:"#8D9B54", belly:"#E2DDB0", stripes:true, teeth:true,
+   spine:[[40,240,2,2],[190,225,7,8],[340,222,30,34],[420,228,30,36],[475,218,16,15],[505,190,12,11],[520,176,11,10]],
+   head:{type:"raptor", at:[512,172], s:90, ang:12},
+   legs:[{far:1,hip:[338,240],segs:[[1,80,18],[1,120,13],[.6,72,9]],foot:24},{hip:[355,248],segs:[[1,70,24],[1,116,16],[.6,74,10]],foot:26}],
+   arms:[{at:[470,238],segs:[[22,80,8],[18,30,6]]}]},
+  {id:"galli", name:"Gallimimus", wiki:"Gallimimus", say:"gal-ih-MY-mus", speak:"Gallimimus",
+   diet:"omni", eats:"plants, seeds, insects, eggs and small animals", period:"Late Cretaceous", ma:[70,68], len:"6 m",
+   scene:"cre", body:"#B5895D", belly:"#EAD7B6", feather:"#7A5638",
+   spine:[[60,215,2,2],[200,200,8,10],[320,190,38,40],[400,192,36,40],[450,180,18,16],[490,120,12,11],[505,95,10,9]],
+   head:{type:"bird", at:[499,90], s:62, ang:10},
+   legs:[{far:1,hip:[330,212],segs:[[1,85,22],[1,118,15],[.8,75,10]],foot:26},{hip:[350,220],segs:[[1,75,28],[1,115,18],[.8,75,11]],foot:28}],
+   arms:[{at:[432,214],segs:[[30,70,9],[26,40,6]],feathers:1}], tailFeathers:1},
+  {id:"coelo", name:"Coelophysis", wiki:"Coelophysis", say:"SEE-loh-FY-sis", speak:"Seelo-fysis",
+   diet:"carn", eats:"small reptiles, early mammal relatives and fish", period:"Late Triassic", ma:[215,200], len:"3 m",
+   scene:"tri", body:"#9C7650", belly:"#E6D2AE", stripes:true, teeth:true,
+   spine:[[30,250,2,2],[190,232,7,8],[330,226,30,34],[410,230,30,34],[460,218,14,12],[500,180,11,10],[520,165,10,9]],
+   head:{type:"raptor", at:[512,160], s:100, ang:15},
+   legs:[{far:1,hip:[328,244],segs:[[1,82,20],[1,120,14],[.6,72,9]],foot:24},{hip:[345,252],segs:[[1,72,26],[1,116,17],[.6,74,11]],foot:26}],
+   arms:[{at:[452,240],segs:[[26,80,8],[22,30,6]]}]}
+];
+const DIET_LABEL = {herb:"Plant eater", carn:"Meat eater", omni:"Ate everything"};
+const ERAS = [["Triassic",252,201,"var(--tri)"],["Jurassic",201,145,"var(--jur)"],["Cretaceous",145,66,"var(--cre)"]];
+
+/* ---------- Drawing helpers ---------- */
+const W=800, H=480, G=420, D2R=Math.PI/180;
+function hexRgb(h){h=h.replace("#","");return [parseInt(h.slice(0,2),16),parseInt(h.slice(2,4),16),parseInt(h.slice(4,6),16)]}
+function shade(h,a){const c=hexRgb(h).map(v=>Math.round(a<0?v*(1+a):v+(255-v)*a));return `rgb(${c[0]},${c[1]},${c[2]})`}
+function rgba(h,a){const c=hexRgb(h);return `rgba(${c[0]},${c[1]},${c[2]},${a})`}
+function rng(seedStr){let h=1779033703;for(const ch of seedStr)h=Math.imul(h^ch.charCodeAt(0),3432918353),h=h<<13|h>>>19;
+  return function(){h=Math.imul(h^h>>>16,2246822507);h=Math.imul(h^h>>>13,3266489909);h^=h>>>16;return (h>>>0)/4294967296}}
+const sm=t=>t*t*(3-2*t);
+
+function sampleSpine(pts){
+  const P=[pts[0],...pts,pts[pts.length-1]], out=[];
+  for(let i=1;i<P.length-2;i++){
+    const [p0,p1,p2,p3]=[P[i-1],P[i],P[i+1],P[i+2]];
+    for(let j=0;j<18;j++){
+      const t=j/18,t2=t*t,t3=t2*t;
+      const f=k=>.5*((2*p1[k])+(-p0[k]+p2[k])*t+(2*p0[k]-5*p1[k]+4*p2[k]-p3[k])*t2+(-p0[k]+3*p1[k]-3*p2[k]+p3[k])*t3);
+      const s=sm(t);
+      out.push({x:f(0),y:f(1),up:p1[2]+(p2[2]-p1[2])*s,down:p1[3]+(p2[3]-p1[3])*s});
+    }
+  }
+  const l=pts[pts.length-1]; out.push({x:l[0],y:l[1],up:l[2],down:l[3]});
+  let acc=0;
+  out.forEach((p,i)=>{
+    const a=out[Math.max(0,i-1)], b=out[Math.min(out.length-1,i+1)];
+    let tx=b.x-a.x, ty=b.y-a.y, m=Math.hypot(tx,ty)||1; tx/=m; ty/=m;
+    p.tx=tx; p.ty=ty; p.nx=-ty; p.ny=tx;
+    if(i) acc+=Math.hypot(p.x-out[i-1].x,p.y-out[i-1].y); p.d=acc;
+  });
+  out.forEach(p=>p.u=p.d/acc);
+  return out;
+}
+function at(S,u){let i=0;while(i<S.length-1&&S[i+1].u<u)i++;return S[Math.min(i,S.length-1)]}
+const topPt=(p,f=1)=>[p.x-p.nx*p.up*f,p.y-p.ny*p.up*f];
+const botPt=(p,f=1)=>[p.x+p.nx*p.down*f,p.y+p.ny*p.down*f];
+
+function bodyPath(ctx,S){
+  ctx.beginPath();
+  S.forEach((p,i)=>{const q=topPt(p);i?ctx.lineTo(q[0],q[1]):ctx.moveTo(q[0],q[1])});
+  for(let i=S.length-1;i>=0;i--){const q=botPt(S[i]);ctx.lineTo(q[0],q[1])}
+  ctx.closePath();
+}
+function smooth(ctx,pts){
+  const n=pts.length, mid=(a,b)=>[(a[0]+b[0])/2,(a[1]+b[1])/2];
+  ctx.beginPath(); const m0=mid(pts[n-1],pts[0]); ctx.moveTo(m0[0],m0[1]);
+  for(let i=0;i<n;i++){const p=pts[i],m=mid(p,pts[(i+1)%n]);ctx.quadraticCurveTo(p[0],p[1],m[0],m[1])}
+  ctx.closePath();
+}
+function poly(ctx,pts){ctx.beginPath();pts.forEach((p,i)=>i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));ctx.closePath()}
+function fillStroke(ctx,fill,line,lw){ctx.fillStyle=fill;ctx.fill();ctx.strokeStyle=line;ctx.lineWidth=lw;ctx.lineJoin="round";ctx.stroke()}
+
+function limbPts(L,ground){
+  let k=1;
+  if(ground!=null){let vy=0;L.segs.forEach(s=>vy+=s[0]*Math.sin(s[1]*D2R));const fw=L.segs[L.segs.length-1][2];k=(ground-fw*.45-L.hip[1])/vy}
+  let x=L.hip[0],y=L.hip[1]; const pts=[[x,y]];
+  L.segs.forEach(s=>{x+=Math.cos(s[1]*D2R)*s[0]*k;y+=Math.sin(s[1]*D2R)*s[0]*k;pts.push([x,y])});
+  return pts;
+}
+function drawLimb(ctx,L,pts,fill,line){
+  const segs=L.segs, fw=segs[segs.length-1][2], e=pts[pts.length-1];
+  ctx.lineCap="round"; ctx.lineJoin="round";
+  for(const pass of [0,1]){
+    ctx.strokeStyle=pass?fill:line;
+    for(let i=0;i<segs.length;i++){ctx.lineWidth=segs[i][2]+(pass?0:5);ctx.beginPath();ctx.moveTo(pts[i][0],pts[i][1]);ctx.lineTo(pts[i+1][0],pts[i+1][1]);ctx.stroke()}
+    if(L.foot){ctx.lineWidth=fw*.85+(pass?0:5);ctx.beginPath();ctx.moveTo(e[0]-fw*.2,e[1]);ctx.lineTo(e[0]+L.foot,e[1]+1);ctx.stroke()}
+  }
+  if(L.claw){ // sickle claw
+    ctx.strokeStyle=line;ctx.lineWidth=3.5;ctx.beginPath();ctx.moveTo(e[0]+6,e[1]-4);ctx.quadraticCurveTo(e[0]+14,e[1]-22,e[0]+24,e[1]-14);ctx.stroke();
+  }
+}
+function drawArm(ctx,A,fill,line,d,dx=0,dy=0){
+  const L={hip:[A.at[0]+dx,A.at[1]+dy],segs:A.segs};const pts=limbPts(L,null);
+  if(A.feathers){ // feather fan hanging from forearm
+    const [a,b,c]=pts; ctx.beginPath(); ctx.moveTo(a[0],a[1]); ctx.lineTo(c[0],c[1]);
+    ctx.quadraticCurveTo(c[0]-6,c[1]+26,b[0]-22,b[1]+20); ctx.quadraticCurveTo(a[0]-20,a[1]+16,a[0],a[1]); ctx.closePath();
+    fillStroke(ctx,dx?shade(d.feather,-.25):d.feather,line,2.5);
+  }
+  drawLimb(ctx,L,pts,fill,line);
+  const e=pts[pts.length-1];
+  ctx.strokeStyle=line; ctx.lineWidth=2.4; ctx.lineCap="round";
+  for(let i=-1;i<=1;i++){ctx.beginPath();ctx.moveTo(e[0],e[1]);ctx.lineTo(e[0]+7+i*2,e[1]+7+i*3);ctx.stroke()}
+  if(A.thumb){ctx.beginPath();ctx.moveTo(e[0]-4,e[1]-3);ctx.lineTo(e[0]+2,e[1]-20);ctx.lineTo(e[0]+6,e[1]-2);ctx.closePath();fillStroke(ctx,d.horn,line,2)}
+}
+
+/* heads, drawn in local units facing +x */
+const HEADS={
+  thero:{p:[[-.12,-.30],[.30,-.40],[.70,-.30],[.97,-.12],[1,.02],[.80,.10],[.86,.20],[.55,.30],[.15,.30],[-.12,.18]],eye:[.32,-.18],mouth:[[.97,.04],[.22,.12]]},
+  raptor:{p:[[-.1,-.22],[.35,-.27],[.8,-.15],[1,0],[.82,.09],[.4,.17],[0,.19],[-.1,.1]],eye:[.3,-.1],mouth:[[.97,.02],[.3,.08]]},
+  spino:{p:[[-.1,-.25],[.3,-.3],[.55,-.18],[1,-.06],[1.05,.04],[.6,.10],[.2,.2],[-.1,.15]],eye:[.25,-.15],mouth:[[1.02,.0],[.3,.06]]},
+  sauro:{p:[[-.1,-.25],[.3,-.38],[.7,-.25],[1,0],[.85,.18],[.3,.22],[-.1,.18]],eye:[.35,-.12],mouth:[[.95,.06],[.55,.12]]},
+  brachio:{p:[[-.1,-.25],[.2,-.42],[.32,-.6],[.5,-.52],[.75,-.25],[1,0],[.85,.18],[.3,.22],[-.1,.18]],eye:[.4,-.18],mouth:[[.95,.06],[.55,.12]]},
+  hadro:{p:[[-.1,-.28],[.35,-.32],[.75,-.18],[1.02,0],[.95,.14],[.6,.16],[.3,.25],[-.1,.2]],eye:[.3,-.12],mouth:[[1,.06],[.62,.1]]},
+  para:{p:[[-.1,-.28],[.35,-.32],[.75,-.18],[1.02,0],[.95,.14],[.6,.16],[.3,.25],[-.1,.2]],eye:[.3,-.12],mouth:[[1,.06],[.62,.1]]},
+  stego:{p:[[-.1,-.22],[.4,-.28],[.85,-.12],[1,.05],[.6,.18],[0,.2]],eye:[.3,-.08],mouth:[[.98,.06],[.65,.1]]},
+  anky:{p:[[-.1,-.3],[.5,-.36],[.9,-.2],[1,.05],[.8,.25],[.2,.3],[-.1,.2]],eye:[.42,-.12],mouth:[[.98,.1],[.7,.16]]},
+  pachy:{p:[[-.12,-.2],[.3,-.24],[.75,-.12],[1,.04],[.9,.16],[.5,.2],[.2,.26],[-.12,.18]],eye:[.42,-.04],mouth:[[.98,.08],[.66,.12]]},
+  cerato:{p:[[0,-.3],[.5,-.32],[.9,-.1],[1.05,.12],[.85,.22],[.4,.3],[0,.25]],eye:[.42,-.12],mouth:[[1,.14],[.7,.18]]},
+  bird:{p:[[-.1,-.25],[.3,-.32],[.6,-.2],[1,.02],[.6,.12],[.2,.22],[-.1,.15]],eye:[.25,-.1],mouth:[[.95,.03],[.45,.08]]}
+};
+function drawHead(ctx,d){
+  const h=d.head, H0=HEADS[h.type], line=shade(d.body,-.55), lw=2.6/h.s;
+  ctx.save(); ctx.translate(h.at[0],h.at[1]); ctx.rotate(h.ang*D2R); ctx.scale(h.s,h.s);
+  ctx.lineCap="round"; ctx.lineJoin="round";
+  if(h.type==="cerato"){
+    // far brow horn, frill, near horns
+    poly(ctx,[[.24,-.26],[.44,-.3],[.82,-.95]]); fillStroke(ctx,shade(d.horn,-.2),line,lw);
+    smooth(ctx,[[.2,-.15],[.05,-.72],[-.32,-.98],[-.66,-.76],[-.68,-.28],[-.36,.12],[.08,.22]]);
+    fillStroke(ctx,d.frill,line,lw);
+    ctx.fillStyle=d.horn; [[.0,-.72],[-.2,-.9],[-.42,-.92],[-.6,-.78],[-.68,-.56],[-.68,-.34]].forEach(p=>{ctx.beginPath();ctx.arc(p[0],p[1],.045,0,7);ctx.fill();ctx.stroke()});
+    ctx.strokeStyle=shade(d.frill,-.3); ctx.lineWidth=.035; ctx.beginPath(); ctx.arc(-.28,-.38,.3,2.2,5.6); ctx.stroke();
+  }
+  if(h.type==="para"){
+    ctx.beginPath();ctx.moveTo(.3,-.24);ctx.quadraticCurveTo(-.3,-.78,-1.02,-.72);
+    ctx.lineWidth=.2+2*lw;ctx.strokeStyle=line;ctx.stroke();ctx.lineWidth=.2;ctx.strokeStyle=d.crest;ctx.stroke();
+  }
+  if(h.type==="anky"){
+    poly(ctx,[[-.02,-.32],[-.32,-.46],[.12,-.2]]);fillStroke(ctx,d.horn,line,lw);
+    poly(ctx,[[-.02,.12],[-.3,.3],[.1,.24]]);fillStroke(ctx,d.horn,line,lw);
+  }
+  smooth(ctx,H0.p); fillStroke(ctx,d.body,line,lw);
+  // lighter jaw / throat
+  ctx.save(); smooth(ctx,H0.p); ctx.clip();
+  ctx.fillStyle=rgba(hexRgb(d.belly).map(v=>v.toString(16).padStart(2,"0")).join(""),.75);
+  ctx.beginPath(); ctx.moveTo(-.2,.12); ctx.lineTo(1.2,H0.mouth[0][1]+.04); ctx.lineTo(1.2,.6); ctx.lineTo(-.2,.6); ctx.fill(); ctx.restore();
+  smooth(ctx,H0.p); ctx.strokeStyle=line; ctx.lineWidth=lw; ctx.stroke();
+  if(h.type==="pachy"){
+    ctx.beginPath(); ctx.ellipse(.26,-.14,.4,.42,0,Math.PI,2*Math.PI); ctx.closePath();
+    ctx.fillStyle=d.dome; ctx.fill(); ctx.beginPath(); ctx.ellipse(.26,-.14,.4,.42,0,Math.PI,2*Math.PI); ctx.strokeStyle=line; ctx.lineWidth=lw; ctx.stroke();
+    ctx.fillStyle=shade(d.body,-.15); [[-.14,-.12],[-.12,-.02],[.68,-.1],[.8,-.06],[.6,-.16]].forEach(p=>{ctx.beginPath();ctx.arc(p[0],p[1],.04,0,7);ctx.fill();ctx.stroke()});
+  }
+  // mouth + teeth
+  const [m0,m1]=H0.mouth; ctx.strokeStyle=line; ctx.lineWidth=lw*1.1;
+  ctx.beginPath(); ctx.moveTo(m0[0],m0[1]); ctx.quadraticCurveTo((m0[0]+m1[0])/2,(m0[1]+m1[1])/2+.03,m1[0],m1[1]); ctx.stroke();
+  if(d.teeth){ ctx.fillStyle="#FBF6E8";
+    for(let i=1;i<7;i++){const t=i/7,x=m0[0]+(m1[0]-m0[0])*t,y=m0[1]+(m1[1]-m0[1])*t+.005;ctx.beginPath();ctx.moveTo(x-.022,y);ctx.lineTo(x,y+.055);ctx.lineTo(x+.022,y);ctx.closePath();ctx.fill()}
+  }
+  if(h.type==="cerato"){
+    poly(ctx,[[.32,-.29],[.54,-.32],[.98,-.9]]); fillStroke(ctx,d.horn,line,lw);
+    poly(ctx,[[.76,-.2],[.9,-.14],[.92,-.42]]); fillStroke(ctx,d.horn,line,lw);
+  }
+  if(d.browHorn){ poly(ctx,[[.2,-.36],[.28,-.54],[.4,-.36]]); fillStroke(ctx,shade(d.body,-.1),line,lw) }
+  // nostril
+  ctx.fillStyle=line; ctx.beginPath(); ctx.arc(H0.mouth[0][0]-.08,-.06,.022,0,7); ctx.fill();
+  // eye
+  const [ex,ey]=H0.eye; const er=h.type==="bird"?.09:.06;
+  ctx.fillStyle="#FFFDF4"; ctx.beginPath(); ctx.arc(ex,ey,er,0,7); ctx.fill(); ctx.strokeStyle=line; ctx.lineWidth=lw*.8; ctx.stroke();
+  ctx.fillStyle="#1A1410"; ctx.beginPath(); ctx.arc(ex+er*.25,ey,er*.55,0,7); ctx.fill();
+  ctx.fillStyle="#FFFFFF"; ctx.beginPath(); ctx.arc(ex+er*.4,ey-er*.25,er*.18,0,7); ctx.fill();
+  if(d.diet==="carn"){ctx.strokeStyle=line;ctx.lineWidth=lw*1.3;ctx.beginPath();ctx.moveTo(ex-er*1.3,ey-er*1.5);ctx.lineTo(ex+er*1.4,ey-er*1.1);ctx.stroke()}
+  ctx.restore();
+}
+
+/* ---------- Scenery ---------- */
+const SCENES={
+  tri:{skyTop:"#EFB676",skyBot:"#FBE5BC",sun:"#FFF4D8",far:"#D9A772",near:"#C48956",ground:"#B88551",plant:"#66733A",plant2:"#8A8744"},
+  jur:{skyTop:"#8CC9CA",skyBot:"#E3F0DA",sun:"#FFFBE9",far:"#8DBA99",near:"#5E946F",ground:"#5A8046",plant:"#2E5C39",plant2:"#4D7B3E"},
+  cre:{skyTop:"#E89F7D",skyBot:"#F9DCB7",sun:"#FFF0D2",far:"#C29890",near:"#9C8B69",ground:"#7F9451",plant:"#3E6135",plant2:"#5C7D3B",flowers:["#E7685A","#F3C34F","#F6EEDC"]}
+};
+function conifer(ctx,x,b,h,c){ctx.fillStyle=shade(c,-.3);ctx.fillRect(x-h*.04,b-h*.25,h*.08,h*.25);ctx.fillStyle=c;
+  for(let i=0;i<3;i++){const y=b-h*.2-i*h*.24,w=h*(.34-i*.08);ctx.beginPath();ctx.moveTo(x-w,y);ctx.lineTo(x,y-h*.42);ctx.lineTo(x+w,y);ctx.closePath();ctx.fill()}}
+function fern(ctx,x,b,s,c,r){ctx.strokeStyle=c;ctx.lineCap="round";
+  for(let i=0;i<7;i++){const a=(-80+i*26+(r()-.5)*10)*D2R,len=s*(.7+r()*.4);ctx.lineWidth=Math.max(2,s*.07);
+    const ex=x+Math.sin(a)*len,ey=b-Math.cos(a)*len*.8;ctx.beginPath();ctx.moveTo(x,b);ctx.quadraticCurveTo(x+Math.sin(a)*len*.5,b-len*.9,ex,ey+len*.25);ctx.stroke();
+    ctx.lineWidth=Math.max(1.2,s*.035);
+    for(let k=1;k<6;k++){const t=k/6,px=x+(ex-x)*t,py=b+(ey+len*.25-b)*t-Math.sin(t*Math.PI)*len*.35;ctx.beginPath();ctx.moveTo(px,py);ctx.lineTo(px+6*(1-t)+2,py+8*(1-t)+3);ctx.moveTo(px,py);ctx.lineTo(px-6*(1-t)-2,py+6*(1-t)+3);ctx.stroke()}}}
+function cycad(ctx,x,b,h,c){ctx.fillStyle=shade(c,-.35);ctx.beginPath();ctx.moveTo(x-h*.07,b);ctx.lineTo(x-h*.05,b-h*.55);ctx.lineTo(x+h*.05,b-h*.55);ctx.lineTo(x+h*.07,b);ctx.fill();
+  ctx.strokeStyle=c;ctx.lineCap="round";ctx.lineWidth=h*.06;for(let i=0;i<7;i++){const a=(-150+i*20)*D2R;ctx.beginPath();ctx.moveTo(x,b-h*.55);ctx.quadraticCurveTo(x+Math.cos(a)*h*.3,b-h*.55+Math.sin(a)*h*.45,x+Math.cos(a)*h*.55,b-h*.4+Math.sin(a)*h*.15);ctx.stroke()}}
+function drawScene(ctx,key,seed){
+  const P=SCENES[key], r=rng(seed);
+  let g=ctx.createLinearGradient(0,0,0,G);g.addColorStop(0,P.skyTop);g.addColorStop(1,P.skyBot);ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+  ctx.fillStyle=P.sun;ctx.globalAlpha=.9;ctx.beginPath();ctx.arc(640+r()*80,80+r()*30,38,0,7);ctx.fill();ctx.globalAlpha=1;
+  if(key==="cre"){ctx.fillStyle=shade(P.far,-.12);ctx.beginPath();ctx.moveTo(60,330);ctx.lineTo(190,190);ctx.lineTo(230,190);ctx.lineTo(380,330);ctx.fill();
+    ctx.fillStyle="rgba(255,255,255,.35)";[[210,170,18],[226,148,24],[250,120,30]].forEach(c=>{ctx.beginPath();ctx.arc(c[0],c[1],c[2],0,7);ctx.fill()})}
+  const ph=r()*6;
+  ctx.fillStyle=P.far;ctx.beginPath();ctx.moveTo(0,H);for(let x=0;x<=W;x+=10)ctx.lineTo(x,318+22*Math.sin(x*.008+ph)+10*Math.sin(x*.023+ph*2));ctx.lineTo(W,H);ctx.fill();
+  for(let i=0;i<7;i++){const x=r()*W;conifer(ctx,x,322+12*Math.sin(x*.008+ph),40+r()*30,shade(P.far,-.25))}
+  ctx.fillStyle=P.near;ctx.beginPath();ctx.moveTo(0,H);for(let x=0;x<=W;x+=10)ctx.lineTo(x,368+14*Math.sin(x*.012+ph*1.7)+6*Math.sin(x*.04));ctx.lineTo(W,H);ctx.fill();
+  if(key!=="tri") for(let i=0;i<4;i++){const x=40+r()*720;conifer(ctx,x,372,60+r()*40,shade(P.near,-.3))}
+  g=ctx.createLinearGradient(0,400,0,H);g.addColorStop(0,P.ground);g.addColorStop(1,shade(P.ground,-.25));ctx.fillStyle=g;
+  ctx.beginPath();ctx.moveTo(0,H);for(let x=0;x<=W;x+=10)ctx.lineTo(x,404+3*Math.sin(x*.05+ph));ctx.lineTo(W,H);ctx.fill();
+  ctx.fillStyle=shade(P.ground,-.15);for(let i=0;i<40;i++){ctx.fillRect(r()*W,410+r()*66,6+r()*12,2)}
+}
+function drawForeground(ctx,key,seed){
+  const P=SCENES[key], r=rng(seed+"fg");
+  if(key==="tri"){cycad(ctx,40,H-6,110,P.plant2);fern(ctx,770,H-4,70,P.plant,r)}
+  else{fern(ctx,30,H-2,80,P.plant,r);fern(ctx,780,H-2,70,P.plant2,r);cycad(ctx,740,H-4,90,P.plant)}
+  if(P.flowers){for(let i=0;i<9;i++){const x=i<5?10+r()*90:690+r()*100,y=440+r()*34;ctx.fillStyle=P.flowers[i%3];ctx.beginPath();ctx.arc(x,y,4+r()*3,0,7);ctx.fill()}}
+}
+
+/* ---------- Dinosaur ---------- */
+function drawDino(ctx,d){
+  const S=sampleSpine(d.spine), line=shade(d.body,-.55), far=shade(d.body,-.25);
+  const xs=S.map(p=>p.x); const cx=(Math.min(...xs)+Math.max(...xs))/2;
+  ctx.fillStyle="rgba(25,30,18,.25)";ctx.beginPath();ctx.ellipse(cx+20,G+4,(Math.max(...xs)-Math.min(...xs))*.38,11,0,0,7);ctx.fill();
+  const legs=d.legs.map(L=>({L,pts:limbPts(L,L.far?G-7:G)}));
+  legs.filter(o=>o.L.far).forEach(o=>drawLimb(ctx,o.L,o.pts,far,line));
+  (d.arms||[]).forEach(A=>drawArm(ctx,A,far,line,d,-10,-4));
+  // behind-body features
+  if(d.plates){const o=d.plates;
+    for(const row of [1,0]){for(let i=0;i<o.n;i++){
+      const u=o.from+(o.to-o.from)*(i+(row?.5:0))/(o.n-1); if(u>o.to+.01)continue;
+      const p=at(S,u),hh=o.max*(.45+.55*Math.pow(Math.sin(Math.PI*(i+.5)/o.n),.8))*(row?.82:1),w=hh*.62;
+      const [bx,by]=topPt(p,.55),ox=-p.nx,oy=-p.ny;
+      smooth(ctx,[[bx-p.tx*w*.5,by-p.ty*w*.5],[bx+ox*hh*.55-p.tx*w*.55,by+oy*hh*.55-p.ty*w*.55],[bx+ox*hh*1.25+p.tx*w*.1,by+oy*hh*1.25+p.ty*w*.1],[bx+ox*hh*.55+p.tx*w*.55,by+oy*hh*.55+p.ty*w*.55],[bx+p.tx*w*.5,by+p.ty*w*.5]]);
+      fillStroke(ctx,row?shade(d.plate,-.25):d.plate,line,2.4);}}
+  }
+  if(d.spikes){d.spikes.at.forEach((u,i)=>{const p=at(S,u),[bx,by]=topPt(p,.6);
+    for(const s of [-1,1]){const a=Math.atan2(-p.ny,-p.nx)+(s<0?-.55:-.95)*(i?1:1.15),L=58-i*8;
+      poly(ctx,[[bx-p.tx*7,by-p.ty*7],[bx+Math.cos(a)*L,by+Math.sin(a)*L],[bx+p.tx*7,by+p.ty*7]]);fillStroke(ctx,s<0?d.horn:shade(d.horn,-.2),line,2.2)}})}
+  if(d.sailOpt){const o=d.sailOpt,pts=[],base=[];
+    for(let k=0;k<=24;k++){const u=o.from+(o.to-o.from)*k/24,p=at(S,u),hh=o.max*Math.pow(Math.sin(Math.PI*k/24),.7)*(1-.25*k/24),[bx,by]=topPt(p,.7);base.push([bx,by]);pts.push([bx-p.nx*hh,by-p.ny*hh])}
+    ctx.beginPath();pts.forEach((q,i)=>i?ctx.lineTo(q[0],q[1]):ctx.moveTo(q[0],q[1]));for(let i=base.length-1;i>=0;i--)ctx.lineTo(base[i][0],base[i][1]);ctx.closePath();
+    const sg=ctx.createLinearGradient(0,60,0,240);sg.addColorStop(0,shade(d.sail,-.15));sg.addColorStop(1,d.sail);fillStroke(ctx,sg,line,2.5);
+    ctx.strokeStyle=rgba("3a2418",.35);ctx.lineWidth=2;for(let i=2;i<pts.length-1;i+=2){ctx.beginPath();ctx.moveTo(base[i][0],base[i][1]);ctx.lineTo(pts[i][0]*.92+base[i][0]*.08,pts[i][1]*.92+base[i][1]*.08);ctx.stroke()}}
+  if(d.tailFeathers){const p=at(S,.04);for(let i=-2;i<=2;i++){ctx.save();ctx.translate(p.x+4,p.y);ctx.rotate(Math.atan2(-p.ty,-p.tx)+i*.16);ctx.beginPath();ctx.ellipse(18,0,30,6,0,0,7);fillStroke(ctx,i%2?shade(d.feather,-.2):d.feather,line,2);ctx.restore()}}
+  // body
+  bodyPath(ctx,S); ctx.fillStyle=d.body; ctx.fill();
+  ctx.save(); bodyPath(ctx,S); ctx.clip();
+  const ys=S.map(p=>p.y); const bg=ctx.createLinearGradient(0,Math.min(...ys)-40,0,Math.max(...ys)+70);
+  bg.addColorStop(0,"rgba(255,255,255,.10)");bg.addColorStop(.5,"rgba(255,255,255,0)");bg.addColorStop(.62,rgba(d.belly,0));bg.addColorStop(.95,rgba(d.belly,.95));
+  ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
+  if(d.stripes){ctx.fillStyle=rgba("1a140c",.16);for(let u=.08;u<.82;u+=.055){const a=at(S,u),b=at(S,u+.018),c=at(S,u+.03);
+    const p1=topPt(a,1.1),p2=topPt(c,1.1),p3=[c.x+c.nx*c.down*.05,c.y+c.ny*c.down*.05],p4=[a.x-a.nx*a.up*.15,a.y-a.ny*a.up*.15];poly(ctx,[p1,p2,p3,p4]);ctx.fill()}}
+  if(d.armorRows){const o=d.armorRows;for(let u=o.from;u<o.to;u+=.035){const p=at(S,u);
+    for(const f of [.82,.45,.08]){const q=topPt(p,f);const r=Math.max(4,p.up*.13);ctx.beginPath();ctx.ellipse(q[0],q[1],r*1.25,r,Math.atan2(p.ty,p.tx),0,7);fillStroke(ctx,d.armor,line,1.8)}}}
+  ctx.restore();
+  bodyPath(ctx,S); ctx.strokeStyle=line; ctx.lineWidth=2.6; ctx.lineJoin="round"; ctx.stroke();
+  if(d.armorRows){for(let u=d.armorRows.from;u<d.armorRows.to;u+=.07){const p=at(S,u),[bx,by]=topPt(p,.95);
+      poly(ctx,[[bx-p.tx*7,by-p.ty*7],[bx-p.nx*16,by-p.ny*16],[bx+p.tx*7,by+p.ty*7]]);fillStroke(ctx,d.horn,line,2)}
+    for(let u=.36;u<.86;u+=.1){const p=at(S,u),[bx,by]=botPt(p,.25);poly(ctx,[[bx-p.tx*8,by-p.ty*8],[bx+p.nx*4-p.tx*18,by+p.ny*4+18],[bx+p.tx*8,by+p.ty*8]]);fillStroke(ctx,d.horn,line,2)}}
+  if(d.club){const p=S[2];ctx.beginPath();ctx.ellipse(p.x+6,p.y,30,22,-.15,0,7);fillStroke(ctx,d.armor,line,2.6);
+    ctx.beginPath();ctx.ellipse(p.x+2,p.y-4,14,9,-.15,0,7);ctx.fillStyle=rgba("ffffff",.15);ctx.fill()}
+  drawHead(ctx,d);
+  legs.filter(o=>!o.L.far).forEach(o=>drawLimb(ctx,o.L,o.pts,d.body,line));
+  (d.arms||[]).forEach(A=>drawArm(ctx,A,d.body,line,d));
+}
+function render(canvas,d){
+  const dpr=Math.min(2,window.devicePixelRatio||1)*1.25;
+  canvas.width=Math.round(W*dpr); canvas.height=Math.round(H*dpr);
+  const ctx=canvas.getContext("2d"); ctx.setTransform(dpr,0,0,dpr,0,0);
+  drawScene(ctx,d.scene,d.id); drawDino(ctx,d); drawForeground(ctx,d.scene,d.id);
+}
+
+/* ---------- Card ---------- */
+function el(tag,cls,html){const e=document.createElement(tag);if(cls)e.className=cls;if(html!=null)e.innerHTML=html;return e}
+function timeline(d){
+  const span=252-66, wrap=el("div","timeline"), bar=el("div","bar");
+  ERAS.forEach(([n,a,b,c])=>{const s=el("span");s.style.width=((a-b)/span*100)+"%";s.style.background=c;bar.append(s)});
+  const m=el("span","mark"); m.style.left=((252-d.ma[0])/span*100)+"%"; m.style.width=((d.ma[0]-d.ma[1])/span*100)+"%"; bar.append(m);
+  const lab=el("div","bar-labels");ERAS.forEach(([n,a,b])=>{const s=el("span",null,n);s.style.width=((a-b)/span*100)+"%";lab.append(s)});
+  wrap.append(bar,lab); wrap.setAttribute("aria-hidden","true"); return wrap;
+}
+function makeCard(d){
+  const card=el("article","card"); card.setAttribute("aria-live","polite");
+  const frame=el("div","frame"); const cv=document.createElement("canvas");
+  cv.setAttribute("role","img"); cv.setAttribute("aria-label",`Illustration of ${d.name}${d.sp?" "+d.sp:""}`);
+  frame.append(cv); render(cv,d);
+  if(d.photo){
+    const bgp=el("div","photo-bg"); const img=new Image(); img.alt=`${d.name} fossil photo from Wikipedia`; img.decoding="async";
+    img.onload=()=>{bgp.style.backgroundImage=`url("${d.photo}")`; frame.insertBefore(bgp,cv.nextSibling); frame.insertBefore(img,bgp.nextSibling); cv.hidden=true;
+      const a=el("a","credit","Photo · Wikipedia"); a.href="https://en.wikipedia.org/wiki/"+encodeURIComponent(d.wiki); a.target="_blank"; a.rel="noopener"; frame.append(a)};
+    img.src=d.photo;
+  }
+  frame.append(el("span","tag",d.period));
+  const pl=el("div","placard");
+  const row=el("div","name-row"); row.append(el("h2",null,d.name+(d.sp?` <i>${d.sp}</i>`:"")), el("span","diet "+d.diet,DIET_LABEL[d.diet]));
+  pl.append(row, el("p","say",d.say), el("p","eats",`<b>What it ate:</b> ${d.eats[0].toUpperCase()+d.eats.slice(1)}.`));
+  const facts=el("dl","facts");
+  const lived=d.ma[0]===d.ma[1]?`${d.ma[0]}`:`${d.ma[0]}–${d.ma[1]}`;
+  facts.innerHTML=`<div><dt>Lived</dt><dd>${lived} million years ago</dd></div><div><dt>Length</dt><dd>about ${d.len}</dd></div>`;
+  pl.append(facts, timeline(d));
+  card.append(frame,pl); return card;
+}
+
+/* ---------- Show loop ---------- */
+const stage=document.getElementById("stage"), playBtn=document.getElementById("play"), nextBtn=document.getElementById("next"),
+  voiceBtn=document.getElementById("voice"), bigStart=document.getElementById("bigStart"), statusEl=document.getElementById("status"),
+  statusText=document.getElementById("statusText"), countEl=document.getElementById("count");
+const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+let bag=[], current=-1, shown=0, running=false, voiceOn=true, run=0, timer=null, wake=null, liveUtter=null, busy=false;
+
+function nextIndex(){
+  if(!bag.length){bag=[...DINOS.keys()];for(let i=bag.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[bag[i],bag[j]]=[bag[j],bag[i]]}
+    if(bag[bag.length-1]===current)[bag[0],bag[bag.length-1]]=[bag[bag.length-1],bag[0]]}
+  return bag.pop();
+}
+function lineFor(d){return `${d.speak}. It ate ${d.eats}.`}
+let voices=[];
+function loadVoices(){try{voices=speechSynthesis.getVoices()}catch(e){voices=[]}}
+if("speechSynthesis" in window){loadVoices();speechSynthesis.onvoiceschanged=loadVoices}
+function pickVoice(){const en=voices.filter(v=>/^en/i.test(v.lang));
+  return en.find(v=>/Google UK English Male|Daniel|Samantha|Google US English|Natural/i.test(v.name))||en[0]||null}
+
+function speak(text,done){
+  const id=run, start=performance.now(), readMs=Math.max(3200,text.length*62);
+  const finish=(err)=>{ if(id!==run)return; clearTimeout(timer);
+    const left=err?Math.max(0,readMs-(performance.now()-start)):0; statusEl.classList.remove("is-speaking");
+    timer=setTimeout(()=>{if(id===run)done()},left)};
+  if(!voiceOn||!("speechSynthesis" in window)){statusText.textContent=voiceOn?"Voice isn't available in this browser.":"Voice is off.";timer=setTimeout(()=>{if(id===run)done()},readMs);return}
+  try{
+    speechSynthesis.cancel();
+    const u=new SpeechSynthesisUtterance(text); const v=pickVoice(); if(v)u.voice=v; u.lang=v?v.lang:"en-GB"; u.rate=.92; u.pitch=1.05;
+    u.onstart=()=>{if(id===run){statusEl.classList.add("is-speaking");statusText.textContent="Speaking…"}};
+    u.onend=()=>finish(false); u.onerror=()=>finish(true);
+    liveUtter=u; speechSynthesis.speak(u);
+    timer=setTimeout(()=>finish(false),readMs+9000);
+  }catch(e){finish(true)}
+}
+function step(){ // speak current, pause, swivel to next, repeat
+  if(!running)return;
+  speak(lineFor(DINOS[current]),()=>{ if(!running)return; statusText.textContent="Next one coming…";
+    const id=run; timer=setTimeout(()=>{if(id===run&&running)swivel(nextIndex(),true)},1400)});
+}
+function swivel(idx,thenSpeak){
+  if(busy)return; busy=true; run++; clearTimeout(timer); try{speechSynthesis.cancel()}catch(e){}
+  statusEl.classList.remove("is-speaking");
+  const out=stage.querySelector(".card"), inc=makeCard(DINOS[idx]); current=idx; shown++; countEl.textContent=`Shown: ${shown}`;
+  stage.append(inc);
+  const dur=reduce?300:950, ease="cubic-bezier(.65,.02,.25,1)";
+  const outK=reduce?[{opacity:1},{opacity:0}]:[{transform:"translateX(0) rotateY(0deg) scale(1)",opacity:1},{transform:"translateX(-58%) rotateY(-78deg) scale(.82)",opacity:0}];
+  const inK=reduce?[{opacity:0},{opacity:1}]:[{transform:"translateX(58%) rotateY(78deg) scale(.82)",opacity:0},{transform:"translateX(0) rotateY(0deg) scale(1)",opacity:1}];
+  if(out) out.animate(outK,{duration:dur,easing:ease,fill:"forwards"});
+  const a=inc.animate(inK,{duration:dur,easing:ease});
+  const fin=()=>{out&&out.remove();busy=false;if(thenSpeak&&running)step()};
+  a.onfinish=fin; a.oncancel=fin;
+  // warm the next photo
+  if(bag.length){const n=DINOS[bag[bag.length-1]];if(n.photo){const i=new Image();i.src=n.photo}}
+}
+async function keepAwake(on){try{if(on&&navigator.wakeLock&&!wake){wake=await navigator.wakeLock.request("screen");wake.addEventListener("release",()=>wake=null)}else if(!on&&wake){await wake.release();wake=null}}catch(e){}}
+function setRunning(on){
+  running=on; run++; clearTimeout(timer); try{speechSynthesis.cancel()}catch(e){}
+  statusEl.classList.remove("is-speaking");
+  playBtn.setAttribute("aria-label",on?"Pause the show":"Start the show");
+  document.getElementById("playLabel").textContent=on?"Pause":(shown>1||bigStart.hidden?"Resume":"Start");
+  document.getElementById("playIcon").setAttribute("d",on?"M7 5h4v14H7zM13 5h4v14h-4z":"M7 5v14l12-7z");
+  bigStart.hidden=true; keepAwake(on);
+  if(on){statusText.textContent=voiceOn?"Listen…":"Voice is off.";step()} else statusText.textContent="Paused.";
+}
+playBtn.onclick=()=>setRunning(!running);
+bigStart.onclick=()=>setRunning(true);
+nextBtn.onclick=()=>{ if(!running)statusText.textContent="Press Start to hear it."; swivel(nextIndex(),running)};
+voiceBtn.onclick=()=>{voiceOn=!voiceOn;voiceBtn.setAttribute("aria-pressed",String(voiceOn));if(running){run++;clearTimeout(timer);try{speechSynthesis.cancel()}catch(e){}step()}};
+document.addEventListener("keydown",e=>{if(e.target.closest("button"))return;if(e.code==="Space"){e.preventDefault();setRunning(!running)}else if(e.key==="ArrowRight"){nextBtn.click()}});
+document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="visible"&&running)keepAwake(true)});
+
+/* first card */
+current=nextIndex(); shown=1; stage.append(makeCard(DINOS[current]));
+
+/* real photos where Wikipedia is reachable */
+(async()=>{
+  try{
+    const ctl=new AbortController(); setTimeout(()=>ctl.abort(),6000);
+    const url="https://en.wikipedia.org/w/api.php?action=query&format=json&origin=*&prop=pageimages&piprop=thumbnail&pithumbsize=1200&redirects=1&titles="+encodeURIComponent(DINOS.map(d=>d.wiki).join("|"));
+    const j=await (await fetch(url,{signal:ctl.signal})).json();
+    const alias={}; [...(j.query.normalized||[]),...(j.query.redirects||[])].forEach(x=>alias[x.from]=x.to);
+    const pics={}; Object.values(j.query.pages||{}).forEach(p=>{if(p.thumbnail)pics[p.title]=p.thumbnail.source});
+    let n=0; DINOS.forEach(d=>{let t=d.wiki;while(alias[t])t=alias[t];if(pics[t]){d.photo=pics[t];n++}});
+    if(n) document.getElementById("note").textContent="Fossil photos come from Wikipedia. Any dinosaur without a photo is drawn by the page.";
+  }catch(e){/* blocked or offline: keep the drawings */}
+})();
+</script>
+
+</body>
+</html>
