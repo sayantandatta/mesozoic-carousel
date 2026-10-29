@@ -913,5 +913,12 @@
    233,
    231
   ]
+ },
+ "Patagotitan": {
+  "group": "sauropod",
+  "diet": "herb",
+  "tpl": "diplo",
+  "eats": "leaves from tall trees and other plants, swallowed without chewing",
+  "hips": "lizard"
  }
 }
