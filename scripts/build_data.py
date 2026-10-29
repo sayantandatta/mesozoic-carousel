@@ -195,7 +195,7 @@ GROUPS = [  # (pattern, group, diet, template, what it ate). Family words only, 
     (r"therizinosaur(?:id|oid|ian|s)?\b|segnosaur(?:id|ian|s)\b", "therizinosaur", "herb", "galli", "leaves, pulled down from trees with its long claws"),
     (r"oviraptor(?:id|ids|osaur|osaurs|osaurian|ine)\b|caenagnathids?\b", "oviraptorosaur", "omni", "galli", "plants and seeds, and possibly eggs and small animals"),
     (r"ornithomim(?:id|ids|osaur|osaurs|osaurian|ine)\b|deinocheirids?\b", "ornithomimosaur", "omni", "galli", "plants, seeds, insects and small animals"),
-    (r"alvarezsaur(?:id|ids|s)?\b", "alvarezsaur", "carn", "compy", "insects such as ants and termites"),
+    (r"alvarezsaur(?:id|ids|oid|oids|s)?\b", "alvarezsaur", "carn", "compy", "insects such as ants and termites"),
     (r"troodont(?:id|ids|s)?\b", "troodontid", "omni", "velo", "small animals, insects and possibly plants"),
     (r"dromaeosaur(?:id|ids|ine|s)?\b|\braptors?\b|unenlagiines?\b|microraptorines?\b|eudromaeosaur", "dromaeosaur", "carn", "velo", "small and medium-sized animals, gripped with its sickle-shaped foot claws"),
     (r"ceratopsians?\b|ceratopsids?\b|ceratopsia\b|chasmosaurines?\b|centrosaurines?\b|leptoceratopsids?\b|protoceratopsids?\b|psittacosaurids?\b|horned dinosaur|frilled dinosaur", "ceratopsian", "herb", "tri", "tough, low-growing plants, sliced with its sharp beak"),
@@ -203,14 +203,14 @@ GROUPS = [  # (pattern, group, diet, template, what it ate). Family words only, 
     (r"stegosaur(?:id|ids|ian|ians|s)?\b", "stegosaur", "herb", "steg", "ferns, mosses and other low plants"),
     (r"pachycephalosaur(?:id|ids|ian|ians|ine|s)?\b|bone-headed|dome-headed|thick-headed", "pachycephalosaur", "herb", "pachy", "leaves, seeds and fruit"),
     (r"lambeosaurines?\b", "hadrosaur", "herb", "para", "leaves, twigs and conifer needles, ground up by hundreds of teeth"),
-    (r"hadrosaur(?:id|ids|oid|oids|ine|s)?\b|saurolophines?\b|duck-billed", "hadrosaur", "herb", "igu", "leaves, twigs and conifer needles, ground up by hundreds of teeth"),
+    (r"hadrosaur(?:id|ids|oid|oids|ine|s|iform|iforms|omorph|omorphs|omorphan)?\b|saurolophines?\b|duck-?billed", "hadrosaur", "herb", "igu", "leaves, twigs and conifer needles, ground up by hundreds of teeth"),
     (r"heterodontosaur(?:id|ids|s)?\b", "heterodontosaur", "omni", "compy", "plants, and maybe insects and small animals"),
     (r"iguanodont(?:ian|ians|id|ids|s)?\b|ornithopods?\b|hypsilophodont(?:id|ids)?\b|rhabdodontids?\b|ornithischians?\b|thescelosaurids?\b|dryosaurids?\b|elasmarians?\b|neornithischian", "ornithopod", "herb", "igu", "low-growing plants such as ferns and horsetails"),
     (r"brachiosaur(?:id|ids|s)?\b", "sauropod", "herb", "brach", "leaves from the tops of tall trees"),
-    (r"prosauropods?\b|sauropodomorphs?\b|plateosaurids?\b|massospondylids?\b|anchisaurids?\b", "sauropodomorph", "herb", "igu", "leaves and other plants, and perhaps the odd small animal"),
+    (r"prosauropods?\b|sauropodomorphs?\b|sauropodiforms?\b|plateosaurids?\b|massospondylids?\b|anchisaurids?\b", "sauropodomorph", "herb", "igu", "leaves and other plants, and perhaps the odd small animal"),
     (r"titanosaur(?:id|ids|ian|ians|iform|s)?\b|sauropods?\b|diplodocids?\b|diplodocoids?\b|macronarians?\b|camarasaurids?\b|mamenchisaurids?\b|rebbachisaurids?\b|dicraeosaurids?\b|turiasaurs?\b|eusauropods?\b|neosauropods?\b|somphospondyl|euhelopodids?\b|cetiosaurids?\b|apatosaurines?\b", "sauropod", "herb", "diplo", "leaves from tall trees and other plants, swallowed without chewing"),
     (r"coelophysoids?\b|coelophysids?\b|herrerasaur(?:id|ids|ian|ians)\b|compsognathids?\b|dilophosaurids?\b", "theropod", "carn", "coelo", "small animals such as lizards and insects"),
-    (r"abelisaur(?:id|ids|oid|oids|ine)?\b|carcharodontosaur(?:id|ids|ian|s)?\b|allosaur(?:id|ids|oid|oids|s)?\b|megalosaur(?:id|ids|oid|oids|s)?\b|ceratosaur(?:id|ids|ian|ians|s)?\b|metriacanthosaurids?\b|sinraptorids?\b|megaraptor(?:an|ans|id|ids)\b|noasaurids?\b|tetanurans?\b|theropods?\b|carnosaurs?\b|piatnitzkysaurids?\b|coelurosaurs?\b|maniraptor", "theropod", "carn", "allo", "meat, hunting other animals"),
+    (r"abelisaur(?:id|ids|oid|oids|ine)?\b|carcharodontosaur(?:id|ids|ian|s)?\b|allosaur(?:id|ids|oid|oids|s)?\b|megalosaur(?:id|ids|oid|oids|s)?\b|ceratosaur(?:id|ids|ian|ians|s)?\b|metriacanthosaurids?\b|sinraptorids?\b|megaraptor(?:an|ans|id|ids)\b|noasaurids?\b|tetanurans?\b|theropods?\b|carnosaur(?:s|ian|ians)?\b|piatnitzkysaurids?\b|coelurosaur(?:s|ian|ians)?\b|maniraptor", "theropod", "carn", "allo", "meat, hunting other animals"),
     (r"avialans?\b|avialae\b|scansoriopterygids?\b|paravians?\b|\bbirds?\b", "avialan", "carn", "compy", "insects and other small animals"),
     (r"dinosauromorphs?\b|dinosauriforms?\b|silesaurids?\b|pseudosuchians?\b|crocodylomorphs?\b|archosaurs?\b", "archosaur", "carn", "coelo", "small animals"),
 ]
@@ -338,12 +338,25 @@ for r in rows_with_cands:
 ov_path = ROOT / "scripts/overrides.json"
 if ov_path.exists():
     ov = json.loads(ov_path.read_text())
+    want = sorted({"File:" + o["pick"] for o in ov.values() if o.get("pick")})
+    picked = image_info(want) if (want and not OFFLINE) else {}
     for r in rows:
         for k, v in ov.get(r["name"], {}).items():
-            if v is None:
+            if k == "pick":
+                i = picked.get("File:" + v)
+                if i and i["url"]:
+                    r.update(img=i["url"], file=v, art=i["art"], lic=i["lic"])
+                elif OFFLINE and r.get("file") != v:
+                    print("pick needs a network run:", r["name"], file=sys.stderr)
+                else:
+                    print("pick not found:", r["name"], v, file=sys.stderr)
+            elif v is None:
                 r.pop(k, None)
             else:
                 r[k] = v
+for r in rows:  # drop tracking parameters from image links
+    if r.get("img"):
+        r["img"] = r["img"].split("?")[0]
 
 out = ROOT / "data/dinos.json"
 out.parent.mkdir(exist_ok=True)

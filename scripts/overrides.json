@@ -1,0 +1,810 @@
+{
+ "Aardonyx": {
+  "pick": "Aardonyx NT.jpg"
+ },
+ "Adamantisaurus": {
+  "pick": "Adamantisaurus mezzalirai 2copia.jpg"
+ },
+ "Agathaumas": {
+  "pick": "Agathaumas.jpg"
+ },
+ "Albertonykus": {
+  "pick": "Albertonykus TD.png"
+ },
+ "Andesaurus": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Animantarx": {
+  "pick": "Animantarx ramaljonesi.png"
+ },
+ "Anodontosaurus": {
+  "pick": "Anodontosaurus lambei.jpg"
+ },
+ "Antarctopelta": {
+  "pick": "Antarctopelta LMR.jpg"
+ },
+ "Antarctosaurus": {
+  "pick": "Antarctosaurus reconstruction.png"
+ },
+ "Aragosaurus": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Archaeoceratops": {
+  "pick": "Archaeoceratops NT.jpg"
+ },
+ "Arcusaurus": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Atlascopcosaurus": {
+  "pick": "Atlascopcosaurus loadsi.JPG"
+ },
+ "Atrociraptor": {
+  "pick": "Atrociraptor.jpg"
+ },
+ "Aublysodon": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Australodocus": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Bagaraatan": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Barilium": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Barosaurus": {
+  "pick": "Barosaurus lentus1.jpg"
+ },
+ "Bellusaurus": {
+  "pick": "Bellusaurus-v1.jpg"
+ },
+ "Berberosaurus": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Bicentenaria": {
+  "pick": "Bicentenaria.jpg"
+ },
+ "Bonitasaura": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Borogovia": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Bothriospondylus": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Chaoyangsaurus": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Claosaurus": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Coahuilaceratops": {
+  "pick": "Coahuilaceratops NT.jpg"
+ },
+ "Crichtonsaurus": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Cruxicheiros": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Datousaurus": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Deinodon": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Dimetrodon": {
+  "pick": "Dimetrodon 695878.JPG"
+ },
+ "Dravidosaurus": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Dysalotosaurus": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Dyslocosaurus": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Eolambia": {
+  "pick": "Eolambia restoration.png"
+ },
+ "Eoraptor": {
+  "pick": "Eoraptor resto. 01.png"
+ },
+ "Erectopus": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Erliansaurus": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Euhelopus": {
+  "pick": "EuhelopusDB2.jpg"
+ },
+ "Euskelosaurus": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Fabrosaurus": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Fukuiraptor": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Fulgurotherium": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Futalognkosaurus": {
+  "pick": "The Real Futalogkosaurus - Nima Sassani.jpg"
+ },
+ "Gargoyleosaurus": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Gasparinisaura": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Gilmoreosaurus": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Glacialisaurus": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Guaibasaurus": {
+  "pick": "Guaibasaurus-mingau.png"
+ },
+ "Hadrosaurus": {
+  "pick": "Hadrosaurus foulkii restoration.png"
+ },
+ "Hagryphus": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Haya": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Hesperonychus": {
+  "pick": "Hesperonychus elizabethae.jpg"
+ },
+ "Hexing": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Heyuannia": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Hoplitosaurus": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Huabeisaurus": {
+  "pick": "Huabeisaurus allocotus.jpg"
+ },
+ "Huanghetitan": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Hungarosaurus": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Hypsibema": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Incisivosaurus": {
+  "pick": "Incisivosaurus (pencil 2013).png"
+ },
+ "Ingenia": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null,
+  "wiki": "Heyuannia",
+  "group": "oviraptorosaur",
+  "diet": "omni",
+  "tpl": "galli",
+  "eats": "plants and seeds, and possibly eggs and small animals",
+  "period": "Late Cretaceous",
+  "ma": [
+   75,
+   71
+  ]
+ },
+ "Janenschia": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Jinzhousaurus": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Juravenator": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Kaatedocus": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Khaan": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Kotasaurus": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Lagosuchus": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Laosaurus": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Laquintasaura": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Leinkupal": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Leptoceratops": {
+  "pick": "Triceratops and Leptoceratops.jpg"
+ },
+ "Lesothosaurus": {
+  "pick": "Lesothosaurus ER670.JPG"
+ },
+ "Limaysaurus": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Lophorhothon": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Lurdusaurus": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Lycorhinus": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Lythronax": {
+  "pick": "Lythronax TD.png"
+ },
+ "Magyarosaurus": {
+  "pick": "Magyarosaurus 04800.JPG"
+ },
+ "Malawisaurus": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Mamenchisaurus": {
+  "pick": "Mamenchisaurus sanjiangensis.png"
+ },
+ "Martharaptor": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Mei": {
+  "pick": "Meilong mmartyniuk wiki.png"
+ },
+ "Metriacanthosaurus": {
+  "pick": "Metriacanthosaurus.jpg"
+ },
+ "Minotaurasaurus": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Mochlodon": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Montanoceratops": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Muttaburrasaurus": {
+  "pick": "Muttaburrasaurus NT transparent.png"
+ },
+ "Nebulasaurus": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Nemegtosaurus": {
+  "pick": "Nemegtosaurus3.jpg"
+ },
+ "Nodosaurus": {
+  "pick": "Nodosaurus 500 TWA.JPG"
+ },
+ "Oohkotokia": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Ornithodesmus": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Ornithopsis": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Orodromeus": {
+  "pick": "Orodromeus.jpg"
+ },
+ "Orthomerus": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Palaeoscincus": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Paronychodon": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Pedopenna": {
+  "pick": "Pedopenna (scansoriopterygid).png"
+ },
+ "Pegomastax": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Peloroplites": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Pinacosaurus": {
+  "pick": "MPC Pinacosaurus restoration.png"
+ },
+ "Prenoceratops": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Proa": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null,
+  "wiki": "Proa valdearinnoensis",
+  "group": "ornithopod",
+  "diet": "herb",
+  "tpl": "igu",
+  "eats": "low-growing plants such as ferns and horsetails",
+  "period": "Early Cretaceous",
+  "ma": [
+   113,
+   110
+  ]
+ },
+ "Protohadros": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Psittacosaurus": {
+  "pick": "Psittacosaurus mongoliensis.png"
+ },
+ "Rapator": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Regnosaurus": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Riojasaurus": {
+  "pick": "Riojasaurus sketch3.jpg"
+ },
+ "Rugops": {
+  "pick": "Rugops reconstruction.jpg"
+ },
+ "Sarcolestes": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Saturnalia": {
+  "pick": "Saturnalia2.jpg"
+ },
+ "Sciurumimus": {
+  "pick": "Sciurumimus Recon.png"
+ },
+ "Scutellosaurus": {
+  "pick": "Scutellosaurus TD.png"
+ },
+ "Sinornithosaurus": {
+  "pick": "Sinornithosaurus (flipped).jpg"
+ },
+ "Sinosaurus": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Sinotyrannus": {
+  "pick": "Sinotyrannus TD.png"
+ },
+ "Skorpiovenator": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Spinophorosaurus": {
+  "pick": "Spinophorosaurus NT.jpg"
+ },
+ "Staurikosaurus": {
+  "pick": "Staurikosaurus DB.jpg"
+ },
+ "Stokesosaurus": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Struthiomimus": {
+  "pick": "Struthiomimus 586.JPG"
+ },
+ "Struthiosaurus": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Stygimoloch": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Suuwassea": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Szechuanosaurus": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Tachiraptor": {
+  "pick": "Illustration of Tachiraptor admirabilis.jpg"
+ },
+ "Tangvayosaurus": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Tanius": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Tastavinsaurus": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Tataouinea": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Tawa": {
+  "pick": "Tawa hallae Martz.jpg"
+ },
+ "Tazoudasaurus": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Technosaurus": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Thecocoelurus": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Thescelosaurus": {
+  "pick": "Thescelosaurus neglectus.png"
+ },
+ "Tianyuraptor": {
+  "pick": "Tianyuraptor NT.jpg"
+ },
+ "Titanosaurus": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Tochisaurus": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Tyrannotitan": {
+  "pick": "Tyrannotitan chubutensis.png"
+ },
+ "Unenlagia": {
+  "pick": "Unenlagia comahuensis .jpg"
+ },
+ "Valdoraptor": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Valdosaurus": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Variraptor": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Wendiceratops": {
+  "pick": "Wendiceratops pinhornensis.jpg"
+ },
+ "Willinakaqe": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Xenotarsosaurus": {
+  "pick": "Xenotarsosaurus V2.png"
+ },
+ "Xuanhuaceratops": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Yaverlandia": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Yongjinglong": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Zephyrosaurus": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Zhanghenglong": {
+  "img": null,
+  "file": null,
+  "art": null,
+  "lic": null
+ },
+ "Zuolong": {
+  "pick": "Zuolong salleei.jpg"
+ },
+ "Hypacrosaurus": {
+  "group": "hadrosaur",
+  "diet": "herb",
+  "tpl": "para",
+  "eats": "leaves, twigs and conifer needles, ground up by hundreds of teeth"
+ },
+ "Microceratops": {
+  "wiki": "Microceratus",
+  "group": "ceratopsian",
+  "diet": "herb",
+  "tpl": "tri",
+  "eats": "tough, low-growing plants, sliced with its sharp beak",
+  "period": "Late Cretaceous"
+ },
+ "Sulaimanisaurus": {
+  "wiki": null,
+  "group": "sauropod",
+  "diet": "herb",
+  "tpl": "diplo",
+  "eats": "leaves from tall trees and other plants, swallowed without chewing",
+  "period": "Late Cretaceous",
+  "ma": [
+   72,
+   66
+  ]
+ }
+}
