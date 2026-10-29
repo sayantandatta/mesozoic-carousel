@@ -14,6 +14,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 UA = "MesozoicCarousel/1.0 (https://github.com/sayantandatta/mesozoic-carousel)"
 WP = "https://en.wikipedia.org/w/api.php"
 CM = "https://commons.wikimedia.org/w/api.php"
+WD = "https://www.wikidata.org/w/api.php"
 
 
 def api(base, **p):
@@ -357,6 +358,82 @@ if ov_path.exists():
 for r in rows:  # drop tracking parameters from image links
     if r.get("img"):
         r["img"] = r["img"].split("?")[0]
+
+# ---------- 7. family tree from Wikidata (parent taxon chains) ----------
+RANKS = {
+    "Q34740": "genus", "Q7432": "species", "Q35409": "family", "Q164280": "subfamily", "Q2136103": "superfamily",
+    "Q2007442": "infrafamily", "Q227936": "tribe", "Q36602": "order", "Q5867959": "suborder", "Q2889003": "infraorder",
+    "Q6311258": "parvorder", "Q5868144": "superorder", "Q37517": "class", "Q713623": "clade", "Q3965313": "subgenus",
+}
+STOP_AT = {"Dinosauria", "Dinosauromorpha", "Dinosauriformes", "Synapsida", "Sauropterygia", "Plesiosauria",
+           "Pseudosuchia", "Archosauria", "Sauropsida", "Reptilia", "Amniota"}
+
+
+def best_claim(claims, prop):
+    st = claims.get(prop, [])
+    st = sorted(st, key=lambda c: {"preferred": 0, "normal": 1}.get(c.get("rank"), 2))
+    for c in st:
+        dv = c.get("mainsnak", {}).get("datavalue", {})
+        v = dv.get("value")
+        if isinstance(v, dict) and "id" in v:
+            return v["id"]
+        if isinstance(v, str):
+            return v
+    return None
+
+
+def build_tree(rows):
+    titles = sorted({r["wiki"] for r in rows if r.get("wiki")})
+    qid_for = {}
+    for ch in chunks(titles, 50):
+        j = api(WP, action="query", titles="|".join(ch), prop="pageprops", ppprop="wikibase_item", redirects=1)
+        q = j.get("query", {})
+        norm = {x["from"]: x["to"] for x in q.get("normalized", [])}
+        red = {x["from"]: x["to"] for x in q.get("redirects", [])}
+        pages = {p["title"]: p for p in q.get("pages", [])}
+        for t in ch:
+            f = norm.get(t, t)
+            f = red.get(f, f)
+            qi = pages.get(f, {}).get("pageprops", {}).get("wikibase_item")
+            if qi:
+                qid_for[t] = qi
+        time.sleep(0.3)
+    taxa, frontier = {}, set(qid_for.values())
+    for _ in range(40):
+        todo = sorted(q for q in frontier if q not in taxa)
+        frontier = set()
+        if not todo:
+            break
+        for ch in chunks(todo, 50):
+            j = api(WD, action="wbgetentities", ids="|".join(ch), props="claims|labels", languages="en")
+            for qid, e in j.get("entities", {}).items():
+                if "missing" in e:
+                    continue
+                cl = e.get("claims", {})
+                name = best_claim(cl, "P225") or e.get("labels", {}).get("en", {}).get("value") or qid
+                rank = RANKS.get(best_claim(cl, "P105") or "", "")
+                parent = None if name in STOP_AT else best_claim(cl, "P171")
+                taxa[qid] = [name, rank, parent]
+                if parent and parent not in taxa:
+                    frontier.add(parent)
+            time.sleep(0.3)
+    dinos = {r["name"]: qid_for[r["wiki"]] for r in rows if r.get("wiki") in qid_for}
+    # keep only taxa on some dinosaur's chain
+    keep = set()
+    for q in dinos.values():
+        seen = set()
+        while q and q in taxa and q not in seen:
+            seen.add(q); keep.add(q); q = taxa[q][2]
+    tree = {"taxa": {q: taxa[q] for q in sorted(keep)}, "dinos": dinos}
+    (ROOT / "data/tree.json").write_text(json.dumps(tree, ensure_ascii=False, separators=(",", ":")))
+    print(f"family tree: {len(dinos)} dinosaurs linked, {len(keep)} groups", file=sys.stderr)
+
+
+if not OFFLINE:
+    try:
+        build_tree(rows)
+    except Exception as e:  # the carousel works without the tree
+        print("family tree failed:", repr(e), file=sys.stderr)
 
 out = ROOT / "data/dinos.json"
 out.parent.mkdir(exist_ok=True)
