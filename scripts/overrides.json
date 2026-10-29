@@ -203,7 +203,10 @@
   "img": null,
   "file": null,
   "art": null,
-  "lic": null
+  "lic": null,
+  "places": [
+   "Africa"
+  ]
  },
  "Fukuiraptor": {
   "img": null,
@@ -798,7 +801,10 @@
   "diet": "herb",
   "tpl": "tri",
   "eats": "tough, low-growing plants, sliced with its sharp beak",
-  "period": "Late Cretaceous"
+  "period": "Late Cretaceous",
+  "places": [
+   "Asia"
+  ]
  },
  "Sulaimanisaurus": {
   "wiki": null,
@@ -810,6 +816,64 @@
   "ma": [
    72,
    66
+  ],
+  "places": [
+   "Asia"
+  ]
+ },
+ "Aorun": {
+  "places": [
+   "Asia"
+  ]
+ },
+ "Brontomerus": {
+  "places": [
+   "North America"
+  ]
+ },
+ "Epidexipteryx": {
+  "places": [
+   "Asia"
+  ]
+ },
+ "Gojirasaurus": {
+  "places": [
+   "North America"
+  ]
+ },
+ "Hypselospinus": {
+  "places": [
+   "Europe"
+  ]
+ },
+ "Kileskus": {
+  "places": [
+   "Asia"
+  ]
+ },
+ "Kulindadromeus": {
+  "places": [
+   "Asia"
+  ]
+ },
+ "Poekilopleuron": {
+  "places": [
+   "Europe"
+  ]
+ },
+ "Quaesitosaurus": {
+  "places": [
+   "Asia"
+  ]
+ },
+ "Saurornithoides": {
+  "places": [
+   "Asia"
+  ]
+ },
+ "Similicaudipteryx": {
+  "places": [
+   "Asia"
   ]
  }
 }

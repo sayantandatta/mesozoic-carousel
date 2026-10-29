@@ -184,7 +184,45 @@ def facts(text):
             hi /= 100
         if 0.1 <= hi <= 45:
             length = (f"{hi:.1f}".rstrip("0").rstrip(".")) + " m"
+    if not length:
+        v = loose_length(t)
+        if v:
+            length = (f"{v:.1f}".rstrip("0").rstrip(".")) + " m"
     return period, ma, length
+
+
+LEN_BAD = re.compile(r"tall|height|high|skull|femur|wingspan|tooth|teeth|tibia|humerus|vertebra|neck|tail|claw|frill|horn|crest|hip|thigh|spine|sail|egg|bone|jaw|head", re.I)
+
+
+def loose_length(t):
+    """A body length mentioned anywhere near words like 'long', 'measured' or 'reached'."""
+    best = None
+    for m in re.finditer(r"(\d+(?:\.\d+)?)\s*(?:-|to|and)?\s*(?:(\d+(?:\.\d+)?))?\s*(m|metres|meters|metre|meter|cm|centimetres|centimeters)\b", t):
+        ctx = t[max(m.start() - 70, 0):m.end() + 45]
+        near = t[max(m.start() - 28, 0):m.start()] + " " + t[m.end():m.end() + 28]
+        if not re.search(r"long|length|measur|reach|size|estimated|grew|body", ctx, re.I) or LEN_BAD.search(near):
+            continue
+        v = max(float(m.group(1)), float(m.group(2)) if m.group(2) else 0)
+        if m.group(3).startswith("c"):
+            v /= 100
+        if 0.2 <= v <= 45:
+            best = max(best or 0, v)
+    return best
+
+
+def loose_weight(t):
+    """A body mass mentioned near 'weigh' or 'mass', in kg or tonnes."""
+    t = (t or "").replace("\u2013", "-").replace("\u00a0", " ")
+    best = None
+    for m in re.finditer(r"(\d+(?:[.,]\d+)*)\s*(?:-|to|and)?\s*(?:(\d+(?:[.,]\d+)*))?\s*(kg|kilograms?|(?:metric |short )?tons?|tonnes?|t)\b", t):
+        ctx = t[max(m.start() - 60, 0):m.end() + 30]
+        if not re.search(r"weigh|mass|heavy", ctx, re.I):
+            continue
+        v = max(num(m.group(1)), num(m.group(2)) if m.group(2) else 0)
+        kg = v if m.group(3).startswith("k") else v * 1000
+        if 0.05 <= kg <= 120000:
+            best = max(best or 0, kg)
+    return best
 
 
 # ---------- 4. group, diet and drawing template ----------
@@ -286,7 +324,7 @@ def image_info(files):
 # ---------- 6. assemble ----------
 rows, seen_titles, cands = [], {}, {}
 for n in names:
-    t = title_for[n]
+    t = title_for.get(n)
     text = intro.get(t, "") if t else ""
     if t and not DINO_WORDS.search(text[:600]):
         t, text = None, ""
@@ -310,7 +348,7 @@ for n in names:
         and not re.search(r"\bis a (genus|species) of [^.]{0,80}dinosaur", text[:300], re.I)
     rows.append({"name": n, "wiki": t, "period": period, "ma": ma, "len": length, "group": grp,
                  "diet": diet, "tpl": tpl, "eats": eats, "notDino": not_dino})
-    if not REUSE_IMAGES:
+    if not OFFLINE and (not REUSE_IMAGES or n not in PREV):
         cands[n] = pick_image(n, t) if t else pick_image(n, n)
 
 if REUSE_IMAGES:  # keep the pictures chosen last time
@@ -319,7 +357,7 @@ if REUSE_IMAGES:  # keep the pictures chosen last time
         for k in ("img", "file", "art", "lic", "alts"):
             if k in p:
                 r[k] = p[k]
-    rows_with_cands = []
+    rows_with_cands = [] if OFFLINE else [r for r in rows if r["name"] not in PREV]
 else:
     rows_with_cands = rows
 all_files = sorted({f for fs in cands.values() for f in fs})
@@ -498,6 +536,171 @@ def regroup_from_tree(rows, overridden):
 
 
 regroup_from_tree(rows, {n for n, o in (json.loads(ov_path.read_text()).items() if ov_path.exists() else []) if "group" in o})
+
+# ---------- 9. where found, hips, size, weight, species (Wikipedia text + DinoDatabase facts) ----------
+CONTINENT_TERMS = {
+ "North America": ["North America","United States","U.S.","USA","Canada","Mexico","Alaska","Alberta","Montana","Utah","Wyoming","Colorado","New Mexico","Texas","South Dakota","North Dakota","Arizona","New Jersey","Maryland","Oklahoma","Kansas","Nebraska","Alabama","Mississippi","North Carolina","Missouri","Massachusetts","Connecticut","Oregon","California","Saskatchewan","British Columbia","Yukon","Nunavut","Coahuila","Baja California","Chihuahua","Sonora","Greenland","Hell Creek","Morrison Formation","Laramidia","Appalachia","Idaho","Nevada","Arkansas","Tennessee","Pennsylvania","Virginia","Delaware","New York","Kentucky","Iowa","Minnesota","Louisiana","Florida","South Carolina"],
+ "South America": ["South America","Argentina","Brazil","Chile","Uruguay","Venezuela","Colombia","Peru","Bolivia","Ecuador","Paraguay","Patagonia","Neuquén","Neuquen","Chubut","Río Negro","Rio Negro","Mendoza Province","Ischigualasto","Minas Gerais","São Paulo","Sao Paulo","Rio Grande do Sul","Paraná","Maranhão","Ceará","Salta","Catamarca"],
+ "Europe": ["Europe","England","Scotland","Wales","United Kingdom","Britain","Isle of Wight","France","Germany","Spain","Portugal","Italy","Belgium","Netherlands","Switzerland","Austria","Hungary","Romania","Transylvania","Poland","Denmark","Sweden","Norway","Czech Republic","Croatia","Slovenia","Luxembourg","Ireland","Lourinhã","Lourinha","Teruel","Aragon","Catalonia","Cuenca","Burgos","Hațeg","Haţeg","Hateg","Sussex","Oxfordshire","Dorset","Bavaria","Lower Saxony","Solnhofen","Provence","Normandy","Wessex Formation"],
+ "Asia": ["Asia","China","Mongolia","Japan","Korea","India","Thailand","Laos","Vietnam","Kazakhstan","Uzbekistan","Kyrgyzstan","Tajikistan","Pakistan","Siberia","Amur","Yakutia","Gobi","Inner Mongolia","Liaoning","Sichuan","Yunnan","Xinjiang","Shandong","Henan","Gansu","Jilin","Heilongjiang","Hebei","Zhejiang","Jiangxi","Guangdong","Hubei","Shanxi","Shaanxi","Anhui","Fujian","Guangxi","Hunan","Chongqing","Tibet","Ningxia","Qinghai","Jiangsu","Guizhou","Sakhalin","Iran","Israel","Lebanon","Saudi Arabia","Oman","Myanmar","Malaysia","Indonesia","Philippines","Taiwan","Sri Lanka","Russian Far East"],
+ "Africa": ["Africa","Egypt","Morocco","Niger","Tanzania","South Africa","Madagascar","Malawi","Zimbabwe","Lesotho","Namibia","Algeria","Tunisia","Libya","Sudan","Kenya","Cameroon","Mali","Angola","Ethiopia","Zambia","Mozambique","Congo","Nigeria","Kem Kem","Sahara","Tendaguru","Karoo"],
+ "Australia": ["Australia","Queensland","New South Wales","Western Australia","Northern Territory","South Australia","Tasmania","New Zealand","Winton","Lightning Ridge","Oceania"],
+ "Antarctica": ["Antarctica","Antarctic","James Ross Island","Seymour Island"],
+}
+TERMS = sorted(((t, c) for c, ts in CONTINENT_TERMS.items() for t in ts), key=lambda x: -len(x[0]))
+PATS = [(re.compile(r"(?<![\w-])" + re.escape(t) + r"(?![\w])"), c) for t, c in TERMS]
+CONT_ORDER = list(CONTINENT_TERMS)
+
+def places_from_text(text):
+    """Continents named in the first two sentences, else in the whole introduction."""
+    if not text:
+        return []
+    sents = re.split(r"(?<=[.!?])\s+", text)
+    for chunk in (" ".join(sents[:2]), text):
+        t, found = chunk, []
+        for pat, c in PATS:
+            if pat.search(t):
+                if c not in found:
+                    found.append(c)
+                t = pat.sub(" ", t)   # longer names first, so "New South Wales" is not also read as Wales
+        if found:
+            return sorted(found, key=CONT_ORDER.index)
+    return []
+
+def places_from_dinodb(p):
+    p = (p or "").replace("North Africa", "Africa").replace("Oceania", "Australia")
+    return sorted({c for c in CONT_ORDER if c in p}, key=CONT_ORDER.index)
+
+DINODB_URL = "https://raw.githubusercontent.com/sopynya/DinoDatabase/main/public/dinosaurs.json"
+DINODB_FIX = {"Maisaura": "Maiasaura"}
+ORNITHISCHIAN = {"ceratopsian", "ankylosaur", "stegosaur", "pachycephalosaur", "hadrosaur", "ornithopod", "heterodontosaur"}
+SAURISCHIAN = {"theropod", "tyrannosaur", "spinosaur", "dromaeosaur", "troodontid", "alvarezsaur", "ornithomimosaur",
+               "oviraptorosaur", "therizinosaur", "avialan", "sauropod", "sauropodomorph"}
+
+
+def load_dinodb():
+    path = os.environ.get("DINODB_PATH")
+    try:
+        if path:
+            data = json.loads(pathlib.Path(path).read_text())
+        else:
+            req = urllib.request.Request(DINODB_URL, headers={"User-Agent": UA})
+            with urllib.request.urlopen(req, timeout=40) as r:
+                data = json.load(r)
+    except Exception as e:
+        print("DinoDatabase not loaded:", repr(e), file=sys.stderr)
+        return {}
+    out = {}
+    for rec in data:
+        n = rec.get("name", "").split()[0]
+        out[DINODB_FIX.get(n, n)] = rec
+    return out
+
+
+def num(tok):
+    tok = tok.strip()
+    if re.fullmatch(r"\d{1,3}(?:[.,]\d{3})+", tok):
+        return float(re.sub(r"[.,]", "", tok))
+    return float(tok.replace(",", "."))
+
+
+NUMRE = r"(\d+(?:[.,]\d+)*)"
+
+
+def dinodb_length(text):
+    t = text.replace("–", "-")
+    best = None
+    for m in re.finditer(NUMRE + r"\s*(?:-|to|and)?\s*" + r"(?:" + NUMRE + r")?\s*(?:m|meters|metres|meter|metre)\b(?:[^.,;]{0,12})\b(long|in length|length)", t):
+        v = max(num(m.group(1)), num(m.group(2)) if m.group(2) else 0)
+        best = max(best or 0, v)
+    if best is None:
+        m = re.search(r"\b(?:long|length)\b[^.;]{0,40}?" + NUMRE + r"\s*(?:-|to)?\s*(?:" + NUMRE + r")?\s*(?:m|meters|metres)\b", t)
+        if m:
+            best = max(num(m.group(1)), num(m.group(2)) if m.group(2) else 0)
+    return best if best and 0.1 <= best <= 45 else None
+
+
+def dinodb_weight(text):
+    t = text.replace("–", "-")
+    best = None
+    for m in re.finditer(NUMRE + r"\s*(?:-|to|and)?\s*(?:" + NUMRE + r")?\s*(kg|kilograms?|kilos|(?:metric |short )?tons?|tonnes?|t)\b", t):
+        v = max(num(m.group(1)), num(m.group(2)) if m.group(2) else 0)
+        kg = v if m.group(3).startswith("k") else v * 1000
+        best = max(best or 0, kg)
+    return best if best and 0.05 <= best <= 120000 else None
+
+
+def fmt_len(m):
+    return (f"{m:.1f}".rstrip("0").rstrip(".")) + " m"
+
+
+def fmt_weight(kg):
+    if kg < 1000:
+        return f"up to {round(kg) if kg >= 10 else round(kg, 1):g} kg"
+    t = kg / 1000
+    return f"up to {round(t, 1) if t < 10 else round(t):g} tonnes"
+
+
+def species_list(name, text):
+    sp = []
+    for m in re.finditer(r"\b(" + re.escape(name) + r"|" + re.escape(name[0]) + r"\.)\s+([a-z]{3,})\b", text or ""):
+        full = f"{name} {m.group(2)}"
+        if m.group(2) not in ("and", "the", "was", "is", "are", "were", "species") and full not in sp:
+            sp.append(full)
+    return sp[:4]
+
+
+def size_class(length):
+    if length is None:
+        return None
+    return "small" if length < 3 else "medium" if length < 9 else "large" if length < 20 else "giant"
+
+
+def enrich(rows):
+    db = load_dinodb()
+    used = 0
+    for r in rows:
+        rec = db.get(r["name"])
+        text = intro.get(r.get("wiki") or "", "")
+        if not r.get("places"):
+            r["places"] = places_from_text(text) or (places_from_dinodb(rec.get("place")) if rec else [])
+        g = r.get("group")
+        r["hips"] = "bird" if g in ORNITHISCHIAN else "lizard" if g in SAURISCHIAN else None
+        length = float(r["len"].split()[0]) if r.get("len") else None
+        if rec:
+            used += 1
+            size = rec.get("size", "")
+            if length is None:
+                dl = dinodb_length(size)
+                if dl:
+                    length = dl
+                    r["len"] = fmt_len(dl)
+            w = dinodb_weight(size)
+            if w:
+                r["weight"] = fmt_weight(w)
+            sp = species_list(r["name"], rec.get("species", ""))
+            if sp:
+                r["species"] = sp
+            src = rec.get("source") or ""
+            if src.startswith("https://commons.wikimedia.org/wiki/File:"):
+                r["fossil"] = src
+            r["dinodb"] = True
+        if not r.get("weight"):
+            w = loose_weight(text)
+            if w:
+                r["weight"] = fmt_weight(w)
+        r["size"] = size_class(length)
+    print(f"enriched: {used} from DinoDatabase, {sum(1 for r in rows if r.get('places'))} with places,"
+          f" {sum(1 for r in rows if r.get('size'))} with size, {sum(1 for r in rows if r.get('weight'))} with weight", file=sys.stderr)
+
+
+enrich(rows)
+# hand corrections win over anything worked out above
+if ov_path.exists():
+    for r in rows:
+        for k, v in json.loads(ov_path.read_text()).get(r["name"], {}).items():
+            if k in ("places", "hips", "size", "weight", "species"):
+                r[k] = v
 
 out = ROOT / "data/dinos.json"
 out.parent.mkdir(exist_ok=True)

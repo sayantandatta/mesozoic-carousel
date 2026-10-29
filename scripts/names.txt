@@ -20,6 +20,7 @@ Agathaumas
 Agilisaurus
 Agujaceratops
 Agustinia
+Ahvaytum
 Ajkaceratops
 Alamosaurus
 Alaskacephale
@@ -37,6 +38,7 @@ Alvarezsaurus
 Alwalkeria
 Alxasaurus
 Amargasaurus
+Amargastegos
 Amazonsaurus
 Ammosaurus
 Ampelosaurus
@@ -71,10 +73,12 @@ Archaeopteryx
 Archaeornithomimus
 Arcovenator
 Arcusaurus
+Ardetosaurus
 Argentinosaurus
 Argyrosaurus
 Aristosuchus
 Arrhinoceratops
+Asiatyrannus
 Astrodon
 Asylosaurus
 Atlasaurus
@@ -93,6 +97,7 @@ Avimimus
 Bactrosaurus
 Bagaceratops
 Bagaraatan
+Bagualia
 Bahariasaurus
 Balaur
 Bambiraptor
@@ -122,6 +127,7 @@ Brontomerus
 Brontosaurus
 Bruhathkayosaurus
 Buitreraptor
+Buriolestes
 Byronosaurus
 Camarasaurus
 Camarillasaurus
@@ -136,6 +142,8 @@ Ceratonykus
 Ceratosaurus
 Cetiosauriscus
 Cetiosaurus
+Chadititan
+Chakisaurus
 Changyuraptor
 Chaoyangsaurus
 Charonosaurus
@@ -147,6 +155,7 @@ Chindesaurus
 Chirostenotes
 Chubutisaurus
 Chungkingosaurus
+Cienciargentina
 Citipati
 Claosaurus
 Coahuilaceratops
@@ -199,6 +208,7 @@ Dromiceiomimus
 Dryosaurus
 Dryptosaurus
 Dubreuillosaurus
+Duonychus
 Duriavenator
 Dyoplosaurus
 Dysalotosaurus
@@ -215,6 +225,7 @@ Elaphrosaurus
 Elmisaurus
 Elopteryx
 Elrhazosaurus
+Enigmacursor
 Enigmosaurus
 Eoabelisaurus
 Eobrontosaurus
@@ -234,6 +245,7 @@ Erectopus
 Erketu
 Erliansaurus
 Erlikosaurus
+Erythrovenator
 Euhelopus
 Euoplocephalus
 Europasaurus
@@ -262,6 +274,7 @@ Gigantspinosaurus
 Gilmoreosaurus
 Giraffatitan
 Glacialisaurus
+Gnathovorax
 Gobiceratops
 Gobisaurus
 Gobivenator
@@ -339,6 +352,7 @@ Kerberosaurus
 Khaan
 Kileskus
 Kinnareemimus
+Kiyacursor
 Kol
 Koreaceratops
 Koreanosaurus
@@ -361,6 +375,7 @@ Latirhinus
 Leaellynasaura
 Leinkupal
 Leonerasaurus
+Lepidus
 Leptoceratops
 Leshansaurus
 Lesothosaurus
@@ -415,6 +430,7 @@ Melanorosaurus
 Mendozasaurus
 Mercuriceratops
 Metriacanthosaurus
+Mexidracon
 Microceratops
 Micropachycephalosaurus
 Microraptor
@@ -473,6 +489,7 @@ Orodromeus
 Orthomerus
 Oryctodromeus
 Ostafrikasaurus
+Ostromia
 Othnielia
 Othnielosaurus
 Ouranosaurus
@@ -498,12 +515,14 @@ Parksosaurus
 Paronychodon
 Parvicursor
 Patagosaurus
+Patagotitan
 Pawpawsaurus
 Pedopenna
 Pegomastax
 Pelecanimimus
 Peloroplites
 Pelorosaurus
+Pendraig
 Pentaceratops
 Philovenator
 Phuwiangosaurus
@@ -531,8 +550,10 @@ Protoceratops
 Protohadros
 Psittacosaurus
 Puertasaurus
+Pycnonemosaurus
 Pyroraptor
 Qantassaurus
+Qianjiangsaurus
 Qianzhousaurus
 Qiaowanlong
 Qiupalong
@@ -565,6 +586,7 @@ Santanaraptor
 Sarahsaurus
 Sarcolestes
 Sarcosaurus
+Sasayamagnomus
 Saturnalia
 Saurolophus
 Sauroniops
@@ -600,6 +622,7 @@ Siamosaurus
 Siamotyrannus
 Siats
 Sigilmassasaurus
+Silesaurus
 Silvisaurus
 Similicaudipteryx
 Sinocalliopteryx
@@ -671,6 +694,7 @@ Tianchisaurus
 Tianyulong
 Tianyuraptor
 Tianzhenosaurus
+Tietasaura
 Timimus
 Titanoceratops
 Titanosaurus
@@ -704,6 +728,7 @@ Valdoraptor
 Valdosaurus
 Variraptor
 Velafrons
+Velocipes
 Velociraptor
 Velocisaurus
 Venenosaurus
@@ -712,6 +737,7 @@ Vulcanodon
 Wannanosaurus
 Wellnhoferia
 Wendiceratops
+Wiehenvenator
 Willinakaqe
 Wintonotitan
 Wuerhosaurus
