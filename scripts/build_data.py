@@ -347,8 +347,9 @@ if ov_path.exists():
                 i = picked.get("File:" + v)
                 if i and i["url"]:
                     r.update(img=i["url"], file=v, art=i["art"], lic=i["lic"])
-                elif OFFLINE and r.get("file") != v:
-                    print("pick needs a network run:", r["name"], file=sys.stderr)
+                elif OFFLINE:
+                    if r.get("file") != v:
+                        print("pick needs a network run:", r["name"], file=sys.stderr)
                 else:
                     print("pick not found:", r["name"], v, file=sys.stderr)
             elif v is None:
@@ -434,6 +435,69 @@ if not OFFLINE:
         build_tree(rows)
     except Exception as e:  # the carousel works without the tree
         print("family tree failed:", repr(e), file=sys.stderr)
+
+# ---------- 8. family from the lineage (more reliable than the article text) ----------
+LINEAGE_RULES = [  # (group, any of these clade names in the chain)
+    ("synapsid", {"Synapsida"}),
+    ("spinosaur", {"Spinosauridae", "Spinosaurinae", "Baryonychinae"}),
+    ("tyrannosaur", {"Tyrannosauroidea", "Tyrannosauridae", "Pantyrannosauria"}),
+    ("dromaeosaur", {"Dromaeosauridae"}),
+    ("troodontid", {"Troodontidae"}),
+    ("avialan", {"Avialae", "Archaeopterygidae", "Scansoriopterygidae", "Anchiornithidae", "Archaeopterygiformes"}),
+    ("ornithomimosaur", {"Ornithomimosauria", "Ornithomimidae", "Deinocheiridae"}),
+    ("oviraptorosaur", {"Oviraptorosauria", "Oviraptoridae", "Caenagnathidae", "Caenagnathoidea"}),
+    ("therizinosaur", {"Therizinosauria", "Therizinosauridae", "Therizinosauroidea"}),
+    ("alvarezsaur", {"Alvarezsauria", "Alvarezsauridae", "Alvarezsauroidea"}),
+    ("theropod", {"Theropoda", "Herrerasauridae", "Herrerasauria"}),
+    ("ceratopsian", {"Ceratopsia", "Ceratopsidae", "Ceratopsoidea", "Neoceratopsia"}),
+    ("pachycephalosaur", {"Pachycephalosauria", "Pachycephalosauridae"}),
+    ("stegosaur", {"Stegosauria", "Stegosauridae"}),
+    ("ankylosaur", {"Ankylosauria", "Ankylosauridae", "Nodosauridae", "Thyreophora"}),
+    ("hadrosaur", {"Hadrosauridae", "Hadrosauroidea", "Hadrosauriformes", "Hadrosauromorpha"}),
+    ("heterodontosaur", {"Heterodontosauridae"}),
+    ("ornithopod", {"Ornithopoda", "Ornithischia"}),
+    ("sauropod", {"Sauropoda"}),
+    ("sauropodomorph", {"Sauropodomorpha"}),
+]
+GROUP_INFO = {}
+for _pat, _g, _diet, _tpl, _eats in GROUPS:
+    GROUP_INFO.setdefault(_g, (_diet, _tpl, _eats))
+
+
+def regroup_from_tree(rows, overridden):
+    p = ROOT / "data/tree.json"
+    if not p.exists():
+        return
+    tree = json.loads(p.read_text())
+    taxa, dq = tree["taxa"], tree["dinos"]
+    changed = 0
+    for r in rows:
+        q = dq.get(r["name"])
+        if not q or r["name"] in overridden:
+            continue
+        chain, seen = [], set()
+        while q and q in taxa and q not in seen:
+            seen.add(q); chain.append(taxa[q][0]); q = taxa[q][2]
+        names_in = set(chain)
+        grp = next((g for g, clades in LINEAGE_RULES if names_in & clades), None)
+        if not grp:
+            continue
+        diet, tpl, eats = GROUP_INFO.get(grp, (r.get("diet"), r.get("tpl"), r.get("eats")))
+        if grp == "hadrosaur" and "Lambeosaurinae" in names_in:
+            tpl = "para"
+        if grp == "sauropod" and "Brachiosauridae" in names_in:
+            tpl, eats = "brach", GROUP_INFO["sauropod"][2] if False else "leaves from the tops of tall trees"
+        if grp == "theropod":
+            size = float(r["len"].split()[0]) if r.get("len") else None
+            tpl, eats = ("coelo", SMALL_THEROPOD_EATS) if (size is not None and size < 3) else ("allo", "meat, hunting other animals")
+        if r.get("group") != grp:
+            changed += 1
+        r.update(group=grp, diet=diet, tpl=tpl, eats=eats)
+        r["notDino"] = chain[-1] != "Dinosauria"
+    print(f"lineage regrouped {changed} dinosaurs", file=sys.stderr)
+
+
+regroup_from_tree(rows, {n for n, o in (json.loads(ov_path.read_text()).items() if ov_path.exists() else []) if "group" in o})
 
 out = ROOT / "data/dinos.json"
 out.parent.mkdir(exist_ok=True)

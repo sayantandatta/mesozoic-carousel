@@ -540,7 +540,7 @@ function fromRow(r,i){
   let h=0; for(const ch of r.name) h=(h*31+ch.charCodeAt(0))>>>0;
   const d = {...base, sp:"", name:r.name, speak:r.name, say:null, id:"x"+i,
     diet:r.diet||null, eats:r.eats||null, period:r.period||"Age unknown", ma:r.ma||null, len:r.len||null,
-    scene:SCENE_FOR(r.period), body:BODY_TONES[h%BODY_TONES.length], teeth:r.diet==="carn", wiki:r.wiki, notDino:r.notDino};
+    scene:SCENE_FOR(r.period), body:BODY_TONES[h%BODY_TONES.length], teeth:r.diet==="carn", wiki:r.wiki, notDino:r.notDino, group:r.group||null};
   if(tpl!=="spino") delete d.sailOpt;
   if(r.img){ d.photo=r.img; d.photo2=null; d.file=r.file; d.art=r.art; d.lic=r.lic; d.png=/\.png$/i.test(r.file||"") }
   return d;
