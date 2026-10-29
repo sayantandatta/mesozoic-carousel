@@ -14969,10 +14969,10 @@
 100
 ],
 "len":"37 m",
-"group":"sauropodomorph",
+"group":"sauropod",
 "diet":"herb",
-"tpl":"igu",
-"eats":"leaves and other plants, and perhaps the odd small animal",
+"tpl":"diplo",
+"eats":"leaves from tall trees and other plants, swallowed without chewing",
 "notDino":false,
 "img":"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Patagotitan_TD.png/960px-Patagotitan_TD.png",
 "file":"Patagotitan TD.png",
@@ -14986,10 +14986,10 @@
 "Patagotitan mayorum.jpg",
 "Patagotitan.png"
 ],
+"hips":"lizard",
 "places":[
 "South America"
 ],
-"hips":"lizard",
 "weight":"up to 76 tonnes",
 "species":[
 "Patagotitan mayorum"

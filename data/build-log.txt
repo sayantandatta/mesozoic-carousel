@@ -14,6 +14,6 @@ duplicate Seismosaurus -> Diplodocus (kept Diplodocus)
 duplicate Sellosaurus -> Plateosaurus (kept Plateosaurus)
 duplicate Zhuchengosaurus -> Shantungosaurus (kept Shantungosaurus)
 family tree: 754 dinosaurs linked, 1082 groups
-lineage regrouped 74 dinosaurs
+lineage regrouped 73 dinosaurs
 enriched: 169 from DinoDatabase, 756 with places, 302 with size, 230 with weight
 756 dinosaurs, 599 with pictures, 754 with articles, 756 grouped, 744 with period
