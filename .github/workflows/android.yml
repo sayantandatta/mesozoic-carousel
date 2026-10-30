@@ -42,7 +42,7 @@ jobs:
           npm ci
           npm run www
           npx cap add android
-          npx @capacitor/assets generate --android --iconBackgroundColor '#E89F7D' --iconBackgroundColorDark '#E89F7D' --splashBackgroundColor '#E7ECE1' --splashBackgroundColorDark '#101712'
+          npx @capacitor/assets generate --android --iconBackgroundColor '#E89F7D' --iconBackgroundColorDark '#E89F7D' --splashBackgroundColor '#FFFFFF' --splashBackgroundColorDark '#121212'
           npx cap sync android
 
       - name: Set the version number
