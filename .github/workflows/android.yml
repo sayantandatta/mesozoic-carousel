@@ -33,11 +33,12 @@ jobs:
         with:
           distribution: temurin
           java-version: "21"
-      - uses: android-actions/setup-android@v3
 
       - name: Create the Android project from the web page
         working-directory: app
         run: |
+          echo "Android SDK at $ANDROID_HOME"
+          yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses > /dev/null || true
           npm ci
           npm run www
           npx cap add android
