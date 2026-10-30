@@ -36,4 +36,5 @@ jobs:
           mkdir -p data && mv build-log.txt data/build-log.txt
           git add data
           git diff --cached --quiet && echo "No changes" || git commit -m "Update dinosaur data"
+          git pull --rebase origin main
           git push
