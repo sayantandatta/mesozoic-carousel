@@ -2,7 +2,7 @@
   "name": "mesozoic-carousel-app",
   "private": true,
   "version": "1.0.0",
-  "description": "Android app wrapper for Mesozoic Carousel",
+  "description": "Android app wrapper for Dinosaur Kingdom (Mesozoic Carousel)",
   "scripts": {
     "www": "rm -rf www && mkdir -p www && cp ../index.html ../manifest.webmanifest www/ && cp -r ../data ../icons www/ && rm -f www/data/raw.json www/data/*.txt"
   },

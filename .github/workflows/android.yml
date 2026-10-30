@@ -41,6 +41,8 @@ jobs:
           yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses > /dev/null || true
           npm ci
           npm run www
+          echo "{\"version\": \"1.0.${{ github.run_number }}\"}" > www/app-version.json
+          cat www/app-version.json
           npx cap add android
           npx @capacitor/assets generate --android --iconBackgroundColor '#E89F7D' --iconBackgroundColorDark '#E89F7D' --splashBackgroundColor '#FFFFFF' --splashBackgroundColorDark '#121212'
           npx cap sync android
@@ -67,5 +69,5 @@ jobs:
         run: |
           gh release create "android-v1.0.${{ github.run_number }}" mesozoic-carousel.apk \
             --title "Mesozoic Carousel for Android 1.0.${{ github.run_number }}" \
-            --notes "Download **mesozoic-carousel.apk** on an Android phone and open it to install. Android will ask you to allow installs from your browser the first time. Built from ${{ github.sha }}." \
+            --notes "Download **mesozoic-carousel.apk** on an Android phone and open it to install. Android will ask you to allow installs from your browser the first time. To update, install the new file over the old app; your app also shows an Update bar when a new version is out (from version 1.0.8). Built from ${{ github.sha }}." \
             --latest
