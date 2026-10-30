@@ -26,7 +26,12 @@
 "Africa"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Aardonyx_TD.png/960px-Aardonyx_TD.png",
+"cfile":"Aardonyx TD.png",
+"cart":"TotalDino",
+"clic":"CC0",
+"ckind":"transparent"
 },
 {
 "name":"Abelisaurus",
@@ -62,7 +67,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Abelisaurus_comahuensis.JPG",
 "dinodb":true,
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Abelisaurus.JPG/960px-Abelisaurus.JPG",
+"cfile":"Abelisaurus.JPG",
+"cart":"Martin J. Kevil",
+"clic":"Public domain",
+"ckind":"plain"
 },
 {
 "name":"Abrictosaurus",
@@ -93,7 +103,12 @@
 ],
 "hips":"bird",
 "weight":"up to 45 kg",
-"size":"small"
+"size":"small",
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/7/7e/Abrictosaurus_dinosaur-removebg-preview.png",
+"cfile":"Abrictosaurus dinosaur-removebg-preview.png",
+"cart":"LadyofHats",
+"clic":"CC0",
+"ckind":"transparent"
 },
 {
 "name":"Abrosaurus",
@@ -122,7 +137,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Abrosaurus_TD.png/960px-Abrosaurus_TD.png",
+"cfile":"Abrosaurus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Abydosaurus",
@@ -178,7 +198,12 @@
 "Europe"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Acanthopholis_copia.jpg/960px-Acanthopholis_copia.jpg",
+"cfile":"Acanthopholis copia.jpg",
+"cart":"Karkemish",
+"clic":"CC BY 3.0",
+"ckind":"plain"
 },
 {
 "name":"Achelousaurus",
@@ -211,7 +236,12 @@
 ],
 "hips":"bird",
 "weight":"up to 3.3 tonnes",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Achelousaurus_dinosaur.png/960px-Achelousaurus_dinosaur.png",
+"cfile":"Achelousaurus dinosaur.png",
+"cart":"Mariana Ruiz",
+"clic":"Public domain",
+"ckind":"transparent"
 },
 {
 "name":"Achillobator",
@@ -244,7 +274,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 300 kg",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Achillobator_TD.png/960px-Achillobator_TD.png",
+"cfile":"Achillobator TD.png",
+"cart":"TotalDino",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Acristavus",
@@ -273,7 +308,12 @@
 "North America"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/f/f6/Acristavus_gagslarsoni.png",
+"cfile":"Acristavus gagslarsoni.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Acrocanthosaurus",
@@ -306,7 +346,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 9.3 tonnes",
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Acrocanthosaurus_restoration.jpg/960px-Acrocanthosaurus_restoration.jpg",
+"cfile":"Acrocanthosaurus restoration.jpg",
+"cart":"Mariolanzas",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Acrotholus",
@@ -334,7 +379,12 @@
 "North America"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/f/f0/Acrotholus_NT.jpg",
+"cfile":"Acrotholus NT.jpg",
+"cart":"Nobu Tamura email:nobu.tamura@yahoo.com",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Adamantisaurus",
@@ -362,7 +412,12 @@
 "South America"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/8/88/Adamantisaurus_mezzalirai_2copia.jpg",
+"cfile":"Adamantisaurus mezzalirai 2copia.jpg",
+"cart":"Karkemish",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Adasaurus",
@@ -398,7 +453,12 @@
 "Adasaurus mongoliensis"
 ],
 "dinodb":true,
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Adasaurus_Restoration.jpg/960px-Adasaurus_Restoration.jpg",
+"cfile":"Adasaurus Restoration.jpg",
+"cart":"PaleoNeolitic",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Adeopapposaurus",
@@ -457,7 +517,12 @@
 "Africa"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Aegyptosaurus_restoration.jpg/960px-Aegyptosaurus_restoration.jpg",
+"cfile":"Aegyptosaurus restoration.jpg",
+"cart":"Atlantis536",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Aeolosaurus",
@@ -487,7 +552,12 @@
 "South America"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Aeolosaurus-rionegrinus-JD-2020-1.png/960px-Aeolosaurus-rionegrinus-JD-2020-1.png",
+"cfile":"Aeolosaurus-rionegrinus-JD-2020-1.png",
+"cart":"Ornithopsis",
+"clic":"CC BY 4.0",
+"ckind":"plain"
 },
 {
 "name":"Aerosteon",
@@ -554,7 +624,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Afrovenator_mount.jpg",
 "dinodb":true,
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Afrovenator_Abakensis_by_PaleoGeek.jpg/960px-Afrovenator_Abakensis_by_PaleoGeek.jpg",
+"cfile":"Afrovenator Abakensis by PaleoGeek.jpg",
+"cart":"PaleoGeekSquared",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Agathaumas",
@@ -583,7 +658,12 @@
 "North America"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Agathaumas_Accurate.png/960px-Agathaumas_Accurate.png",
+"cfile":"Agathaumas Accurate.png",
+"cart":"DinolanderXD",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Agilisaurus",
@@ -614,7 +694,12 @@
 ],
 "hips":"bird",
 "weight":"up to 40 kg",
-"size":"small"
+"size":"small",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Agilisaurus_life_restoration.jpg/960px-Agilisaurus_life_restoration.jpg",
+"cfile":"Agilisaurus life restoration.jpg",
+"cart":"Danny Cicchetti",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Agujaceratops",
@@ -646,7 +731,12 @@
 "North America"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Agujaceratops_life_restoration_flipped_transparent.png/960px-Agujaceratops_life_restoration_flipped_transparent.png",
+"cfile":"Agujaceratops life restoration flipped transparent.png",
+"cart":"Lineart by Robinson Kunz",
+"clic":"CC BY-SA 3.0",
+"ckind":"transparent"
 },
 {
 "name":"Agustinia",
@@ -673,7 +763,12 @@
 "South America"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Agustinia_reconstruction.png/960px-Agustinia_reconstruction.png",
+"cfile":"Agustinia reconstruction.png",
+"cart":"Atlantis536",
+"clic":"CC0",
+"ckind":"plain"
 },
 {
 "name":"Ahvaytum",
@@ -705,7 +800,12 @@
 "Ahvaytum bahndooiv"
 ],
 "dinodb":true,
-"size":"small"
+"size":"small",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Ahvaytum_TD.png/960px-Ahvaytum_TD.png",
+"cfile":"Ahvaytum TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Ajkaceratops",
@@ -737,7 +837,12 @@
 "Europe"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/e/e3/Ajkaceratops_NT.jpg",
+"cfile":"Ajkaceratops NT.jpg",
+"cart":"Nobu Tamura",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Alamosaurus",
@@ -777,7 +882,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Alamosaurus-mount-in-Perot-museum.jpg",
 "dinodb":true,
-"size":"giant"
+"size":"giant",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Alamosaurus_TD.png/960px-Alamosaurus_TD.png",
+"cfile":"Alamosaurus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Alaskacephale",
@@ -806,7 +916,12 @@
 "North America"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Alaskacephale_gangloffi_copia_transparent.png/960px-Alaskacephale_gangloffi_copia_transparent.png",
+"cfile":"Alaskacephale gangloffi copia transparent.png",
+"cart":"Karkemish",
+"clic":"CC BY-SA 3.0",
+"ckind":"transparent"
 },
 {
 "name":"Albalophosaurus",
@@ -836,7 +951,12 @@
 "Asia"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Albalophosaurus_TD.png/960px-Albalophosaurus_TD.png",
+"cfile":"Albalophosaurus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Albertaceratops",
@@ -868,7 +988,12 @@
 "North America"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Albertaceratops_TD.png/960px-Albertaceratops_TD.png",
+"cfile":"Albertaceratops TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Albertadromeus",
@@ -896,7 +1021,12 @@
 "North America"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Albertadromeus_TD.png/960px-Albertadromeus_TD.png",
+"cfile":"Albertadromeus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Albertonykus",
@@ -926,7 +1056,12 @@
 "North America"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Albertonykus_TD.png/960px-Albertonykus_TD.png",
+"cfile":"Albertonykus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Albertosaurus",
@@ -964,7 +1099,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Albertosaurus_sarcophagus_skull_(TMP_2019.000.0023,_detail),_Royal_Tyrrell_Museum,_Drumheller,_Alberta,_2025-07-13_02.jpg",
 "dinodb":true,
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Albertosaurus_sarcophagus.png/960px-Albertosaurus_sarcophagus.png",
+"cfile":"Albertosaurus sarcophagus.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Alectrosaurus",
@@ -996,7 +1136,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Alectrosaurus_2-fingered.jpg/960px-Alectrosaurus_2-fingered.jpg",
+"cfile":"Alectrosaurus 2-fingered.jpg",
+"cart":"Conty",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Aletopelta",
@@ -1028,7 +1173,12 @@
 ],
 "hips":"bird",
 "weight":"up to 2 tonnes",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Aletopelta_TD.png/960px-Aletopelta_TD.png",
+"cfile":"Aletopelta TD.png",
+"cart":"TotalDino",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Alioramus",
@@ -1060,7 +1210,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Alioramus_altai_by_PaleoGeek.png/960px-Alioramus_altai_by_PaleoGeek.png",
+"cfile":"Alioramus altai by PaleoGeek.png",
+"cart":"PaleoGeekSquared",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Allosaurus",
@@ -1100,7 +1255,12 @@
 "Allosaurus jimmadseni"
 ],
 "dinodb":true,
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Allosaurus_Life_Reconstruction.jpg/960px-Allosaurus_Life_Reconstruction.jpg",
+"cfile":"Allosaurus Life Reconstruction.jpg",
+"cart":"Fred Wierum",
+"clic":"CC BY 3.0",
+"ckind":"plain"
 },
 {
 "name":"Altirhinus",
@@ -1129,7 +1289,12 @@
 "Asia"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Altirhinus_01_transparent.png/960px-Altirhinus_01_transparent.png",
+"cfile":"Altirhinus 01 transparent.png",
+"cart":"Conty",
+"clic":"CC BY-SA 3.0",
+"ckind":"transparent"
 },
 {
 "name":"Alvarezsaurus",
@@ -1161,7 +1326,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 3 kg",
-"size":"small"
+"size":"small",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Alvarezsaurus_calvoi.jpg/960px-Alvarezsaurus_calvoi.jpg",
+"cfile":"Alvarezsaurus calvoi.jpg",
+"cart":"User:Karkemish",
+"clic":"CC BY 3.0",
+"ckind":"plain"
 },
 {
 "name":"Alwalkeria",
@@ -1190,7 +1360,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Alwalkeria_maleriensis.jpg/960px-Alwalkeria_maleriensis.jpg",
+"cfile":"Alwalkeria maleriensis.jpg",
+"cart":"No machine-readable author provided. Karkemish assumed",
+"clic":"CC BY 3.0",
+"ckind":"plain"
 },
 {
 "name":"Alxasaurus",
@@ -1222,7 +1397,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Alxasaurus_TD.png/960px-Alxasaurus_TD.png",
+"cfile":"Alxasaurus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Amargasaurus",
@@ -1260,7 +1440,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Amargasaurus1_Melb_Museum_email.jpg",
 "dinodb":true,
-"size":"large"
+"size":"large",
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/9/97/Amargasaurus_NT_small.jpg",
+"cfile":"Amargasaurus NT small.jpg",
+"cart":"Nobu Tamura email:nobu.tamura@yahoo.com",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Amargastegos",
@@ -1324,7 +1509,12 @@
 ],
 "dinodb":true,
 "weight":"up to 5 tonnes",
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Amazonsaurus.png/960px-Amazonsaurus.png",
+"cfile":"Amazonsaurus.png",
+"cart":"DarkWerewolf",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Ampelosaurus",
@@ -1352,7 +1542,12 @@
 "Europe"
 ],
 "hips":"lizard",
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/AmpelosaurusDB.jpg/960px-AmpelosaurusDB.jpg",
+"cfile":"AmpelosaurusDB.jpg",
+"cart":"ДиБгд at Russian Wikipedia",
+"clic":"Public domain",
+"ckind":"plain"
 },
 {
 "name":"Amphicoelias",
@@ -1416,7 +1611,12 @@
 "Asia"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Life_reconstruction_of_Amurosaurus_riabinini.png/960px-Life_reconstruction_of_Amurosaurus_riabinini.png",
+"cfile":"Life reconstruction of Amurosaurus riabinini.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Anabisetia",
@@ -1497,7 +1697,12 @@
 "North America"
 ],
 "hips":"bird",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Anchiceratops_04625.JPG/960px-Anchiceratops_04625.JPG",
+"cfile":"Anchiceratops 04625.JPG",
+"cart":"Conty",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Anchiornis",
@@ -1535,7 +1740,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Anchiornis-Beijing_Museum_of_Natural_History.jpg",
 "dinodb":true,
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Anchiornis_TD.png/960px-Anchiornis_TD.png",
+"cfile":"Anchiornis TD.png",
+"cart":"TotalDino",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Anchisaurus",
@@ -1622,7 +1832,12 @@
 "Africa"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Angolatitan_LM.png/960px-Angolatitan_LM.png",
+"cfile":"Angolatitan LM.png",
+"cart":"Levi Martinez-Reza",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Angulomastacator",
@@ -1650,7 +1865,12 @@
 "North America"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Life_reconstruction_of_Angulomastacator_daviesi.png/960px-Life_reconstruction_of_Angulomastacator_daviesi.png",
+"cfile":"Life reconstruction of Angulomastacator daviesi.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Animantarx",
@@ -1682,7 +1902,12 @@
 "North America"
 ],
 "hips":"bird",
-"size":"small"
+"size":"small",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Animantarx_ramaljonesi.png/960px-Animantarx_ramaljonesi.png",
+"cfile":"Animantarx ramaljonesi.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Ankylosaurus",
@@ -1719,7 +1944,12 @@
 "Ankylosaurus magniventris"
 ],
 "dinodb":true,
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Ankylosaurus_magniventris_reconstruction.png/960px-Ankylosaurus_magniventris_reconstruction.png",
+"cfile":"Ankylosaurus magniventris reconstruction.png",
+"cart":"Emily Willoughby",
+"clic":"CC BY-SA 3.0",
+"ckind":"transparent"
 },
 {
 "name":"Anodontosaurus",
@@ -1777,7 +2007,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Anserimimus_planinychus.png/960px-Anserimimus_planinychus.png",
+"cfile":"Anserimimus planinychus.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Antarctopelta",
@@ -1808,7 +2043,12 @@
 "Antarctica"
 ],
 "hips":"bird",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Antarctopelta_LMR.jpg/960px-Antarctopelta_LMR.jpg",
+"cfile":"Antarctopelta LMR.jpg",
+"cart":"Levi B. Martinez-Reza",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Antarctosaurus",
@@ -1844,7 +2084,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:QRpedia_Antarctosaurus.jpg",
 "dinodb":true,
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Antarctosaurus_reconstruction.png/960px-Antarctosaurus_reconstruction.png",
+"cfile":"Antarctosaurus reconstruction.png",
+"cart":"Atlantis536",
+"clic":"CC0",
+"ckind":"plain"
 },
 {
 "name":"Antetonitrus",
@@ -1872,7 +2117,12 @@
 "Africa"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Antetonitrus_reconstruction.jpg/960px-Antetonitrus_reconstruction.jpg",
+"cfile":"Antetonitrus reconstruction.jpg",
+"cart":"PaleoEquii",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Anzu",
@@ -1904,7 +2154,12 @@
 "North America"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Anzu_wyliei_life_reconstruction.png/960px-Anzu_wyliei_life_reconstruction.png",
+"cfile":"Anzu wyliei life reconstruction.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Aorun",
@@ -1934,7 +2189,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Aorun.png/960px-Aorun.png",
+"cfile":"Aorun.png",
+"cart":"J-H. Jang",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Apatosaurus",
@@ -1973,7 +2233,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Louisae.jpg",
 "dinodb":true,
-"size":"giant"
+"size":"giant",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Apatosaurus_louisae_by_durbed_flipped.jpg/960px-Apatosaurus_louisae_by_durbed_flipped.jpg",
+"cfile":"Apatosaurus louisae by durbed flipped.jpg",
+"cart":"Durbed",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Appalachiosaurus",
@@ -2006,7 +2271,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 623 kg",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Appalachiosaurus_TD.png/960px-Appalachiosaurus_TD.png",
+"cfile":"Appalachiosaurus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"plain"
 },
 {
 "name":"Aquilops",
@@ -2039,7 +2309,12 @@
 ],
 "hips":"bird",
 "weight":"up to 1.6 kg",
-"size":"small"
+"size":"small",
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/b/b6/Aquilops_NT_small_transparent.png",
+"cfile":"Aquilops NT small transparent.png",
+"cart":"Nobu Tamura email:nobu.tamura@yahoo.com",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Aragosaurus",
@@ -2097,7 +2372,12 @@
 "Asia"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/f/f4/Life_reconstruction_of_Aralosaurus_tuberiferus.png",
+"cfile":"Life reconstruction of Aralosaurus tuberiferus.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Archaeoceratops",
@@ -2130,7 +2410,12 @@
 ],
 "hips":"bird",
 "weight":"up to 10 kg",
-"size":"small"
+"size":"small",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Ricostruzione_di_Archaeoceratops.jpg/960px-Ricostruzione_di_Archaeoceratops.jpg",
+"cfile":"Ricostruzione di Archaeoceratops.jpg",
+"cart":"Danny Cicchetti",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Archaeopteryx",
@@ -2170,7 +2455,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Archaeopteryx_fossil.jpg",
 "dinodb":true,
-"size":"small"
+"size":"small",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Archaeopteryx_TD.png/960px-Archaeopteryx_TD.png",
+"cfile":"Archaeopteryx TD.png",
+"cart":"TotalDino",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Archaeornithomimus",
@@ -2198,7 +2488,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Archaeornithomimus.png/960px-Archaeornithomimus.png",
+"cfile":"Archaeornithomimus.png",
+"cart":"Audrey.m.horn",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Arcovenator",
@@ -2227,7 +2522,12 @@
 "Europe"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Arcovenator.jpg/960px-Arcovenator.jpg",
+"cfile":"Arcovenator.jpg",
+"cart":"Danny Cicchetti",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Arcusaurus",
@@ -2283,7 +2583,12 @@
 "Ardetosaurus viator"
 ],
 "dinodb":true,
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Ardetosaurus_viator.png/960px-Ardetosaurus_viator.png",
+"cfile":"Ardetosaurus viator.png",
+"cart":"Ddinodan",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Argentinosaurus",
@@ -2321,7 +2626,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Argentinosaurus_LACM.jpg",
 "dinodb":true,
-"size":"giant"
+"size":"giant",
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/f/fb/Argentinosaurus_digital_clay_reconstruction.png",
+"cfile":"Argentinosaurus digital clay reconstruction.png",
+"cart":"Dinosaur Zoo",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Argyrosaurus",
@@ -2349,7 +2659,12 @@
 "South America"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/6/6f/Argyrosaurus_superbus.jpg",
+"cfile":"Argyrosaurus superbus.jpg",
+"cart":"FunkMonk",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Aristosuchus",
@@ -2379,7 +2694,12 @@
 "Europe"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Aristosuchus_restoration.jpg/960px-Aristosuchus_restoration.jpg",
+"cfile":"Aristosuchus restoration.jpg",
+"cart":"FunkMonk",
+"clic":"CC BY 3.0",
+"ckind":"plain"
 },
 {
 "name":"Arrhinoceratops",
@@ -2407,7 +2727,12 @@
 "North America"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Arrhinoceratops_TD.png/960px-Arrhinoceratops_TD.png",
+"cfile":"Arrhinoceratops TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Asiatyrannus",
@@ -2441,7 +2766,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Asiatyrannus_(holotype).png",
 "dinodb":true,
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Asiatyrannus_TD.png/960px-Asiatyrannus_TD.png",
+"cfile":"Asiatyrannus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Astrodon",
@@ -2472,7 +2802,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 22 tonnes",
-"size":"giant"
+"size":"giant",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Astrodon_TD.png/960px-Astrodon_TD.png",
+"cfile":"Astrodon TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Asylosaurus",
@@ -2501,7 +2836,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 250 kg",
-"size":"small"
+"size":"small",
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/6/67/Asylosaurus_yalensis.jpg",
+"cfile":"Asylosaurus yalensis.jpg",
+"cart":"Nobu Tamura",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Atlasaurus",
@@ -2530,7 +2870,12 @@
 "Africa"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Atlasaurus_TD.png/960px-Atlasaurus_TD.png",
+"cfile":"Atlasaurus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Atlascopcosaurus",
@@ -2595,7 +2940,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Atrociraptor_TMP_95.166.1.jpg",
 "dinodb":true,
-"size":"small"
+"size":"small",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Atrociraptor_%28flipped%29.jpg/960px-Atrociraptor_%28flipped%29.jpg",
+"cfile":"Atrociraptor (flipped).jpg",
+"cart":"FunkMonk",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Aublysodon",
@@ -2650,7 +3000,12 @@
 "South America"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Aucasaurus_01.JPG/960px-Aucasaurus_01.JPG",
+"cfile":"Aucasaurus 01.JPG",
+"cart":"Conty",
+"clic":"CC BY 3.0",
+"ckind":"plain"
 },
 {
 "name":"Auroraceratops",
@@ -2681,7 +3036,12 @@
 "Asia"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Auroraceratops_TD.png/960px-Auroraceratops_TD.png",
+"cfile":"Auroraceratops TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Australodocus",
@@ -2738,7 +3098,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 500 kg",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Australovenator_reconstruction.jpg/960px-Australovenator_reconstruction.jpg",
+"cfile":"Australovenator reconstruction.jpg",
+"cart":"PaleoEquii",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Austroraptor",
@@ -2771,7 +3136,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 520 kg",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Austroraptor_Reconstruction.jpg/960px-Austroraptor_Reconstruction.jpg",
+"cfile":"Austroraptor Reconstruction.jpg",
+"cart":"Fred Wierum",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Austrosaurus",
@@ -2830,7 +3200,12 @@
 "North America"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Avaceratops_7032.JPG/960px-Avaceratops_7032.JPG",
+"cfile":"Avaceratops 7032.JPG",
+"cart":"Conty",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Aviatyrannis",
@@ -2859,7 +3234,12 @@
 "Europe"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Aviatyrannis.jpg/960px-Aviatyrannis.jpg",
+"cfile":"Aviatyrannis.jpg",
+"cart":"IJReid",
+"clic":"CC BY 4.0",
+"ckind":"plain"
 },
 {
 "name":"Avimimus",
@@ -2896,7 +3276,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Avimimus_at_TyrannosaursMeetTheFamily.jpg",
 "dinodb":true,
-"size":"small"
+"size":"small",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Avimimus_%28_feathers_%29.JPG/960px-Avimimus_%28_feathers_%29.JPG",
+"cfile":"Avimimus ( feathers ).JPG",
+"cart":"Conty",
+"clic":"CC BY 3.0",
+"ckind":"plain"
 },
 {
 "name":"Bactrosaurus",
@@ -2924,7 +3309,12 @@
 "Asia"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Bactrosaurus_LM.png/960px-Bactrosaurus_LM.png",
+"cfile":"Bactrosaurus LM.png",
+"cart":"Levi Martinez-Reza",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Bagaceratops",
@@ -2958,7 +3348,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Bagaceratops.JPG",
 "dinodb":true,
-"size":"small"
+"size":"small",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Bagaceratops_Restoration.png/960px-Bagaceratops_Restoration.png",
+"cfile":"Bagaceratops Restoration.png",
+"cart":"PaleoNeolitic",
+"clic":"CC BY 4.0",
+"ckind":"plain"
 },
 {
 "name":"Bagaraatan",
@@ -3043,7 +3438,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 4.4 tonnes",
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Bahariasaurus_restoration.png/960px-Bahariasaurus_restoration.png",
+"cfile":"Bahariasaurus restoration.png",
+"cart":"Bubblesorg",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Balaur",
@@ -3075,7 +3475,12 @@
 "Europe"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Balaur_TD.png/960px-Balaur_TD.png",
+"cfile":"Balaur TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Bambiraptor",
@@ -3112,7 +3517,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Dans_l%27ombre_des_dinosaures_-_Bambiraptor_jeune_-_04.jpg",
 "dinodb":true,
-"size":"small"
+"size":"small",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Bambiraptor_reconstruction.jpg/960px-Bambiraptor_reconstruction.jpg",
+"cfile":"Bambiraptor reconstruction.jpg",
+"cart":"PaleoEquii",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Barapasaurus",
@@ -3141,7 +3551,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Barapasaurus_TD.png/960px-Barapasaurus_TD.png",
+"cfile":"Barapasaurus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Barilium",
@@ -3202,7 +3617,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Barosaurus_lentus_skull_salt_lake_city.jpg",
 "dinodb":true,
-"size":"giant"
+"size":"giant",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Barosaurus_DC.jpg/960px-Barosaurus_DC.jpg",
+"cfile":"Barosaurus DC.jpg",
+"cart":"Danny Cicchetti",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Barsboldia",
@@ -3233,7 +3653,12 @@
 "Asia"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Barsboldia_sicinskii.png/960px-Barsboldia_sicinskii.png",
+"cfile":"Barsboldia sicinskii.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Baryonyx",
@@ -3271,7 +3696,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Baryonyx_in_Japan.jpg",
 "dinodb":true,
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Life_reconstruction_of_Baryonyx_walkeri.png/960px-Life_reconstruction_of_Baryonyx_walkeri.png",
+"cfile":"Life reconstruction of Baryonyx walkeri.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Batyrosaurus",
@@ -3298,7 +3728,12 @@
 "Asia"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Batyrosaurus.png/960px-Batyrosaurus.png",
+"cfile":"Batyrosaurus.png",
+"cart":"Miracusaurs",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Becklespinax",
@@ -3358,7 +3793,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 27 kg",
-"size":"small"
+"size":"small",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Beipiaosaurus_Restoration.png/960px-Beipiaosaurus_Restoration.png",
+"cfile":"Beipiaosaurus Restoration.png",
+"cart":"PaleoNeolitic",
+"clic":"CC BY 4.0",
+"ckind":"plain"
 },
 {
 "name":"Beishanlong",
@@ -3385,7 +3825,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/6/67/Beishanlong_grandis.jpg",
+"cfile":"Beishanlong grandis.jpg",
+"cart":"Nobu Tamura",
+"clic":"CC BY 3.0",
+"ckind":"plain"
 },
 {
 "name":"Bellusaurus",
@@ -3415,7 +3860,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Bellusaurus-v1.jpg/960px-Bellusaurus-v1.jpg",
+"cfile":"Bellusaurus-v1.jpg",
+"cart":"Debivort at English Wikipedia",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Berberosaurus",
@@ -3469,7 +3919,12 @@
 "South America"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Bicentenaria.jpg/960px-Bicentenaria.jpg",
+"cfile":"Bicentenaria.jpg",
+"cart":"Lucas-Attwell",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Bistahieversor",
@@ -3500,7 +3955,12 @@
 "North America"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Bistahieversor_sealeyi_life_restoration.jpg/960px-Bistahieversor_sealeyi_life_restoration.jpg",
+"cfile":"Bistahieversor sealeyi life restoration.jpg",
+"cart":"Petrodactylus",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Bonapartenykus",
@@ -3530,7 +3990,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 72 kg",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Bonapartenykus_TD.png/960px-Bonapartenykus_TD.png",
+"cfile":"Bonapartenykus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Bonitasaura",
@@ -3637,7 +4102,12 @@
 "Brachiosaurus altithorax"
 ],
 "dinodb":true,
-"size":"giant"
+"size":"giant",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Brachiosaurus_TD.png/960px-Brachiosaurus_TD.png",
+"cfile":"Brachiosaurus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Brachyceratops",
@@ -3665,7 +4135,12 @@
 "North America"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Dibujo_de_Brachyceratops_by_Andr%C3%A9s_Felippe_Lasso_Arellano.jpg/960px-Dibujo_de_Brachyceratops_by_Andr%C3%A9s_Felippe_Lasso_Arellano.jpg",
+"cfile":"Dibujo de Brachyceratops by Andrés Felippe Lasso Arellano.jpg",
+"cart":"Nobu Tamura",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Brachylophosaurus",
@@ -3697,7 +4172,12 @@
 "North America"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/0/01/Brachylophosaurus_NT.png",
+"cfile":"Brachylophosaurus NT.png",
+"cart":"Nobu Tamura email:nobu.tamura@yahoo.com",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Brachytrachelopan",
@@ -3729,7 +4209,12 @@
 "South America"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Brachytrachelopan_TD.png/960px-Brachytrachelopan_TD.png",
+"cfile":"Brachytrachelopan TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Bravoceratops",
@@ -3756,7 +4241,12 @@
 "North America"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/e/e9/Bravoceratops_NT_small.jpg",
+"cfile":"Bravoceratops NT small.jpg",
+"cart":"Nobu Tamura email:nobu.tamura@yahoo.com",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Brontomerus",
@@ -3854,7 +4344,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 80 tonnes",
-"size":"giant"
+"size":"giant",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Possible_life_appearance_of_Bruhathkayosaurus_matleyi_with_inferences_from_other_Titanosaurs.png/960px-Possible_life_appearance_of_Bruhathkayosaurus_matleyi_with_inferences_from_other_Titanosaurs.png",
+"cfile":"Possible life appearance of Bruhathkayosaurus matleyi with inferences from other Titanosaurs.png",
+"cart":"Ansh Saxena",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Buitreraptor",
@@ -3886,7 +4381,12 @@
 "South America"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Buitreraptor_TD.png/960px-Buitreraptor_TD.png",
+"cfile":"Buitreraptor TD.png",
+"cart":"TotalDino",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Buriolestes",
@@ -3924,7 +4424,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Foto_do_bloco_com_o_buriolestes_Foto_Flavio_Lopes_(Ufrgs).jpg",
 "dinodb":true,
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Buriolestes_schultzi_restoration.png/960px-Buriolestes_schultzi_restoration.png",
+"cfile":"Buriolestes schultzi restoration.png",
+"cart":"Audrey.m.horn",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Byronosaurus",
@@ -3952,7 +4457,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/e/e2/Byronosaurus.jpg",
+"cfile":"Byronosaurus.jpg",
+"cart":"FunkMonk",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Camarasaurus",
@@ -3993,7 +4503,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Camarasaurus_lentus_Carnegie.jpg",
 "dinodb":true,
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Camarasaurus_supremus_life_reconstruction.png/960px-Camarasaurus_supremus_life_reconstruction.png",
+"cfile":"Camarasaurus supremus life reconstruction.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Camarillasaurus",
@@ -4024,7 +4539,12 @@
 "Europe"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Life_reconstruction_of_Camarillasaurus_cirugedae.png/960px-Life_reconstruction_of_Camarillasaurus_cirugedae.png",
+"cfile":"Life reconstruction of Camarillasaurus cirugedae.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Camelotia",
@@ -4056,7 +4576,12 @@
 "Camelotia borealis"
 ],
 "dinodb":true,
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Camelotia.jpg/960px-Camelotia.jpg",
+"cfile":"Camelotia.jpg",
+"cart":"Ghedoghedo",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Camptosaurus",
@@ -4097,7 +4622,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Camptosaurus_nanus.jpg",
 "dinodb":true,
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Camptosaurus_transparent.png/960px-Camptosaurus_transparent.png",
+"cfile":"Camptosaurus transparent.png",
+"cart":"FunkMonk",
+"clic":"CC BY-SA 3.0",
+"ckind":"transparent"
 },
 {
 "name":"Carcharodontosaurus",
@@ -4135,7 +4665,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Ultimate_Dinosaurs_Carcharodontosaurus.jpg",
 "dinodb":true,
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Carcharodontosaurus_TD.png/960px-Carcharodontosaurus_TD.png",
+"cfile":"Carcharodontosaurus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Carnotaurus",
@@ -4173,7 +4708,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Carnotaurus_skeleton_in_Bonn.jpg",
 "dinodb":true,
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Carnotaurus_TD.png/960px-Carnotaurus_TD.png",
+"cfile":"Carnotaurus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Caudipteryx",
@@ -4205,7 +4745,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Caudipteryx_TD.png/960px-Caudipteryx_TD.png",
+"cfile":"Caudipteryx TD.png",
+"cart":"TotalDino",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Centrosaurus",
@@ -4243,7 +4788,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Centrosaurus.JPG",
 "dinodb":true,
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Centrosaurus_flipped.png/960px-Centrosaurus_flipped.png",
+"cfile":"Centrosaurus flipped.png",
+"cart":"Fred Wierum",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Cerasinops",
@@ -4338,7 +4888,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Ceratosaurus_mount_utah_museum_1.jpg",
 "dinodb":true,
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Life_reconstruction_of_Ceratosaurus_nasicornis.png/960px-Life_reconstruction_of_Ceratosaurus_nasicornis.png",
+"cfile":"Life reconstruction of Ceratosaurus nasicornis.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Cetiosauriscus",
@@ -4371,7 +4926,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 11 tonnes",
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Cetiosauriscus_life_restoration.png/960px-Cetiosauriscus_life_restoration.png",
+"cfile":"Cetiosauriscus life restoration.png",
+"cart":"EnnieNovachrono",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Cetiosaurus",
@@ -4404,7 +4964,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 12 tonnes",
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Cetiosaurus.jpg/960px-Cetiosaurus.jpg",
+"cfile":"Cetiosaurus.jpg",
+"cart":"Titanichamster",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Chadititan",
@@ -4437,7 +5002,12 @@
 "Chadititan calvoi"
 ],
 "dinodb":true,
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Chadititan_TD.png/960px-Chadititan_TD.png",
+"cfile":"Chadititan TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Chakisaurus",
@@ -4470,7 +5040,12 @@
 "Chakisaurus nekul"
 ],
 "dinodb":true,
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Chakisaurus_TD.png/960px-Chakisaurus_TD.png",
+"cfile":"Chakisaurus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Changyuraptor",
@@ -4498,7 +5073,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Changyuraptor.png/960px-Changyuraptor.png",
+"cfile":"Changyuraptor.png",
+"cart":"Emily Willoughby",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Chaoyangsaurus",
@@ -4558,7 +5138,12 @@
 "Asia"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Life_reconstruction_of_Charonosaurus_jiayinensis.png/960px-Life_reconstruction_of_Charonosaurus_jiayinensis.png",
+"cfile":"Life reconstruction of Charonosaurus jiayinensis.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Chasmosaurus",
@@ -4591,7 +5176,12 @@
 ],
 "hips":"bird",
 "weight":"up to 2.2 tonnes",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Sketch_chasmosaurus.jpg/960px-Sketch_chasmosaurus.jpg",
+"cfile":"Sketch chasmosaurus.jpg",
+"cart":"No machine-readable author provided. Tbc assumed",
+"clic":"Public domain",
+"ckind":"plain"
 },
 {
 "name":"Chialingosaurus",
@@ -4619,7 +5209,12 @@
 "Asia"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Chialingosaurus_kuani.png/960px-Chialingosaurus_kuani.png",
+"cfile":"Chialingosaurus kuani.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Chilantaisaurus",
@@ -4649,7 +5244,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 4.4 tonnes",
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Chilantaisaurus.jpg/960px-Chilantaisaurus.jpg",
+"cfile":"Chilantaisaurus.jpg",
+"cart":"FunkMonk",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Chilesaurus",
@@ -4681,7 +5281,12 @@
 "South America"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Chilesaurus_TD.png/960px-Chilesaurus_TD.png",
+"cfile":"Chilesaurus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Chindesaurus",
@@ -4711,7 +5316,12 @@
 "North America"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/5/5d/Chindesaurus_bryansmalli_transparent.png",
+"cfile":"Chindesaurus bryansmalli transparent.png",
+"cart":"Jeff Martz",
+"clic":"CC0",
+"ckind":"transparent"
 },
 {
 "name":"Chirostenotes",
@@ -4743,7 +5353,12 @@
 "North America"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Chirostenotes_pergracilis.png/960px-Chirostenotes_pergracilis.png",
+"cfile":"Chirostenotes pergracilis.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Chubutisaurus",
@@ -4772,7 +5387,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 13 tonnes",
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Chubutisaurus.jpg/960px-Chubutisaurus.jpg",
+"cfile":"Chubutisaurus.jpg",
+"cart":"Levi Martinez-Reza",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Chungkingosaurus",
@@ -4805,7 +5425,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Chungkingosaurus_jiangbeiensis.jpg",
 "dinodb":true,
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Chungkingosaurus_jiangbeiensis.png/960px-Chungkingosaurus_jiangbeiensis.png",
+"cfile":"Chungkingosaurus jiangbeiensis.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Cienciargentina",
@@ -4837,7 +5462,12 @@
 "Cienciargentina sanchezi"
 ],
 "dinodb":true,
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Cienciargentina_TD.png/960px-Cienciargentina_TD.png",
+"cfile":"Cienciargentina TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Citipati",
@@ -4875,7 +5505,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Citipati_IGM_100_979_(2).jpg",
 "dinodb":true,
-"size":"small"
+"size":"small",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Citipati_TD.png/960px-Citipati_TD.png",
+"cfile":"Citipati TD.png",
+"cart":"TotalDino",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Claosaurus",
@@ -4966,7 +5601,12 @@
 "Coelophysis bauri"
 ],
 "dinodb":true,
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Coelophysis_TD.png/960px-Coelophysis_TD.png",
+"cfile":"Coelophysis TD.png",
+"cart":"TotalDino",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Coelurus",
@@ -4998,7 +5638,12 @@
 "North America"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/1/12/Coelurus_picture2.png",
+"cfile":"Coelurus picture2.png",
+"cart":"Dropzink",
+"clic":"CC BY-SA 2.5",
+"ckind":"plain"
 },
 {
 "name":"Colepiocephale",
@@ -5027,7 +5672,12 @@
 "North America"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Colepiocephale_lambei.png/960px-Colepiocephale_lambei.png",
+"cfile":"Colepiocephale lambei.png",
+"cart":"Cesar Diaz",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Compsognathus",
@@ -5065,7 +5715,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Compsognathus_corallestris_%3D_longipes.JPG",
 "dinodb":true,
-"size":"small"
+"size":"small",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Compsognathus_TD.png/960px-Compsognathus_TD.png",
+"cfile":"Compsognathus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Concavenator",
@@ -5098,7 +5753,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 400 kg",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Concavenator_TD.png/960px-Concavenator_TD.png",
+"cfile":"Concavenator TD.png",
+"cart":"TotalDino",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Conchoraptor",
@@ -5128,7 +5788,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Conchoraptor_Restoration.png/960px-Conchoraptor_Restoration.png",
+"cfile":"Conchoraptor Restoration.png",
+"cart":"PaleoNeolitic",
+"clic":"CC BY 4.0",
+"ckind":"plain"
 },
 {
 "name":"Condorraptor",
@@ -5157,7 +5822,12 @@
 "South America"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Condorraptor.jpg/960px-Condorraptor.jpg",
+"cfile":"Condorraptor.jpg",
+"cart":"FunkMonk",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Coronosaurus",
@@ -5190,7 +5860,12 @@
 ],
 "hips":"bird",
 "weight":"up to 2.2 tonnes",
-"size":"medium"
+"size":"medium",
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/8/8f/Coronosaurus_NT_small_flipped_transparent.png",
+"cfile":"Coronosaurus NT small flipped transparent.png",
+"cart":"Nobu Tamura email:nobu.tamura@yahoo.com",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Corythosaurus",
@@ -5314,7 +5989,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Cryolophosaurus_ellioti_at_Orton_Hall.jpg",
 "dinodb":true,
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Cryolophosaurus_TD.png/960px-Cryolophosaurus_TD.png",
+"cfile":"Cryolophosaurus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Cumnoria",
@@ -5343,7 +6023,12 @@
 "Europe"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/b/b1/Cumnoria_NT_flipped_transparent.png",
+"cfile":"Cumnoria NT flipped transparent.png",
+"cart":"Nobu Tamura email:nobu.tamura@yahoo.com",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Dacentrurus",
@@ -5376,7 +6061,12 @@
 ],
 "hips":"bird",
 "weight":"up to 8.2 tonnes",
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Dacentrurus_TD.png/960px-Dacentrurus_TD.png",
+"cfile":"Dacentrurus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Daemonosaurus",
@@ -5410,7 +6100,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Daemonosaurus_skull_cast_displayed_at_Ruth_Hall_Museum_of_Paleontology_(Ghost_Ranch).jpg",
 "dinodb":true,
-"size":"small"
+"size":"small",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Daemonosaurus_chauliodus.jpg/960px-Daemonosaurus_chauliodus.jpg",
+"cfile":"Daemonosaurus chauliodus.jpg",
+"cart":"FunkMonk",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Dahalokely",
@@ -5439,7 +6134,12 @@
 "Africa"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Dahalokely_restoration_%28flipped%29.jpg/960px-Dahalokely_restoration_%28flipped%29.jpg",
+"cfile":"Dahalokely restoration (flipped).jpg",
+"cart":"Danny Cicchetti",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Dakotaraptor",
@@ -5472,7 +6172,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 350 kg",
-"size":"medium"
+"size":"medium",
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/8/82/Dakotaraptor_wiki_%28white_background%29.jpg",
+"cfile":"Dakotaraptor wiki (white background).jpg",
+"cart":"Emily Willoughby",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Daspletosaurus",
@@ -5512,7 +6217,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Daspletosaurus_skull_(1).jpg",
 "dinodb":true,
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Daspletosaurus_torosus_steveoc_flipped.jpg/960px-Daspletosaurus_torosus_steveoc_flipped.jpg",
+"cfile":"Daspletosaurus torosus steveoc flipped.jpg",
+"cart":"Steveoc 86 at English Wikipedia",
+"clic":"CC BY-SA 2.5",
+"ckind":"plain"
 },
 {
 "name":"Datousaurus",
@@ -5573,7 +6283,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Deinocheirusbcn.JPG",
 "dinodb":true,
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Deinocheirus_TD.png/960px-Deinocheirus_TD.png",
+"cfile":"Deinocheirus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Deinodon",
@@ -5636,7 +6351,12 @@
 "Deinonychus antirrhopus"
 ],
 "dinodb":true,
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Deinonychus_Restoration.png/960px-Deinonychus_Restoration.png",
+"cfile":"Deinonychus Restoration.png",
+"cart":"Fred Wierum",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Delapparentia",
@@ -5696,7 +6416,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 1.1 tonnes",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Deltadromeus_agilis.jpg/960px-Deltadromeus_agilis.jpg",
+"cfile":"Deltadromeus agilis.jpg",
+"cart":"Ornitholestes",
+"clic":"Public domain",
+"ckind":"plain"
 },
 {
 "name":"Demandasaurus",
@@ -5759,7 +6484,12 @@
 ],
 "hips":"bird",
 "weight":"up to 1.4 tonnes",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Diabloceratops_TD.png/960px-Diabloceratops_TD.png",
+"cfile":"Diabloceratops TD.png",
+"cart":"TotalDino",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Diamantinasaurus",
@@ -5790,7 +6520,12 @@
 "Australia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Diamantinasaurus.png/960px-Diamantinasaurus.png",
+"cfile":"Diamantinasaurus.png",
+"cart":"Artwork: T. Tischler, Australian Age of Dinosaurs Museum of ",
+"clic":"CC BY 2.5",
+"ckind":"plain"
 },
 {
 "name":"Diceratops",
@@ -5840,7 +6575,12 @@
 "Africa"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Dicraeosaurus_hansemanni22.jpg/960px-Dicraeosaurus_hansemanni22.jpg",
+"cfile":"Dicraeosaurus hansemanni22.jpg",
+"cart":"The original uploader was ДиБгд at Russian Wikipedia.",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Dilong",
@@ -5872,7 +6612,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Dilong_paradoxus_VQER_35.JPG/960px-Dilong_paradoxus_VQER_35.JPG",
+"cfile":"Dilong paradoxus VQER 35.JPG",
+"cart":"Conty",
+"clic":"CC BY 3.0",
+"ckind":"plain"
 },
 {
 "name":"Dilophosaurus",
@@ -5909,7 +6654,12 @@
 "Dilophosaurus wetherilli"
 ],
 "dinodb":true,
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Dilophosaurus_TD.png/960px-Dilophosaurus_TD.png",
+"cfile":"Dilophosaurus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Dimetrodon",
@@ -5943,7 +6693,12 @@
 ],
 "hips":null,
 "weight":"up to 250 kg",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Dimetrodon_695878.JPG/960px-Dimetrodon_695878.JPG",
+"cfile":"Dimetrodon 695878.JPG",
+"cart":"Conty",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Diplodocus",
@@ -5982,7 +6737,12 @@
 "Diplodocus hallorum"
 ],
 "dinodb":true,
-"size":"giant"
+"size":"giant",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Diplodocus_carnegii_flipped.jpg/960px-Diplodocus_carnegii_flipped.jpg",
+"cfile":"Diplodocus carnegii flipped.jpg",
+"cart":"Fred Wierum",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Draconyx",
@@ -6009,7 +6769,12 @@
 "Europe"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Draconyx.png/960px-Draconyx.png",
+"cfile":"Draconyx.png",
+"cart":"Miracusaurs",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Dracopelta",
@@ -6067,7 +6832,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Dracovenator_snout.JPG",
 "dinodb":true,
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/Dracovenator.jpg/960px-Dracovenator.jpg",
+"cfile":"Dracovenator.jpg",
+"cart":"Ornitholestes",
+"clic":"Public domain",
+"ckind":"plain"
 },
 {
 "name":"Dravidosaurus",
@@ -6127,7 +6897,12 @@
 "Dreadnoughtus schrani"
 ],
 "dinodb":true,
-"size":"giant"
+"size":"giant",
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/6/6c/Dreadnoughtus_NT_small.jpg",
+"cfile":"Dreadnoughtus NT small.jpg",
+"cart":"Nobu Tamura email:nobu.tamura@yahoo.com",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Dromaeosauroides",
@@ -6157,7 +6932,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 40 kg",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Dromaeosauroides.jpg/960px-Dromaeosauroides.jpg",
+"cfile":"Dromaeosauroides.jpg",
+"cart":"FunkMonk",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Dromaeosaurus",
@@ -6189,7 +6969,12 @@
 "North America"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Dromaeosaurus_TD.png/960px-Dromaeosaurus_TD.png",
+"cfile":"Dromaeosaurus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Dromiceiomimus",
@@ -6217,7 +7002,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 135 kg",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Dromiceiomimus_03747.JPG/960px-Dromiceiomimus_03747.JPG",
+"cfile":"Dromiceiomimus 03747.JPG",
+"cart":"Conty",
+"clic":"CC BY 3.0",
+"ckind":"plain"
 },
 {
 "name":"Dryosaurus",
@@ -6255,7 +7045,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Beneski_Museum_of_Natural_History_Dryosaurus_altus.jpghttps://commons.wikimedia.org/wiki/File:Beneski_Museum_of_Natural_History_Dryosaurus_altus.jpg",
 "dinodb":true,
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Dryosaurus_TD.png/960px-Dryosaurus_TD.png",
+"cfile":"Dryosaurus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Dryptosaurus",
@@ -6293,7 +7088,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:NJSM_Dryptosaurus.jpg",
 "dinodb":true,
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Dryptosaurus_TD.png/960px-Dryptosaurus_TD.png",
+"cfile":"Dryptosaurus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Dubreuillosaurus",
@@ -6321,7 +7121,12 @@
 "Europe"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Dubreuillosaurus_NT_Flipped.png/960px-Dubreuillosaurus_NT_Flipped.png",
+"cfile":"Dubreuillosaurus NT Flipped.png",
+"cart":"Nobu Tamura",
+"clic":"CC BY 3.0",
+"ckind":"transparent"
 },
 {
 "name":"Duonychus",
@@ -6358,7 +7163,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Duonychus_tsogtbaatari_in_2019_02.jpg",
 "dinodb":true,
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Duonychus_TD.png/960px-Duonychus_TD.png",
+"cfile":"Duonychus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Duriavenator",
@@ -6391,7 +7201,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 1 tonnes",
-"size":"medium"
+"size":"medium",
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/1/1b/Duriavenator_NT.jpg",
+"cfile":"Duriavenator NT.jpg",
+"cart":"Nobu Tamura",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Dyoplosaurus",
@@ -6507,7 +7322,12 @@
 "Europe"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Nuthetes_and_Echinodon.jpg/960px-Nuthetes_and_Echinodon.jpg",
+"cfile":"Nuthetes and Echinodon.jpg",
+"cart":"FunkMonk",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Edmontonia",
@@ -6539,7 +7359,12 @@
 "North America"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Edmontonia_TD.png/960px-Edmontonia_TD.png",
+"cfile":"Edmontonia TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Edmontosaurus",
@@ -6578,7 +7403,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Edmontosaurus_annectens_holotype_in_1978.jpg",
 "dinodb":true,
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Edmontosaurus_sp._reconstruction.PNG/960px-Edmontosaurus_sp._reconstruction.PNG",
+"cfile":"Edmontosaurus sp. reconstruction.PNG",
+"cart":"Paleoart by Natee Puttapipat. Published by Stephanie K. Drum",
+"clic":"CC BY 4.0",
+"ckind":"plain"
 },
 {
 "name":"Efraasia",
@@ -6606,7 +7436,12 @@
 "Europe"
 ],
 "hips":"lizard",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Efraasia.png/960px-Efraasia.png",
+"cfile":"Efraasia.png",
+"cart":"UniverseScienceItaly",
+"clic":"CC0",
+"ckind":"plain"
 },
 {
 "name":"Einiosaurus",
@@ -6644,7 +7479,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Einiosaurus_skull_front.jpg",
 "dinodb":true,
-"size":"medium"
+"size":"medium",
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/2/2b/Einiosaurus.jpg",
+"cfile":"Einiosaurus.jpg",
+"cart":"No machine-readable author provided. ArthurWeasley~commonswi",
+"clic":"CC BY 2.5",
+"ckind":"plain"
 },
 {
 "name":"Ekrixinatosaurus",
@@ -6674,7 +7514,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 800 kg",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Ekrixinatosaurus.jpg/960px-Ekrixinatosaurus.jpg",
+"cfile":"Ekrixinatosaurus.jpg",
+"cart":"Ghedoghedo",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Elaphrosaurus",
@@ -6704,7 +7549,12 @@
 "Africa"
 ],
 "hips":"lizard",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Elaphrosaurus.jpg/960px-Elaphrosaurus.jpg",
+"cfile":"Elaphrosaurus.jpg",
+"cart":"FunkMonk",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Elmisaurus",
@@ -6732,7 +7582,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Elmisaurus.jpg/960px-Elmisaurus.jpg",
+"cfile":"Elmisaurus.jpg",
+"cart":"FunkMonk",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Elopteryx",
@@ -6781,7 +7636,12 @@
 "Africa"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/6/6e/Elrhazosaurus_NT_flipped.png",
+"cfile":"Elrhazosaurus NT flipped.png",
+"cart":"Nobu Tamura email:nobu.tamura@yahoo.com",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Enigmacursor",
@@ -6813,7 +7673,12 @@
 "Enigmacursor mollyborthwickae"
 ],
 "dinodb":true,
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Enigmacursor_mollyborthwickae.png/960px-Enigmacursor_mollyborthwickae.png",
+"cfile":"Enigmacursor mollyborthwickae.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Enigmosaurus",
@@ -6842,7 +7707,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Enigmosaurus_Restoration.jpg/960px-Enigmosaurus_Restoration.jpg",
+"cfile":"Enigmosaurus Restoration.jpg",
+"cart":"PaleoNeolitic",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Eoabelisaurus",
@@ -6873,7 +7743,12 @@
 "South America"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Eoabelisaurus_TD.png/960px-Eoabelisaurus_TD.png",
+"cfile":"Eoabelisaurus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Eocarcharia",
@@ -6902,7 +7777,12 @@
 "Africa"
 ],
 "hips":"lizard",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Eocarcharia%2C_improved.png/960px-Eocarcharia%2C_improved.png",
+"cfile":"Eocarcharia, improved.png",
+"cart":"TKWTH",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Eocursor",
@@ -6961,7 +7841,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Eodromaeus_murphi.jpg",
 "dinodb":true,
-"size":"small"
+"size":"small",
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/1/11/Eodromaeus_murphi_%282%29.jpg",
+"cfile":"Eodromaeus murphi (2).jpg",
+"cart":"Ezequielvera",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Eolambia",
@@ -6993,7 +7878,12 @@
 "North America"
 ],
 "hips":"bird",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Eolambia_restoration.png/960px-Eolambia_restoration.png",
+"cfile":"Eolambia restoration.png",
+"cart":"Audrey.m.horn",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Eoraptor",
@@ -7031,7 +7921,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Eoraptor_lunensis_1.jpg",
 "dinodb":true,
-"size":"small"
+"size":"small",
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/3/36/Eoraptor_sketch5.png",
+"cfile":"Eoraptor sketch5.png",
+"cart":"w:en:user:Debivort",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Eosinopteryx",
@@ -7062,7 +7957,12 @@
 "Eosinopteryx brevipenna"
 ],
 "dinodb":true,
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Eosinopteryx.jpg/960px-Eosinopteryx.jpg",
+"cfile":"Eosinopteryx.jpg",
+"cart":"El fosilmaníaco",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Eotriceratops",
@@ -7090,7 +7990,12 @@
 "North America"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Eotriceratops_TD.png/960px-Eotriceratops_TD.png",
+"cfile":"Eotriceratops TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Eotyrannus",
@@ -7122,7 +8027,12 @@
 "Europe"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/8/84/Eotyrannus_1_NT.jpg",
+"cfile":"Eotyrannus 1 NT.jpg",
+"cart":"Nobu Tamura",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Epachthosaurus",
@@ -7198,7 +8108,12 @@
 "Asia"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Equijubus_TD.png/960px-Equijubus_TD.png",
+"cfile":"Equijubus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Erectopus",
@@ -7298,7 +8213,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 250 kg",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Erlikosaurus_Restoration.png/960px-Erlikosaurus_Restoration.png",
+"cfile":"Erlikosaurus Restoration.png",
+"cart":"PaleoNeolitic",
+"clic":"CC BY 4.0",
+"ckind":"plain"
 },
 {
 "name":"Erythrovenator",
@@ -7330,7 +8250,12 @@
 "Erythrovenator jacuiensis"
 ],
 "dinodb":true,
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Erythrovenator_jacuiensis.png/960px-Erythrovenator_jacuiensis.png",
+"cfile":"Erythrovenator jacuiensis.png",
+"cart":"Sauriazoicillus",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Euhelopus",
@@ -7362,7 +8287,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/EuhelopusDB2.jpg/960px-EuhelopusDB2.jpg",
+"cfile":"EuhelopusDB2.jpg",
+"cart":"DiBgd at English Wikipedia",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Euoplocephalus",
@@ -7400,7 +8330,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Euoplocephalus-tutus-1.jpg",
 "dinodb":true,
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Euoplocephalus_TD.png/960px-Euoplocephalus_TD.png",
+"cfile":"Euoplocephalus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Europasaurus",
@@ -7432,7 +8367,12 @@
 "Europe"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Europasaurus_TD.png/960px-Europasaurus_TD.png",
+"cfile":"Europasaurus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Europelta",
@@ -7521,7 +8461,12 @@
 "Europe"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Eustrept1DB1.jpg/960px-Eustrept1DB1.jpg",
+"cfile":"Eustrept1DB1.jpg",
+"cart":"ДиБгд at Russian Wikipedia Hands fixed by FunkMonk.",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Fabrosaurus",
@@ -7580,7 +8525,12 @@
 "North America"
 ],
 "hips":"lizard",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Falcarius_Restoration.png/960px-Falcarius_Restoration.png",
+"cfile":"Falcarius Restoration.png",
+"cart":"PaleoNeolitic",
+"clic":"CC BY 4.0",
+"ckind":"plain"
 },
 {
 "name":"Ferganasaurus",
@@ -7633,7 +8583,12 @@
 ],
 "hips":"bird",
 "weight":"up to 0.8 kg",
-"size":"small"
+"size":"small",
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/5/50/Fruitadens_transparent.png",
+"cfile":"Fruitadens transparent.png",
+"cart":"Smokeybjb",
+"clic":"CC BY-SA 3.0",
+"ckind":"transparent"
 },
 {
 "name":"Fukuiraptor",
@@ -7772,7 +8727,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Gallimimus_2_NHM.JPG",
 "dinodb":true,
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/Gallimimus_Restoration.png/960px-Gallimimus_Restoration.png",
+"cfile":"Gallimimus Restoration.png",
+"cart":"PaleoNeolitic",
+"clic":"CC BY 4.0",
+"ckind":"plain"
 },
 {
 "name":"Gargoyleosaurus",
@@ -7830,7 +8790,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 98 kg",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Garudimimus_Restoration.png/960px-Garudimimus_Restoration.png",
+"cfile":"Garudimimus Restoration.png",
+"cart":"PaleoNeolitic",
+"clic":"CC BY 4.0",
+"ckind":"plain"
 },
 {
 "name":"Gasosaurus",
@@ -7864,7 +8829,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Zigong_Dinosaur_Museum_Gasosaurus.jpg",
 "dinodb":true,
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Gasosaurus_constructus.png/960px-Gasosaurus_constructus.png",
+"cfile":"Gasosaurus constructus.png",
+"cart":"Paleocolour",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Gasparinisaura",
@@ -7927,7 +8897,12 @@
 "North America"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Gastonia_TD.png/960px-Gastonia_TD.png",
+"cfile":"Gastonia TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Genyodectes",
@@ -8017,7 +8992,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Giganotosaurus_AustMus_email.jpg",
 "dinodb":true,
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Giganotosaurus_TD.png/960px-Giganotosaurus_TD.png",
+"cfile":"Giganotosaurus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Gigantoraptor",
@@ -8055,7 +9035,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Gigantoraptor_elrianensis_skeleton.jpg",
 "dinodb":true,
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Gigantoraptor_Restoration.png/960px-Gigantoraptor_Restoration.png",
+"cfile":"Gigantoraptor Restoration.png",
+"cart":"PaleoNeolitic",
+"clic":"CC BY 4.0",
+"ckind":"plain"
 },
 {
 "name":"Gigantspinosaurus",
@@ -8085,7 +9070,12 @@
 "Asia"
 ],
 "hips":"bird",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Gigantspinosaurus_05387.JPG/960px-Gigantspinosaurus_05387.JPG",
+"cfile":"Gigantspinosaurus 05387.JPG",
+"cart":"Conty",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Gilmoreosaurus",
@@ -8148,7 +9138,12 @@
 "fossil":"https://commons.wikimedia.org/wiki/File:Giraffatitan_MfN_2018_3_skull_right_lateral_view.jpg",
 "dinodb":true,
 "weight":"up to 53 tonnes",
-"size":"giant"
+"size":"giant",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Giraffatitan_TD.png/960px-Giraffatitan_TD.png",
+"cfile":"Giraffatitan TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Glacialisaurus",
@@ -8213,7 +9208,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Gnathovorax_skull_scans.png",
 "dinodb":true,
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Gnathovorax_cabreirai_J..jpg/960px-Gnathovorax_cabreirai_J..jpg",
+"cfile":"Gnathovorax cabreirai J..jpg",
+"cart":"Juan",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Gobisaurus",
@@ -8243,7 +9243,12 @@
 "Asia"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/GobisaurusNV_%28cropped%29.jpg/960px-GobisaurusNV_%28cropped%29.jpg",
+"cfile":"GobisaurusNV (cropped).jpg",
+"cart":"Foolp",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Gobivenator",
@@ -8362,7 +9367,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Drumheller_150.jpg",
 "dinodb":true,
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Gorgosaurus_flipped.png/960px-Gorgosaurus_flipped.png",
+"cfile":"Gorgosaurus flipped.png",
+"cart":"Levi bernardo",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Goyocephale",
@@ -8393,7 +9403,12 @@
 "Asia"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Goyocephale.jpg/960px-Goyocephale.jpg",
+"cfile":"Goyocephale.jpg",
+"cart":"Ornitholestes",
+"clic":"CC0",
+"ckind":"plain"
 },
 {
 "name":"Graciliraptor",
@@ -8421,7 +9436,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Graciliraptor.jpg/960px-Graciliraptor.jpg",
+"cfile":"Graciliraptor.jpg",
+"cart":"FunkMonk",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Gryphoceratops",
@@ -8509,7 +9529,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Gryposaurus_monumentensis_salt_lake_city.jpg",
 "dinodb":true,
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Gryposaurus_TD.png/960px-Gryposaurus_TD.png",
+"cfile":"Gryposaurus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Guaibasaurus",
@@ -8539,7 +9564,12 @@
 "South America"
 ],
 "hips":"lizard",
-"size":"small"
+"size":"small",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Guaibasaurus.jpg/960px-Guaibasaurus.jpg",
+"cfile":"Guaibasaurus.jpg",
+"cart":"Leví Bernardo Martínez",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Guanlong",
@@ -8571,7 +9601,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Guanlong_TD.png/960px-Guanlong_TD.png",
+"cfile":"Guanlong TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Hadrosaurus",
@@ -8609,7 +9644,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Hadrosaurus_reconstruction.jpg",
 "dinodb":true,
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Hadrosaurus_TD.png/960px-Hadrosaurus_TD.png",
+"cfile":"Hadrosaurus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Hagryphus",
@@ -8688,7 +9728,12 @@
 "North America"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Haplocanthosaurus_sp_life_restoration.png/960px-Haplocanthosaurus_sp_life_restoration.png",
+"cfile":"Haplocanthosaurus sp life restoration.png",
+"cart":"Colin Boisvert, Gunnar T. Bivens, Brian Curtice, Ray Wilhite",
+"clic":"CC BY 4.0",
+"ckind":"plain"
 },
 {
 "name":"Haplocheirus",
@@ -8747,7 +9792,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Harpymimus_steveoc_%28flipped%29.jpg/960px-Harpymimus_steveoc_%28flipped%29.jpg",
+"cfile":"Harpymimus steveoc (flipped).jpg",
+"cart":"Steveoc 86",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Haya",
@@ -8813,7 +9863,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Herrerasaurus_ischigualastensis_DSC_2929.jpg",
 "dinodb":true,
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Herrerasaurus_TD.png/960px-Herrerasaurus_TD.png",
+"cfile":"Herrerasaurus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Hesperonychus",
@@ -8873,7 +9928,12 @@
 "North America"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/7/7d/Hesperosaurus_NT_transparent.png",
+"cfile":"Hesperosaurus NT transparent.png",
+"cart":"Nobu Tamura",
+"clic":"CC BY-SA 3.0",
+"ckind":"transparent"
 },
 {
 "name":"Heterodontosaurus",
@@ -8906,7 +9966,12 @@
 ],
 "hips":"bird",
 "weight":"up to 10 kg",
-"size":"small"
+"size":"small",
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/d/df/Heterodontosaurus_restoration_transparent.png",
+"cfile":"Heterodontosaurus restoration transparent.png",
+"cart":"FunkMonk",
+"clic":"CC BY-SA 3.0",
+"ckind":"transparent"
 },
 {
 "name":"Hexing",
@@ -8958,7 +10023,12 @@
 "Asia"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Hexinlusaurus.jpg/960px-Hexinlusaurus.jpg",
+"cfile":"Hexinlusaurus.jpg",
+"cart":"Danny Cicchetti",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Heyuannia",
@@ -9012,7 +10082,12 @@
 "North America"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Life_restoration_of_Hippodraco_transparent.png/960px-Life_restoration_of_Hippodraco_transparent.png",
+"cfile":"Life restoration of Hippodraco transparent.png",
+"cart":"Lukas Panzarin",
+"clic":"CC BY-SA 2.5",
+"ckind":"transparent"
 },
 {
 "name":"Homalocephale",
@@ -9044,7 +10119,12 @@
 "Asia"
 ],
 "hips":"bird",
-"size":"small"
+"size":"small",
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/0/0d/Homalocephale_body_transparent.png",
+"cfile":"Homalocephale body transparent.png",
+"cart":"FunkMonk",
+"clic":"CC BY-SA 3.0",
+"ckind":"transparent"
 },
 {
 "name":"Hoplitosaurus",
@@ -9096,7 +10176,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":"giant"
+"size":"giant",
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/1/10/Huabeisaurus_allocotus.jpg",
+"cfile":"Huabeisaurus allocotus.jpg",
+"cart":"FunkMonk",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Huanghetitan",
@@ -9149,7 +10234,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Huaxiagnathus-v2.jpg/960px-Huaxiagnathus-v2.jpg",
+"cfile":"Huaxiagnathus-v2.jpg",
+"cart":"drawing by en:user:debivort, 2.07",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Huayangosaurus",
@@ -9179,7 +10269,12 @@
 "Asia"
 ],
 "hips":"bird",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Huayangosaurus_TD.png/960px-Huayangosaurus_TD.png",
+"cfile":"Huayangosaurus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Huehuecanauhtlus",
@@ -9261,7 +10356,12 @@
 "Europe"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Hylaeosaurus_TD.png/960px-Hylaeosaurus_TD.png",
+"cfile":"Hylaeosaurus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Hypacrosaurus",
@@ -9293,7 +10393,12 @@
 "North America"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Life_reconstruction_of_Hypacrosaurus_altispinus.png/960px-Life_reconstruction_of_Hypacrosaurus_altispinus.png",
+"cfile":"Life reconstruction of Hypacrosaurus altispinus.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Hypselosaurus",
@@ -9322,7 +10427,12 @@
 "Europe"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/8/84/Hypselosaurus_priscus.jpg",
+"cfile":"Hypselosaurus priscus.jpg",
+"cart":"Nobu Tamura",
+"clic":"CC BY 3.0",
+"ckind":"plain"
 },
 {
 "name":"Hypselospinus",
@@ -9346,7 +10456,12 @@
 "Europe"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/0/05/Hypselospinus_NT_flipped_transparent.png",
+"cfile":"Hypselospinus NT flipped transparent.png",
+"cart":"Nobu Tamura",
+"clic":"CC BY-SA 3.0",
+"ckind":"transparent"
 },
 {
 "name":"Hypsibema",
@@ -9407,7 +10522,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Hypsilophodon_Melb_Museum_email.jpg",
 "dinodb":true,
-"size":"small"
+"size":"small",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Hypsilophodon_TD.png/960px-Hypsilophodon_TD.png",
+"cfile":"Hypsilophodon TD.png",
+"cart":"TotalDino",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Ichthyovenator",
@@ -9440,7 +10560,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 2.6 tonnes",
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Life_reconstruction_of_Ichthyovenator_laosensis.png/960px-Life_reconstruction_of_Ichthyovenator_laosensis.png",
+"cfile":"Life reconstruction of Ichthyovenator laosensis.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Ignavusaurus",
@@ -9498,7 +10623,12 @@
 "North America"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Life_restoration_of_Iguanacolossus_transparent.png/960px-Life_restoration_of_Iguanacolossus_transparent.png",
+"cfile":"Life restoration of Iguanacolossus transparent.png",
+"cart":"Lukas Panzarin",
+"clic":"CC BY 2.5",
+"ckind":"transparent"
 },
 {
 "name":"Iguanodon",
@@ -9537,7 +10667,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Iguanodon-Pink_Iggy-MIWG5126.jpg",
 "dinodb":true,
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Iguanodon_bernissartensis_%28Davide_Bonadonna%2C_cropped%29.png/960px-Iguanodon_bernissartensis_%28Davide_Bonadonna%2C_cropped%29.png",
+"cfile":"Iguanodon bernissartensis (Davide Bonadonna, cropped).png",
+"cart":"Davide Bonadonna",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Ilokelesia",
@@ -9568,7 +10703,12 @@
 "South America"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Ilokelesia_Aguadagrandensis.png/960px-Ilokelesia_Aguadagrandensis.png",
+"cfile":"Ilokelesia Aguadagrandensis.png",
+"cart":"Odhránt",
+"clic":"CC BY 4.0",
+"ckind":"plain"
 },
 {
 "name":"Incisivosaurus",
@@ -9599,7 +10739,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Incisivosaurus_TD.png/960px-Incisivosaurus_TD.png",
+"cfile":"Incisivosaurus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Indosuchus",
@@ -9629,7 +10774,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 1.3 tonnes",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Indosuchus.jpg/960px-Indosuchus.jpg",
+"cfile":"Indosuchus.jpg",
+"cart":"FunkMonk",
+"clic":"CC BY 3.0",
+"ckind":"plain"
 },
 {
 "name":"Ingenia",
@@ -9690,7 +10840,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Irritator_challengeri_mount_01.jpg",
 "dinodb":true,
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Irritator_Life_Reconstruction.jpg/960px-Irritator_Life_Reconstruction.jpg",
+"cfile":"Irritator Life Reconstruction.jpg",
+"cart":"Fred Wierum",
+"clic":"CC BY 3.0",
+"ckind":"plain"
 },
 {
 "name":"Isanosaurus",
@@ -9748,7 +10903,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Isisaurus_TD.png/960px-Isisaurus_TD.png",
+"cfile":"Isisaurus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Jainosaurus",
@@ -9776,7 +10936,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 17 tonnes",
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Jainosaurus_septentrionalis_life_restoration.png/960px-Jainosaurus_septentrionalis_life_restoration.png",
+"cfile":"Jainosaurus septentrionalis life restoration.png",
+"cart":"Ansh Saxena",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Janenschia",
@@ -9827,7 +10992,12 @@
 "Asia"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/8/87/Life_reconstruction_of_Jaxartosaurus_aralensis.png",
+"cfile":"Life reconstruction of Jaxartosaurus aralensis.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Jeholosaurus",
@@ -9857,7 +11027,12 @@
 "Asia"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Jeholosaurus_shangyuanensis_reconstruction.png/960px-Jeholosaurus_shangyuanensis_reconstruction.png",
+"cfile":"Jeholosaurus shangyuanensis reconstruction.png",
+"cart":"Jeez Luiz art",
+"clic":"CC0",
+"ckind":"transparent"
 },
 {
 "name":"Jeyawati",
@@ -9915,7 +11090,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 26 kg",
-"size":"small"
+"size":"small",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Jianchangosaurus_Restoration.png/960px-Jianchangosaurus_Restoration.png",
+"cfile":"Jianchangosaurus Restoration.png",
+"cart":"PaleoNeolitic",
+"clic":"CC BY 4.0",
+"ckind":"plain"
 },
 {
 "name":"Jinfengopteryx",
@@ -9945,7 +11125,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/0/01/Jinfengopteryx_wiki.jpg",
+"cfile":"Jinfengopteryx wiki.jpg",
+"cart":"Matt Martyniuk",
+"clic":"CC BY 2.5",
+"ckind":"plain"
 },
 {
 "name":"Jingshanosaurus",
@@ -9974,7 +11159,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 4.7 tonnes",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Jingshanosaurus_xinwaensis.png/960px-Jingshanosaurus_xinwaensis.png",
+"cfile":"Jingshanosaurus xinwaensis.png",
+"cart":"Paleocolour",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Jinzhousaurus",
@@ -10028,7 +11218,12 @@
 "Africa"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Jobaria_tiguidensis_steveoc.jpg/960px-Jobaria_tiguidensis_steveoc.jpg",
+"cfile":"Jobaria tiguidensis steveoc.jpg",
+"cart":"Steveoc 86",
+"clic":"CC BY 2.5",
+"ckind":"plain"
 },
 {
 "name":"Judiceratops",
@@ -10058,7 +11253,12 @@
 "North America"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/2/26/Judiceratops_NT_small.jpg",
+"cfile":"Judiceratops NT small.jpg",
+"cart":"Nobu Tamura email:nobu.tamura@yahoo.com",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Juratyrant",
@@ -10169,7 +11369,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Kaijiangosaurus_SW.png/960px-Kaijiangosaurus_SW.png",
+"cfile":"Kaijiangosaurus SW.png",
+"cart":"User:Slate Weasel",
+"clic":"CC BY 4.0",
+"ckind":"plain"
 },
 {
 "name":"Kazaklambia",
@@ -10197,7 +11402,12 @@
 "Asia"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Life_reconstruction_of_Kazaklambia_convincens.png/960px-Life_reconstruction_of_Kazaklambia_convincens.png",
+"cfile":"Life reconstruction of Kazaklambia convincens.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Kentrosaurus",
@@ -10235,7 +11445,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Berlin_Naturkundemuseum_Dino_Eingangshalle.jpg",
 "dinodb":true,
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Kentrosaurus_TD.png/960px-Kentrosaurus_TD.png",
+"cfile":"Kentrosaurus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Kerberosaurus",
@@ -10262,7 +11477,12 @@
 "Asia"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Kerberosaurus_manakini.png/960px-Kerberosaurus_manakini.png",
+"cfile":"Kerberosaurus manakini.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Khaan",
@@ -10319,7 +11539,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Kileskus.png/960px-Kileskus.png",
+"cfile":"Kileskus.png",
+"cart":"Petr Menshikov",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Kinnareemimus",
@@ -10384,7 +11609,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Kiyacursor.jpg",
 "dinodb":true,
-"size":"small"
+"size":"small",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Kiyacursor_TD.png/960px-Kiyacursor_TD.png",
+"cfile":"Kiyacursor TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Kol",
@@ -10445,7 +11675,12 @@
 "Asia"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Koreaceratops.png/960px-Koreaceratops.png",
+"cfile":"Koreaceratops.png",
+"cart":"Jun-Hyeok Jang",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Koreanosaurus",
@@ -10473,7 +11708,12 @@
 "Asia"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Koreanosaurus.png/960px-Koreanosaurus.png",
+"cfile":"Koreanosaurus.png",
+"cart":"Jun-Hyeok Jang",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Kosmoceratops",
@@ -10506,7 +11746,12 @@
 ],
 "hips":"bird",
 "weight":"up to 1.3 tonnes",
-"size":"medium"
+"size":"medium",
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/8/81/Kosmoceratops_NT_small_%282%29_transparent.png",
+"cfile":"Kosmoceratops NT small (2) transparent.png",
+"cart":"Nobu Tamura email:nobu.tamura@yahoo.com",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Kotasaurus",
@@ -10562,7 +11807,12 @@
 "North America"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Kritosaurus_navajovius.png/960px-Kritosaurus_navajovius.png",
+"cfile":"Kritosaurus navajovius.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Kryptops",
@@ -10591,7 +11841,12 @@
 "Africa"
 ],
 "hips":"lizard",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Kryptops_life_restoration.jpg/960px-Kryptops_life_restoration.jpg",
+"cfile":"Kryptops life restoration.jpg",
+"cart":"Paleocolour",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Kulindadromeus",
@@ -10620,7 +11875,12 @@
 "Asia"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/c/c0/Kulindadromeus_NT_small_transparent.png",
+"cfile":"Kulindadromeus NT small transparent.png",
+"cart":"Nobu Tamura email:nobu.tamura@yahoo.com",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Kundurosaurus",
@@ -10649,7 +11909,12 @@
 "Asia"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Kundurosaurus_nagornyi.png/960px-Kundurosaurus_nagornyi.png",
+"cfile":"Kundurosaurus nagornyi.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Labocania",
@@ -10681,7 +11946,12 @@
 "North America"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Labocania_aguillonae.png/960px-Labocania_aguillonae.png",
+"cfile":"Labocania aguillonae.png",
+"cart":"Ddinodan",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Lagosuchus",
@@ -10745,7 +12015,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Lambeosaurus_Pacific_Museum_of_Earth.jpg",
 "dinodb":true,
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Life_reconstruction_of_Lambeosaurus_lambei.png/960px-Life_reconstruction_of_Lambeosaurus_lambei.png",
+"cfile":"Life reconstruction of Lambeosaurus lambei.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Lamplughsaura",
@@ -10794,7 +12069,12 @@
 ],
 "hips":"bird",
 "weight":"up to 6.6 tonnes",
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Lanzhousaurus_TD.png/960px-Lanzhousaurus_TD.png",
+"cfile":"Lanzhousaurus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Laosaurus",
@@ -10893,7 +12173,12 @@
 "North America"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Life_reconstruction_of_Latirhinus_uitstlani.png/960px-Life_reconstruction_of_Latirhinus_uitstlani.png",
+"cfile":"Life reconstruction of Latirhinus uitstlani.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Leaellynasaura",
@@ -10923,7 +12208,12 @@
 "Australia"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/2/22/Leaellynasaura_transparent.png",
+"cfile":"Leaellynasaura transparent.png",
+"cart":"Danny Cicchetti",
+"clic":"CC BY-SA 3.0",
+"ckind":"transparent"
 },
 {
 "name":"Leinkupal",
@@ -10977,7 +12267,12 @@
 "South America"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/a/a9/Leonerasaurus_NT.jpg",
+"cfile":"Leonerasaurus NT.jpg",
+"cart":"NobuTamura email:nobu.tamura@yahoo.com palaeocritti",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Lepidus",
@@ -11013,7 +12308,12 @@
 "Lepidus praecisio"
 ],
 "dinodb":true,
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Lepidus_praecisio_%28flipped%29.jpg/960px-Lepidus_praecisio_%28flipped%29.jpg",
+"cfile":"Lepidus praecisio (flipped).jpg",
+"cart":"Levi bernardo",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Leptoceratops",
@@ -11097,7 +12397,12 @@
 "Africa"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Lesothosaurus_dinosaur.png/960px-Lesothosaurus_dinosaur.png",
+"cfile":"Lesothosaurus dinosaur.png",
+"cart":"Mariana Ruiz LadyofHats",
+"clic":"Public domain",
+"ckind":"plain"
 },
 {
 "name":"Lessemsaurus",
@@ -11124,7 +12429,12 @@
 "South America"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Lessemsaurus.jpg/960px-Lessemsaurus.jpg",
+"cfile":"Lessemsaurus.jpg",
+"cart":"Ornitholestes",
+"clic":"Public domain",
+"ckind":"plain"
 },
 {
 "name":"Lexovisaurus",
@@ -11228,7 +12538,12 @@
 "Asia"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Liaoningosaurus.jpg/960px-Liaoningosaurus.jpg",
+"cfile":"Liaoningosaurus.jpg",
+"cart":"PaleoEquii",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Liliensternus",
@@ -11266,7 +12581,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Liliensternus_liliensterni.JPG",
 "dinodb":true,
-"size":"large"
+"size":"large",
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/0/0b/Liliensternus.jpg",
+"cfile":"Liliensternus.jpg",
+"cart":"No machine-readable author provided. ArthurWeasley~commonswi",
+"clic":"CC BY 2.5",
+"ckind":"plain"
 },
 {
 "name":"Limaysaurus",
@@ -11321,7 +12641,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 15 kg",
-"size":"small"
+"size":"small",
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/8/89/Limusaurus_inextricabilis.jpg",
+"cfile":"Limusaurus inextricabilis.jpg",
+"cart":"Nobu Tamura",
+"clic":"CC BY 3.0",
+"ckind":"plain"
 },
 {
 "name":"Linhenykus",
@@ -11380,7 +12705,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":"small"
+"size":"small",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Linheraptor.jpg/960px-Linheraptor.jpg",
+"cfile":"Linheraptor.jpg",
+"cart":"Ornitholestes",
+"clic":"Public domain",
+"ckind":"plain"
 },
 {
 "name":"Linhevenator",
@@ -11410,7 +12740,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Linhevenator_Reconstruction.png/960px-Linhevenator_Reconstruction.png",
+"cfile":"Linhevenator Reconstruction.png",
+"cart":"BipedalSarcopterygian201.3",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Lophorhothon",
@@ -11481,7 +12816,12 @@
 "Europe"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Loricatosaurus_priscus.png/960px-Loricatosaurus_priscus.png",
+"cfile":"Loricatosaurus priscus.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Lourinhanosaurus",
@@ -11510,7 +12850,12 @@
 "Europe"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Lourinhanosaurus_antunesi_reconstruction.png/960px-Lourinhanosaurus_antunesi_reconstruction.png",
+"cfile":"Lourinhanosaurus antunesi reconstruction.png",
+"cart":"Audrey.m.horn",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Lourinhasaurus",
@@ -11540,7 +12885,12 @@
 "Europe"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Lourinhasaurus_alenquerensis.png/960px-Lourinhasaurus_alenquerensis.png",
+"cfile":"Lourinhasaurus alenquerensis.png",
+"cart":"Pfonseca1999",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Luanchuanraptor",
@@ -11567,7 +12917,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Luanchuanraptor.jpg/960px-Luanchuanraptor.jpg",
+"cfile":"Luanchuanraptor.jpg",
+"cart":"FunkMonk",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Lufengosaurus",
@@ -11596,7 +12951,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Lufengosaurus_sketch1.jpg/960px-Lufengosaurus_sketch1.jpg",
+"cfile":"Lufengosaurus sketch1.jpg",
+"cart":"Debivort at en.wikipedia",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Lurdusaurus",
@@ -11623,7 +12983,12 @@
 ],
 "hips":"bird",
 "weight":"up to 6.1 tonnes",
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Lurdusaurus1_flipped.jpg/960px-Lurdusaurus1_flipped.jpg",
+"cfile":"Lurdusaurus1 flipped.jpg",
+"cart":"User:Ghedo",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Lusotitan",
@@ -11655,7 +13020,12 @@
 "Europe"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Lusotitan_TD.png/960px-Lusotitan_TD.png",
+"cfile":"Lusotitan TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Lycorhinus",
@@ -11712,7 +13082,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 2.5 tonnes",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Lythronax_TD.png/960px-Lythronax_TD.png",
+"cfile":"Lythronax TD.png",
+"cart":"TotalDino",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Machairasaurus",
@@ -11767,7 +13142,12 @@
 "South America"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/2/21/Macrogryphosaurus_life_reconstruction.png",
+"cfile":"Macrogryphosaurus life reconstruction.png",
+"cart":"Tomopteryx",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Magnapaulia",
@@ -11797,7 +13177,12 @@
 "North America"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Magnapaulia_laticaudus_transparent.png/960px-Magnapaulia_laticaudus_transparent.png",
+"cfile":"Magnapaulia laticaudus transparent.png",
+"cart":"Creator:Dmitry Bogdanov, Modified to match skeletal remains ",
+"clic":"CC BY-SA 3.0",
+"ckind":"transparent"
 },
 {
 "name":"Magnosaurus",
@@ -11828,7 +13213,12 @@
 "hips":"lizard",
 "weight":"up to 175 kg",
 "dinodb":true,
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Magnosaurus_%28Flipped%29.jpg/960px-Magnosaurus_%28Flipped%29.jpg",
+"cfile":"Magnosaurus (Flipped).jpg",
+"cart":"Ghedoghedo",
+"clic":"CC BY 3.0",
+"ckind":"plain"
 },
 {
 "name":"Magyarosaurus",
@@ -11892,7 +13282,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Mahakala_omnogovae_no_background.png/960px-Mahakala_omnogovae_no_background.png",
+"cfile":"Mahakala omnogovae no background.png",
+"cart":"Sauriazoicillus",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Maiasaura",
@@ -11930,7 +13325,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Maiasaura_skeleton.jpg",
 "dinodb":true,
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Maiasaura_peeblesorum.png/960px-Maiasaura_peeblesorum.png",
+"cfile":"Maiasaura peeblesorum.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Majungasaurus",
@@ -11968,7 +13368,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Majungasaurus_crenatissimus,_ROM.jpg",
 "dinodb":true,
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Majungasaurus_TD.png/960px-Majungasaurus_TD.png",
+"cfile":"Majungasaurus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Malawisaurus",
@@ -12031,7 +13436,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Mamenchisaurus_Skeleton_(10096922675).jpg",
 "dinodb":true,
-"size":"giant"
+"size":"giant",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Mamenchisaurus_sanjiangensis.png/960px-Mamenchisaurus_sanjiangensis.png",
+"cfile":"Mamenchisaurus sanjiangensis.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Manidens",
@@ -12060,7 +13470,12 @@
 "Africa"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Manidens.png/960px-Manidens.png",
+"cfile":"Manidens.png",
+"cart":"Olmagon",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Mantellisaurus",
@@ -12114,7 +13529,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 3 tonnes",
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Mapusaurus_Reconstruction.png/960px-Mapusaurus_Reconstruction.png",
+"cfile":"Mapusaurus Reconstruction.png",
+"cart":"Bidnat",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Marshosaurus",
@@ -12192,7 +13612,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 20 kg",
-"size":"small"
+"size":"small",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Masiakasaurus_LMR.png/960px-Masiakasaurus_LMR.png",
+"cfile":"Masiakasaurus LMR.png",
+"cart":"Levi Martinez-Reza",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Massospondylus",
@@ -12230,7 +13655,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Massospondylus_skull.jpg",
 "dinodb":true,
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Massospondylus_reconstruction.png/960px-Massospondylus_reconstruction.png",
+"cfile":"Massospondylus reconstruction.png",
+"cart":"Emily Willoughby",
+"clic":"CC BY-SA 3.0",
+"ckind":"transparent"
 },
 {
 "name":"Maxakalisaurus",
@@ -12294,7 +13724,12 @@
 "North America"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Medusaceratops_TD.png/960px-Medusaceratops_TD.png",
+"cfile":"Medusaceratops TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Megalosaurus",
@@ -12332,7 +13767,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Megalosaurus,_World_Museum_Liverpool.jpg",
 "dinodb":true,
-"size":"giant"
+"size":"giant",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Megalosaurus_dinosaur.png/960px-Megalosaurus_dinosaur.png",
+"cfile":"Megalosaurus dinosaur.png",
+"cart":"LadyofHats Mariana Ruiz Altered by FunkMonk and Steveoc 86",
+"clic":"Public domain",
+"ckind":"plain"
 },
 {
 "name":"Megapnosaurus",
@@ -12362,7 +13802,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 13 kg",
-"size":"small"
+"size":"small",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Megapnosaurus_TD.png/960px-Megapnosaurus_TD.png",
+"cfile":"Megapnosaurus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Megaraptor",
@@ -12395,7 +13840,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 1 tonnes",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Megaraptor_TD.png/960px-Megaraptor_TD.png",
+"cfile":"Megaraptor TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Mei",
@@ -12427,7 +13877,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Meilong_mmartyniuk_wiki.png/960px-Meilong_mmartyniuk_wiki.png",
+"cfile":"Meilong mmartyniuk wiki.png",
+"cart":"Matt Martyniuk",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Melanorosaurus",
@@ -12505,7 +13960,12 @@
 "North America"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/d/d7/Mercuriceratops_NT_small.jpg",
+"cfile":"Mercuriceratops NT small.jpg",
+"cart":"Nobu Tamura email:nobu.tamura@yahoo.com",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Metriacanthosaurus",
@@ -12541,7 +14001,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Metriacanthosaurus_holotype.png",
 "dinodb":true,
-"size":"medium"
+"size":"medium",
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/6/6d/Metriacanthosaurus.jpg",
+"cfile":"Metriacanthosaurus.jpg",
+"cart":"FunkMonk",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Mexidracon",
@@ -12572,7 +14037,12 @@
 "Mexidracon longimanus"
 ],
 "dinodb":true,
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Mexidracon_TD.png/960px-Mexidracon_TD.png",
+"cfile":"Mexidracon TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Microceratops",
@@ -12626,7 +14096,12 @@
 "Asia"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Micropachycephalosaurus_TD.png/960px-Micropachycephalosaurus_TD.png",
+"cfile":"Micropachycephalosaurus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Microraptor",
@@ -12666,7 +14141,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:MicroraptorGui-PaleozoologicalMuseumOfChina-May23-08.jpg",
 "dinodb":true,
-"size":null
+"size":null,
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/b/b9/Microraptor_mmartyniuk_true_colors.png",
+"cfile":"Microraptor mmartyniuk true colors.png",
+"cart":"Matt Martyniuk, Tyrannosaure",
+"clic":"CC BY 3.0",
+"ckind":"transparent"
 },
 {
 "name":"Microvenator",
@@ -12694,7 +14174,12 @@
 "North America"
 ],
 "hips":"lizard",
-"size":"small"
+"size":"small",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Microvenator.jpg/960px-Microvenator.jpg",
+"cfile":"Microvenator.jpg",
+"cart":"FunkMonk",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Minmi",
@@ -12776,7 +14261,12 @@
 "Europe"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Miragaia_longicollum.png/960px-Miragaia_longicollum.png",
+"cfile":"Miragaia longicollum.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Mirischia",
@@ -12881,7 +14371,12 @@
 "North America"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Dibujo_de_Monoclonius_by_Andr%C3%A9s_Felippe_Lasso_Arellano.jpg/960px-Dibujo_de_Monoclonius_by_Andr%C3%A9s_Felippe_Lasso_Arellano.jpg",
+"cfile":"Dibujo de Monoclonius by Andrés Felippe Lasso Arellano.jpg",
+"cart":"AndreXs5",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Monolophosaurus",
@@ -12914,7 +14409,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 475 kg",
-"size":"medium"
+"size":"medium",
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/6/6b/Monolophosaurus_jiangi_jmallon_%28flipped%29.jpg",
+"cfile":"Monolophosaurus jiangi jmallon (flipped).jpg",
+"cart":"Jordan Mallon",
+"clic":"CC BY-SA 2.5",
+"ckind":"plain"
 },
 {
 "name":"Mononykus",
@@ -12950,7 +14450,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Mononykus_AMNH.jpg",
 "dinodb":true,
-"size":"small"
+"size":"small",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Mononykus_TD.png/960px-Mononykus_TD.png",
+"cfile":"Mononykus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Montanoceratops",
@@ -13005,7 +14510,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 1.8 tonnes",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Mussaurus_patagonicus_life_restoration.png/960px-Mussaurus_patagonicus_life_restoration.png",
+"cfile":"Mussaurus patagonicus life restoration.png",
+"cart":"Sauropodomorph",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Muttaburrasaurus",
@@ -13043,7 +14553,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Muttaburrasaurus_mount.jpg",
 "dinodb":true,
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Muttaburrasaurus_TD.png/960px-Muttaburrasaurus_TD.png",
+"cfile":"Muttaburrasaurus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Mymoorapelta",
@@ -13073,7 +14588,12 @@
 "North America"
 ],
 "hips":"bird",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Mymoorapelta_maysi.png/960px-Mymoorapelta_maysi.png",
+"cfile":"Mymoorapelta maysi.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Nankangia",
@@ -13104,7 +14624,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Nankangia_Restoration.jpg/960px-Nankangia_Restoration.jpg",
+"cfile":"Nankangia Restoration.jpg",
+"cart":"Danny Cicchetti",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Nanosaurus",
@@ -13132,7 +14657,12 @@
 "North America"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/NanosaurusJF.png/960px-NanosaurusJF.png",
+"cfile":"NanosaurusJF.png",
+"cart":"Jfstudiospaleoart",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Nanotyrannus",
@@ -13165,7 +14695,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 1.2 tonnes",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Nanotyrannus_TD.png/960px-Nanotyrannus_TD.png",
+"cfile":"Nanotyrannus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Nanshiungosaurus",
@@ -13196,7 +14731,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 907 kg",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Nanshiungosaurus_Restoration.png/960px-Nanshiungosaurus_Restoration.png",
+"cfile":"Nanshiungosaurus Restoration.png",
+"cart":"PaleoNeolitic",
+"clic":"CC BY 4.0",
+"ckind":"plain"
 },
 {
 "name":"Nanuqsaurus",
@@ -13228,7 +14768,12 @@
 "North America"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Life_reconstruction_of_Nanuqsaurus_hoglundi.png/960px-Life_reconstruction_of_Nanuqsaurus_hoglundi.png",
+"cfile":"Life reconstruction of Nanuqsaurus hoglundi.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Nanyangosaurus",
@@ -13255,7 +14800,12 @@
 "Asia"
 ],
 "hips":"bird",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Nanyangosaurus_dinosaur.png/960px-Nanyangosaurus_dinosaur.png",
+"cfile":"Nanyangosaurus dinosaur.png",
+"cart":"LadyofHats Mariana Ruiz",
+"clic":"Public domain",
+"ckind":"transparent"
 },
 {
 "name":"Nasutoceratops",
@@ -13287,7 +14837,12 @@
 ],
 "hips":"bird",
 "weight":"up to 1.7 tonnes",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Nasutoceratops.png/960px-Nasutoceratops.png",
+"cfile":"Nasutoceratops.png",
+"cart":"Olmagon",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Nebulasaurus",
@@ -13338,7 +14893,12 @@
 "North America"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Nedcolbertia.jpg/960px-Nedcolbertia.jpg",
+"cfile":"Nedcolbertia.jpg",
+"cart":"Danny Cicchetti",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Neimongosaurus",
@@ -13367,7 +14927,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/3/30/Neimongosaurus.jpg",
+"cfile":"Neimongosaurus.jpg",
+"cart":"FunkMonk",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Nemegtomaia",
@@ -13400,7 +14965,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 40 kg",
-"size":"small"
+"size":"small",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Nemegtomaia_Restoration.png/960px-Nemegtomaia_Restoration.png",
+"cfile":"Nemegtomaia Restoration.png",
+"cart":"PaleoNeolitic",
+"clic":"CC BY 4.0",
+"ckind":"plain"
 },
 {
 "name":"Nemegtosaurus",
@@ -13430,7 +15000,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 20 tonnes",
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/Nemegtosaurus3.jpg/960px-Nemegtosaurus3.jpg",
+"cfile":"Nemegtosaurus3.jpg",
+"cart":"Josep Asensi",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Neovenator",
@@ -13463,7 +15038,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 1.1 tonnes",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Neovenator.png/960px-Neovenator.png",
+"cfile":"Neovenator.png",
+"cart":"Fred Wierum",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Neuquenraptor",
@@ -13492,7 +15072,12 @@
 "South America"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Neuquenraptor_argentinus_by_PaleoGeek.png/960px-Neuquenraptor_argentinus_by_PaleoGeek.png",
+"cfile":"Neuquenraptor argentinus by PaleoGeek.png",
+"cart":"PaleoGeekSquared",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Neuquensaurus",
@@ -13521,7 +15106,12 @@
 "South America"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Neuquensaurus_restoration.jpg/960px-Neuquensaurus_restoration.jpg",
+"cfile":"Neuquensaurus restoration.jpg",
+"cart":"FunkMonk",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Nigersaurus",
@@ -13559,7 +15149,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:August_1,_2012_-_Cast_Skull_of_a_Nigersaurus_taqueti_on_Display_at_the_Royal_Ontario_Museum_(Cast_of_MNN_GAD512).jpg",
 "dinodb":true,
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Nigersaurus_TD.png/960px-Nigersaurus_TD.png",
+"cfile":"Nigersaurus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Nipponosaurus",
@@ -13589,7 +15184,12 @@
 "Asia"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Life_reconstruction_of_Nipponosaurus_sachalinensis.png/960px-Life_reconstruction_of_Nipponosaurus_sachalinensis.png",
+"cfile":"Life reconstruction of Nipponosaurus sachalinensis.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Noasaurus",
@@ -13619,7 +15219,12 @@
 "South America"
 ],
 "hips":"lizard",
-"size":"small"
+"size":"small",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Noasaurus.png/960px-Noasaurus.png",
+"cfile":"Noasaurus.png",
+"cart":"Olmagon",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Nodocephalosaurus",
@@ -13676,7 +15281,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:The_American_journal_of_science_(1921)_(17529968373).jpg",
 "dinodb":true,
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Nodosaurus_500_TWA.JPG/960px-Nodosaurus_500_TWA.JPG",
+"cfile":"Nodosaurus 500 TWA.JPG",
+"cart":"Conty",
+"clic":"CC BY 3.0",
+"ckind":"plain"
 },
 {
 "name":"Nomingia",
@@ -13706,7 +15316,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Nomingia_gobiensis.png/960px-Nomingia_gobiensis.png",
+"cfile":"Nomingia gobiensis.png",
+"cart":"Smokeybjb at English Wikipedia",
+"clic":"Public domain",
+"ckind":"plain"
 },
 {
 "name":"Nothronychus",
@@ -13745,7 +15360,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Nothronychus_AZMNH.jpg",
 "dinodb":true,
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Nothronychus_mckinleyi_Restoration.png/960px-Nothronychus_mckinleyi_Restoration.png",
+"cfile":"Nothronychus mckinleyi Restoration.png",
+"cart":"PaleoNeolitic",
+"clic":"CC BY 4.0",
+"ckind":"plain"
 },
 {
 "name":"Notohypsilophodon",
@@ -13772,7 +15392,12 @@
 "South America"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Notohypsilodon_reconstruction_raingerr.png/960px-Notohypsilodon_reconstruction_raingerr.png",
+"cfile":"Notohypsilodon reconstruction raingerr.png",
+"cart":"Raingerr",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Nqwebasaurus",
@@ -13801,7 +15426,12 @@
 "Africa"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Nqwebasaurus.png/960px-Nqwebasaurus.png",
+"cfile":"Nqwebasaurus.png",
+"cart":"J-H. Jang",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Nuthetes",
@@ -13829,7 +15459,12 @@
 "Europe"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Nuthetes_and_Echinodon.jpg/960px-Nuthetes_and_Echinodon.jpg",
+"cfile":"Nuthetes and Echinodon.jpg",
+"cart":"FunkMonk",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Nyasasaurus",
@@ -13858,7 +15493,12 @@
 "Africa"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Nyasasaurus_TD.png/960px-Nyasasaurus_TD.png",
+"cfile":"Nyasasaurus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Ojoceratops",
@@ -13885,7 +15525,12 @@
 "North America"
 ],
 "hips":"bird",
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Ojoceratops_fowleri_profile_reconstruction.jpg/960px-Ojoceratops_fowleri_profile_reconstruction.jpg",
+"cfile":"Ojoceratops fowleri profile reconstruction.jpg",
+"cart":"LancianIdolatry",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Olorotitan",
@@ -13923,7 +15568,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Olorotitan_28-12-2007_14-52-33.jpg",
 "dinodb":true,
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Olorotitan_TD.png/960px-Olorotitan_TD.png",
+"cfile":"Olorotitan TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Omeisaurus",
@@ -13953,7 +15603,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 11 tonnes",
-"size":"giant"
+"size":"giant",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Omeisaurus_tianfuensis34.jpg/960px-Omeisaurus_tianfuensis34.jpg",
+"cfile":"Omeisaurus tianfuensis34.jpg",
+"cart":"Levi bernardo",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Oohkotokia",
@@ -14007,7 +15662,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Opisthocoelicaudia.jpg/960px-Opisthocoelicaudia.jpg",
+"cfile":"Opisthocoelicaudia.jpg",
+"cart":"FunkMonk",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Orkoraptor",
@@ -14093,7 +15753,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Ornitholestes_Royal_Tyrrell_2.jpg",
 "dinodb":true,
-"size":"small"
+"size":"small",
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/d/d3/Ornitholestes_NT.jpg",
+"cfile":"Ornitholestes NT.jpg",
+"cart":"NobuTamura email:nobu.tamura@yahoo.com",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Ornithomimus",
@@ -14132,7 +15797,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Ornithomimus_edmontonicus_Royal_Tyrrell.jpg",
 "dinodb":true,
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Ornithomimus_TD.png/960px-Ornithomimus_TD.png",
+"cfile":"Ornithomimus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Ornithopsis",
@@ -14187,7 +15857,12 @@
 "North America"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/7/7f/Orodromeus.jpg",
+"cfile":"Orodromeus.jpg",
+"cart":"",
+"clic":"CC BY 2.5",
+"ckind":"plain"
 },
 {
 "name":"Orthomerus",
@@ -14240,7 +15915,12 @@
 "North America"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Oryctodromeus_TD.png/960px-Oryctodromeus_TD.png",
+"cfile":"Oryctodromeus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Ostafrikasaurus",
@@ -14270,7 +15950,12 @@
 "Africa"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Ostafrikasaurus_crassiserratus_by_PaleoGeek.png/960px-Ostafrikasaurus_crassiserratus_by_PaleoGeek.png",
+"cfile":"Ostafrikasaurus crassiserratus by PaleoGeek.png",
+"cart":"PaleoGeekSquared",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Ostromia",
@@ -14303,7 +15988,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Ostromia_crassipes_Teylers_1.jpg",
 "dinodb":true,
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/OSTROMIA_mario_lanzas_recomstruction.jpg/960px-OSTROMIA_mario_lanzas_recomstruction.jpg",
+"cfile":"OSTROMIA mario lanzas recomstruction.jpg",
+"cart":"Mariolanzas",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Ouranosaurus",
@@ -14341,7 +16031,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Ouranosaurus_MSNVE_3714.png",
 "dinodb":true,
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Ouranosaurus_nigeriensis_restoration.png/960px-Ouranosaurus_nigeriensis_restoration.png",
+"cfile":"Ouranosaurus nigeriensis restoration.png",
+"cart":"Audrey.m.horn",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Overosaurus",
@@ -14369,7 +16064,12 @@
 "South America"
 ],
 "hips":"lizard",
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Overosaurus_life_restoration.jpg/960px-Overosaurus_life_restoration.jpg",
+"cfile":"Overosaurus life restoration.jpg",
+"cart":"Danny Cicchetti",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Oviraptor",
@@ -14407,7 +16107,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Oviraptor_mount_at_Japan_1.jpg",
 "dinodb":true,
-"size":"small"
+"size":"small",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Oviraptor_TD.png/960px-Oviraptor_TD.png",
+"cfile":"Oviraptor TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Oxalaia",
@@ -14439,7 +16144,12 @@
 "South America"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Oxalaia_quilombensis_by_PaleoGeek.png/960px-Oxalaia_quilombensis_by_PaleoGeek.png",
+"cfile":"Oxalaia quilombensis by PaleoGeek.png",
+"cart":"PaleoGeekSquared",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Ozraptor",
@@ -14467,7 +16177,12 @@
 "Australia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Ozraptor_TD.png/960px-Ozraptor_TD.png",
+"cfile":"Ozraptor TD.png",
+"cart":"TotalDino",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Pachycephalosaurus",
@@ -14507,7 +16222,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Pachycephalosaurus_in_Japan.jpg",
 "dinodb":true,
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Pachycephalosaurus_TD.png/960px-Pachycephalosaurus_TD.png",
+"cfile":"Pachycephalosaurus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Pachyrhinosaurus",
@@ -14539,7 +16259,12 @@
 "North America"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Pachyrhinosaurus_TD.png/960px-Pachyrhinosaurus_TD.png",
+"cfile":"Pachyrhinosaurus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Palaeoscincus",
@@ -14593,7 +16318,12 @@
 "Pampadromaeus barberenai"
 ],
 "dinodb":true,
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Pampadromaeus_life.png/960px-Pampadromaeus_life.png",
+"cfile":"Pampadromaeus life.png",
+"cart":"IJReid",
+"clic":"CC BY 4.0",
+"ckind":"plain"
 },
 {
 "name":"Pamparaptor",
@@ -14621,7 +16351,12 @@
 "South America"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Pamparaptor.jpg/960px-Pamparaptor.jpg",
+"cfile":"Pamparaptor.jpg",
+"cart":"Danny Cicchetti",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Panamericansaurus",
@@ -14755,7 +16490,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 61 tonnes",
-"size":"giant"
+"size":"giant",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Paralititan_63844.jpg/960px-Paralititan_63844.jpg",
+"cfile":"Paralititan 63844.jpg",
+"cart":"Conty",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Paranthodon",
@@ -14787,7 +16527,12 @@
 "Africa"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Paranthodon_africanus.png/960px-Paranthodon_africanus.png",
+"cfile":"Paranthodon africanus.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Pararhabdodon",
@@ -14816,7 +16561,12 @@
 "Europe"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Life_reconstruction_of_Pararhabdodon_isonensis.png/960px-Life_reconstruction_of_Pararhabdodon_isonensis.png",
+"cfile":"Life reconstruction of Pararhabdodon isonensis.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Parasaurolophus",
@@ -14858,7 +16608,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Parasaurolophus_walkeri.jpg",
 "dinodb":true,
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Parasaurolophus_TD.png/960px-Parasaurolophus_TD.png",
+"cfile":"Parasaurolophus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Parksosaurus",
@@ -14958,7 +16713,12 @@
 "South America"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Patagosaurus.jpg/960px-Patagosaurus.jpg",
+"cfile":"Patagosaurus.jpg",
+"cart":"Smokeybjb",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Patagotitan",
@@ -14996,7 +16756,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Detail_of_Patagotitan_skull_at_the_American_Museum_of_Natural_History.jpg",
 "dinodb":true,
-"size":"giant"
+"size":"giant",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Patagotitan_TD.png/960px-Patagotitan_TD.png",
+"cfile":"Patagotitan TD.png",
+"cart":"UnexpectedDinoLesson",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Pawpawsaurus",
@@ -15025,7 +16790,12 @@
 "North America"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Pawpawsaurus_reconstuction.png/960px-Pawpawsaurus_reconstuction.png",
+"cfile":"Pawpawsaurus reconstuction.png",
+"cart":"Void Lampshade",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Pedopenna",
@@ -15055,7 +16825,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":"small"
+"size":"small",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Pedopenna_%28scansoriopterygid%29.png/960px-Pedopenna_%28scansoriopterygid%29.png",
+"cfile":"Pedopenna (scansoriopterygid).png",
+"cart":"Sauriazoicillus",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Pegomastax",
@@ -15085,7 +16860,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Pegomastax.jpg",
 "dinodb":true,
-"size":null
+"size":null,
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/6/68/Pegomastax_africana_reconstruction_transparent.png",
+"cfile":"Pegomastax africana reconstruction transparent.png",
+"cart":"Todd Marshall",
+"clic":"CC BY-SA 3.0",
+"ckind":"transparent"
 },
 {
 "name":"Pelecanimimus",
@@ -15117,7 +16897,12 @@
 "Europe"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Pelecanimimus_TD.png/960px-Pelecanimimus_TD.png",
+"cfile":"Pelecanimimus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Peloroplites",
@@ -15173,7 +16958,12 @@
 "Europe"
 ],
 "hips":"lizard",
-"size":"giant"
+"size":"giant",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Pelorosaurus2.jpg/960px-Pelorosaurus2.jpg",
+"cfile":"Pelorosaurus2.jpg",
+"cart":"Levi bernardo",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Pendraig",
@@ -15242,7 +17032,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Pentaceratops_sternbergii_(1).jpg",
 "dinodb":true,
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Pentaceratops_sternbergii_0482.JPG/960px-Pentaceratops_sternbergii_0482.JPG",
+"cfile":"Pentaceratops sternbergii 0482.JPG",
+"cart":"Conty",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Philovenator",
@@ -15319,7 +17114,12 @@
 "South America"
 ],
 "hips":"lizard",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Piatnitzkysaurus_floresi_by_Paleocolour.jpg/960px-Piatnitzkysaurus_floresi_by_Paleocolour.jpg",
+"cfile":"Piatnitzkysaurus floresi by Paleocolour.jpg",
+"cart":"Paleocolour",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Pinacosaurus",
@@ -15358,7 +17158,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Pinacosaurus.jpg",
 "dinodb":true,
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Pinacosaurus_Jack_Wood_2017_flipped_transparent.png/960px-Pinacosaurus_Jack_Wood_2017_flipped_transparent.png",
+"cfile":"Pinacosaurus Jack Wood 2017 flipped transparent.png",
+"cart":"Jack Mayer Wood",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Pisanosaurus",
@@ -15390,7 +17195,12 @@
 "South America"
 ],
 "hips":"bird",
-"size":"small"
+"size":"small",
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/d/dc/Pisanosaurus_transparent.png",
+"cfile":"Pisanosaurus transparent.png",
+"cart":"FunkMonk",
+"clic":"CC BY-SA 3.0",
+"ckind":"transparent"
 },
 {
 "name":"Piveteausaurus",
@@ -15418,7 +17228,12 @@
 "Europe"
 ],
 "hips":"lizard",
-"size":"large"
+"size":"large",
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/d/d1/Piveteausaurus_divesensis_jmallon.jpg",
+"cfile":"Piveteausaurus divesensis jmallon.jpg",
+"cart":"Jordan Mallon",
+"clic":"CC BY-SA 2.5",
+"ckind":"plain"
 },
 {
 "name":"Planicoxa",
@@ -15447,7 +17262,12 @@
 ],
 "hips":"bird",
 "weight":"up to 450 kg",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Planicoxa_TD.png/960px-Planicoxa_TD.png",
+"cfile":"Planicoxa TD.png",
+"cart":"UnexpectedDinoLesson",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Plateosaurus",
@@ -15487,7 +17307,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Muja_01.jpg",
 "dinodb":true,
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Plateosaurus_TD.png/960px-Plateosaurus_TD.png",
+"cfile":"Plateosaurus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Pneumatoraptor",
@@ -15515,7 +17340,12 @@
 "Europe"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Pneumatoraptor_fodori.jpg/960px-Pneumatoraptor_fodori.jpg",
+"cfile":"Pneumatoraptor fodori.jpg",
+"cart":"FunkMonk",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Podokesaurus",
@@ -15548,7 +17378,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 40 kg",
-"size":"small"
+"size":"small",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Podokesaurus_restoration.jpg/960px-Podokesaurus_restoration.jpg",
+"cfile":"Podokesaurus restoration.jpg",
+"cart":"FunkMonk",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Poekilopleuron",
@@ -15578,7 +17413,12 @@
 "Europe"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Poekilopleuron_reconstruction.png/960px-Poekilopleuron_reconstruction.png",
+"cfile":"Poekilopleuron reconstruction.png",
+"cart":"PaleoEquii",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Polacanthus",
@@ -15610,7 +17450,12 @@
 "Europe"
 ],
 "hips":"bird",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Polacanthus_TD.png/960px-Polacanthus_TD.png",
+"cfile":"Polacanthus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Prenocephale",
@@ -15642,7 +17487,12 @@
 "Asia"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Prenocephale_TD.png/960px-Prenocephale_TD.png",
+"cfile":"Prenocephale TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Prenoceratops",
@@ -15720,7 +17570,12 @@
 "Asia"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Probactrosaurus_v3_transparent.png/960px-Probactrosaurus_v3_transparent.png",
+"cfile":"Probactrosaurus v3 transparent.png",
+"cart":"Deibvort",
+"clic":"CC BY-SA 3.0",
+"ckind":"transparent"
 },
 {
 "name":"Proceratosaurus",
@@ -15788,7 +17643,12 @@
 "Europe"
 ],
 "hips":"lizard",
-"size":"small"
+"size":"small",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Procompsognathus.png/960px-Procompsognathus.png",
+"cfile":"Procompsognathus.png",
+"cart":"D2Hills",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Propanoplosaurus",
@@ -15817,7 +17677,12 @@
 "North America"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Propanoplosaurus.jpg/960px-Propanoplosaurus.jpg",
+"cfile":"Propanoplosaurus.jpg",
+"cart":"Danny Cicchetti",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Prosaurolophus",
@@ -15846,7 +17711,12 @@
 "North America"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Prosaurolophus_maximus.png/960px-Prosaurolophus_maximus.png",
+"cfile":"Prosaurolophus maximus.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Protarchaeopteryx",
@@ -15877,7 +17747,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Protarchaeopteryx-reconstruction.png/960px-Protarchaeopteryx-reconstruction.png",
+"cfile":"Protarchaeopteryx-reconstruction.png",
+"cart":"Clara Takahashi",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Protoceratops",
@@ -15916,7 +17791,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Protoceratops_andrewsi_-_IMG_0691.jpg",
 "dinodb":true,
-"size":"small"
+"size":"small",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Protoceratops_andrewsi_Restoration.png/960px-Protoceratops_andrewsi_Restoration.png",
+"cfile":"Protoceratops andrewsi Restoration.png",
+"cart":"PaleoNeolitic",
+"clic":"CC BY 4.0",
+"ckind":"plain"
 },
 {
 "name":"Protohadros",
@@ -15983,7 +17863,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Psittacosaurus_family.jpg",
 "dinodb":true,
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Psittacosaurus_TD.png/960px-Psittacosaurus_TD.png",
+"cfile":"Psittacosaurus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Puertasaurus",
@@ -16013,7 +17898,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 55 tonnes",
-"size":"giant"
+"size":"giant",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Puertasaurus_reuili.png/960px-Puertasaurus_reuili.png",
+"cfile":"Puertasaurus reuili.png",
+"cart":"User:Slate Weasel",
+"clic":"Public domain",
+"ckind":"plain"
 },
 {
 "name":"Pycnonemosaurus",
@@ -16082,7 +17972,12 @@
 "Pyroraptor olympius"
 ],
 "dinodb":true,
-"size":"small"
+"size":"small",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Pyroraptor_olympius_reconstruction.png/960px-Pyroraptor_olympius_reconstruction.png",
+"cfile":"Pyroraptor olympius reconstruction.png",
+"cart":"Mette Aumala",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Qantassaurus",
@@ -16144,7 +18039,12 @@
 "Qianjiangsaurus changshengi"
 ],
 "dinodb":true,
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Qianjiangsaurus_TD.png/960px-Qianjiangsaurus_TD.png",
+"cfile":"Qianjiangsaurus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Qianzhousaurus",
@@ -16171,7 +18071,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Qianzhousaurus_sinensis_by_PaleoGeek.png/960px-Qianzhousaurus_sinensis_by_PaleoGeek.png",
+"cfile":"Qianzhousaurus sinensis by PaleoGeek.png",
+"cart":"PaleoGeekSquared",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Qiaowanlong",
@@ -16224,7 +18129,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Qiupalong_Restoration.png/960px-Qiupalong_Restoration.png",
+"cfile":"Qiupalong Restoration.png",
+"cart":"PaleoNeolitic",
+"clic":"CC BY 4.0",
+"ckind":"plain"
 },
 {
 "name":"Quaesitosaurus",
@@ -16283,7 +18193,12 @@
 "South America"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Quilmesaurus_curriei.jpg/960px-Quilmesaurus_curriei.jpg",
+"cfile":"Quilmesaurus curriei.jpg",
+"cart":"Paleocolour",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Rahiolisaurus",
@@ -16310,7 +18225,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Rahiolisaurus_restoration.png/960px-Rahiolisaurus_restoration.png",
+"cfile":"Rahiolisaurus restoration.png",
+"cart":"Paleocolour",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Rahonavis",
@@ -16339,7 +18259,12 @@
 "Africa"
 ],
 "hips":"lizard",
-"size":"small"
+"size":"small",
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/3/3d/Rahonavis_NT.jpg",
+"cfile":"Rahonavis NT.jpg",
+"cart":"Nobu Tamura",
+"clic":"CC BY 3.0",
+"ckind":"plain"
 },
 {
 "name":"Rajasaurus",
@@ -16377,7 +18302,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Exhibit_of_Rajasaurus_Narmadensis_at_Regional_Museum_of_Natural_History,Bhopal,India_2.jpg",
 "dinodb":true,
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Rajasaurus_TD.png/960px-Rajasaurus_TD.png",
+"cfile":"Rajasaurus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Rapator",
@@ -16431,7 +18361,12 @@
 "Africa"
 ],
 "hips":"lizard",
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Rapetosaurus_TD.png/960px-Rapetosaurus_TD.png",
+"cfile":"Rapetosaurus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Raptorex",
@@ -16468,7 +18403,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Raptorex_Head.jpg",
 "dinodb":true,
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Raptorex.jpg/960px-Raptorex.jpg",
+"cfile":"Raptorex.jpg",
+"cart":"Ornitholestes",
+"clic":"Public domain",
+"ckind":"plain"
 },
 {
 "name":"Rebbachisaurus",
@@ -16499,7 +18439,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 13 tonnes",
-"size":"giant"
+"size":"giant",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Rebbachisaurus_TD.png/960px-Rebbachisaurus_TD.png",
+"cfile":"Rebbachisaurus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Regaliceratops",
@@ -16582,7 +18527,12 @@
 ],
 "hips":"bird",
 "weight":"up to 250 kg",
-"size":"medium"
+"size":"medium",
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/6/6b/Rhabdodon.jpg",
+"cfile":"Rhabdodon.jpg",
+"cart":"No machine-readable author provided. ArthurWeasley~commonswi",
+"clic":"CC BY 2.5",
+"ckind":"plain"
 },
 {
 "name":"Rhinorex",
@@ -16610,7 +18560,12 @@
 "North America"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Rhinorex_condrupus.png/960px-Rhinorex_condrupus.png",
+"cfile":"Rhinorex condrupus.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Rhoetosaurus",
@@ -16662,7 +18617,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Ojo_Alamo_cf._Richardoestesia_sp_profile_reconstruction.jpg/960px-Ojo_Alamo_cf._Richardoestesia_sp_profile_reconstruction.jpg",
+"cfile":"Ojo Alamo cf. Richardoestesia sp profile reconstruction.jpg",
+"cart":"LancianIdolatry",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Rinchenia",
@@ -16690,7 +18650,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Rinchenia_Restoration.png/960px-Rinchenia_Restoration.png",
+"cfile":"Rinchenia Restoration.png",
+"cart":"PaleoNeolitic",
+"clic":"CC BY 4.0",
+"ckind":"plain"
 },
 {
 "name":"Rinconsaurus",
@@ -16717,7 +18682,12 @@
 "South America"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Rinconsaurus_test_2.jpg/960px-Rinconsaurus_test_2.jpg",
+"cfile":"Rinconsaurus test 2.jpg",
+"cart":"Steveoc 86",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Riojasaurus",
@@ -16746,7 +18716,12 @@
 "South America"
 ],
 "hips":"lizard",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Riojasaurus_sketch3.jpg/960px-Riojasaurus_sketch3.jpg",
+"cfile":"Riojasaurus sketch3.jpg",
+"cart":"No machine-readable author provided. Deivid assumed",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Rugops",
@@ -16779,7 +18754,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 410 kg",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Rugops_%28cropped%29.png/960px-Rugops_%28cropped%29.png",
+"cfile":"Rugops (cropped).png",
+"cart":"Liam Elward",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Saichania",
@@ -16809,7 +18789,12 @@
 ],
 "hips":"bird",
 "weight":"up to 2.2 tonnes",
-"size":"medium"
+"size":"medium",
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/7/72/Saichania_1_001.jpg",
+"cfile":"Saichania 1 001.jpg",
+"cart":"JaviDex",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Saltasaurus",
@@ -16845,7 +18830,12 @@
 "Saltasaurus loricatus"
 ],
 "dinodb":true,
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Saltasaurus_TD.png/960px-Saltasaurus_TD.png",
+"cfile":"Saltasaurus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Saltopus",
@@ -16874,7 +18864,12 @@
 "Europe"
 ],
 "hips":null,
-"size":null
+"size":null,
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/e/eb/Saltopus_NT_small.jpg",
+"cfile":"Saltopus NT small.jpg",
+"cart":"Nobu Tamura email:nobu.tamura@yahoo.com",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Sanjuansaurus",
@@ -16932,7 +18927,12 @@
 "South America"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Santanaraptor_placidus.jpg/960px-Santanaraptor_placidus.jpg",
+"cfile":"Santanaraptor placidus.jpg",
+"cart":"FunkMonk",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Sarahsaurus",
@@ -17011,7 +19011,12 @@
 "Europe"
 ],
 "hips":"lizard",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Sarcosaurus_TD.png/960px-Sarcosaurus_TD.png",
+"cfile":"Sarcosaurus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Sasayamagnomus",
@@ -17045,7 +19050,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Sasayamagnomus_HolotypeJH.jpg",
 "dinodb":true,
-"size":"small"
+"size":"small",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Sasayamagnomus_TD.png/960px-Sasayamagnomus_TD.png",
+"cfile":"Sasayamagnomus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Saturnalia",
@@ -17082,7 +19092,12 @@
 "Saturnalia tupiniquim"
 ],
 "dinodb":true,
-"size":"small"
+"size":"small",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Saturnalia_tupiniquim.jpg/960px-Saturnalia_tupiniquim.jpg",
+"cfile":"Saturnalia tupiniquim.jpg",
+"cart":"CaetaMS",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Saurolophus",
@@ -17122,7 +19137,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Crane_de_Saurolophus.jpg",
 "dinodb":true,
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Saurolophus_TD.png/960px-Saurolophus_TD.png",
+"cfile":"Saurolophus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Sauroniops",
@@ -17149,7 +19169,12 @@
 "Africa"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Reconstruction_of_a_Sauroniops.jpg/960px-Reconstruction_of_a_Sauroniops.jpg",
+"cfile":"Reconstruction of a Sauroniops.jpg",
+"cart":"08pateldan",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Sauropelta",
@@ -17187,7 +19212,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Sauropelta.jpg",
 "dinodb":true,
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Sauropelta_reconstruction.png/960px-Sauropelta_reconstruction.png",
+"cfile":"Sauropelta reconstruction.png",
+"cart":"Emily Willoughby",
+"clic":"CC BY-SA 3.0",
+"ckind":"transparent"
 },
 {
 "name":"Saurophaganax",
@@ -17255,7 +19285,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 66 tonnes",
-"size":"giant"
+"size":"giant",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Sauroposeidon_TD.png/960px-Sauroposeidon_TD.png",
+"cfile":"Sauroposeidon TD.png",
+"cart":"TotalDino",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Saurornithoides",
@@ -17287,7 +19322,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Saurornithoides_restoration.png/960px-Saurornithoides_restoration.png",
+"cfile":"Saurornithoides restoration.png",
+"cart":"Audrey.m.horn",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Saurornitholestes",
@@ -17319,7 +19359,12 @@
 "North America"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Saurornitholestes_langstoni.png/960px-Saurornitholestes_langstoni.png",
+"cfile":"Saurornitholestes langstoni.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Savannasaurus",
@@ -17375,7 +19420,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Scansoriopteryx_restoration.png/960px-Scansoriopteryx_restoration.png",
+"cfile":"Scansoriopteryx restoration.png",
+"cart":"Cornhead",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Scelidosaurus",
@@ -17412,7 +19462,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Scelidosaurus_skull_close_up.jpg",
 "dinodb":true,
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Scelidosaurus_harrisonii_flipped_transparent.png/960px-Scelidosaurus_harrisonii_flipped_transparent.png",
+"cfile":"Scelidosaurus harrisonii flipped transparent.png",
+"cart":"Jack Mayer Wood",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Scipionyx",
@@ -17444,7 +19499,12 @@
 "Europe"
 ],
 "hips":"lizard",
-"size":"small"
+"size":"small",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/ScipionyxFEATHERS.jpg/960px-ScipionyxFEATHERS.jpg",
+"cfile":"ScipionyxFEATHERS.jpg",
+"cart":"Conty",
+"clic":"CC BY 3.0",
+"ckind":"plain"
 },
 {
 "name":"Sciurumimus",
@@ -17479,7 +19539,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Sciurumimus_albersdoerfi_38.jpg",
 "dinodb":true,
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Sciurumimus_Recon.png/960px-Sciurumimus_Recon.png",
+"cfile":"Sciurumimus Recon.png",
+"cart":"Olmagon",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Scolosaurus",
@@ -17511,7 +19576,12 @@
 ],
 "hips":"bird",
 "weight":"up to 2.4 tonnes",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Scolosaurus_SW.png/960px-Scolosaurus_SW.png",
+"cfile":"Scolosaurus SW.png",
+"cart":"Slate Weasel",
+"clic":"CC0",
+"ckind":"transparent"
 },
 {
 "name":"Scutellosaurus",
@@ -17543,7 +19613,12 @@
 "North America"
 ],
 "hips":"bird",
-"size":"small"
+"size":"small",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Scutellosaurus_TD.png/960px-Scutellosaurus_TD.png",
+"cfile":"Scutellosaurus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Secernosaurus",
@@ -17571,7 +19646,12 @@
 "South America"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/9/96/Secernosaurus_koerneri.png",
+"cfile":"Secernosaurus koerneri.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Segisaurus",
@@ -17599,7 +19679,12 @@
 "North America"
 ],
 "hips":"lizard",
-"size":"small"
+"size":"small",
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/8/88/Segisaurus.jpg",
+"cfile":"Segisaurus.jpg",
+"cart":"Nobu Tamura",
+"clic":"CC BY 2.5",
+"ckind":"plain"
 },
 {
 "name":"Segnosaurus",
@@ -17635,7 +19720,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Dentary_teeth_of_Segnosaurus_(22nd%E2%80%9324th_tooth_crowns_in_lingual_view).png",
 "dinodb":true,
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Segnosaurus_Restoration.jpg/960px-Segnosaurus_Restoration.jpg",
+"cfile":"Segnosaurus Restoration.jpg",
+"cart":"PaleoNeolitic",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Seitaad",
@@ -17771,7 +19861,12 @@
 ],
 "hips":"bird",
 "weight":"up to 18 tonnes",
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Shantungosaurus_life.png/960px-Shantungosaurus_life.png",
+"cfile":"Shantungosaurus life.png",
+"cart":"IJReid",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Shaochilong",
@@ -17798,7 +19893,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Shaochilong.jpg/960px-Shaochilong.jpg",
+"cfile":"Shaochilong.jpg",
+"cart":"FunkMonk",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Shenzhousaurus",
@@ -17860,7 +19960,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Shunosaurus,_DinoPark_Ostrava.jpg",
 "dinodb":true,
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Shunosaurus_life_restoration.jpg/960px-Shunosaurus_life_restoration.jpg",
+"cfile":"Shunosaurus life restoration.jpg",
+"cart":"User:Smokeybjb",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Shuvosaurus",
@@ -17888,7 +19993,12 @@
 "North America"
 ],
 "hips":null,
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Shuvosaurus_inexpectatus_%E3%82%B7%E3%83%A5%E3%83%B4%E3%82%A9%E3%82%B5%E3%82%A6%E3%83%AB%E3%82%B9%E3%83%BB%E3%82%A4%E3%83%8D%E3%82%AF%E3%82%B9%E3%83%9A%E3%82%AF%E3%82%BF%E3%83%BC%E3%83%88%E3%82%A5%E3%82%B9.jpg/960px-Shuvosaurus_inexpectatus_%E3%82%B7%E3%83%A5%E3%83%B4%E3%82%A9%E3%82%B5%E3%82%A6%E3%83%AB%E3%82%B9%E3%83%BB%E3%82%A4%E3%83%8D%E3%82%AF%E3%82%B9%E3%83%9A%E3%82%AF%E3%82%BF%E3%83%BC%E3%83%88%E3%82%A5%E3%82%B9.jpg",
+"cfile":"Shuvosaurus inexpectatus シュヴォサウルス・イネクスペクタートゥス.jpg",
+"cart":"Solanohikali",
+"clic":"CC BY 4.0",
+"ckind":"plain"
 },
 {
 "name":"Shuvuuia",
@@ -17919,7 +20029,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Shuvuuia_TD.png/960px-Shuvuuia_TD.png",
+"cfile":"Shuvuuia TD.png",
+"cart":"TotalDino",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Siamodon",
@@ -18014,7 +20129,12 @@
 "North America"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Siats_TD.png/960px-Siats_TD.png",
+"cfile":"Siats TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Sigilmassasaurus",
@@ -18045,7 +20165,12 @@
 "Africa"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Life_reconstruction_of_Sigilmassasaurus_brevicollis.png/960px-Life_reconstruction_of_Sigilmassasaurus_brevicollis.png",
+"cfile":"Life reconstruction of Sigilmassasaurus brevicollis.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Silesaurus",
@@ -18082,7 +20207,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Silesaurus_szkielet.JPG",
 "dinodb":true,
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Silesaurus_TD.png/960px-Silesaurus_TD.png",
+"cfile":"Silesaurus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Silvisaurus",
@@ -18134,7 +20264,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Similicaudipteryx.png/960px-Similicaudipteryx.png",
+"cfile":"Similicaudipteryx.png",
+"cart":"Olmagon",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Sinocalliopteryx",
@@ -18199,7 +20334,12 @@
 ],
 "hips":"bird",
 "weight":"up to 2.2 tonnes",
-"size":"medium"
+"size":"medium",
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/8/8b/Sinoceratops_NT_transparent.png",
+"cfile":"Sinoceratops NT transparent.png",
+"cart":"Nobu Tamura",
+"clic":"CC BY-SA 3.0",
+"ckind":"transparent"
 },
 {
 "name":"Sinornithoides",
@@ -18227,7 +20367,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":"small"
+"size":"small",
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/d/d6/Sinornithoides-youngi_jconway.png",
+"cfile":"Sinornithoides-youngi jconway.png",
+"cart":"John Conway [1]",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Sinornithomimus",
@@ -18257,7 +20402,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Sinornithomimus.jpg/960px-Sinornithomimus.jpg",
+"cfile":"Sinornithomimus.jpg",
+"cart":"FunkMonk, spiritual guidance from John Gerrard Keulemans",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Sinornithosaurus",
@@ -18290,7 +20440,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 5 kg",
-"size":"small"
+"size":"small",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Sinornithosaurus.jpg/960px-Sinornithosaurus.jpg",
+"cfile":"Sinornithosaurus.jpg",
+"cart":"FunkMonk",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Sinosauropteryx",
@@ -18323,7 +20478,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 0.6 kg",
-"size":"small"
+"size":"small",
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/2/24/Sinosauropteryx_mmartyniuk_solosml_%28flipped%29.png",
+"cfile":"Sinosauropteryx mmartyniuk solosml (flipped).png",
+"cart":"No machine-readable author provided. Dinoguy2 assumed",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Sinosaurus",
@@ -18387,7 +20547,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Sinotyrannus_TD.png/960px-Sinotyrannus_TD.png",
+"cfile":"Sinotyrannus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Sinovenator",
@@ -18450,7 +20615,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Sinraptor_dongi.jpg",
 "dinodb":true,
-"size":"medium"
+"size":"medium",
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/9/96/Sinraptor_NT_%28no_bg%29.png",
+"cfile":"Sinraptor NT (no bg).png",
+"cart":"Nobu Tamura",
+"clic":"CC BY 3.0",
+"ckind":"transparent"
 },
 {
 "name":"Sinusonasus",
@@ -18530,7 +20700,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 16 tonnes",
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Sonorasaurus_thompsoni.jpg/960px-Sonorasaurus_thompsoni.jpg",
+"cfile":"Sonorasaurus thompsoni.jpg",
+"cart":"Creator:Dmitry Bogdanov",
+"clic":"CC BY 3.0",
+"ckind":"plain"
 },
 {
 "name":"Sphaerotholus",
@@ -18559,7 +20734,12 @@
 "North America"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Sphaerotholus_TD.png/960px-Sphaerotholus_TD.png",
+"cfile":"Sphaerotholus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Spinophorosaurus",
@@ -18592,7 +20772,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 7.7 tonnes",
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Irhazer_Shale_Spinophorosaurus.png/960px-Irhazer_Shale_Spinophorosaurus.png",
+"cfile":"Irhazer Shale Spinophorosaurus.png",
+"cart":"YellowPanda2001",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Spinops",
@@ -18623,7 +20808,12 @@
 ],
 "hips":"bird",
 "weight":"up to 1.4 tonnes",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Spinops_TD.png/960px-Spinops_TD.png",
+"cfile":"Spinops TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Spinosaurus",
@@ -18662,7 +20852,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Spinosaurus_skeleton.jpg",
 "dinodb":true,
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Life_reconstruction_of_Spinosaurus_aegyptiacus.png/960px-Life_reconstruction_of_Spinosaurus_aegyptiacus.png",
+"cfile":"Life reconstruction of Spinosaurus aegyptiacus.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Spinostropheus",
@@ -18690,7 +20885,12 @@
 "Africa"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/3/31/Spinostropheus_NT.png",
+"cfile":"Spinostropheus NT.png",
+"cart":"Nobu Tamura email:nobu.tamura@yahoo.com",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Staurikosaurus",
@@ -18755,7 +20955,12 @@
 ],
 "hips":"bird",
 "weight":"up to 40 kg",
-"size":"small"
+"size":"small",
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/8/8c/Stegoceras_validum_transparent.png",
+"cfile":"Stegoceras validum transparent.png",
+"cart":"FunkMonk",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Stegosaurus",
@@ -18795,7 +21000,12 @@
 "Stegosaurus sulcatus"
 ],
 "dinodb":true,
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Stegosaurus_stenops_Life_Reconstruction.png/960px-Stegosaurus_stenops_Life_Reconstruction.png",
+"cfile":"Stegosaurus stenops Life Reconstruction.png",
+"cart":"Fred Wierum",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Stenonychosaurus",
@@ -18825,7 +21035,12 @@
 "North America"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Troodon_or_Stenonychosaurus_%28update%29.png/960px-Troodon_or_Stenonychosaurus_%28update%29.png",
+"cfile":"Troodon or Stenonychosaurus (update).png",
+"cart":"Conty",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Stenopelix",
@@ -18910,7 +21125,12 @@
 "North America"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Struthiomimus_586.JPG/960px-Struthiomimus_586.JPG",
+"cfile":"Struthiomimus 586.JPG",
+"cart":"Conty",
+"clic":"CC BY 3.0",
+"ckind":"plain"
 },
 {
 "name":"Struthiosaurus",
@@ -19012,7 +21232,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Styracosaurus_%22parksi%22_AMNH.jpg",
 "dinodb":true,
-"size":"small"
+"size":"small",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Styracosaurus_TD.png/960px-Styracosaurus_TD.png",
+"cfile":"Styracosaurus TD.png",
+"cart":"TotalDino",
+"clic":"CC0",
+"ckind":"transparent"
 },
 {
 "name":"Suchomimus",
@@ -19050,7 +21275,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:CCM_Suchomimus_2018.jpg",
 "dinodb":true,
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Life_reconstruction_of_Suchomimus_tenerensis.png/960px-Life_reconstruction_of_Suchomimus_tenerensis.png",
+"cfile":"Life reconstruction of Suchomimus tenerensis.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Sulaimanisaurus",
@@ -19103,7 +21333,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 49 tonnes",
-"size":"giant"
+"size":"giant",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Supersaurus_TD.png/960px-Supersaurus_TD.png",
+"cfile":"Supersaurus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Suuwassea",
@@ -19157,7 +21392,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 3.1 tonnes",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Suzhousaurus.JPG/960px-Suzhousaurus.JPG",
+"cfile":"Suzhousaurus.JPG",
+"cart":"FunkMonk",
+"clic":"CC BY 3.0",
+"ckind":"plain"
 },
 {
 "name":"Szechuanosaurus",
@@ -19209,7 +21449,12 @@
 "South America"
 ],
 "hips":"lizard",
-"size":"small"
+"size":"small",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Illustration_of_Tachiraptor_admirabilis.jpg/960px-Illustration_of_Tachiraptor_admirabilis.jpg",
+"cfile":"Illustration of Tachiraptor admirabilis.jpg",
+"cart":"Disfrasaurio",
+"clic":"CC BY 4.0",
+"ckind":"plain"
 },
 {
 "name":"Talarurus",
@@ -19242,7 +21487,12 @@
 ],
 "hips":"bird",
 "weight":"up to 907 kg",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Talarurus_transparent.png/960px-Talarurus_transparent.png",
+"cfile":"Talarurus transparent.png",
+"cart":"Jack Mayer Wood",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Talenkauen",
@@ -19272,7 +21522,12 @@
 "South America"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Talenkauen_TD.png/960px-Talenkauen_TD.png",
+"cfile":"Talenkauen TD.png",
+"cart":"TotalDino",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Talos",
@@ -19304,7 +21559,12 @@
 "North America"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Talos_sampsoni.jpg/960px-Talos_sampsoni.jpg",
+"cfile":"Talos sampsoni.jpg",
+"cart":"Tom Parker:",
+"clic":"CC BY 3.0",
+"ckind":"plain"
 },
 {
 "name":"Tangvayosaurus",
@@ -19353,7 +21613,12 @@
 ],
 "hips":"bird",
 "weight":"up to 2.2 tonnes",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Tanius_transparent.png/960px-Tanius_transparent.png",
+"cfile":"Tanius transparent.png",
+"cart":"FunkMonk",
+"clic":"CC BY-SA 3.0",
+"ckind":"transparent"
 },
 {
 "name":"Tanycolagreus",
@@ -19385,7 +21650,12 @@
 "North America"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Tanycolagreus_reconstruction.png/960px-Tanycolagreus_reconstruction.png",
+"cfile":"Tanycolagreus reconstruction.png",
+"cart":"PaleoNeolitic",
+"clic":"CC BY 4.0",
+"ckind":"plain"
 },
 {
 "name":"Taohelong",
@@ -19502,7 +21772,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Tarbosaurus_bataar_mount_-_Dinosaur_Mysteries_exhibit.jpg",
 "dinodb":true,
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Tarbosaurus_Restoration.png/960px-Tarbosaurus_Restoration.png",
+"cfile":"Tarbosaurus Restoration.png",
+"cart":"PaleoNeolitic",
+"clic":"CC BY 4.0",
+"ckind":"plain"
 },
 {
 "name":"Tarchia",
@@ -19540,7 +21815,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Tarchia_kielanae_2.JPG",
 "dinodb":true,
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Tarchia_TD.png/960px-Tarchia_TD.png",
+"cfile":"Tarchia TD.png",
+"cart":"TotalDino",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Tastavinsaurus",
@@ -19667,7 +21947,12 @@
 "North America"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Tawa_TD.png/960px-Tawa_TD.png",
+"cfile":"Tawa TD.png",
+"cart":"TotalDino",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Tazoudasaurus",
@@ -19742,7 +22027,12 @@
 "South America"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Tehuelchesaurus_benetezii.jpg/960px-Tehuelchesaurus_benetezii.jpg",
+"cfile":"Tehuelchesaurus benetezii.jpg",
+"cart":"Levi bernardo",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Telmatosaurus",
@@ -19777,7 +22067,12 @@
 "fossil":"https://commons.wikimedia.org/wiki/File:Telmatosaurus_transsylvanicus_vertebrae.JPG",
 "dinodb":true,
 "weight":"up to 600 kg",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Telmatosaurus_transsylvanicus_reconstruction.png/960px-Telmatosaurus_transsylvanicus_reconstruction.png",
+"cfile":"Telmatosaurus transsylvanicus reconstruction.png",
+"cart":"He who needs to be silenced",
+"clic":"CC BY 4.0",
+"ckind":"plain"
 },
 {
 "name":"Tendaguria",
@@ -19804,7 +22099,12 @@
 "Africa"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Tendaguria.png/960px-Tendaguria.png",
+"cfile":"Tendaguria.png",
+"cart":"Miracusaurs",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Tenontosaurus",
@@ -19834,7 +22134,12 @@
 "North America"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Tenontosaurus_TD.png/960px-Tenontosaurus_TD.png",
+"cfile":"Tenontosaurus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Teratophoneus",
@@ -19866,7 +22171,12 @@
 "North America"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/c/cf/Teratophoneus2_NT.jpg",
+"cfile":"Teratophoneus2 NT.jpg",
+"cart":"Nobu Tamura",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Tethyshadros",
@@ -19895,7 +22205,12 @@
 "Europe"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Tethyshadros_TD.png/960px-Tethyshadros_TD.png",
+"cfile":"Tethyshadros TD.png",
+"cart":"TotalDino",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Texacephale",
@@ -19969,7 +22284,12 @@
 "Europe"
 ],
 "hips":"lizard",
-"size":"small"
+"size":"small",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Thecodontosaurus_antiquus_limb_musculature.jpg/960px-Thecodontosaurus_antiquus_limb_musculature.jpg",
+"cfile":"Thecodontosaurus antiquus limb musculature.jpg",
+"cart":"Antonio Ballell, Emily J. Rayfield and Michael J. Benton",
+"clic":"CC BY 4.0",
+"ckind":"plain"
 },
 {
 "name":"Theiophytalia",
@@ -20028,7 +22348,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Therizinosaurus_MPC-D_100_15_arms.jpg",
 "dinodb":true,
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Therizinosaurus_Restoration.png/960px-Therizinosaurus_Restoration.png",
+"cfile":"Therizinosaurus Restoration.png",
+"cart":"PaleoNeolitic",
+"clic":"CC BY 4.0",
+"ckind":"plain"
 },
 {
 "name":"Thescelosaurus",
@@ -20061,7 +22386,12 @@
 ],
 "hips":"bird",
 "weight":"up to 300 kg",
-"size":"medium"
+"size":"medium",
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/8/85/Thescelosaurus_filamented_transparent.png",
+"cfile":"Thescelosaurus filamented transparent.png",
+"cart":"Leandra Walters, Phil Senter, James H. Robins",
+"clic":"CC BY-SA 2.5",
+"ckind":"transparent"
 },
 {
 "name":"Tianchisaurus",
@@ -20109,7 +22439,12 @@
 "Asia"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Tianyulong_confuciusi.png/960px-Tianyulong_confuciusi.png",
+"cfile":"Tianyulong confuciusi.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Tianyuraptor",
@@ -20166,7 +22501,12 @@
 "Asia"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Tianzhenosaurus_chengi.png/960px-Tianzhenosaurus_chengi.png",
+"cfile":"Tianzhenosaurus chengi.png",
+"cart":"Ddinodan",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Tietasaura",
@@ -20198,7 +22538,12 @@
 "Tietasaura derbyiana"
 ],
 "dinodb":true,
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Tietasaura_TD.png/960px-Tietasaura_TD.png",
+"cfile":"Tietasaura TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Timimus",
@@ -20252,7 +22597,12 @@
 ],
 "hips":"bird",
 "weight":"up to 7.2 tonnes",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Titanoceratops_ouranos_life_restoration.jpg/960px-Titanoceratops_ouranos_life_restoration.jpg",
+"cfile":"Titanoceratops ouranos life restoration.jpg",
+"cart":"Lineart by Robinson Kunz",
+"clic":"CC BY 3.0",
+"ckind":"plain"
 },
 {
 "name":"Titanosaurus",
@@ -20363,7 +22713,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Milwaukee_Public_Museum_May_2023_01_(Third_Planet--Torosaurus).jpghttps://commons.wikimedia.org/wiki/File:Milwaukee_Public_Museum_May_2023_01_(Third_Planet--Torosaurus).jpg",
 "dinodb":true,
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Torosaurus_TD.png/960px-Torosaurus_TD.png",
+"cfile":"Torosaurus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Torvosaurus",
@@ -20405,7 +22760,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Torvosaurus_Museum_of_Ancient_Life_2.jpg",
 "dinodb":true,
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Torvosaurus_tanneri_Reconstruction_%28Flipped%29.png/960px-Torvosaurus_tanneri_Reconstruction_%28Flipped%29.png",
+"cfile":"Torvosaurus tanneri Reconstruction (Flipped).png",
+"cart":"Fred Wierum",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Triceratops",
@@ -20439,7 +22799,12 @@
 "hips":"bird",
 "weight":"up to 9 tonnes",
 "dinodb":true,
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Triceratops_horridus.png/960px-Triceratops_horridus.png",
+"cfile":"Triceratops horridus.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Trinisaura",
@@ -20469,7 +22834,12 @@
 "Antarctica"
 ],
 "hips":"bird",
-"size":"small"
+"size":"small",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Trinisaura_santamartaensis.jpg/960px-Trinisaura_santamartaensis.jpg",
+"cfile":"Trinisaura santamartaensis.jpg",
+"cart":"Daniel Méndez",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Troodon",
@@ -20506,7 +22876,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Troodon_formosus_holotype_tooth.jpg",
 "dinodb":true,
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Troodon_or_Stenonychosaurus_%28update%29.png/960px-Troodon_or_Stenonychosaurus_%28update%29.png",
+"cfile":"Troodon or Stenonychosaurus (update).png",
+"cart":"Conty",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Tsaagan",
@@ -20535,7 +22910,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Tsaagan.png/960px-Tsaagan.png",
+"cfile":"Tsaagan.png",
+"cart":"Miracusaurs",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Tsintaosaurus",
@@ -20573,7 +22953,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Tsintaosaurus_Squelette.JPG",
 "dinodb":true,
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/A_life_reconstruction_of_Tsintaosaurus_spinorhinus.png/960px-A_life_reconstruction_of_Tsintaosaurus_spinorhinus.png",
+"cfile":"A life reconstruction of Tsintaosaurus spinorhinus.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Tuojiangosaurus",
@@ -20611,7 +22996,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Tuojiangosaurus_multispinus_mount_img1.jpg",
 "dinodb":true,
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Tuojiangosaurus_multispinus.png/960px-Tuojiangosaurus_multispinus.png",
+"cfile":"Tuojiangosaurus multispinus.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Turanoceratops",
@@ -20642,7 +23032,12 @@
 "Asia"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Turanoceratops_tardabilis_life_restoration.jpg/960px-Turanoceratops_tardabilis_life_restoration.jpg",
+"cfile":"Turanoceratops tardabilis life restoration.jpg",
+"cart":"Lineart by Teratophoneus of Deviant Art",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Turiasaurus",
@@ -20742,7 +23137,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Tyrannosaurus_rex_J1.jpg",
 "dinodb":true,
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Tyrannosaurus-rex-Profile-steveoc86_%28coloured%29%28mirror%29.png/960px-Tyrannosaurus-rex-Profile-steveoc86_%28coloured%29%28mirror%29.png",
+"cfile":"Tyrannosaurus-rex-Profile-steveoc86 (coloured)(mirror).png",
+"cart":"Steveoc 86",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Tyrannotitan",
@@ -20774,7 +23174,12 @@
 "South America"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Tyrannotitan_chubutensis.png/960px-Tyrannotitan_chubutensis.png",
+"cfile":"Tyrannotitan chubutensis.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Uberabatitan",
@@ -20801,7 +23206,12 @@
 "South America"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Uberabatitan_riberoi_profile_reconstruction.jpg/960px-Uberabatitan_riberoi_profile_reconstruction.jpg",
+"cfile":"Uberabatitan riberoi profile reconstruction.jpg",
+"cart":"LancianIdolatry",
+"clic":"CC0",
+"ckind":"plain"
 },
 {
 "name":"Udanoceratops",
@@ -20832,7 +23242,12 @@
 ],
 "hips":"bird",
 "weight":"up to 700 kg",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Udanoceratops_Restoration.png/960px-Udanoceratops_Restoration.png",
+"cfile":"Udanoceratops Restoration.png",
+"cart":"PaleoNeolitic",
+"clic":"CC BY 4.0",
+"ckind":"plain"
 },
 {
 "name":"Unaysaurus",
@@ -20858,7 +23273,12 @@
 "South America"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Unaysaurus.jpg/960px-Unaysaurus.jpg",
+"cfile":"Unaysaurus.jpg",
+"cart":"FunkMonk, cycad modified from illustration by Esculapio[1]. ",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Unenlagia",
@@ -20938,7 +23358,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Urbacodon_norelli.png/960px-Urbacodon_norelli.png",
+"cfile":"Urbacodon norelli.png",
+"cart":"Ddinodan",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Utahceratops",
@@ -20970,7 +23395,12 @@
 "North America"
 ],
 "hips":"bird",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Utahceratops_TD.png/960px-Utahceratops_TD.png",
+"cfile":"Utahceratops TD.png",
+"cart":"TotalDino",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Utahraptor",
@@ -21008,7 +23438,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:BYU_Utahraptor_skeletal_mount.jpg",
 "dinodb":true,
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Utahraptor_traditional.jpg/960px-Utahraptor_traditional.jpg",
+"cfile":"Utahraptor traditional.jpg",
+"cart":"PaleoNeolitic",
+"clic":"CC0",
+"ckind":"plain"
 },
 {
 "name":"Uteodon",
@@ -21035,7 +23470,12 @@
 "North America"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Uteodon_reconstruction_raingerr.png/960px-Uteodon_reconstruction_raingerr.png",
+"cfile":"Uteodon reconstruction raingerr.png",
+"cart":"Raingerr",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Vagaceratops",
@@ -21195,7 +23635,12 @@
 "North America"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Life_reconstruction_of_Velafrons_coahuilensis.png/960px-Life_reconstruction_of_Velafrons_coahuilensis.png",
+"cfile":"Life reconstruction of Velafrons coahuilensis.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Velocipes",
@@ -21263,7 +23708,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Velociraptor_skeleton.jpg",
 "dinodb":true,
-"size":"small"
+"size":"small",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Velociraptor_TD.png/960px-Velociraptor_TD.png",
+"cfile":"Velociraptor TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Velocisaurus",
@@ -21290,7 +23740,12 @@
 "South America"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Velocisaurus.jpg/960px-Velocisaurus.jpg",
+"cfile":"Velocisaurus.jpg",
+"cart":"FunkMonk",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Venenosaurus",
@@ -21311,7 +23766,12 @@
 "North America"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Ilustracion_de_Venenosaurus.png/960px-Ilustracion_de_Venenosaurus.png",
+"cfile":"Ilustracion de Venenosaurus.png",
+"cart":"Fran84sco44",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Veterupristisaurus",
@@ -21373,7 +23833,12 @@
 "Vulcanodon karibaensis"
 ],
 "dinodb":true,
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Vulcanodon.png/960px-Vulcanodon.png",
+"cfile":"Vulcanodon.png",
+"cart":"J-H. Jang",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Wannanosaurus",
@@ -21403,7 +23868,12 @@
 "Asia"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/f/f0/Wannanosaurus_for_wiki_review_transparent.png",
+"cfile":"Wannanosaurus for wiki review transparent.png",
+"cart":"Jack Mayer Wood",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Wellnhoferia",
@@ -21433,7 +23903,12 @@
 "Europe"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Wellnhoferia_Reconstruction.png/960px-Wellnhoferia_Reconstruction.png",
+"cfile":"Wellnhoferia Reconstruction.png",
+"cart":"Djerados",
+"clic":"CC0",
+"ckind":"plain"
 },
 {
 "name":"Wendiceratops",
@@ -21500,7 +23975,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Wiehenvenator_reconstructed_skull.png",
 "dinodb":true,
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Wiehenvenator.png/960px-Wiehenvenator.png",
+"cfile":"Wiehenvenator.png",
+"cart":"Petr Menshikov",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Willinakaqe",
@@ -21551,7 +24031,12 @@
 "Australia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Wintonotitan.png/960px-Wintonotitan.png",
+"cfile":"Wintonotitan.png",
+"cart":"Artwork: T. Tischler, Australian Age of Dinosaurs Museum of ",
+"clic":"CC BY 2.5",
+"ckind":"plain"
 },
 {
 "name":"Wuerhosaurus",
@@ -21579,7 +24064,12 @@
 "Asia"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Wuerhosaurus_homheni.png/960px-Wuerhosaurus_homheni.png",
+"cfile":"Wuerhosaurus homheni.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Wulagasaurus",
@@ -21608,7 +24098,12 @@
 "Asia"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Wulagasaurus_dongi.png/960px-Wulagasaurus_dongi.png",
+"cfile":"Wulagasaurus dongi.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Xenoceratops",
@@ -21638,7 +24133,12 @@
 "North America"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/a/af/Xenoceratops_NT_small_transparent.png",
+"cfile":"Xenoceratops NT small transparent.png",
+"cart":"Nobu Tamura email:nobu.tamura@yahoo.com",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Xenoposeidon",
@@ -21669,7 +24169,12 @@
 "Europe"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Xenoposeidon_white_background.png/960px-Xenoposeidon_white_background.png",
+"cfile":"Xenoposeidon white background.png",
+"cart":"Levi bernardo",
+"clic":"CC BY-SA 3.0",
+"ckind":"transparent"
 },
 {
 "name":"Xenotarsosaurus",
@@ -21748,7 +24253,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Xiaotingia_.jpg/960px-Xiaotingia_.jpg",
+"cfile":"Xiaotingia .jpg",
+"cart":"El fosilmaníaco",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Xinjiangtitan",
@@ -21775,7 +24285,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Xinjiangtitan_%28adjusted%29.jpg/960px-Xinjiangtitan_%28adjusted%29.jpg",
+"cfile":"Xinjiangtitan (adjusted).jpg",
+"cart":"Danny Cicchetti",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Xiongguanlong",
@@ -21806,7 +24321,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Xiongguanlong_6007.JPG/960px-Xiongguanlong_6007.JPG",
+"cfile":"Xiongguanlong 6007.JPG",
+"cart":"Conty",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Xixianykus",
@@ -21856,7 +24376,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Xuanhanosaurus_qilixiaensis.png/960px-Xuanhanosaurus_qilixiaensis.png",
+"cfile":"Xuanhanosaurus qilixiaensis.png",
+"cart":"Audrey.m.horn",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Xuanhuaceratops",
@@ -21909,7 +24434,12 @@
 "Asia"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://upload.wikimedia.org/wikipedia/commons/5/56/Xuwulong_NT_flipped_transparent.png",
+"cfile":"Xuwulong NT flipped transparent.png",
+"cart":"NobuTamura email:nobu.tamura@yahoo.com palaeocritti",
+"clic":"CC BY-SA 3.0",
+"ckind":"transparent"
 },
 {
 "name":"Yamaceratops",
@@ -21958,7 +24488,12 @@
 "Asia"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Yandusaurus_reconstruction.png/960px-Yandusaurus_reconstruction.png",
+"cfile":"Yandusaurus reconstruction.png",
+"cart":"Raingerr",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Yangchuanosaurus",
@@ -21990,7 +24525,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Yangchuanosaurus_TD.png/960px-Yangchuanosaurus_TD.png",
+"cfile":"Yangchuanosaurus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Yaverlandia",
@@ -22045,7 +24585,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Yi_TD.png/960px-Yi_TD.png",
+"cfile":"Yi TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Yimenosaurus",
@@ -22074,7 +24619,12 @@
 ],
 "hips":"lizard",
 "weight":"up to 2.2 tonnes",
-"size":"large"
+"size":"large",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Yimenosaurus.png/960px-Yimenosaurus.png",
+"cfile":"Yimenosaurus.png",
+"cart":"Miracusaurs",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Yinlong",
@@ -22192,7 +24742,12 @@
 "Asia"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Yueosaurus_reconstruction.jpg/960px-Yueosaurus_reconstruction.jpg",
+"cfile":"Yueosaurus reconstruction.jpg",
+"cart":"Raingerr",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Yulong",
@@ -22221,7 +24776,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Yulong.png/960px-Yulong.png",
+"cfile":"Yulong.png",
+"cart":"Olmagon",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Yunnanosaurus",
@@ -22274,7 +24834,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Yutyrannus_TD.png/960px-Yutyrannus_TD.png",
+"cfile":"Yutyrannus TD.png",
+"cart":"TotalDino",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Zalmoxes",
@@ -22311,7 +24876,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:Zalmoxes_shqiperorum_Brussels.jpg",
 "dinodb":true,
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Zalmoxes_dinosaur.png/960px-Zalmoxes_dinosaur.png",
+"cfile":"Zalmoxes dinosaur.png",
+"cart":"LadyofHats",
+"clic":"Public domain",
+"ckind":"transparent"
 },
 {
 "name":"Zanabazar",
@@ -22341,7 +24911,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Zanabazar.jpg/960px-Zanabazar.jpg",
+"cfile":"Zanabazar.jpg",
+"cart":"FunkMonk",
+"clic":"CC BY 3.0",
+"ckind":"plain"
 },
 {
 "name":"Zapalasaurus",
@@ -22368,7 +24943,12 @@
 "South America"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Zapalasaurus.png/960px-Zapalasaurus.png",
+"cfile":"Zapalasaurus.png",
+"cart":"Miracusaurs",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Zby",
@@ -22399,7 +24979,12 @@
 "Europe"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/ZBY_atlanticus_one_turiasaurian_of_Portugal.jpg/960px-ZBY_atlanticus_one_turiasaurian_of_Portugal.jpg",
+"cfile":"ZBY atlanticus one turiasaurian of Portugal.jpg",
+"cart":"Levi bernardo",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Zephyrosaurus",
@@ -22423,7 +25008,12 @@
 "North America"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Zephyrosaurus.png/960px-Zephyrosaurus.png",
+"cfile":"Zephyrosaurus.png",
+"cart":"Klaora",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Zhanghenglong",
@@ -22499,7 +25089,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Zhenyuanlong_transparent_bg.png/960px-Zhenyuanlong_transparent_bg.png",
+"cfile":"Zhenyuanlong transparent bg.png",
+"cart":"Ferahgo the Assassin",
+"clic":"CC BY-SA 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Zhongyuansaurus",
@@ -22526,7 +25121,12 @@
 "Asia"
 ],
 "hips":"bird",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Zhongyuansaurus_junchangi.png/960px-Zhongyuansaurus_junchangi.png",
+"cfile":"Zhongyuansaurus junchangi.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Zhuchengceratops",
@@ -22585,7 +25185,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/ZhuchengtyrannusJF.png/960px-ZhuchengtyrannusJF.png",
+"cfile":"ZhuchengtyrannusJF.png",
+"cart":"Jfstudiospaleoart",
+"clic":"CC BY-SA 4.0",
+"ckind":"plain"
 },
 {
 "name":"Zuniceratops",
@@ -22623,7 +25228,12 @@
 ],
 "fossil":"https://commons.wikimedia.org/wiki/File:ZuniMountSide.jpg",
 "dinodb":true,
-"size":"small"
+"size":"small",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Zuniceratops_christopheri.png/960px-Zuniceratops_christopheri.png",
+"cfile":"Zuniceratops christopheri.png",
+"cart":"Connor Ashbridge",
+"clic":"CC BY 4.0",
+"ckind":"transparent"
 },
 {
 "name":"Zuolong",
@@ -22651,7 +25261,12 @@
 "Asia"
 ],
 "hips":"lizard",
-"size":null
+"size":null,
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Zuolong_salleei.jpg/960px-Zuolong_salleei.jpg",
+"cfile":"Zuolong salleei.jpg",
+"cart":"FunkMonk",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 },
 {
 "name":"Zupaysaurus",
@@ -22679,6 +25294,11 @@
 "South America"
 ],
 "hips":"lizard",
-"size":"medium"
+"size":"medium",
+"cimg":"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Zupaysaurus.jpg/960px-Zupaysaurus.jpg",
+"cfile":"Zupaysaurus.jpg",
+"cart":"FunkMonk",
+"clic":"CC BY-SA 3.0",
+"ckind":"plain"
 }
 ]
