@@ -1,5 +1,5 @@
 /* Mesozoic Carousel service worker: works offline, keeps recent pictures. */
-const VERSION = "mc-v3";
+const VERSION = "mc-v4";
 const SHELL = `${VERSION}-shell`, PICS = `${VERSION}-pics`, FONTS = `${VERSION}-fonts`;
 const MAX_PICS = 160;
 const PRECACHE = ["./", "index.html", "manifest.webmanifest", "data/dinos.json", "data/tree.json",

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="An endless carousel of dinosaurs. Each one swivels in, says its name and tells you what it ate.">
-<title>Mesozoic Carousel</title>
+<title>Welcome to the Dinosaur Kingdom · Mesozoic Carousel</title>
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#000000" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
@@ -69,16 +69,17 @@ a:hover{text-decoration-color:currentColor}
 .appbtn svg{width:16px; height:16px}
 .iostip{color:#D0D0D0; font-size:.82rem}
 @media (display-mode: standalone){ .getapp{display:none!important} }
+@media (max-width:560px){ .mast-in{gap:2px 14px; padding-block:6px} .mast-links{gap:4px 14px} .mast .getapp{display:contents} .mast .getapp .flabel{display:none} .appbtn{min-height:30px; font-size:.74rem} }
 
 .wrap{max-width:1080px; margin:0 auto; display:grid; gap:28px;
   padding-left:max(16px, env(safe-area-inset-left, 0px)); padding-right:max(16px, env(safe-area-inset-right, 0px)); padding-block:28px 48px}
 
 /* Intro */
-header.intro{display:grid; gap:16px; padding-bottom:24px; border-bottom:1px solid var(--line)}
+header.intro{display:grid; gap:8px; max-width:760px; padding-bottom:4px}
 .crumbs{margin:0; font:700 .74rem/1.2 var(--f-body); letter-spacing:.12em; text-transform:uppercase; color:var(--muted)}
 .crumbs span+span::before{content:"/"; margin:0 .6em; color:var(--line)}
-.intro h1{margin:0; font:800 clamp(2.4rem, 7vw, 4.6rem)/.98 var(--f-display); letter-spacing:-.025em; text-wrap:balance}
-.intro .dek{margin:0; max-width:62ch; font:400 clamp(1.08rem, 2.2vw, 1.3rem)/1.5 var(--f-serif); color:var(--ink)}
+.intro h1{margin:0; font:800 clamp(1.9rem, 4.6vw, 3rem)/1.02 var(--f-display); letter-spacing:-.02em; text-wrap:balance}
+.intro .dek{margin:0; max-width:60ch; font:400 clamp(1rem, 1.8vw, 1.12rem)/1.5 var(--f-serif); color:var(--muted)}
 .meta{display:flex; flex-wrap:wrap; gap:10px 32px; margin:0}
 .meta div{display:grid; gap:2px}
 .meta dt{font:700 .72rem/1.2 var(--f-body); letter-spacing:.12em; text-transform:uppercase; color:var(--muted)}
@@ -97,8 +98,20 @@ button[aria-pressed="false"] .on{display:none}
 button[aria-pressed="true"] .off{display:none}
 
 /* Feature card */
-.stage{position:relative; display:grid; perspective:1600px; perspective-origin:50% 30%}
-.card{grid-area:1/1; min-width:0; background:var(--surface); transform-origin:50% 50%; backface-visibility:hidden}
+.stage{position:relative; display:grid; grid-template-columns:minmax(0,1fr); grid-template-rows:auto auto auto auto; perspective:1600px; perspective-origin:50% 30%}
+/* Each card spans the stage rows through a subgrid and leaves row 3 empty; the player sits there, so it stays put while cards swivel. */
+.stage > .card{grid-column:1; grid-row:1 / 5; display:grid; grid-template-rows:subgrid; grid-template-columns:minmax(0,1fr)}
+.card > .frame{grid-row:1} .card > .caption{grid-row:2} .card > .placard{grid-row:4}
+.player{grid-column:1; grid-row:3; z-index:4; position:relative; display:flex; flex-wrap:wrap; align-items:center; gap:10px 18px; padding:12px 0; border-bottom:1px solid var(--line); background:var(--bg)}
+.pbtns{display:flex; gap:6px}
+.pbtns button{min-height:44px; padding:10px 14px}
+.pbtns button:disabled{opacity:.35; cursor:default}
+.pbtns button:disabled:hover{background:var(--surface)}
+#play{min-width:104px; justify-content:center}
+.player .status{flex:1 1 180px; min-width:0; padding:0; border:none}
+.player #voice{margin-left:auto}
+@media (max-width:520px){ .pbtns{flex:1 1 100%} .pbtns button{flex:1; justify-content:center; padding:10px 8px} .player #voice{margin-left:0} }
+.card{min-width:0; background:var(--surface); transform-origin:50% 50%; backface-visibility:hidden}
 .frame{position:relative; aspect-ratio:16/9; max-width:100%; background:#1E1E1E; overflow:hidden}
 .frame canvas{display:block; width:100%; height:100%}
 .frame.studio{background:var(--plate)}
@@ -109,7 +122,7 @@ button[aria-pressed="true"] .off{display:none}
 .frame.studio.plainbg img{filter:none; mix-blend-mode:multiply}
 .tag{position:absolute; left:0; top:16px; font:800 .72rem/1 var(--f-body); letter-spacing:.14em; text-transform:uppercase;
   background:var(--accent); color:#111; padding:8px 12px}
-.caption{display:flex; flex-wrap:wrap; justify-content:space-between; gap:4px 16px; margin:0; padding:8px 0 0; border-bottom:1px solid var(--line); padding-bottom:10px;
+.caption{display:flex; flex-wrap:wrap; justify-content:space-between; gap:4px 16px; margin:0; padding:8px 0 0; padding-bottom:2px;
   font:400 .8rem/1.4 var(--f-body); color:var(--muted)}
 .caption a{color:var(--muted)}
 .credit{color:var(--muted)}
@@ -360,27 +373,8 @@ dialog.tree::backdrop{background:rgb(0 0 0 / .6)}
 <main class="wrap">
   <header class="intro">
     <p class="crumbs"><span>Science</span><span>Life on Earth</span><span>Dinosaurs</span></p>
-    <h1>Meet the dinosaurs</h1>
-    <p class="dek"><span id="total">51</span> dinosaurs, from Aardonyx to Zupaysaurus, picked at random. Each one swivels in, says its name and tells you what it ate. It keeps going forever.</p>
-    <dl class="meta">
-      <div><dt>Time span</dt><dd>About 233–66 million years ago</dd></div>
-      <div><dt>Periods</dt><dd>Triassic, Jurassic, Cretaceous</dd></div>
-      <div><dt>Format</dt><dd>Picture carousel, read aloud</dd></div>
-    </dl>
-    <div class="controls">
-      <button id="play" class="primary" type="button" aria-label="Start the show">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path id="playIcon" d="M7 5v14l12-7z" fill="currentColor"/></svg>
-        <span id="playLabel">Start</span>
-      </button>
-      <button id="next" type="button" aria-label="Next dinosaur">
-        Next
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-      <button id="voice" type="button" aria-pressed="true" aria-label="Voice">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path class="on" d="M16 9a4 4 0 010 6M18.5 6.5a7.5 7.5 0 010 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="off" d="M16 9l5 6M21 9l-5 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-        <span class="on">Voice on</span><span class="off">Voice off</span>
-      </button>
-    </div>
+    <h1>Welcome to the Dinosaur Kingdom</h1>
+    <p class="dek">From Aardonyx to Zupaysaurus, picked at random. Each one swivels in, says its name and tells you what it ate.</p>
   </header>
 
   <section class="finder" aria-labelledby="finderH">
@@ -458,15 +452,31 @@ dialog.tree::backdrop{background:rgb(0 0 0 / .6)}
   </section>
 
   <div class="stage" id="stage">
-    <button class="start" id="bigStart" type="button">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5v14l12-7z" fill="currentColor"/></svg>
-      Start the show
-    </button>
-  </div>
-
-  <div class="status" id="status">
-    <span class="speaking"><span class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span id="statusText">Press Start to hear each dinosaur.</span></span>
-    <span class="count" id="count">Shown: 1</span>
+    <button class="start" id="bigStart" type="button" hidden>Start the show</button>
+    <div class="player" role="group" aria-label="Slideshow controls">
+      <div class="pbtns">
+        <button id="prev" type="button" aria-label="Previous dinosaur" disabled>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="pl">Previous</span>
+        </button>
+        <button id="play" class="primary" type="button" aria-label="Play the show">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path id="playIcon" d="M7 5v14l12-7z" fill="currentColor"/></svg>
+          <span id="playLabel">Play</span>
+        </button>
+        <button id="next" type="button" aria-label="Next dinosaur">
+          <span class="pl">Next</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+      <div class="status" id="status">
+        <span class="speaking"><span class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span id="statusText">Press Play to hear each dinosaur.</span></span>
+      </div>
+      <button id="voice" type="button" aria-pressed="true" aria-label="Voice">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path class="on" d="M16 9a4 4 0 010 6M18.5 6.5a7.5 7.5 0 010 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="off" d="M16 9l5 6M21 9l-5 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span class="on">Voice on</span><span class="off">Voice off</span>
+      </button>
+      <span class="count" id="count" hidden>Shown: 1</span>
+    </div>
   </div>
 
   <section class="about" aria-labelledby="aboutH">
@@ -815,9 +825,8 @@ function mergeRows(rows){
     if(!c.len && r.len) c.len=r.len; return c } return fromRow(r,i) });
   DINOS.forEach(d=>{ if(!out.includes(d)) out.push(d) });
   DINOS = out; bag = []; current = DINOS.findIndex(d=>d.name===curName);
-  document.getElementById("total").textContent = DINOS.length;
-  document.getElementById("q").placeholder = `Search ${DINOS.length} dinosaurs by name`;
   KIN = null; refreshFinder();
+  if(POOL && POOL.length && !POOL.includes(current) && !(location.hash && indexFromHash()===current)){ current=nextIndex(); hist=[]; hpos=-1; if(current>=0) record(current) }   // the first card didn't match the filters in the address
   { const shownCard=stage.querySelector(".card"); if(shownCard && !busy && DINOS[current]) shownCard.replaceWith(makeCard(DINOS[current])) }   // first card gets the full facts
   if(location.hash && indexFromHash()>=0 && indexFromHash()!==current) showFromHash();
 }
@@ -1147,7 +1156,7 @@ function makeCard(d){
 }
 
 /* ---------- Show loop ---------- */
-const stage=document.getElementById("stage"), playBtn=document.getElementById("play"), nextBtn=document.getElementById("next"),
+const stage=document.getElementById("stage"), playBtn=document.getElementById("play"), nextBtn=document.getElementById("next"), prevBtn=document.getElementById("prev"),
   voiceBtn=document.getElementById("voice"), bigStart=document.getElementById("bigStart"), statusEl=document.getElementById("status"),
   statusText=document.getElementById("statusText"), countEl=document.getElementById("count");
 const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -1206,22 +1215,36 @@ function speak(text,done){
 function step(){ // speak current, pause, swivel to next, repeat
   if(!running)return;
   speak(lineFor(DINOS[current]),()=>{ if(!running)return; statusText.textContent="Next one coming…";
-    const id=run; timer=setTimeout(()=>{ if(id!==run||!running) return; const n=nextIndex();
-      if(n<0||n===current){ statusText.textContent = n<0 ? "No dinosaurs match. Clear a filter to keep going." : "That’s the only match. Change a filter for more."; if(n===current) step(); return }
-      swivel(n,true)},1400)});
+    const id=run; timer=setTimeout(()=>{ if(id!==run||!running) return;
+      if(goNext(true)) return;
+      const n=nextIndex(); statusText.textContent = n<0 ? "No dinosaurs match. Clear a filter to keep going." : "That’s the only match. Change a filter for more."; if(n===current) step() },1400)});
 }
 let pendingJump=null;
+// History of shown dinosaurs (by name, because the list is re-ordered when the full data arrives).
+let hist=[], hpos=-1;
+const idxOf=name=>DINOS.findIndex(d=>d.name===name);
+function updateNav(){ prevBtn.disabled = !(hpos>0) }
+function record(idx){ const n=DINOS[idx].name; if(hist[hpos]===n) return; hist=hist.slice(0,hpos+1); hist.push(n); if(hist.length>500){hist.shift()} hpos=hist.length-1; updateNav() }
+function goNext(thenSpeak){
+  while(hpos<hist.length-1){ hpos++; const i=idxOf(hist[hpos]); if(i>=0 && i!==current){ swivel(i,thenSpeak,1,true); return true } }
+  const n=nextIndex(); if(n<0||n===current) return false; swivel(n,thenSpeak,1); return true;
+}
+function goPrev(){
+  while(hpos>0){ hpos--; const i=idxOf(hist[hpos]); if(i>=0 && i!==current){ swivel(i,running,-1,true); return } }
+  updateNav();
+}
 function jumpTo(idx){ if(idx<0) return; if(busy){ pendingJump=idx; return } swivel(idx, running) }
-function swivel(idx,thenSpeak){
+function swivel(idx,thenSpeak,dir=1,fromHist=false){
   if(idx<0||idx==null) return;
   if(busy)return; busy=true; run++; clearTimeout(timer); stopSpeech();
   statusEl.classList.remove("is-speaking");
   const out=stage.querySelector(".card"), inc=makeCard(DINOS[idx]); current=idx; shown++; countEl.textContent=`Shown: ${shown}`;
+  if(fromHist) updateNav(); else record(idx);
   markSlide(DINOS[idx]);
   stage.append(inc);
-  const dur=reduce?300:950, ease="cubic-bezier(.65,.02,.25,1)";
-  const outK=reduce?[{opacity:1},{opacity:0}]:[{transform:"translateX(0) rotateY(0deg) scale(1)",opacity:1},{transform:"translateX(-58%) rotateY(-78deg) scale(.82)",opacity:0}];
-  const inK=reduce?[{opacity:0},{opacity:1}]:[{transform:"translateX(58%) rotateY(78deg) scale(.82)",opacity:0},{transform:"translateX(0) rotateY(0deg) scale(1)",opacity:1}];
+  const dur=reduce?300:950, ease="cubic-bezier(.65,.02,.25,1)", s=dir<0?-1:1;
+  const outK=reduce?[{opacity:1},{opacity:0}]:[{transform:"translateX(0) rotateY(0deg) scale(1)",opacity:1},{transform:`translateX(${-58*s}%) rotateY(${-78*s}deg) scale(.82)`,opacity:0}];
+  const inK=reduce?[{opacity:0},{opacity:1}]:[{transform:`translateX(${58*s}%) rotateY(${78*s}deg) scale(.82)`,opacity:0},{transform:"translateX(0) rotateY(0deg) scale(1)",opacity:1}];
   if(out) out.animate(outK,{duration:dur,easing:ease,fill:"forwards"});
   const a=inc.animate(inK,{duration:dur,easing:ease});
   const fin=()=>{out&&out.remove();busy=false;
@@ -1235,21 +1258,22 @@ async function keepAwake(on){try{if(on&&navigator.wakeLock&&!wake){wake=await na
 function setRunning(on){
   running=on; run++; clearTimeout(timer); stopSpeech();
   statusEl.classList.remove("is-speaking");
-  playBtn.setAttribute("aria-label",on?"Pause the show":"Start the show");
-  document.getElementById("playLabel").textContent=on?"Pause":(shown>1||bigStart.hidden?"Resume":"Start");
+  playBtn.setAttribute("aria-label",on?"Pause the show":"Play the show");
+  document.getElementById("playLabel").textContent=on?"Pause":"Play";
   document.getElementById("playIcon").setAttribute("d",on?"M7 5h4v14H7zM13 5h4v14h-4z":"M7 5v14l12-7z");
   bigStart.hidden=true; keepAwake(on);
   if(on){statusText.textContent=voiceOn?"Listen…":"Voice is off.";step()} else statusText.textContent="Paused.";
 }
 playBtn.onclick=()=>setRunning(!running);
 bigStart.onclick=()=>setRunning(true);
-nextBtn.onclick=()=>{ const n=nextIndex(); if(n<0){statusText.textContent="No dinosaurs match. Clear a filter to keep going.";return}
-  if(!running)statusText.textContent="Press Start to hear it."; jumpTo(n)};
+nextBtn.onclick=()=>{ if(busy) return; if(!goNext(running)){ statusText.textContent = nextIndex()<0 ? "No dinosaurs match. Clear a filter to keep going." : "That’s the only match. Change a filter for more."; return }
+  if(!running)statusText.textContent="Press Play to hear it." };
+prevBtn.onclick=()=>{ if(busy) return; goPrev(); if(!running)statusText.textContent="Press Play to hear it." };
 voiceBtn.onclick=()=>{voiceOn=!voiceOn;voiceBtn.setAttribute("aria-pressed",String(voiceOn));if(running){run++;clearTimeout(timer);stopSpeech();step()}};
 document.addEventListener("keydown",e=>{
   if(e.target.closest("button, input, select, textarea, dialog")) return;
   if(e.key==="/"){ e.preventDefault(); document.getElementById("q").focus(); return }
-  if(e.code==="Space"){e.preventDefault();setRunning(!running)}else if(e.key==="ArrowRight"){nextBtn.click()}});
+  if(e.code==="Space"){e.preventDefault();setRunning(!running)}else if(e.key==="ArrowRight"){nextBtn.click()}else if(e.key==="ArrowLeft"){prevBtn.click()}});
 document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="visible"&&running)keepAwake(true)});
 
 /* ---------- Submit an image ---------- */
@@ -1443,7 +1467,7 @@ const groupSel = document.getElementById("f-group"), ribbon = document.getElemen
     document.getElementById(id).onclick=e=>{ const b=e.target.closest("button"); if(b&&!b.disabled) setFilter(key, b.dataset.v) };
   const tg=document.getElementById("fToggle"), panel=document.getElementById("filterPanel");
   const setOpen=o=>{ tg.setAttribute("aria-expanded", String(o)); panel.hidden=!o };
-  setOpen(matchMedia("(min-width: 760px)").matches);
+  setOpen(false);   // folded by default; opened below when the address already has filters
   tg.onclick=()=>setOpen(panel.hidden);
   groupSel.onchange=()=>setFilter("group", groupSel.value);
   document.getElementById("f-pic").onchange=e=>setFilter("pic", e.target.checked);
@@ -1510,13 +1534,13 @@ function refreshFinder(changed){
   badge.hidden=!nPanel; badge.textContent=nPanel;
   writeQuery();
   document.getElementById("matchCount").innerHTML = active
-    ? `Showing <b>${POOL.length}</b> of ${DINOS.length} dinosaurs`
-    : `Showing all <b>${DINOS.length}</b> dinosaurs`;
+    ? `<b>${POOL.length}</b> ${POOL.length===1?"dinosaur matches":"dinosaurs match"}`
+    : `Showing all dinosaurs`;
   document.getElementById("clearF").hidden = !active;
   if(!changed) return;
   if(!POOL.length){ statusText.textContent="No dinosaurs match. Clear a filter to keep going."; return }
   if(!POOL.includes(current)) jumpTo(nextIndex());
-  else if(!running) statusText.textContent = "Press Start to hear each dinosaur.";
+  else if(!running) statusText.textContent = "Press Play to hear each dinosaur.";
 }
 
 /* search with suggestions */
@@ -1541,7 +1565,7 @@ function moveSug(dir){ if(!sugItems.length) return; sugActive=(sugActive+dir+sug
   sugs.querySelectorAll("li").forEach((li,k)=>li.setAttribute("aria-selected", String(k===sugActive)));
   qIn.setAttribute("aria-activedescendant","sug"+sugActive); sugs.querySelector("#sug"+sugActive)?.scrollIntoView({block:"nearest"}) }
 function pickSug(k){ const i=sugItems[k]; if(i==null) return; qIn.value=""; closeSugs(); qIn.blur();
-  if(!running) statusText.textContent=`${DINOS[i].name}. Press Start to hear it.`; jumpTo(i) }
+  if(!running) statusText.textContent=`${DINOS[i].name}. Press Play to hear it.`; jumpTo(i) }
 qIn.addEventListener("input", ()=>{ sugActive=-1; renderSugs() });
 qIn.addEventListener("keydown", e=>{
   if(e.key==="ArrowDown"){ e.preventDefault(); if(sugs.hidden) renderSugs(); moveSug(1) }
@@ -1628,7 +1652,7 @@ function indexFromHash(){
 function showFromHash(){
   const i=indexFromHash(); if(i<0) return false;
   if(treeDlg.open) treeDlg.close();
-  if(i!==current){ if(!running) statusText.textContent=`${DINOS[i].name}. Press Start to hear it.`; jumpTo(i) }
+  if(i!==current){ if(!running) statusText.textContent=`${DINOS[i].name}. Press Play to hear it.`; jumpTo(i) }
   return true;
 }
 window.addEventListener("hashchange", showFromHash);
@@ -1655,8 +1679,9 @@ function markSlide(d){   // keep the address in step with the card, without addi
 /* first card */
 readQuery();
 refreshFinder(false);
-{ const h=indexFromHash(); current = h>=0 ? h : nextIndex(); }
-shown=1; stage.append(makeCard(DINOS[current])); if(location.hash && indexFromHash()===current) markSlide(DINOS[current]);
+if(Object.keys(DEFAULTS).some(k=>F[k]!==DEFAULTS[k])) document.getElementById("fToggle").click();
+{ const h=indexFromHash(); current = h>=0 ? h : nextIndex(); if(current<0) current=Math.floor(Math.random()*DINOS.length); }   // no match yet: the full list arrives below
+shown=1; stage.append(makeCard(DINOS[current])); record(current); if(location.hash && indexFromHash()===current) markSlide(DINOS[current]);
 getData("data/dinos.json").then(mergeRows).catch(()=>{});
 
 
