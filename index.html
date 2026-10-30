@@ -5,6 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="An endless carousel of dinosaurs. Each one swivels in, says its name and tells you what it ate.">
 <title>Mesozoic Carousel</title>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#E7ECE1" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#101712" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/png" href="icons/favicon-64.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Mesozoic">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,500..800&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap">
@@ -55,6 +63,15 @@ header{display:flex; flex-wrap:wrap; align-items:end; justify-content:space-betw
   font-size:clamp(1.9rem, 6vw, 2.7rem); line-height:.95; letter-spacing:-.01em; text-wrap:balance;
 }
 .brand p{margin:6px 0 0; color:var(--muted); font-size:.95rem; max-width:44ch}
+.brand p.getapp{display:flex; flex-wrap:wrap; align-items:center; gap:6px 8px; margin-top:10px; max-width:none}
+.getapp .flabel{margin-right:2px}
+.appbtn{display:inline-flex; align-items:center; gap:6px; min-height:34px; padding:6px 12px; border-radius:999px; border:1.5px solid var(--line);
+  background:var(--surface); color:var(--ink); font:600 .85rem/1 var(--f-body); text-decoration:none; cursor:pointer}
+.appbtn:hover{border-color:var(--accent); color:var(--accent)}
+.appbtn:focus-visible{outline:3px solid var(--accent); outline-offset:2px}
+.appbtn svg{width:16px; height:16px}
+.iostip{font-size:.82rem; color:var(--muted)}
+@media (display-mode: standalone){ .getapp{display:none!important} }
 .controls{display:flex; flex-wrap:wrap; gap:8px}
 button{
   font:600 .95rem/1 var(--f-body); color:var(--ink); background:var(--surface);
@@ -271,6 +288,14 @@ dialog.tree::backdrop{background:rgb(10 16 12 / .55)}
     <div class="brand">
       <h1>Mesozoic Carousel</h1>
       <p><span id="total">51</span> dinosaurs, from Aardonyx to Zupaysaurus, picked at random. Each one swivels in, says its name and tells you what it ate. It keeps going forever.</p>
+      <p class="getapp" id="getApp" hidden>
+        <span class="flabel">Get the app</span>
+        <button type="button" class="appbtn" id="installBtn" hidden>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Install</button>
+        <a class="appbtn" id="apkLink" href="https://github.com/sayantandatta/mesozoic-carousel/releases/latest/download/mesozoic-carousel.apk" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 9h10v8a1 1 0 01-1 1H8a1 1 0 01-1-1zM7 8a5 5 0 0110 0M9.5 5.5L8.5 4M14.5 5.5l1-1.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Android app</a>
+        <span class="iostip" id="iosTip" hidden>On iPhone or iPad: tap Share, then <b>Add to Home Screen</b>.</span>
+      </p>
     </div>
     <div class="controls">
       <button id="play" class="primary" type="button" aria-label="Start the show">
@@ -943,6 +968,16 @@ function nextIndex(){
 }
 function lineFor(d){return d.eats ? `${d.speak}. It ate ${d.eats}.` : `${d.speak}. Scientists aren't sure what it ate.`}
 let voices=[];
+const NATIVE = !!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform());
+const TTS = NATIVE ? ((window.Capacitor.Plugins && window.Capacitor.Plugins.TextToSpeech) || (window.Capacitor.registerPlugin && window.Capacitor.registerPlugin("TextToSpeech"))) : null;
+// The Android app reads the latest data from the website, and falls back to the copy built into the app.
+const LIVE = "https://sayantandatta.github.io/mesozoic-carousel/";
+function getData(path){
+  const local = () => fetch(path,{cache:"no-cache"}).then(r=>r.ok?r.json():Promise.reject(r.status));
+  if(!NATIVE) return local();
+  return fetch(LIVE+path,{cache:"no-cache"}).then(r=>r.ok?r.json():Promise.reject(r.status)).catch(local);
+}
+function stopSpeech(){ try{ speechSynthesis.cancel() }catch(e){} if(TTS){ try{ TTS.stop().catch(()=>{}) }catch(e){} } }
 function loadVoices(){try{voices=speechSynthesis.getVoices()}catch(e){voices=[]}}
 if("speechSynthesis" in window){loadVoices();speechSynthesis.onvoiceschanged=loadVoices}
 // Neutral accent: standard US English (General American), never a regional voice when a US one exists.
@@ -959,6 +994,10 @@ function speak(text,done){
   const finish=(err)=>{ if(id!==run)return; clearTimeout(timer);
     const left=err?Math.max(0,readMs-(performance.now()-start)):0; statusEl.classList.remove("is-speaking");
     timer=setTimeout(()=>{if(id===run)done()},left)};
+  if(voiceOn && TTS){
+    statusEl.classList.add("is-speaking"); statusText.textContent="Speaking…";
+    TTS.speak({text, lang:"en-US", rate:0.95, pitch:1.0, volume:1.0, category:"playback"}).then(()=>finish(false), ()=>finish(true));
+    timer=setTimeout(()=>finish(false),readMs+9000); return }
   if(!voiceOn||!("speechSynthesis" in window)){statusText.textContent=voiceOn?"Voice isn't available in this browser.":"Voice is off.";timer=setTimeout(()=>{if(id===run)done()},readMs);return}
   try{
     speechSynthesis.cancel();
@@ -980,7 +1019,7 @@ let pendingJump=null;
 function jumpTo(idx){ if(idx<0) return; if(busy){ pendingJump=idx; return } swivel(idx, running) }
 function swivel(idx,thenSpeak){
   if(idx<0||idx==null) return;
-  if(busy)return; busy=true; run++; clearTimeout(timer); try{speechSynthesis.cancel()}catch(e){}
+  if(busy)return; busy=true; run++; clearTimeout(timer); stopSpeech();
   statusEl.classList.remove("is-speaking");
   const out=stage.querySelector(".card"), inc=makeCard(DINOS[idx]); current=idx; shown++; countEl.textContent=`Shown: ${shown}`;
   markSlide(DINOS[idx]);
@@ -999,7 +1038,7 @@ function swivel(idx,thenSpeak){
 }
 async function keepAwake(on){try{if(on&&navigator.wakeLock&&!wake){wake=await navigator.wakeLock.request("screen");wake.addEventListener("release",()=>wake=null)}else if(!on&&wake){await wake.release();wake=null}}catch(e){}}
 function setRunning(on){
-  running=on; run++; clearTimeout(timer); try{speechSynthesis.cancel()}catch(e){}
+  running=on; run++; clearTimeout(timer); stopSpeech();
   statusEl.classList.remove("is-speaking");
   playBtn.setAttribute("aria-label",on?"Pause the show":"Start the show");
   document.getElementById("playLabel").textContent=on?"Pause":(shown>1||bigStart.hidden?"Resume":"Start");
@@ -1011,7 +1050,7 @@ playBtn.onclick=()=>setRunning(!running);
 bigStart.onclick=()=>setRunning(true);
 nextBtn.onclick=()=>{ const n=nextIndex(); if(n<0){statusText.textContent="No dinosaurs match. Clear a filter to keep going.";return}
   if(!running)statusText.textContent="Press Start to hear it."; jumpTo(n)};
-voiceBtn.onclick=()=>{voiceOn=!voiceOn;voiceBtn.setAttribute("aria-pressed",String(voiceOn));if(running){run++;clearTimeout(timer);try{speechSynthesis.cancel()}catch(e){}step()}};
+voiceBtn.onclick=()=>{voiceOn=!voiceOn;voiceBtn.setAttribute("aria-pressed",String(voiceOn));if(running){run++;clearTimeout(timer);stopSpeech();step()}};
 document.addEventListener("keydown",e=>{
   if(e.target.closest("button, input, select, textarea, dialog")) return;
   if(e.key==="/"){ e.preventDefault(); document.getElementById("q").focus(); return }
@@ -1175,7 +1214,7 @@ qIn.addEventListener("focus", ()=>{ if(qIn.value.trim()) renderSugs() });
 /* ---------- Family tree pop-up ---------- */
 let TREE=null, KIN=null, treeWasRunning=false;
 const treeDlg=document.getElementById("treeDlg"), treeBody=document.getElementById("treeBody");
-fetch("data/tree.json",{cache:"no-cache"}).then(r=>r.ok?r.json():null).then(t=>{ TREE=t; KIN=null }).catch(()=>{});
+getData("data/tree.json").then(t=>{ TREE=t; KIN=null }).catch(()=>{});
 function chainOf(name){
   if(!TREE) return null; let q=TREE.dinos[name]; const out=[], seen=new Set();
   while(q && TREE.taxa[q] && !seen.has(q)){ seen.add(q); out.push(q); q=TREE.taxa[q][2] }
@@ -1256,12 +1295,28 @@ function markSlide(d){   // keep the address in step with the card, without addi
   const h=slideHref(d); if(location.hash!==h){ try{ history.replaceState(null,"",h) }catch(e){} }
 }
 
+/* ---------- App: install button, Android download, offline ---------- */
+(function appSetup(){
+  const standalone = matchMedia("(display-mode: standalone)").matches || navigator.standalone;
+  const box=document.getElementById("getApp"), btn=document.getElementById("installBtn"), apk=document.getElementById("apkLink"), tip=document.getElementById("iosTip");
+  if(NATIVE || standalone) return;
+  const ua=navigator.userAgent, ios=/iPad|iPhone|iPod/.test(ua) || (navigator.platform==="MacIntel" && navigator.maxTouchPoints>1), android=/Android/i.test(ua);
+  box.hidden=false;
+  if(ios){ apk.hidden=true; tip.hidden=false }
+  let deferred=null;
+  window.addEventListener("beforeinstallprompt", e=>{ e.preventDefault(); deferred=e; btn.hidden=false });
+  btn.onclick=async()=>{ if(!deferred) return; deferred.prompt(); try{ await deferred.userChoice }catch(_){} deferred=null; btn.hidden=true };
+  window.addEventListener("appinstalled", ()=>{ box.hidden=true });
+  if(!android && !ios) apk.title="Download the Android app (APK) to install on an Android phone";
+  if("serviceWorker" in navigator && (location.protocol==="https:" || location.hostname==="localhost")) navigator.serviceWorker.register("sw.js").catch(()=>{});
+})();
+
 /* first card */
 readQuery();
 refreshFinder(false);
 { const h=indexFromHash(); current = h>=0 ? h : nextIndex(); }
 shown=1; stage.append(makeCard(DINOS[current])); if(location.hash && indexFromHash()===current) markSlide(DINOS[current]);
-fetch("data/dinos.json",{cache:"no-cache"}).then(r=>r.ok?r.json():Promise.reject(r.status)).then(mergeRows).catch(()=>{});
+getData("data/dinos.json").then(mergeRows).catch(()=>{});
 
 
 </script>

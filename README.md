@@ -4,6 +4,12 @@ An endless carousel of about 750 dinosaurs, Aardonyx to Zupaysaurus. A random on
 
 Live site: https://sayantandatta.github.io/mesozoic-carousel/
 
+## Apps
+
+- **Install from the browser:** on Android (Chrome), Windows or Mac (Chrome or Edge) press **Install** under the title, or use the browser's *Install app* menu. On iPhone or iPad, tap Share, then *Add to Home Screen*. The installed app has its own icon, opens full screen, and works offline: dinosaurs you've seen keep their pictures, the rest are drawn.
+- **Android APK:** [download mesozoic-carousel.apk](https://github.com/sayantandatta/mesozoic-carousel/releases/latest/download/mesozoic-carousel.apk) on an Android phone and open it. Android asks once to allow installs from your browser. It speaks with the phone's own text-to-speech and reads the latest dinosaur data from the website. The APK is built by `.github/workflows/android.yml` from the `app/` folder (Capacitor) on every change to the page, and each build is published as a GitHub release.
+- The APK is signed with a shared debug key (`app/keystore/`) so new versions install over old ones. To publish on Google Play you'd need your own release key and a Play developer account.
+
 - Press **Start** (browsers need a tap before a page can speak).
 - **Pause**, **Next** and **Voice on/off** controls. Space pauses, → skips.
 - Speech uses the browser's built-in voice (Web Speech API) in a neutral US English accent. The exact voice depends on the device; regional English voices are only used if the device has no US one.

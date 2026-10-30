@@ -1,0 +1,8 @@
+{
+  "appId": "io.github.sayantandatta.mesozoic",
+  "appName": "Mesozoic Carousel",
+  "webDir": "www",
+  "android": {
+    "backgroundColor": "#E7ECE1"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "mesozoic-carousel-app",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Android app wrapper for Mesozoic Carousel",
+  "scripts": {
+    "www": "rm -rf www && mkdir -p www && cp ../index.html ../manifest.webmanifest www/ && cp -r ../data ../icons www/ && rm -f www/data/raw.json www/data/*.txt"
+  },
+  "dependencies": {
+    "@capacitor/android": "8.5.3",
+    "@capacitor/core": "8.5.3",
+    "@capacitor-community/text-to-speech": "8.0.2"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "3.0.5",
+    "@capacitor/cli": "8.5.3"
+  }
+}

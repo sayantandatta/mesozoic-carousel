@@ -1,0 +1,24 @@
+{
+  "name": "Mesozoic Carousel",
+  "short_name": "Mesozoic",
+  "description": "An endless carousel of about 750 dinosaurs. Each one swivels in, says its name and tells you what it ate.",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#E7ECE1",
+  "theme_color": "#E7ECE1",
+  "categories": ["education", "kids", "entertainment"],
+  "icons": [
+    {"src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+    {"src": "icons/maskable-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable"},
+    {"src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ],
+  "shortcuts": [
+    {"name": "Meat-eaters", "url": "./?diet=meat", "icons": [{"src": "icons/icon-192.png", "sizes": "192x192"}]},
+    {"name": "Giants", "url": "./?size=giant", "icons": [{"src": "icons/icon-192.png", "sizes": "192x192"}]},
+    {"name": "Tyrannosaurus", "url": "./#Tyrannosaurus", "icons": [{"src": "icons/icon-192.png", "sizes": "192x192"}]}
+  ]
+}

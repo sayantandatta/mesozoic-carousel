@@ -1,0 +1,70 @@
+name: Android app
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "index.html"
+      - "manifest.webmanifest"
+      - "icons/**"
+      - "app/**"
+      - ".github/workflows/android.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: android
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+      - uses: android-actions/setup-android@v3
+
+      - name: Create the Android project from the web page
+        working-directory: app
+        run: |
+          npm ci
+          npm run www
+          npx cap add android
+          npx @capacitor/assets generate --android --iconBackgroundColor '#E89F7D' --iconBackgroundColorDark '#E89F7D' --splashBackgroundColor '#E7ECE1' --splashBackgroundColorDark '#101712'
+          npx cap sync android
+
+      - name: Set the version number
+        working-directory: app/android/app
+        run: |
+          sed -i "s/versionCode 1$/versionCode ${{ github.run_number }}/" build.gradle
+          sed -i "s/versionName \"1.0\"/versionName \"1.0.${{ github.run_number }}\"/" build.gradle
+          grep -n "versionCode\|versionName" build.gradle
+
+      - name: Build the APK
+        working-directory: app/android
+        run: |
+          mkdir -p ~/.android && cp ../keystore/debug.keystore ~/.android/debug.keystore
+          chmod +x gradlew
+          ./gradlew --no-daemon assembleDebug
+          cp app/build/outputs/apk/debug/app-debug.apk "$GITHUB_WORKSPACE/mesozoic-carousel.apk"
+          ls -la "$GITHUB_WORKSPACE/mesozoic-carousel.apk"
+
+      - name: Publish as the latest release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "android-v1.0.${{ github.run_number }}" mesozoic-carousel.apk \
+            --title "Mesozoic Carousel for Android 1.0.${{ github.run_number }}" \
+            --notes "Download **mesozoic-carousel.apk** on an Android phone and open it to install. Android will ask you to allow installs from your browser the first time. Built from ${{ github.sha }}." \
+            --latest
