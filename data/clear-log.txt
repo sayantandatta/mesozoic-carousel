@@ -1,0 +1,19 @@
+candidates gathered 2994
+0/756 measured, 1 with clear pictures
+50/756 measured, 43 with clear pictures
+100/756 measured, 86 with clear pictures
+150/756 measured, 127 with clear pictures
+200/756 measured, 169 with clear pictures
+250/756 measured, 202 with clear pictures
+300/756 measured, 234 with clear pictures
+350/756 measured, 273 with clear pictures
+400/756 measured, 307 with clear pictures
+450/756 measured, 346 with clear pictures
+500/756 measured, 384 with clear pictures
+550/756 measured, 423 with clear pictures
+600/756 measured, 461 with clear pictures
+650/756 measured, 498 with clear pictures
+700/756 measured, 531 with clear pictures
+750/756 measured, 566 with clear pictures
+clear pictures found for 570 of 756 dinosaurs
+review sheets written
