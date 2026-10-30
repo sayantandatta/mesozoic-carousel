@@ -1,5 +1,5 @@
 /* Mesozoic Carousel service worker: works offline, keeps recent pictures. */
-const VERSION = "mc-v2";
+const VERSION = "mc-v3";
 const SHELL = `${VERSION}-shell`, PICS = `${VERSION}-pics`, FONTS = `${VERSION}-fonts`;
 const MAX_PICS = 160;
 const PRECACHE = ["./", "index.html", "manifest.webmanifest", "data/dinos.json", "data/tree.json",
@@ -45,7 +45,7 @@ self.addEventListener("fetch", e => {
     return;
   }
   // Pictures from Wikimedia: keep the most recent ones for offline use.
-  if (/(^|\.)wikimedia\.org$/.test(url.hostname)) {
+  if (url.hostname === "upload.wikimedia.org") {
     e.respondWith(caches.open(PICS).then(async c => {
       const hit = await c.match(req.url);
       if (hit) return hit;

@@ -1,0 +1,74 @@
+name: Image submissions
+
+on:
+  issues:
+    types: [opened, edited, labeled]
+
+permissions:
+  contents: write
+  issues: write
+  actions: write
+
+concurrency:
+  group: image-submission-${{ github.event.issue.number }}
+  cancel-in-progress: false
+
+jobs:
+  check:
+    if: github.event.action != 'labeled' && contains(github.event.issue.body, '### Wikimedia Commons file')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check the picture on Wikimedia Commons
+        id: chk
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: python scripts/check_image.py check >> "$GITHUB_OUTPUT"
+      - name: Report
+        env:
+          GH_TOKEN: ${{ github.token }}
+          N: ${{ github.event.issue.number }}
+        run: |
+          gh label create image-submission --color FFCE00 --description "A picture offered for the site" 2>/dev/null || true
+          gh label create image-approved --color 2E7D32 --description "Approved: add this picture to the site" 2>/dev/null || true
+          gh issue edit "$N" --add-label image-submission || true
+          gh issue comment "$N" --body-file comment.md
+
+  apply:
+    if: github.event.action == 'labeled' && github.event.label.name == 'image-approved'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Add the picture to the overrides
+        id: app
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: python scripts/check_image.py apply >> "$GITHUB_OUTPUT"
+      - name: Commit and rebuild the data
+        if: steps.app.outputs.ok == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          N: ${{ github.event.issue.number }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts
+          git diff --cached --quiet || git commit -m "Use submitted picture for $(cat dino.txt) (#$N)"
+          git pull --rebase origin main
+          git push
+          gh workflow run build-data.yml --ref main
+      - name: Report
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          N: ${{ github.event.issue.number }}
+          OK: ${{ steps.app.outputs.ok }}
+        run: |
+          [ -f comment.md ] && gh issue comment "$N" --body-file comment.md
+          if [ "$OK" = "true" ]; then gh issue close "$N" --reason completed; else gh issue edit "$N" --remove-label image-approved; fi

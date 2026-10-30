@@ -19,6 +19,15 @@ Live site: https://sayantandatta.github.io/mesozoic-carousel/
 - **Family tree** on every card opens a pop-up: the groups it belongs to run from Dinosauria at the top down to the dinosaur in the centre, with its closest relatives on the site underneath.
 - **Every slide has its own address**, like `#Velociraptor`, so you can share or bookmark a dinosaur. In the family tree, each relative, the centre dinosaur and the members of every group (tap "N on this site") link to their slides, and the browser's back button returns to the previous one.
 
+## Submitting images
+
+Dinosaurs without a freely licensed picture show **No image available**. Anyone can offer one with **Submit an image** (in the top bar, on each no-image card and under About these pictures):
+
+1. The picture goes on [Wikimedia Commons](https://commons.wikimedia.org/wiki/Special:UploadWizard) first, under CC0, public domain, CC BY or CC BY-SA. Commons checks open licences, so it is the standard used here. NC and ND licences are not accepted.
+2. The form on the site checks the file on Commons, fills in the artist and licence, and opens a pre-filled [image submission issue](https://github.com/sayantandatta/mesozoic-carousel/issues/new?template=image-submission.yml) with the three licence agreement boxes.
+3. The **Image submissions** workflow checks the file again and comments with a preview, the licence and the size.
+4. To accept it, add the `image-approved` label. The workflow records it in `scripts/overrides.json`, removes any older clear-background pick, rebuilds the data and closes the issue. Only people with write access to the repository can add labels.
+
 ## Where the content comes from
 
 - **Names:** the A to Z list at ThoughtCo, plus Brontosaurus and Stenonychosaurus, plus 26 more from DinoDatabase. Only the names are used. A few names that are now treated as the same animal (for example Seismosaurus and Diplodocus) appear once.

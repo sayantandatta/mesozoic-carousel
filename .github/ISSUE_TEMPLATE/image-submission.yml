@@ -1,0 +1,60 @@
+name: Submit a dinosaur image
+description: Offer a freely licensed picture (CC0, public domain, CC BY or CC BY-SA) for a dinosaur on Mesozoic Carousel.
+title: "Image: "
+labels: ["image-submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping. Pictures are shown on the website and in the apps, with credit to the artist.
+
+        **The picture must be on Wikimedia Commons.** Commons only hosts openly licensed files and checks their licences, so it is the standard we use. If your picture is not there yet, upload it with the [Commons Upload Wizard](https://commons.wikimedia.org/wiki/Special:UploadWizard) and choose CC0, CC BY 4.0 or CC BY-SA 4.0.
+
+        We are looking for **life restorations**: the whole animal as it looked when alive. Skeletons, bones and charts are not used.
+  - type: input
+    id: dino
+    attributes:
+      label: Dinosaur
+      description: The name exactly as it appears on the site.
+      placeholder: Stegosaurus
+    validations:
+      required: true
+  - type: input
+    id: file
+    attributes:
+      label: Wikimedia Commons file
+      description: The file name or the full Commons link.
+      placeholder: File:Stegosaurus life restoration.png
+    validations:
+      required: true
+  - type: input
+    id: artist
+    attributes:
+      label: Artist or credit line
+      placeholder: Jane Doe
+    validations:
+      required: true
+  - type: input
+    id: licence
+    attributes:
+      label: Licence
+      description: One of CC0 1.0, Public domain, CC BY 4.0, CC BY-SA 4.0 (other CC BY and CC BY-SA versions are also fine). No NC or ND licences.
+      placeholder: CC BY-SA 4.0
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Anything else we should know, such as the sources the artist used.
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Open licence agreement
+      options:
+        - label: I made this picture, or it is already published under the licence above, and I have the right to share it under that licence.
+          required: true
+        - label: I agree it can be shown on Mesozoic Carousel (website and apps), with credit to the artist and a link to its Commons page.
+          required: true
+        - label: It shows the whole animal as it looked in life, not a skeleton, bones or a chart.
+          required: true

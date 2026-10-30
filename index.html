@@ -161,15 +161,15 @@ button[aria-pressed="true"] .off{display:none}
 .wave i:nth-child(2){animation-delay:.15s} .wave i:nth-child(3){animation-delay:.3s} .wave i:nth-child(4){animation-delay:.45s}
 @keyframes wave{0%,100%{height:4px}50%{height:16px}}
 .count{font-size:.82rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; font-variant-numeric:tabular-nums}
-.start{position:absolute; z-index:5; left:50%; top:22%; transform:translate(-50%,-50%); white-space:nowrap;
-  background:var(--ink); color:var(--bg); border:none; font-size:1rem; padding:16px 22px; box-shadow:inset 0 -4px 0 var(--accent), 0 14px 30px -12px rgb(0 0 0 / .55)}
-.start:hover{background:var(--ink)}
+.start{position:absolute; z-index:5; left:50%; top:60px; transform:translateX(-50%); white-space:nowrap;
+  background:#111; color:#fff; border:none; font-size:1rem; padding:16px 22px; box-shadow:inset 0 -4px 0 var(--accent), 0 14px 30px -12px rgb(0 0 0 / .55)}
+.start:hover{background:#111}
 .start svg{width:22px; height:22px}
 .about{display:grid; grid-template-columns:200px minmax(0,1fr); gap:12px 40px; padding-top:20px; border-top:4px solid var(--rule)}
 .about h2{margin:0; font:800 .8rem/1.2 var(--f-body); letter-spacing:.14em; text-transform:uppercase}
 .note{margin:0; color:var(--muted); font:400 .95rem/1.6 var(--f-serif); max-width:70ch}
 @media (max-width:640px){ .about{grid-template-columns:minmax(0,1fr)} }
-@media (max-width:480px){ .start{font-size:.92rem; padding:12px 16px; top:18%} }
+@media (max-width:480px){ .start{font-size:.92rem; padding:12px 16px; top:58px} }
 
 /* Finder */
 .finder{display:grid; gap:14px; padding:18px 0; border-top:4px solid var(--rule); border-bottom:1px solid var(--line)}
@@ -219,6 +219,54 @@ button[aria-pressed="true"] .off{display:none}
   .ribbon button{min-width:0; padding:6px 0; font-size:.82rem}
 }
 
+/* No image available */
+.frame.noimg{background:var(--plate); color:#3A3A3A}
+.noimg-in{position:absolute; inset:0; display:grid; place-content:center; justify-items:center; gap:10px; padding:20px; text-align:center}
+@media (max-width:820px){ .stage:has(.start:not([hidden])) .noimg-in{place-content:end center; padding:118px 20px 18px} }
+@media (max-width:480px){ .stage:has(.start:not([hidden])) .noimg-in svg{display:none} .noimg-in{gap:6px} }
+.noimg-in svg{width:clamp(44px, 9vw, 72px); height:auto; color:#8A8A85}
+.noimg-in b{font:800 clamp(1rem, 2.6vw, 1.5rem)/1.1 var(--f-display); letter-spacing:.12em; text-transform:uppercase; color:#1A1A1A}
+.noimg-in span{max-width:44ch; font:400 clamp(.86rem, 1.8vw, 1rem)/1.45 var(--f-serif); color:#4A4A4A}
+.noimg-in button{margin-top:4px; min-height:40px; padding:9px 14px; background:#111; color:#fff; border-color:#111; box-shadow:inset 0 -3px 0 var(--accent)}
+.noimg-in button:hover{background:#111}
+.frame.noimg .tag{z-index:1}
+.caption .sub{color:var(--ink); font-weight:700}
+.mast-links{display:flex; flex-wrap:wrap; align-items:center; gap:6px 18px}
+.about .more-about{grid-column:2; display:grid; gap:10px}
+.about .more-about p{margin:0}
+@media (max-width:640px){ .about .more-about{grid-column:1} }
+
+/* Submit an image */
+dialog.submit{width:min(620px, calc(100% - 32px)); max-height:min(92vh, 980px); padding:0; border:none; border-top:6px solid var(--accent);
+  background:var(--surface); color:var(--ink); box-shadow:0 30px 80px -30px rgb(0 0 0 / .7); overflow:hidden}
+dialog.submit[open]{display:grid; grid-template-rows:auto 1fr; grid-template-columns:minmax(0,1fr)}
+dialog.submit::backdrop{background:rgb(0 0 0 / .6)}
+.sform{overflow-y:auto; overscroll-behavior:contain; padding:16px 22px 20px; display:grid; gap:16px}
+.sform .intro-p{margin:0; font:400 .98rem/1.55 var(--f-serif)}
+.steps{margin:0; padding:12px 14px 12px 34px; background:var(--panel); border-left:4px solid var(--accent); font-size:.9rem; display:grid; gap:4px}
+.field{display:grid; gap:6px; min-width:0}
+.field label, .field .lbl{font:700 .72rem/1.2 var(--f-body); letter-spacing:.12em; text-transform:uppercase}
+.field .hint{margin:0; font-size:.84rem; color:var(--muted)}
+.field input[type=text], .field select, .field textarea{width:100%; min-height:44px; padding:10px 12px; border:1px solid var(--ink); border-radius:2px;
+  background:var(--surface); color:var(--ink); font:400 1rem/1.3 var(--f-body)}
+.field textarea{min-height:76px; resize:vertical}
+.field input:focus-visible, .field select:focus-visible, .field textarea:focus-visible{outline:3px solid var(--accent); outline-offset:1px}
+.field input[aria-invalid="true"]{border-color:var(--carn); box-shadow:inset 0 0 0 1px var(--carn)}
+.two{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:16px}
+@media (max-width:520px){ .two{grid-template-columns:minmax(0,1fr)} }
+.preview{display:flex; gap:14px; align-items:center; padding:10px; border:1px solid var(--line); background:var(--panel); min-height:64px; font-size:.88rem}
+.preview .pv{flex:none; width:110px; aspect-ratio:4/3; background:var(--plate) center/contain no-repeat}
+.preview div{min-width:0; display:grid; gap:2px; overflow-wrap:anywhere}
+.preview .ok{color:var(--herb); font-weight:700}
+.preview .bad{color:var(--carn); font-weight:700}
+.checks{display:grid; gap:10px; margin:0; padding:0; border:none}
+.checks legend{padding:0; margin-bottom:8px; font:700 .72rem/1.2 var(--f-body); letter-spacing:.12em; text-transform:uppercase}
+.checks label{display:grid; grid-template-columns:20px minmax(0,1fr); gap:10px; align-items:start; font-size:.92rem; cursor:pointer}
+.checks input{width:18px; height:18px; margin:2px 0 0; accent-color:var(--ink)}
+.formerr{margin:0; color:var(--carn); font-weight:700; font-size:.92rem}
+.sactions{display:flex; flex-wrap:wrap; align-items:center; gap:10px 18px; padding-top:4px}
+.sactions .fine{flex-basis:100%; margin:0; font-size:.82rem; color:var(--muted)}
+
 /* Family tree dialog */
 dialog.tree{width:min(580px, calc(100% - 32px)); max-height:min(88vh, 900px); padding:0; border:none; border-top:6px solid var(--accent);
   background:var(--surface); color:var(--ink); box-shadow:0 30px 80px -30px rgb(0 0 0 / .7); overflow:hidden}
@@ -245,6 +293,7 @@ dialog.tree::backdrop{background:rgb(0 0 0 / .6)}
 .me-card{display:flex; align-items:center; gap:14px; width:100%; min-width:0; padding:10px; border:2px solid var(--ink); background:var(--panel)}
 .me-card .th{flex:none; width:96px; aspect-ratio:4/3; background:#1E1E1E center/cover no-repeat}
 .me-card .th.png{background-color:var(--plate); background-size:contain}
+.me-card .th.none{display:grid; place-items:center; background:var(--plate); color:#555; font:700 .6rem/1.2 var(--f-body); letter-spacing:.1em; text-transform:uppercase; text-align:center; padding:4px}
 .me-card div{min-width:0}
 .me-card b{display:block; font:800 clamp(1.15rem, 4.6vw, 1.5rem)/1.05 var(--f-display); overflow-wrap:anywhere}
 .me-card b.long{font-size:clamp(1rem, 4vw, 1.3rem)}
@@ -272,6 +321,9 @@ dialog.tree::backdrop{background:rgb(0 0 0 / .6)}
 <div class="mast">
   <div class="mast-in">
     <a class="wordmark" href="./"><i aria-hidden="true"></i>Mesozoic Carousel</a>
+    <div class="mast-links">
+    <a class="appbtn" href="https://github.com/sayantandatta/mesozoic-carousel/issues/new?template=image-submission.yml" data-submit target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6a2 2 0 012-2h12a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2z M4 16l5-5 4 4 3-3 4 4M12 8v6M9 11l3-3 3 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Submit an image</a>
     <p class="getapp" id="getApp" hidden>
         <span class="flabel">Get the app</span>
         <button type="button" class="appbtn" id="installBtn" hidden>
@@ -280,6 +332,7 @@ dialog.tree::backdrop{background:rgb(0 0 0 / .6)}
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 9h10v8a1 1 0 01-1 1H8a1 1 0 01-1-1zM7 8a5 5 0 0110 0M9.5 5.5L8.5 4M14.5 5.5l1-1.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Android app</a>
         <span class="iostip" id="iosTip" hidden>On iPhone or iPad: tap Share, then <b>Add to Home Screen</b>.</span>
       </p>
+    </div>
   </div>
 </div>
 
@@ -397,7 +450,10 @@ dialog.tree::backdrop{background:rgb(0 0 0 / .6)}
 
   <section class="about" aria-labelledby="aboutH">
     <h2 id="aboutH">About these pictures</h2>
-    <p class="note" id="note">Pictures are life restorations by paleoartists, from Wikimedia Commons; tap the credit under a picture to see the artist and licence. Nobody has photographed a living dinosaur, so these are scientists’ and artists’ best reconstructions. If there’s no free picture, or it can’t load, the page draws the dinosaur instead. Ages and sizes come from Wikipedia; for most dinosaurs, “what it ate” is what its family is known to have eaten. Some weights, species names and fossil-photo links come from <a href="https://github.com/sopynya/DinoDatabase" target="_blank" rel="noopener">DinoDatabase</a> by sopynya.</p>
+    <div class="more-about">
+    <p class="note" id="note">Pictures are life restorations by paleoartists, from Wikimedia Commons; tap the credit under a picture to see the artist and licence. Nobody has photographed a living dinosaur, so these are scientists’ and artists’ best reconstructions. If there’s no freely licensed picture yet, the page says “No image available”. Ages and sizes come from Wikipedia; for most dinosaurs, “what it ate” is what its family is known to have eaten. Some weights, species names and fossil-photo links come from <a href="https://github.com/sopynya/DinoDatabase" target="_blank" rel="noopener">DinoDatabase</a> by sopynya.</p>
+    <p class="note"><b>Have a picture?</b> If you made a life restoration of a dinosaur, or know of one under an open licence (CC0, public domain, CC BY or CC BY-SA), <a href="https://github.com/sayantandatta/mesozoic-carousel/issues/new?template=image-submission.yml" data-submit target="_blank" rel="noopener">submit an image</a>. It needs to be on Wikimedia Commons, which checks open licences; every submission is reviewed before it appears.</p>
+    </div>
   </section>
 </main>
 
@@ -408,6 +464,65 @@ dialog.tree::backdrop{background:rgb(0 0 0 / .6)}
   </div>
   <div class="dlg-body" id="treeBody"></div>
   <p class="dlg-foot">Branches run from the oldest group at the top down to this dinosaur. Groups come from Wikidata; scientists still debate some of them.</p>
+</dialog>
+
+<dialog class="submit" id="submitDlg" aria-labelledby="submitTitle">
+  <div class="dlg-head">
+    <h2 id="submitTitle">Submit an image</h2>
+    <button type="button" id="submitClose" aria-label="Close the form"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></button>
+  </div>
+  <form class="sform" id="submitForm" novalidate>
+    <p class="intro-p">Offer a picture of a dinosaur under an open licence. We use life restorations: the whole animal as it looked when alive.</p>
+    <ol class="steps">
+      <li>Put the picture on Wikimedia Commons, if it isn’t there yet, with the <a href="https://commons.wikimedia.org/wiki/Special:UploadWizard" target="_blank" rel="noopener">Upload Wizard ↗</a>. Choose CC0, CC BY 4.0 or CC BY-SA 4.0.</li>
+      <li>Fill in this form. It checks the file on Commons.</li>
+      <li>Continue on GitHub to send it (a free account is needed). Each submission is reviewed before it appears.</li>
+    </ol>
+    <div class="field">
+      <label for="s-dino">Dinosaur</label>
+      <input type="text" id="s-dino" list="s-names" autocomplete="off" spellcheck="false" required>
+      <datalist id="s-names"></datalist>
+    </div>
+    <div class="field">
+      <label for="s-file">Wikimedia Commons file</label>
+      <input type="text" id="s-file" placeholder="File:Name of picture.png, or the Commons link" autocomplete="off" spellcheck="false" required aria-describedby="s-file-hint">
+      <p class="hint" id="s-file-hint">Paste the file name or the link to its page on commons.wikimedia.org.</p>
+      <div class="preview" id="s-preview" aria-live="polite" hidden></div>
+    </div>
+    <div class="two">
+      <div class="field">
+        <label for="s-artist">Artist or credit line</label>
+        <input type="text" id="s-artist" autocomplete="off" required>
+      </div>
+      <div class="field">
+        <label for="s-lic">Licence</label>
+        <select id="s-lic" required>
+          <option value="">Choose a licence</option>
+          <option>CC0 1.0</option>
+          <option>Public domain</option>
+          <option>CC BY 4.0</option>
+          <option>CC BY-SA 4.0</option>
+          <option>Another CC BY or CC BY-SA version</option>
+        </select>
+      </div>
+    </div>
+    <div class="field">
+      <label for="s-notes">Notes <span style="font-weight:400;text-transform:none;letter-spacing:0">(optional)</span></label>
+      <textarea id="s-notes" placeholder="For example, the fossils or papers the artist worked from"></textarea>
+    </div>
+    <fieldset class="checks">
+      <legend>Open licence agreement</legend>
+      <label><input type="checkbox" required> <span>I made this picture, or it is already published under the licence above, and I have the right to share it under that licence.</span></label>
+      <label><input type="checkbox" required> <span>I agree it can be shown on Mesozoic Carousel (website and apps), with credit to the artist and a link to its Commons page.</span></label>
+      <label><input type="checkbox" required> <span>It shows the whole animal as it looked in life, not a skeleton, bones or a chart.</span></label>
+    </fieldset>
+    <p class="formerr" id="s-err" role="alert" hidden></p>
+    <div class="sactions">
+      <button type="submit" class="primary">Continue on GitHub ↗</button>
+      <button type="button" class="linkbtn" id="submitCancel">Cancel</button>
+      <p class="fine">GitHub opens with your answers filled in; tick the three boxes there again and press Create. Licences that forbid commercial use or changes (NC, ND) can’t be accepted.</p>
+    </div>
+  </form>
 </dialog>
 
 <script>
@@ -917,9 +1032,16 @@ function makeCard(d){
   const label=`${d.name}${d.sp?" "+d.sp:""}`;
   const capText=el("span",null,""), setCap=t=>{capText.textContent=t};
   cap.append(capText);
-  const drawFallback=()=>{frame.classList.remove("studio","plainbg"); frame.querySelectorAll("img,.photo-bg,.loading").forEach(n=>n.remove()); cap.querySelectorAll(".credit").forEach(n=>n.remove());
-    const cv=document.createElement("canvas"); cv.setAttribute("role","img"); cv.setAttribute("aria-label",`Drawing of ${label}`); frame.prepend(cv); render(cv,d);
-    setCap(`An illustration of ${label}, drawn by this page because no free picture could be shown.`)};
+  const drawFallback=failed=>{frame.classList.remove("studio","plainbg"); frame.classList.add("noimg"); frame.querySelectorAll("img,.photo-bg,.loading").forEach(n=>n.remove()); cap.querySelectorAll(".credit").forEach(n=>n.remove());
+    const box=el("div","noimg-in",`<svg viewBox="0 0 64 48" aria-hidden="true"><rect x="3" y="3" width="58" height="42" rx="2" fill="none" stroke="currentColor" stroke-width="3"/><path d="M3 36l16-14 12 11 9-8 21 17" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><circle cx="45" cy="15" r="5" fill="currentColor"/><path d="M6 44L58 4" stroke="currentColor" stroke-width="3"/></svg>`);
+    box.setAttribute("role","img"); box.setAttribute("aria-label",`No image available for ${label}`);
+    box.append(el("b",null,failed?"Image unavailable":"No image available"),
+      el("span",null,failed?"The picture couldn’t load right now. Check your connection and try again.":`No freely licensed picture of ${label} has been found yet.`));
+    if(!failed){ const sb=el("button",null,"Submit an image"); sb.type="button"; sb.onclick=()=>openSubmit(d); box.append(sb) }
+    frame.prepend(box);
+    if(failed) setCap(`A life restoration of ${label} should appear here, but it couldn’t load.`);
+    else { setCap(`No image available for ${label}. `); const sl=el("a","sub","Have one under an open licence? Submit an image"); sl.href=submitHref(d); sl.target="_blank"; sl.rel="noopener";
+      sl.onclick=e=>{ if(e.metaKey||e.ctrlKey||e.shiftKey) return; e.preventDefault(); openSubmit(d) }; capText.append(sl) }};
   if(d.photo){
     const studio = d.png || d.clear;
     if(studio) frame.classList.add("studio");
@@ -931,9 +1053,9 @@ function makeCard(d){
       if(!studio){const bgp=el("div","photo-bg"); bgp.style.backgroundImage=`url("${img.src}")`; frame.prepend(bgp)}
       frame.insertBefore(img, frame.querySelector(".tag"));
       const a=el("a","credit",`Art: ${d.art||"Wikimedia Commons"} · ${d.lic}`); a.href="https://commons.wikimedia.org/wiki/File:"+encodeURIComponent(d.file.replace(/ /g,"_")); a.target="_blank"; a.rel="noopener"; cap.append(a)};
-    img.onerror=()=>{ if(d.photo2&&!tried2){tried2=true; img.src=d.photo2} else drawFallback() };
+    img.onerror=()=>{ if(d.photo2&&!tried2){tried2=true; img.src=d.photo2} else drawFallback(true) };
     img.src=d.photo;
-  } else drawFallback();
+  } else drawFallback(false);
   frame.append(el("span","tag",d.period));
 
   const pl=el("div","placard"), lead=el("div","lead"), side=el("aside","side");
@@ -1076,6 +1198,84 @@ document.addEventListener("keydown",e=>{
   if(e.key==="/"){ e.preventDefault(); document.getElementById("q").focus(); return }
   if(e.code==="Space"){e.preventDefault();setRunning(!running)}else if(e.key==="ArrowRight"){nextBtn.click()}});
 document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="visible"&&running)keepAwake(true)});
+
+/* ---------- Submit an image ---------- */
+const ISSUE_NEW = "https://github.com/sayantandatta/mesozoic-carousel/issues/new";
+const submitDlg=document.getElementById("submitDlg"), sForm=document.getElementById("submitForm"),
+  sDino=document.getElementById("s-dino"), sFile=document.getElementById("s-file"), sArtist=document.getElementById("s-artist"),
+  sLic=document.getElementById("s-lic"), sNotes=document.getElementById("s-notes"), sPrev=document.getElementById("s-preview"), sErr=document.getElementById("s-err");
+let submitWasRunning=false, sInfo=null, sSeq=0;
+function issueUrl(f){
+  const q=new URLSearchParams({template:"image-submission.yml", title:"Image: "+(f.dino||"")});
+  for(const k of ["dino","file","artist","licence","notes"]) if(f[k]) q.set(k,f[k]);
+  return ISSUE_NEW+"?"+q.toString();
+}
+function submitHref(d){ return issueUrl({dino:d?d.name:""}) }
+function commonsName(v){
+  let s=(v||"").trim(); try{ s=decodeURIComponent(s) }catch(_){}
+  s=s.split("?")[0].split("#")[0].replace(/^https?:\/\/[^/]+\/(wiki\/)?/i,"").replace(/^(File|Image):/i,"").replace(/_/g," ").trim();
+  return s;
+}
+const FREE_LIC=/^(cc0|cc-?zero|public domain|pd\b|pd-|no restrictions|cc[ -]by(-sa)?[ -]\d)/i, NOT_FREE=/\b(nc|nd)\b|non-?commercial|no-?deriv/i;
+async function checkCommons(){
+  const f=commonsName(sFile.value), my=++sSeq; sInfo=null;
+  if(!f){ sPrev.hidden=true; return }
+  sPrev.hidden=false; sPrev.innerHTML="<div>Checking Wikimedia Commons…</div>";
+  try{
+    const u="https://commons.wikimedia.org/w/api.php?"+new URLSearchParams({action:"query",format:"json",formatversion:"2",origin:"*",
+      titles:"File:"+f, prop:"imageinfo", iiprop:"url|mime|size|extmetadata", iiurlwidth:"320"});
+    const j=await (await fetch(u)).json(); if(my!==sSeq) return;
+    const pg=j.query&&j.query.pages&&j.query.pages[0], ii=pg&&pg.imageinfo&&pg.imageinfo[0];
+    if(!ii){ sPrev.innerHTML=`<div><span class="bad">Not found on Commons.</span> Check the file name, or upload it with the <a href="https://commons.wikimedia.org/wiki/Special:UploadWizard" target="_blank" rel="noopener">Upload Wizard ↗</a> first.</div>`; return }
+    const em=ii.extmetadata||{}, lic=(em.LicenseShortName&&em.LicenseShortName.value)||"", tmp=document.createElement("div");
+    tmp.innerHTML=(em.Artist&&em.Artist.value)||""; const art=tmp.textContent.replace(/\s+/g," ").trim().slice(0,80);
+    const free=FREE_LIC.test(lic)&&!NOT_FREE.test(lic), img=/^image\/(jpeg|png|webp)$/.test(ii.mime||"");
+    sInfo={title:pg.title.replace(/^File:/,""), lic, art, ok:free&&img};
+    const pv=el("span","pv"); pv.style.backgroundImage=`url("${ii.thumburl||ii.url}")`;
+    const info=el("div"); info.append(el("b",null,""), el("span",null,""), el("span",null,""), el("span",null,""));
+    info.children[0].textContent=sInfo.title; info.children[1].textContent="Licence on Commons: "+(lic||"unknown");
+    info.children[2].textContent="Artist: "+(art||"unknown");
+    info.children[3].className=sInfo.ok?"ok":"bad";
+    info.children[3].textContent = !img ? "This file isn’t a JPEG, PNG or WebP picture." : free ? "Open licence: OK" : "This licence can’t be accepted. Use CC0, public domain, CC BY or CC BY-SA.";
+    sPrev.replaceChildren(pv, info);
+    if(art && !sArtist.value){ sArtist.value=art; sArtist.removeAttribute("aria-invalid") }
+    sFile.removeAttribute("aria-invalid");
+    if(lic && !sLic.value){ const m=/^cc0/i.test(lic)?"CC0 1.0":/public domain|^pd/i.test(lic)?"Public domain":/^cc[ -]by-sa[ -]4/i.test(lic)?"CC BY-SA 4.0":/^cc[ -]by[ -]4/i.test(lic)?"CC BY 4.0":/^cc[ -]by/i.test(lic)?"Another CC BY or CC BY-SA version":""; if(m){ sLic.value=m; sLic.removeAttribute("aria-invalid") } }
+    if(!sForm.querySelector('[aria-invalid="true"]')) sErr.hidden=true;
+  }catch(e){ if(my===sSeq) sPrev.innerHTML="<div>Couldn’t reach Wikimedia Commons to check the file. You can still continue; it will be checked after you send it.</div>" }
+}
+function openSubmit(d){
+  sErr.hidden=true; sForm.querySelectorAll("[aria-invalid]").forEach(n=>n.removeAttribute("aria-invalid"));
+  const dl=document.getElementById("s-names"); if(dl.childElementCount!==DINOS.length){ dl.replaceChildren(...DINOS.map(x=>{const o=document.createElement("option"); o.value=x.name; return o})) }
+  if(d) sDino.value=d.name;
+  submitWasRunning=running; if(running) setRunning(false);
+  submitDlg.showModal(); (d?sFile:sDino).focus();
+}
+sFile.addEventListener("change", checkCommons);
+sForm.addEventListener("input", e=>{ e.target.removeAttribute("aria-invalid"); const b=e.target.closest(".checks"); if(b && [...b.querySelectorAll("input")].every(x=>x.checked)) b.querySelectorAll("input").forEach(x=>x.removeAttribute("aria-invalid"));
+  if(!sForm.querySelector('[aria-invalid="true"]')) sErr.hidden=true });
+sFile.addEventListener("paste", ()=>setTimeout(checkCommons,0));
+sForm.addEventListener("submit", e=>{
+  e.preventDefault();
+  const bad=[]; sForm.querySelectorAll("[aria-invalid]").forEach(n=>n.removeAttribute("aria-invalid"));
+  const name=sDino.value.trim(), hit=DINOS.find(x=>x.name.toLowerCase()===name.toLowerCase());
+  if(!hit){ bad.push([sDino,"Pick a dinosaur from the list."]) }
+  if(!commonsName(sFile.value)) bad.push([sFile,"Add the Wikimedia Commons file."]);
+  else if(sInfo && !sInfo.ok) bad.push([sFile,"This file’s licence or type can’t be accepted."]);
+  if(!sArtist.value.trim()) bad.push([sArtist,"Add the artist or credit line."]);
+  if(!sLic.value) bad.push([sLic,"Choose the licence."]);
+  const boxes=[...sForm.querySelectorAll(".checks input")]; if(boxes.some(b=>!b.checked)) bad.push([boxes.find(b=>!b.checked),"Tick all three boxes in the agreement."]);
+  if(bad.length){ bad.forEach(([n])=>n.setAttribute("aria-invalid","true")); sErr.textContent=bad.map(b=>b[1]).join(" "); sErr.hidden=false; bad[0][0].focus(); return }
+  const file="File:"+(sInfo?sInfo.title:commonsName(sFile.value));
+  window.open(issueUrl({dino:hit.name, file, artist:sArtist.value.trim(), licence:sLic.value, notes:sNotes.value.trim()}), "_blank", "noopener");
+  submitDlg.close();
+});
+document.getElementById("submitClose").onclick=()=>submitDlg.close();
+document.getElementById("submitCancel").onclick=()=>submitDlg.close();
+submitDlg.addEventListener("click", e=>{ if(e.target===submitDlg) submitDlg.close() });
+submitDlg.addEventListener("close", ()=>{ if(submitWasRunning){ submitWasRunning=false; setRunning(true) } });
+document.addEventListener("click", e=>{ const a=e.target.closest("a[data-submit]"); if(!a || e.metaKey||e.ctrlKey||e.shiftKey) return;
+  e.preventDefault(); openSubmit(DINOS[current]||null) });
 
 /* ---------- Finder: filters, A–Z ribbon, search ---------- */
 const GROUPS = [
@@ -1271,7 +1471,7 @@ function openTree(d){
         ct.setAttribute("aria-expanded", String(!box.hidden)) };
       li.insertBefore(ct, li.querySelector(".bird")); ol.append(li) });
     const own=TREE.taxa[chain[chain.length-1]], me=el("li","me"), card=el("div","me-card");
-    const th=el("div","th"+(d.png||d.clear?" png":"")); if(d.photo) th.style.backgroundImage=`url("${d.photo}")`; else { const cv=document.createElement("canvas"); cv.style.cssText="width:100%;height:100%;border-radius:8px"; th.append(cv); render(cv,d) }
+    const th=el("div","th"+(d.png||d.clear?" png":"")); if(d.photo) th.style.backgroundImage=`url("${d.photo}")`; else { th.classList.add("none"); th.textContent="No image available" }
     const sub=[own[1]&&own[1]!=="genus"?own[1]:"", own[0]!==d.name?own[0]:"", d.period].filter(Boolean).join(" · ");
     card.append(th, el("div",null,`<b${d.name.length>15?' class="long"':''}><a href="${slideHref(d)}" title="Link to ${d.name}’s slide">${d.name}</a></b><span>${sub}</span>`)); me.append(card); ol.append(me); treeBody.append(ol);
     // nearest group that holds at least three other dinosaurs on the site
