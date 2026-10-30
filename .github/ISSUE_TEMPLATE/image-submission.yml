@@ -8,7 +8,11 @@ body:
       value: |
         Thanks for helping. Pictures are shown on the website and in the apps, with credit to the artist.
 
-        **The picture must be on Wikimedia Commons.** Commons only hosts openly licensed files and checks their licences, so it is the standard we use. If your picture is not there yet, upload it with the [Commons Upload Wizard](https://commons.wikimedia.org/wiki/Special:UploadWizard) and choose CC0, CC BY 4.0 or CC BY-SA 4.0.
+        There are two ways to send a picture:
+        - **From Wikimedia Commons:** give the file below. Commons only hosts openly licensed files and checks their licences.
+        - **From your computer or phone:** leave the Commons file blank and paste or drag the picture into **Picture file**. Only send a picture you made yourself, or one in the public domain. It will be shared under the licence you choose.
+
+        Accepted licences: CC0, public domain, CC BY and CC BY-SA. Licences that forbid commercial use or changes (NC, ND) can't be used.
 
         We are looking for **life restorations**: the whole animal as it looked when alive. Skeletons, bones and charts are not used.
   - type: input
@@ -23,10 +27,17 @@ body:
     id: file
     attributes:
       label: Wikimedia Commons file
-      description: The file name or the full Commons link.
+      description: The file name or the full Commons link. Leave blank if you are uploading the picture below.
       placeholder: File:Stegosaurus life restoration.png
     validations:
-      required: true
+      required: false
+  - type: textarea
+    id: upload
+    attributes:
+      label: Picture file
+      description: Uploading from your computer or phone? Paste or drag the picture into this box and wait for its link to appear. JPEG, PNG or WebP, up to 10 MB, at least 300 pixels on the short side.
+    validations:
+      required: false
   - type: input
     id: artist
     attributes:
@@ -38,7 +49,7 @@ body:
     id: licence
     attributes:
       label: Licence
-      description: One of CC0 1.0, Public domain, CC BY 4.0, CC BY-SA 4.0 (other CC BY and CC BY-SA versions are also fine). No NC or ND licences.
+      description: One of CC0 1.0, Public domain, CC BY 4.0, CC BY-SA 4.0 (other CC BY and CC BY-SA versions are fine for Commons files). No NC or ND licences.
       placeholder: CC BY-SA 4.0
     validations:
       required: true
@@ -54,7 +65,7 @@ body:
       options:
         - label: I made this picture, or it is already published under the licence above, and I have the right to share it under that licence.
           required: true
-        - label: I agree it can be shown on Mesozoic Carousel (website and apps), with credit to the artist and a link to its Commons page.
+        - label: I agree it can be shown on Mesozoic Carousel (website and apps), with credit to the artist and a link to where it came from.
           required: true
         - label: It shows the whole animal as it looked in life, not a skeleton, bones or a chart.
           required: true

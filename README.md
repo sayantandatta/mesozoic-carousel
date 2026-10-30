@@ -23,10 +23,11 @@ Live site: https://sayantandatta.github.io/mesozoic-carousel/
 
 Dinosaurs without a freely licensed picture show **No image available**. Anyone can offer one with **Submit an image** (in the top bar, on each no-image card and under About these pictures):
 
-1. The picture goes on [Wikimedia Commons](https://commons.wikimedia.org/wiki/Special:UploadWizard) first, under CC0, public domain, CC BY or CC BY-SA. Commons checks open licences, so it is the standard used here. NC and ND licences are not accepted.
-2. The form on the site checks the file on Commons, fills in the artist and licence, and opens a pre-filled [image submission issue](https://github.com/sayantandatta/mesozoic-carousel/issues/new?template=image-submission.yml) with the three licence agreement boxes.
+1. The picture comes either from Wikimedia Commons or from the contributor's computer or phone. A file from Commons goes on [Wikimedia Commons](https://commons.wikimedia.org/wiki/Special:UploadWizard) first, under CC0, public domain, CC BY or CC BY-SA. Commons checks open licences, so it is the standard used here. NC and ND licences are not accepted.
+2. The form on the site checks the file (on Commons, or the uploaded file's type, size and dimensions), fills in what it can, and opens a pre-filled [image submission issue](https://github.com/sayantandatta/mesozoic-carousel/issues/new?template=image-submission.yml) with the three licence agreement boxes.
 3. The **Image submissions** workflow checks the file again and comments with a preview, the licence and the size.
-4. To accept it, add the `image-approved` label. The workflow records it in `scripts/overrides.json`, removes any older clear-background pick, rebuilds the data and closes the issue. Only people with write access to the repository can add labels.
+   For an upload, the form copies the picture and the contributor pastes it into the **Picture file** box on GitHub. Uploads must be the contributor's own work or public domain, under CC0, CC BY 4.0 or CC BY-SA 4.0.
+4. To accept it, add the `image-approved` label. A Commons file is recorded in `scripts/overrides.json`; an upload is resized to 1600 px, stripped of metadata (EXIF, GPS), saved in `images/submitted/` and recorded in `scripts/submitted_images.json`, with the credit linking to the issue. The workflow then removes any older clear-background pick, rebuilds the data and closes the issue. Only people with write access to the repository can add labels.
 
 ## Where the content comes from
 

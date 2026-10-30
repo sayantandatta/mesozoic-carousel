@@ -267,6 +267,27 @@ dialog.submit::backdrop{background:rgb(0 0 0 / .6)}
 .sactions{display:flex; flex-wrap:wrap; align-items:center; gap:10px 18px; padding-top:4px}
 .sactions .fine{flex-basis:100%; margin:0; font-size:.82rem; color:var(--muted)}
 
+.srcpick{display:flex; flex-wrap:wrap; gap:8px; margin:0; padding:0; border:none}
+.srcpick legend{padding:0; margin-bottom:8px; font:700 .72rem/1.2 var(--f-body); letter-spacing:.12em; text-transform:uppercase}
+.srcpick label{flex:1 1 200px; display:flex; align-items:center; gap:10px; min-height:48px; padding:10px 12px; border:1px solid var(--line); cursor:pointer; font-weight:600; font-size:.94rem}
+.srcpick label:has(input:checked){border-color:var(--ink); box-shadow:inset 0 -3px 0 var(--accent); background:var(--panel)}
+.srcpick input{width:18px; height:18px; margin:0; accent-color:var(--ink)}
+.vh{position:absolute!important; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap}
+.drop{display:grid; justify-items:center; gap:6px; padding:22px 16px; border:2px dashed var(--line); background:var(--panel); text-align:center; cursor:pointer}
+.drop:hover, .drop.over{border-color:var(--ink)}
+.drop:has(input:focus-visible){outline:3px solid var(--accent); outline-offset:2px}
+.drop[aria-invalid="true"]{border-color:var(--carn)}
+.drop svg{width:34px; height:34px}
+.field label.drop{font:400 .9rem/1.4 var(--f-body); text-transform:none; letter-spacing:0}
+.drop b{font:800 .95rem/1.2 var(--f-body)}
+.drop span{font-size:.84rem; color:var(--muted); max-width:46ch}
+.snext{overflow-y:auto; padding:18px 22px 22px; display:grid; gap:14px}
+.snext h3{margin:0; font:800 1.25rem/1.2 var(--f-display)}
+.snext ol{margin:0; padding-left:22px; display:grid; gap:8px}
+.snext kbd{font:700 .82em/1 var(--f-body); padding:2px 6px; border:1px solid var(--line); border-bottom-width:2px; background:var(--panel)}
+.snext .copied{margin:0; font-weight:700}
+.snext .copied.ok{color:var(--herb)} .snext .copied.bad{color:var(--carn)}
+
 /* Family tree dialog */
 dialog.tree{width:min(580px, calc(100% - 32px)); max-height:min(88vh, 900px); padding:0; border:none; border-top:6px solid var(--accent);
   background:var(--surface); color:var(--ink); box-shadow:0 30px 80px -30px rgb(0 0 0 / .7); overflow:hidden}
@@ -474,8 +495,8 @@ dialog.tree::backdrop{background:rgb(0 0 0 / .6)}
   <form class="sform" id="submitForm" novalidate>
     <p class="intro-p">Offer a picture of a dinosaur under an open licence. We use life restorations: the whole animal as it looked when alive.</p>
     <ol class="steps">
-      <li>Put the picture on Wikimedia Commons, if it isn’t there yet, with the <a href="https://commons.wikimedia.org/wiki/Special:UploadWizard" target="_blank" rel="noopener">Upload Wizard ↗</a>. Choose CC0, CC BY 4.0 or CC BY-SA 4.0.</li>
-      <li>Fill in this form. It checks the file on Commons.</li>
+      <li>Pick a picture on Wikimedia Commons, or upload one from your computer or phone.</li>
+      <li>Fill in this form. It checks the picture and its licence.</li>
       <li>Continue on GitHub to send it (a free account is needed). Each submission is reviewed before it appears.</li>
     </ol>
     <div class="field">
@@ -483,9 +504,26 @@ dialog.tree::backdrop{background:rgb(0 0 0 / .6)}
       <input type="text" id="s-dino" list="s-names" autocomplete="off" spellcheck="false" required>
       <datalist id="s-names"></datalist>
     </div>
-    <div class="field">
+    <fieldset class="srcpick">
+      <legend>Where is the picture?</legend>
+      <label><input type="radio" name="s-src" value="commons" checked> On Wikimedia Commons</label>
+      <label><input type="radio" name="s-src" value="local"> On my computer or phone</label>
+    </fieldset>
+    <div class="field" id="s-local" hidden>
+      <span class="lbl">Picture file</span>
+      <label class="drop" id="s-drop">
+        <input type="file" id="s-upfile" class="vh" accept="image/jpeg,image/png,image/webp" aria-describedby="s-up-hint">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5M4 15v4a1 1 0 001 1h14a1 1 0 001-1v-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <b id="s-up-title">Choose a picture</b>
+        <span id="s-up-hint">or drag it here. JPEG, PNG or WebP, up to 10 MB, at least 300 pixels on the short side.</span>
+      </label>
+      <div class="preview" id="s-uprev" aria-live="polite" hidden></div>
+      <p class="hint">Only upload a picture you made yourself, or one that is in the public domain. It will be shared under the licence you choose below. Photo details such as location are removed before it goes on the site.</p>
+    </div>
+    <div class="field" id="s-commons">
+      <p class="hint" style="margin-bottom:2px">Not on Commons yet? Add it with the <a href="https://commons.wikimedia.org/wiki/Special:UploadWizard" target="_blank" rel="noopener">Upload Wizard ↗</a> (choose CC0, CC BY 4.0 or CC BY-SA 4.0), or switch to <b>On my computer or phone</b>.</p>
       <label for="s-file">Wikimedia Commons file</label>
-      <input type="text" id="s-file" placeholder="File:Name of picture.png, or the Commons link" autocomplete="off" spellcheck="false" required aria-describedby="s-file-hint">
+      <input type="text" id="s-file" placeholder="File:Name of picture.png, or the Commons link" autocomplete="off" spellcheck="false" aria-describedby="s-file-hint">
       <p class="hint" id="s-file-hint">Paste the file name or the link to its page on commons.wikimedia.org.</p>
       <div class="preview" id="s-preview" aria-live="polite" hidden></div>
     </div>
@@ -513,7 +551,7 @@ dialog.tree::backdrop{background:rgb(0 0 0 / .6)}
     <fieldset class="checks">
       <legend>Open licence agreement</legend>
       <label><input type="checkbox" required> <span>I made this picture, or it is already published under the licence above, and I have the right to share it under that licence.</span></label>
-      <label><input type="checkbox" required> <span>I agree it can be shown on Mesozoic Carousel (website and apps), with credit to the artist and a link to its Commons page.</span></label>
+      <label><input type="checkbox" required> <span>I agree it can be shown on Mesozoic Carousel (website and apps), with credit to the artist and a link to where it came from.</span></label>
       <label><input type="checkbox" required> <span>It shows the whole animal as it looked in life, not a skeleton, bones or a chart.</span></label>
     </fieldset>
     <p class="formerr" id="s-err" role="alert" hidden></p>
@@ -523,6 +561,20 @@ dialog.tree::backdrop{background:rgb(0 0 0 / .6)}
       <p class="fine">GitHub opens with your answers filled in; tick the three boxes there again and press Create. Licences that forbid commercial use or changes (NC, ND) can’t be accepted.</p>
     </div>
   </form>
+  <div class="snext" id="s-next" hidden>
+    <h3>One more step on GitHub</h3>
+    <p class="copied" id="s-copied"></p>
+    <ol>
+      <li>In the GitHub tab, click in the <b>Picture file</b> box.</li>
+      <li>Paste the picture: <kbd>Ctrl</kbd>+<kbd>V</kbd>, or <kbd>⌘</kbd>+<kbd>V</kbd> on a Mac, or touch and hold, then <b>Paste</b> on a phone. If that doesn’t work, drag your file into the box, or use <b>Paste, drop, or click to add files</b> under it.</li>
+      <li>Wait until the picture link appears in the box, tick the three agreement boxes, and press <b>Create</b>.</li>
+    </ol>
+    <div class="sactions">
+      <a class="appbtn" id="s-open" href="#" target="_blank" rel="noopener" style="color:var(--bg);background:var(--ink);padding:10px 14px;box-shadow:inset 0 -3px 0 var(--accent)">Open GitHub again ↗</a>
+      <button type="button" class="linkbtn" id="s-copyagain">Copy the picture again</button>
+      <button type="button" class="primary" id="s-done">Done</button>
+    </div>
+  </div>
 </dialog>
 
 <script>
@@ -750,7 +802,7 @@ function fromRow(r,i){
     places:r.places||[], hips:r.hips||null, weight:r.weight||null, species:r.species||null, fossil:r.fossil||null};
   if(tpl!=="spino") delete d.sailOpt;
   if(r.cimg){ d.photo=r.cimg; d.photo2=null; d.file=r.cfile; d.art=r.cart; d.lic=r.clic; d.clear=r.ckind||"plain"; d.png=/\.png$/i.test(r.cfile||"") }
-  else if(r.img){ d.photo=r.img; d.photo2=null; d.file=r.file; d.art=r.art; d.lic=r.lic; d.png=/\.png$/i.test(r.file||"") }
+  else if(r.img){ d.photo=r.img; d.photo2=null; d.file=r.file; d.art=r.art; d.lic=r.lic; d.src=r.src||null; d.png=/\.png$/i.test(r.file||"") }
   return d;
 }
 function mergeRows(rows){
@@ -759,6 +811,7 @@ function mergeRows(rows){
   const out = rows.map((r,i)=>{ const c=byName[r.name]; if(c){ if(r.wiki&&!c.wiki) c.wiki=r.wiki; if(r.group) c.group=r.group;
     for(const k of ["places","hips","weight","species","fossil"]) if(r[k]!=null && c[k]==null) c[k]=r[k];
     if(r.cimg){ c.photo=r.cimg; c.photo2=null; c.file=r.cfile; c.art=r.cart; c.lic=r.clic; c.clear=r.ckind||"plain"; c.png=/\.png$/i.test(r.cfile||"") }
+    else if(r.src && r.img){ c.photo=r.img; c.photo2=null; c.file=r.file; c.art=r.art; c.lic=r.lic; c.src=r.src; c.clear=null; c.png=/\.png$/i.test(r.file||"") }
     if(!c.len && r.len) c.len=r.len; return c } return fromRow(r,i) });
   DINOS.forEach(d=>{ if(!out.includes(d)) out.push(d) });
   DINOS = out; bag = []; current = DINOS.findIndex(d=>d.name===curName);
@@ -1052,7 +1105,7 @@ function makeCard(d){
     img.onload=()=>{wait.remove();
       if(!studio){const bgp=el("div","photo-bg"); bgp.style.backgroundImage=`url("${img.src}")`; frame.prepend(bgp)}
       frame.insertBefore(img, frame.querySelector(".tag"));
-      const a=el("a","credit",`Art: ${d.art||"Wikimedia Commons"} · ${d.lic}`); a.href="https://commons.wikimedia.org/wiki/File:"+encodeURIComponent(d.file.replace(/ /g,"_")); a.target="_blank"; a.rel="noopener"; cap.append(a)};
+      const a=el("a","credit",`Art: ${d.art||"Wikimedia Commons"} · ${d.lic}`); a.href=d.src||("https://commons.wikimedia.org/wiki/File:"+encodeURIComponent(d.file.replace(/ /g,"_"))); a.target="_blank"; a.rel="noopener"; cap.append(a)};
     img.onerror=()=>{ if(d.photo2&&!tried2){tried2=true; img.src=d.photo2} else drawFallback(true) };
     img.src=d.photo;
   } else drawFallback(false);
@@ -1205,6 +1258,64 @@ const submitDlg=document.getElementById("submitDlg"), sForm=document.getElementB
   sDino=document.getElementById("s-dino"), sFile=document.getElementById("s-file"), sArtist=document.getElementById("s-artist"),
   sLic=document.getElementById("s-lic"), sNotes=document.getElementById("s-notes"), sPrev=document.getElementById("s-preview"), sErr=document.getElementById("s-err");
 let submitWasRunning=false, sInfo=null, sSeq=0;
+const sLocal=document.getElementById("s-local"), sCommons=document.getElementById("s-commons"), sUp=document.getElementById("s-upfile"),
+  sDrop=document.getElementById("s-drop"), sUprev=document.getElementById("s-uprev"), sNext=document.getElementById("s-next"), sCopied=document.getElementById("s-copied");
+let sLocalFile=null;   // {file, w, h, ok, url}
+const srcMode=()=>sForm.querySelector('input[name="s-src"]:checked').value;
+sForm.querySelectorAll('input[name="s-src"]').forEach(r=>r.addEventListener("change", ()=>{
+  const local=srcMode()==="local"; sLocal.hidden=!local; sCommons.hidden=local;
+  const other=[...sLic.options].find(o=>/^Another/.test(o.value)); other.disabled=local; other.hidden=local; if(local && sLic.value===other.value) sLic.value="";
+  sForm.querySelectorAll("[aria-invalid]").forEach(n=>n.removeAttribute("aria-invalid")); sErr.hidden=true }));
+const fmtSize=b=>b>=1048576?(b/1048576).toFixed(1)+" MB":Math.max(1,Math.round(b/1024))+" KB";
+function takeLocal(file){
+  if(!file) return;
+  if(sLocalFile&&sLocalFile.url) URL.revokeObjectURL(sLocalFile.url);
+  sDrop.removeAttribute("aria-invalid"); sUprev.hidden=false;
+  const problems=[];
+  if(!/^image\/(jpeg|png|webp)$/.test(file.type)) problems.push("Use a JPEG, PNG or WebP picture.");
+  if(file.size>10*1048576) problems.push(`The file is ${fmtSize(file.size)}; the limit is 10 MB.`);
+  const url=URL.createObjectURL(file), im=new Image();
+  sLocalFile={file, url, w:0, h:0, ok:false};
+  const show=()=>{
+    const pv=el("span","pv"); pv.style.backgroundImage=`url("${url}")`;
+    const info=el("div"); const n=el("b"); n.textContent=file.name;
+    const meta=el("span"); meta.textContent=[im.naturalWidth?`${im.naturalWidth}×${im.naturalHeight} pixels`:"", fmtSize(file.size)].filter(Boolean).join(" · ");
+    const st=el("span",problems.length?"bad":"ok"); st.textContent=problems.length?problems.join(" "):"Ready to send";
+    info.append(n, meta, st); sUprev.replaceChildren(pv, info);
+    document.getElementById("s-up-title").textContent="Choose a different picture";
+    sLocalFile.ok=!problems.length;
+    if(!problems.length && !sForm.querySelector('[aria-invalid="true"]')) sErr.hidden=true;
+  };
+  if(problems.length && !/^image\//.test(file.type)){ show(); return }
+  im.onload=()=>{ sLocalFile.w=im.naturalWidth; sLocalFile.h=im.naturalHeight; sLocalFile.img=im;
+    if(Math.min(im.naturalWidth, im.naturalHeight)<300) problems.push(`It is only ${im.naturalWidth}×${im.naturalHeight} pixels; use one at least 300 pixels on the short side.`);
+    show() };
+  im.onerror=()=>{ problems.push("This file couldn’t be opened as a picture."); show() };
+  im.src=url;
+}
+sUp.addEventListener("change", ()=>takeLocal(sUp.files[0]));
+["dragenter","dragover"].forEach(t=>sDrop.addEventListener(t, e=>{ e.preventDefault(); sDrop.classList.add("over") }));
+["dragleave","drop"].forEach(t=>sDrop.addEventListener(t, e=>{ e.preventDefault(); sDrop.classList.remove("over") }));
+sDrop.addEventListener("drop", e=>{ const f=e.dataTransfer&&e.dataTransfer.files[0]; if(f) takeLocal(f) });
+// The picture goes to GitHub through the clipboard: browsers only copy PNG, so other formats are redrawn (max 1600 px).
+function pngBlob(){
+  const L=sLocalFile;
+  if(L.file.type==="image/png" && Math.max(L.w,L.h)<=2400) return Promise.resolve(L.file);
+  const k=Math.min(1, 1600/Math.max(L.w,L.h)), c=document.createElement("canvas");
+  c.width=Math.round(L.w*k); c.height=Math.round(L.h*k); c.getContext("2d").drawImage(L.img,0,0,c.width,c.height);
+  return new Promise((res,rej)=>c.toBlob(b=>b?res(b):rej(new Error("toBlob")),"image/png"));
+}
+function copyPicture(){
+  if(!(window.ClipboardItem && navigator.clipboard && navigator.clipboard.write)) return Promise.reject(new Error("no clipboard"));
+  return navigator.clipboard.write([new ClipboardItem({"image/png": pngBlob()})]);
+}
+function copyReport(p){
+  sCopied.className="copied"; sCopied.textContent="Copying the picture…";
+  p.then(()=>{ sCopied.className="copied ok"; sCopied.textContent=`✓ ${sLocalFile.file.name} is copied, ready to paste.` })
+   .catch(()=>{ sCopied.className="copied bad"; sCopied.textContent=`This browser couldn’t copy the picture. Drag ${sLocalFile.file.name} into the box on GitHub instead.` });
+}
+document.getElementById("s-copyagain").onclick=()=>copyReport(copyPicture());
+document.getElementById("s-done").onclick=()=>submitDlg.close();
 function issueUrl(f){
   const q=new URLSearchParams({template:"image-submission.yml", title:"Image: "+(f.dino||"")});
   for(const k of ["dino","file","artist","licence","notes"]) if(f[k]) q.set(k,f[k]);
@@ -1260,20 +1371,30 @@ sForm.addEventListener("submit", e=>{
   const bad=[]; sForm.querySelectorAll("[aria-invalid]").forEach(n=>n.removeAttribute("aria-invalid"));
   const name=sDino.value.trim(), hit=DINOS.find(x=>x.name.toLowerCase()===name.toLowerCase());
   if(!hit){ bad.push([sDino,"Pick a dinosaur from the list."]) }
-  if(!commonsName(sFile.value)) bad.push([sFile,"Add the Wikimedia Commons file."]);
+  const local=srcMode()==="local";
+  if(local){ if(!sLocalFile) bad.push([sDrop,"Choose a picture from your computer or phone."]); else if(!sLocalFile.ok) bad.push([sDrop,"This picture can’t be used; see the note under it."]) }
+  else if(!commonsName(sFile.value)) bad.push([sFile,"Add the Wikimedia Commons file."]);
   else if(sInfo && !sInfo.ok) bad.push([sFile,"This file’s licence or type can’t be accepted."]);
   if(!sArtist.value.trim()) bad.push([sArtist,"Add the artist or credit line."]);
   if(!sLic.value) bad.push([sLic,"Choose the licence."]);
   const boxes=[...sForm.querySelectorAll(".checks input")]; if(boxes.some(b=>!b.checked)) bad.push([boxes.find(b=>!b.checked),"Tick all three boxes in the agreement."]);
-  if(bad.length){ bad.forEach(([n])=>n.setAttribute("aria-invalid","true")); sErr.textContent=bad.map(b=>b[1]).join(" "); sErr.hidden=false; bad[0][0].focus(); return }
-  const file="File:"+(sInfo?sInfo.title:commonsName(sFile.value));
-  window.open(issueUrl({dino:hit.name, file, artist:sArtist.value.trim(), licence:sLic.value, notes:sNotes.value.trim()}), "_blank", "noopener");
+  if(bad.length){ bad.forEach(([n])=>n.setAttribute("aria-invalid","true")); sErr.textContent=bad.map(b=>b[1]).join(" "); sErr.hidden=false; (bad[0][0]===sDrop?sUp:bad[0][0]).focus(); return }
+  const fields={dino:hit.name, artist:sArtist.value.trim(), licence:sLic.value, notes:sNotes.value.trim()};
+  if(local){
+    const copying=copyPicture();          // must start inside the click
+    const u=issueUrl(fields); document.getElementById("s-open").href=u;
+    window.open(u, "_blank", "noopener");
+    sForm.hidden=true; sNext.hidden=false; copyReport(copying); const h3=sNext.querySelector("h3"); h3.tabIndex=-1; h3.focus();
+    return;
+  }
+  fields.file="File:"+(sInfo?sInfo.title:commonsName(sFile.value));
+  window.open(issueUrl(fields), "_blank", "noopener");
   submitDlg.close();
 });
 document.getElementById("submitClose").onclick=()=>submitDlg.close();
 document.getElementById("submitCancel").onclick=()=>submitDlg.close();
 submitDlg.addEventListener("click", e=>{ if(e.target===submitDlg) submitDlg.close() });
-submitDlg.addEventListener("close", ()=>{ if(submitWasRunning){ submitWasRunning=false; setRunning(true) } });
+submitDlg.addEventListener("close", ()=>{ sForm.hidden=false; sNext.hidden=true; if(submitWasRunning){ submitWasRunning=false; setRunning(true) } });
 document.addEventListener("click", e=>{ const a=e.target.closest("a[data-submit]"); if(!a || e.metaKey||e.ctrlKey||e.shiftKey) return;
   e.preventDefault(); openSubmit(DINOS[current]||null) });
 

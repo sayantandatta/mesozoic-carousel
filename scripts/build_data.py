@@ -724,6 +724,19 @@ if CLEAR.exists():
             r.update(cimg=i["url"].split("?")[0], cfile=f, cart=i["art"], clic=i["lic"], ckind="plain")
     print(f"clear-background pictures: {sum(1 for r in rows if r.get('cimg'))}", file=sys.stderr)
 
+# ---------- 11. pictures people uploaded and the owner approved (scripts/submitted_images.json) ----------
+SUB = ROOT / "scripts/submitted_images.json"
+if SUB.exists():
+    sub = json.loads(SUB.read_text())
+    for r in rows:
+        s = sub.get(r["name"])
+        if not s or not (ROOT / s["path"]).exists():
+            continue
+        for k in ("cimg", "cfile", "cart", "clic", "ckind"):
+            r.pop(k, None)
+        r.update(img=s["url"], file=pathlib.Path(s["path"]).name, art=s["art"], lic=s["lic"], src=s["src"])
+    print(f"submitted pictures: {sum(1 for r in rows if r.get('src'))}", file=sys.stderr)
+
 out = ROOT / "data/dinos.json"
 out.parent.mkdir(exist_ok=True)
 out.write_text(json.dumps(rows, ensure_ascii=False, indent=0, separators=(",", ":")))

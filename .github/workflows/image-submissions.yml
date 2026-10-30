@@ -22,10 +22,13 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Check the picture on Wikimedia Commons
+      - run: pip install pillow==11.0.0
+      - name: Check the picture
         id: chk
         env:
           ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
+          GH_TOKEN: ${{ github.token }}
         run: python scripts/check_image.py check >> "$GITHUB_OUTPUT"
       - name: Report
         env:
@@ -45,10 +48,13 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Add the picture to the overrides
+      - run: pip install pillow==11.0.0
+      - name: Add the picture to the site data
         id: app
         env:
           ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
+          GH_TOKEN: ${{ github.token }}
         run: python scripts/check_image.py apply >> "$GITHUB_OUTPUT"
       - name: Commit and rebuild the data
         if: steps.app.outputs.ok == 'true'
@@ -58,7 +64,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add scripts
+          git add scripts images 2>/dev/null || git add scripts
           git diff --cached --quiet || git commit -m "Use submitted picture for $(cat dino.txt) (#$N)"
           git pull --rebase origin main
           git push
