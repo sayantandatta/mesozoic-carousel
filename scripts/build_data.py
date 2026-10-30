@@ -704,6 +704,26 @@ if ov_path.exists():
             if k in ("places", "hips", "size", "weight", "species"):
                 r[k] = v
 
+# ---------- 10. reviewed clear-background pictures (scripts/clear_picks.json: {name: Commons file}) ----------
+CLEAR = ROOT / "scripts/clear_picks.json"
+if CLEAR.exists():
+    picks = json.loads(CLEAR.read_text())
+    cand = json.loads((ROOT / "data/clear_candidates.json").read_text()) if (ROOT / "data/clear_candidates.json").exists() else {}
+    known = {c["file"]: c for v in cand.values() for c in v}
+    need = sorted({f for f in picks.values() if f and f not in known})
+    extra = image_info(["File:" + f for f in need]) if (need and not OFFLINE) else {}
+    for r in rows:
+        f = picks.get(r["name"])
+        if not f:
+            continue
+        c = known.get(f)
+        if c:
+            r.update(cimg=c["url"], cfile=f, cart=c["art"], clic=c["lic"], ckind=c["kind"])
+        elif extra.get("File:" + f):
+            i = extra["File:" + f]
+            r.update(cimg=i["url"].split("?")[0], cfile=f, cart=i["art"], clic=i["lic"], ckind="plain")
+    print(f"clear-background pictures: {sum(1 for r in rows if r.get('cimg'))}", file=sys.stderr)
+
 out = ROOT / "data/dinos.json"
 out.parent.mkdir(exist_ok=True)
 out.write_text(json.dumps(rows, ensure_ascii=False, indent=0, separators=(",", ":")))

@@ -98,6 +98,7 @@ button[aria-pressed="true"] .off{display:none}
 .frame .photo-bg{position:absolute; inset:-20px; background-size:cover; background-position:center; filter:blur(18px) brightness(.55)}
 .frame img{position:absolute; inset:0; width:100%; height:100%; object-fit:contain}
 .frame.studio img{inset:4% 3%; width:94%; height:92%; filter:drop-shadow(0 10px 14px rgb(0 0 0 / .18))}
+.frame.studio.plainbg img{filter:none; mix-blend-mode:multiply}
 .tag{
   position:absolute; left:12px; top:12px; font:500 .72rem/1 var(--f-mono); letter-spacing:.06em; text-transform:uppercase;
   background:rgb(255 255 255 / .82); color:#1B2620; padding:6px 9px; border-radius:6px;
@@ -634,7 +635,8 @@ function fromRow(r,i){
     scene:SCENE_FOR(r.period), body:BODY_TONES[h%BODY_TONES.length], teeth:r.diet==="carn", wiki:r.wiki, notDino:r.notDino, group:r.group||null,
     places:r.places||[], hips:r.hips||null, weight:r.weight||null, species:r.species||null, fossil:r.fossil||null};
   if(tpl!=="spino") delete d.sailOpt;
-  if(r.img){ d.photo=r.img; d.photo2=null; d.file=r.file; d.art=r.art; d.lic=r.lic; d.png=/\.png$/i.test(r.file||"") }
+  if(r.cimg){ d.photo=r.cimg; d.photo2=null; d.file=r.cfile; d.art=r.cart; d.lic=r.clic; d.clear=r.ckind||"plain"; d.png=/\.png$/i.test(r.cfile||"") }
+  else if(r.img){ d.photo=r.img; d.photo2=null; d.file=r.file; d.art=r.art; d.lic=r.lic; d.png=/\.png$/i.test(r.file||"") }
   return d;
 }
 function mergeRows(rows){
@@ -642,6 +644,7 @@ function mergeRows(rows){
   const curName = DINOS[current] && DINOS[current].name;
   const out = rows.map((r,i)=>{ const c=byName[r.name]; if(c){ if(r.wiki&&!c.wiki) c.wiki=r.wiki; if(r.group) c.group=r.group;
     for(const k of ["places","hips","weight","species","fossil"]) if(r[k]!=null && c[k]==null) c[k]=r[k];
+    if(r.cimg){ c.photo=r.cimg; c.photo2=null; c.file=r.cfile; c.art=r.cart; c.lic=r.clic; c.clear=r.ckind||"plain"; c.png=/\.png$/i.test(r.cfile||"") }
     if(!c.len && r.len) c.len=r.len; return c } return fromRow(r,i) });
   DINOS.forEach(d=>{ if(!out.includes(d)) out.push(d) });
   DINOS = out; bag = []; current = DINOS.findIndex(d=>d.name===curName);
@@ -912,11 +915,13 @@ function makeCard(d){
   const drawFallback=()=>{frame.classList.remove("studio"); frame.querySelectorAll("img,.photo-bg,.credit,.loading").forEach(n=>n.remove());
     const cv=document.createElement("canvas"); cv.setAttribute("role","img"); cv.setAttribute("aria-label",`Drawing of ${label}`); frame.prepend(cv); render(cv,d)};
   if(d.photo){
-    if(d.png) frame.classList.add("studio");
+    const studio = d.png || d.clear;
+    if(studio) frame.classList.add("studio");
+    if(d.clear==="plain") frame.classList.add("plainbg");
     const wait=el("div","loading","Loading picture"); frame.append(wait);
     const img=new Image(); img.alt=`Life restoration of ${label}`; img.decoding="async"; let tried2=false;
     img.onload=()=>{wait.remove();
-      if(!d.png){const bgp=el("div","photo-bg"); bgp.style.backgroundImage=`url("${img.src}")`; frame.prepend(bgp)}
+      if(!studio){const bgp=el("div","photo-bg"); bgp.style.backgroundImage=`url("${img.src}")`; frame.prepend(bgp)}
       frame.insertBefore(img, frame.querySelector(".tag"));
       const a=el("a","credit",`Art: ${d.art||"Wikimedia Commons"} · ${d.lic}`); a.href="https://commons.wikimedia.org/wiki/File:"+encodeURIComponent(d.file.replace(/ /g,"_")); a.target="_blank"; a.rel="noopener"; frame.append(a)};
     img.onerror=()=>{ if(d.photo2&&!tried2){tried2=true; img.src=d.photo2} else drawFallback() };
@@ -1251,7 +1256,7 @@ function openTree(d){
         ct.setAttribute("aria-expanded", String(!box.hidden)) };
       li.insertBefore(ct, li.querySelector(".bird")); ol.append(li) });
     const own=TREE.taxa[chain[chain.length-1]], me=el("li","me"), card=el("div","me-card");
-    const th=el("div","th"+(d.png?" png":"")); if(d.photo) th.style.backgroundImage=`url("${d.photo}")`; else { const cv=document.createElement("canvas"); cv.style.cssText="width:100%;height:100%;border-radius:8px"; th.append(cv); render(cv,d) }
+    const th=el("div","th"+(d.png||d.clear?" png":"")); if(d.photo) th.style.backgroundImage=`url("${d.photo}")`; else { const cv=document.createElement("canvas"); cv.style.cssText="width:100%;height:100%;border-radius:8px"; th.append(cv); render(cv,d) }
     const sub=[own[1]&&own[1]!=="genus"?own[1]:"", own[0]!==d.name?own[0]:"", d.period].filter(Boolean).join(" · ");
     card.append(th, el("div",null,`<b${d.name.length>15?' class="long"':''}><a href="${slideHref(d)}" title="Link to ${d.name}’s slide">${d.name}</a></b><span>${sub}</span>`)); me.append(card); ol.append(me); treeBody.append(ol);
     // nearest group that holds at least three other dinosaurs on the site
